@@ -80,18 +80,16 @@ export default function KurucularVeEkipPage() {
           <Card className="max-w-4xl border-0 shadow-lg overflow-hidden">
             <CardContent className="p-0">
               <div className="flex flex-col lg:flex-row">
-                <div className="lg:w-1/3 p-8 flex justify-center items-center bg-gradient-to-br from-primary/5 to-primary/10">
-                  <div className="relative">
-                    <div className="w-48 h-48 md:w-56 md:h-56 rounded-lg overflow-hidden border-4 border-white shadow-xl">
-                      <Image
-                        src={founder.image || "/placeholder.svg"}
-                        alt={founder.name}
-                        width={300}
-                        height={300}
-                        className="w-full h-full object-cover"
-                        priority
-                      />
-                    </div>
+                <div className="lg:w-1/3 flex justify-center items-center">
+                  <div className="w-full h-full">
+                    <Image
+                      src={founder.image || "/placeholder.svg"}
+                      alt={founder.name}
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
                   </div>
                 </div>
                 <div className="lg:w-2/3 p-8">
@@ -126,32 +124,24 @@ export default function KurucularVeEkipPage() {
       <div>
         <h2 className="text-3xl font-bold mb-10 text-left font-lora italic text-primary">Ekibimiz</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {otherMembers.map((member, index) => (
             <Card
               key={index}
-              className="border-0 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group h-full"
+              className="border-0 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group aspect-square"
             >
-              <CardContent className="p-4 text-center h-full flex flex-col">
-                <div className="relative mb-4">
-                  <div className="w-24 h-24 mx-auto rounded-lg overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-colors duration-300 shadow-md">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={150}
-                      height={150}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
+              <CardContent className="p-0 h-full relative">
+                <Image
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  width={300}
+                  height={300}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
 
-                <div className="space-y-1 flex-grow">
-                  <h3 className="text-base font-bold font-lora italic text-primary leading-tight">{member.name}</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">{member.title}</p>
-                </div>
-
-                <div className="mt-3 pt-3 border-t border-gray-100">
-                  <p className="text-xs text-gray-500">Gönüllü Uzman</p>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                  <h3 className="text-sm font-bold font-lora italic text-white leading-tight mb-1">{member.name}</h3>
+                  <p className="text-xs text-white/90 leading-relaxed">Gönüllü {member.title}</p>
                 </div>
               </CardContent>
             </Card>

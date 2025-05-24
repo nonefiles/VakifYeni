@@ -1,5 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"Her Perşembe, 19:00@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight, Calendar, Users, BookOpen, Globe, Award } from "lucide-react"
 import Link from "next/link"
