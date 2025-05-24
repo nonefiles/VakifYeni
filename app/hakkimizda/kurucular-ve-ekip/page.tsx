@@ -93,7 +93,7 @@ export default function KurucularVeEkipPage() {
                   </div>
                 </div>
                 <div className="lg:w-2/3 p-8">
-                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-primary">{founder.name}</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-white">{founder.name}</h3>
                   <p className="text-xl text-primary mb-4 italic">{founder.title}</p>
 
                   {founder.description && (
