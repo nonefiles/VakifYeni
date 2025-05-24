@@ -64,6 +64,11 @@ export default function ServicesPage() {
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
                   </ul>
+                  <p>
+                    Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
+                    gizlilik ilkesiyle gerçekleştirilir.
+                  </p>
+                  <p>Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
                 </div>
               </CardContent>
               <CardFooter>
@@ -237,7 +242,7 @@ export default function ServicesPage() {
             </div>
             <div className="mt-8">
               <Button asChild className="bg-primary text-white">
-                <Link href="/gonullu-ol">Enstitü Projesine Katkı Sun</Link>
+                <Link href="/gonullu-ol">Gönüllü Ol</Link>
               </Button>
             </div>
           </div>

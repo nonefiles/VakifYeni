@@ -41,9 +41,7 @@ export default function Home() {
             <h2 className="mb-8 text-4xl font-medium md:text-5xl text-left">Biz Kimiz?</h2>
             <p className="mb-12 text-xl text-foreground/80 leading-relaxed font-aristotelica text-left">
               20 yılı aşkın deneyimle; uzman gönüllüler, psikoloji alanındaki güçlü iş birlikleri ve toplum temelli
-              yaklaşımımızla fazlasıyız.
-              <br />
-              Ruh sağlığı için dayanışma ağıyız.
+              yaklaşımımızla bir vakıftan fazlasıyız: Ruh sağlığı için dayanışma ağıyız.
             </p>
           </div>
 
@@ -68,7 +66,7 @@ export default function Home() {
       <section className="py-24 blue-gradient-bg relative">
         <div className="container">
           <div className="mx-auto max-w-3xl text-left">
-            <h2 className="mb-6 text-4xl font-medium md:text-5xl text-left">İnsana Değer Veren Bir Yolculuk</h2>
+            <h2 className="mb-6 text-4xl font-medium md:text-5xl text-left">İnsana Hizmet Değer Veren Bir Yolculuk</h2>
             <p className="mb-16 text-xl text-foreground/80 leading-relaxed font-aristotelica text-left">
               Maddi engellerin terapiye ve eğitime ulaşmanın önünde durmaması için bireylerle ve psikoloji
               öğrencileriyle omuz omuza çalışıyoruz.

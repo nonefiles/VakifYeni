@@ -53,7 +53,7 @@ export default function AboutPage() {
               <div className="shrink-0">
                 <div className="relative h-48 w-48 overflow-hidden rounded-full">
                   <Image
-                    src="/placeholder.svg?height=200&width=200"
+                    src="/images/team/abdullah-yilmaz.jpg"
                     alt="M. Abdullah Yılmaz"
                     width={200}
                     height={200}
