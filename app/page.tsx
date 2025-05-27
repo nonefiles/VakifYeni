@@ -131,7 +131,7 @@ export default function Home() {
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-responsive-lg font-medium mb-6">İnsana Hizmet Değer Veren Bir Yolculuk</h2>
+            <h2 className="text-responsive-lg font-medium mb-6">İnsana Değer Veren Bir Yolculuk</h2>
             <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto mb-8"></div>
             <p className="text-responsive-md text-foreground/70 max-w-4xl mx-auto leading-relaxed">
               Maddi engellerin terapiye ve eğitime ulaşmanın önünde durmaması için bireylerle ve psikoloji
