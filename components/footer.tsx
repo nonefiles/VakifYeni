@@ -15,17 +15,17 @@ export function Footer() {
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element"></div>
       </div>
 
-      <div className="container relative z-10 py-20 text-white">
+      <div className="container relative z-10 py-20 text-gray-800" style={{ backgroundColor: "#ecf6fc" }}>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <Heart className="w-8 h-8 mr-3 text-primary" />
-              <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#FFFFFF" }}>
+              <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#000000" }}>
                 Yol Arkadaşları
               </h3>
             </div>
-            <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-800/90 text-lg leading-relaxed mb-8 max-w-md">
               Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
 
@@ -80,7 +80,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+                    className="text-gray-800/80 hover:text-gray-800 transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
                   >
                     {link.name}
                   </Link>
@@ -97,17 +97,17 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="mt-1 flex-shrink-0 text-primary" />
-                <span className="text-white/80 text-sm leading-relaxed">
+                <span className="text-gray-800/80 text-sm leading-relaxed">
                   Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="flex-shrink-0 text-primary" />
-                <span className="text-white/80">+90 539 889 33 75</span>
+                <span className="text-gray-800/80">+90 539 889 33 75</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="flex-shrink-0 text-primary" />
-                <span className="text-white/80">info@yolarkadaslari.org</span>
+                <span className="text-gray-800/80">info@yolarkadaslari.org</span>
               </li>
             </ul>
 
@@ -116,7 +116,7 @@ export function Footer() {
               <h4 className="mb-4 text-lg font-semibold font-lora italic" style={{ color: "#FFFFFF" }}>
                 Çalışma Saatleri
               </h4>
-              <div className="space-y-2 text-sm text-white/80">
+              <div className="space-y-2 text-sm text-gray-800/80">
                 <div className="flex justify-between">
                   <span>Pazartesi - Cumartesi:</span>
                   <span>09:00 - 20:00</span>
@@ -132,7 +132,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-16 pt-8 border-t border-white/20 text-center">
-          <p className="text-white/70 text-sm">
+          <p className="text-gray-800/70 text-sm">
             © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
