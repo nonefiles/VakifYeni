@@ -82,8 +82,8 @@ export default function KurucularVeEkipPage() {
                     />
                   </div>
                 </div>
-                <div className="lg:w-2/3 p-8">
-                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-white">{founder.name}</h3>
+                <div className="lg:w-2/3 p-8 text-center">
+                  <h3 className="text-3xl font-bold mb-2 text-center font-lora italic text-white">{founder.name}</h3>
                   <p className="text-xl text-primary mb-4 italic">{founder.title}</p>
 
                   {founder.description && (
@@ -92,7 +92,7 @@ export default function KurucularVeEkipPage() {
                     </p>
                   )}
 
-                  <div className="space-y-4 text-left">
+                  <div className="space-y-4 text-center">
                     <p>
                       1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve
                       iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve
