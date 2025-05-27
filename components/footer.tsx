@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-// ... diğer gerekli importlar
+import { Facebook, Instagram, Mail, MapPin, Phone, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,22 +18,24 @@ export default function Footer() {
 
           {/* Sosyal Medya */}
           <div className="flex space-x-4">
-            {[
-              { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100089335227245", label: "Facebook" },
-              { icon: Instagram, href: "https://instagram.com/yilmazyolarkadaslari", label: "Instagram" },
-              // ... diğer sosyal medya ikonları
-            ].map((social, idx) => (
-              <Link
-                href={social.href}
-                key={idx}
-                className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <social.icon size={20} className="text-white" />
-                <span className="sr-only">{social.label}</span>
-              </Link>
-            ))}
+            <Link
+              href="https://www.facebook.com/profile.php?id=100089335227245"
+              className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook size={20} className="text-white" />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link
+              href="https://instagram.com/yilmazyolarkadaslari"
+              className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram size={20} className="text-white" />
+              <span className="sr-only">Instagram</span>
+            </Link>
           </div>
         </div>
 
@@ -44,22 +45,46 @@ export default function Footer() {
             Hızlı Bağlantılar
           </h3>
           <ul className="space-y-3">
-            {[
-              { name: "Hakkımızda", href: "/hakkimizda" },
-              { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
-              { name: "Blog/Kaynaklar", href: "/blog" },
-              { name: "Gönüllü Ol/Bağış Yap", href: "/gonullu-bagis" },
-              { name: "İletişim", href: "/iletisim" },
-            ].map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link
+                href="/hakkimizda"
+                className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+              >
+                Hakkımızda
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/hizmetlerimiz"
+                className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+              >
+                Hizmetlerimiz
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+              >
+                Blog/Kaynaklar
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/gonullu-bagis"
+                className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+              >
+                Gönüllü Ol/Bağış Yap
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/iletisim"
+                className="text-white hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+              >
+                İletişim
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -84,7 +109,6 @@ export default function Footer() {
               <span className="text-white">info@yolarkadaslari.org</span>
             </li>
           </ul>
-          {/* Çalışma Saatleri */}
           <div className="mt-8">
             <h4 className="mb-4 text-lg font-semibold font-lora italic text-white">
               Çalışma Saatleri
@@ -103,7 +127,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Alt Kısım */}
       <div className="mt-16 pt-8 border-t border-white/20 text-center">
         <p className="text-white text-sm">
           © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
