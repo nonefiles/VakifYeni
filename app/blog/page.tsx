@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Search, Clock, ArrowRight, Calendar, User, BookOpen, Film, PenTool, Filter } from "lucide-react"
-import { SectionDivider } from "@/components/section-divider"
 
 // Örnek blog yazıları
 const blogPosts = [
@@ -132,50 +131,61 @@ export default function BlogPage() {
   const regularPosts = blogPosts.filter((post) => !post.featured)
 
   return (
-    <div>
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-accent py-16 md:py-24 blue-gradient-bg relative">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-left">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-lora italic text-primary">Blog ve Kaynaklar</h1>
-            <p className="text-lg text-foreground/80 mb-8">
+      <section className="bg-gradient-primary py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 -translate-y-48 float-element"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 translate-y-32 float-element"></div>
+        </div>
+
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-lora italic text-white">Blog ve Kaynaklar</h1>
+            <p className="text-xl text-white/90 mb-12 leading-relaxed">
               Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın hazırladığı içerikler, öneriler ve
               kaynaklar.
             </p>
 
             {/* Arama Kutusu */}
-            <div className="relative max-w-2xl">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+            <div className="relative max-w-2xl mx-auto">
+              <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
               <Input
                 placeholder="Blog yazılarında ara..."
-                className="pl-12 pr-4 py-6 rounded-full bg-white/90 backdrop-blur-sm border-primary/20 shadow-sm text-base"
+                className="pl-16 pr-6 py-8 rounded-full bg-white/95 backdrop-blur-sm border-0 shadow-lg text-lg placeholder:text-gray-500"
               />
-              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full px-6 py-2 bg-primary text-white">
+              <Button className="absolute right-3 top-1/2 transform -translate-y-1/2 rounded-full px-8 py-3 bg-primary text-white hover:bg-primary/90 transition-all duration-300">
                 Ara
               </Button>
             </div>
           </div>
         </div>
-        <SectionDivider type="wave" color="blue" position="bottom" />
       </section>
 
       {/* Kategori Filtreleme */}
-      <section className="py-8 white-gradient-bg sticky top-20 z-10 border-b border-primary/10 backdrop-blur-sm">
+      <section className="py-8 bg-white/80 backdrop-blur-sm sticky top-20 z-20 border-b border-primary/10">
         <div className="container">
           <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 hide-scrollbar">
+            <div className="flex items-center gap-3 overflow-x-auto pb-2 hide-scrollbar">
               {categories.map((category, index) => (
                 <Button
                   key={index}
                   variant={index === 0 ? "default" : "outline"}
-                  className={`rounded-full whitespace-nowrap ${index === 0 ? "bg-primary text-white" : "border-primary/20 hover:bg-primary/10"}`}
+                  className={`rounded-full whitespace-nowrap transition-all duration-300 ${
+                    index === 0
+                      ? "bg-primary text-white shadow-lg"
+                      : "border-primary/30 hover:bg-primary/10 hover:border-primary/50"
+                  }`}
                 >
                   {category}
                 </Button>
               ))}
             </div>
 
-            <Button variant="outline" className="rounded-full border-primary/20 flex items-center gap-2">
+            <Button
+              variant="outline"
+              className="rounded-full border-primary/30 flex items-center gap-2 hover:bg-primary/10"
+            >
               <Filter className="h-4 w-4" />
               <span>Filtrele</span>
             </Button>
@@ -184,13 +194,13 @@ export default function BlogPage() {
       </section>
 
       {/* Öne Çıkan Yazılar */}
-      <section className="py-12 white-gradient-bg">
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50/50">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 font-lora italic text-primary text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 font-lora italic text-primary text-center">
             Öne Çıkan Yazılar
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {featuredPosts.map((post) => (
               <FeaturedPostCard key={post.id} post={post} />
             ))}
@@ -199,14 +209,14 @@ export default function BlogPage() {
       </section>
 
       {/* Tüm Blog Yazıları */}
-      <section className="py-12 white-gradient-bg">
+      <section className="py-16 bg-white">
         <div className="container">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold font-lora italic text-primary text-left">Son Yazılar</h2>
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-lora italic text-primary">Son Yazılar</h2>
 
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Sırala:</span>
-              <select className="text-sm border-none bg-transparent focus:outline-none text-primary cursor-pointer">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-600">Sırala:</span>
+              <select className="text-sm border border-primary/20 rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 text-primary cursor-pointer">
                 <option>En Yeni</option>
                 <option>En Popüler</option>
                 <option>A-Z</option>
@@ -220,8 +230,11 @@ export default function BlogPage() {
             ))}
           </div>
 
-          <div className="mt-12 flex justify-center">
-            <Button variant="outline" className="rounded-full border-primary/20 px-8 hover:bg-primary/10">
+          <div className="mt-16 flex justify-center">
+            <Button
+              variant="outline"
+              className="rounded-full border-primary/30 px-10 py-3 hover:bg-primary/10 transition-all duration-300"
+            >
               Daha Fazla Göster
             </Button>
           </div>
@@ -229,11 +242,14 @@ export default function BlogPage() {
       </section>
 
       {/* Kaynaklar Bölümü */}
-      <section className="py-16 blue-gradient-bg relative">
-        <SectionDivider type="wave" color="blue" position="top" />
+      <section className="py-20 bg-gradient-secondary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-0 w-72 h-72 bg-white rounded-full -translate-x-36 float-element"></div>
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-white rounded-full translate-x-48 float-element"></div>
+        </div>
 
-        <div className="container py-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-12 font-lora italic text-primary text-center">
+        <div className="container relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 font-lora italic text-white text-center">
             Faydalı Kaynaklar
           </h2>
 
@@ -246,23 +262,25 @@ export default function BlogPage() {
       </section>
 
       {/* Bülten Aboneliği */}
-      <section className="py-16 white-gradient-bg">
+      <section className="py-20 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="container">
-          <div className="max-w-3xl mx-auto bg-primary/5 rounded-2xl p-8 md:p-12 shadow-sm border border-primary/10">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary">Bültene Abone Olun</h2>
-              <p className="text-foreground/80">
+          <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 md:p-16 shadow-lg border border-primary/10">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-lora italic text-primary">Bültene Abone Olun</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Yeni blog yazıları, kaynaklar ve etkinliklerden haberdar olmak için e-posta listemize kaydolun.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
               <Input
                 type="email"
                 placeholder="E-posta adresiniz"
-                className="flex-1 bg-white/90 backdrop-blur-sm border-primary/20 rounded-full py-6"
+                className="flex-1 bg-white border-primary/20 rounded-full py-6 px-6 text-lg placeholder:text-gray-500"
               />
-              <Button className="bg-primary text-white rounded-full px-8">Abone Ol</Button>
+              <Button className="bg-primary text-white rounded-full px-10 py-6 text-lg hover:bg-primary/90 transition-all duration-300">
+                Abone Ol
+              </Button>
             </div>
           </div>
         </div>
@@ -274,47 +292,53 @@ export default function BlogPage() {
 // Öne Çıkan Yazı Kartı
 function FeaturedPostCard({ post }: { post: any }) {
   return (
-    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all duration-300 group">
+    <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group h-full">
       <div className="grid md:grid-cols-2 h-full">
-        <div className="relative h-64 md:h-full">
+        <div className="relative h-64 md:h-full overflow-hidden">
           <Image
             src={post.image || "/placeholder.svg"}
             alt={post.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent md:hidden"></div>
-          <Badge className="absolute top-4 left-4 bg-primary text-white md:hidden">{post.category}</Badge>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+          <Badge className="absolute top-6 left-6 bg-primary text-white px-4 py-2 text-sm font-medium">
+            {post.category}
+          </Badge>
         </div>
 
-        <div className="p-6 flex flex-col justify-between relative">
+        <div className="p-8 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-                {post.category}
-              </Badge>
-              <div className="flex items-center text-sm text-muted-foreground">
-                <Clock className="mr-1 h-4 w-4" />
+            <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
+              <div className="flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                <span>{post.date}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Clock className="h-4 w-4" />
                 <span>{post.readTime}</span>
               </div>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold mb-3 font-lora italic text-primary line-clamp-2">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary line-clamp-2 leading-tight">
               <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
                 {post.title}
               </Link>
             </h3>
 
-            <p className="text-foreground/80 mb-4 line-clamp-3">{post.excerpt}</p>
+            <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{post.excerpt}</p>
           </div>
 
-          <div className="flex items-center justify-between mt-auto">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              <span>{post.date}</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <User className="h-4 w-4 text-primary" />
+              <span className="text-sm text-gray-600">{post.author}</span>
             </div>
 
-            <Link href={`/blog/${post.slug}`} className="link-with-arrow group/link">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 group/link font-medium"
+            >
               <span>Devamını Oku</span>
               <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
             </Link>
@@ -328,20 +352,20 @@ function FeaturedPostCard({ post }: { post: any }) {
 // Blog Yazı Kartı
 function BlogPostCard({ post }: { post: any }) {
   return (
-    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group h-full flex flex-col">
-      <div className="relative h-48 overflow-hidden">
+    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group h-full flex flex-col">
+      <div className="relative h-56 overflow-hidden">
         <Image
           src={post.image || "/placeholder.svg"}
           alt={post.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-        <Badge className="absolute bottom-4 left-4 bg-primary text-white">{post.category}</Badge>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <Badge className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 text-sm">{post.category}</Badge>
       </div>
 
-      <CardHeader className="text-left pb-2">
-        <div className="flex items-center justify-between mb-2 text-sm text-muted-foreground">
+      <CardHeader className="text-left pb-3">
+        <div className="flex items-center justify-between mb-3 text-sm text-gray-500">
           <div className="flex items-center gap-1">
             <Calendar className="h-3 w-3" />
             <span>{post.date}</span>
@@ -352,7 +376,7 @@ function BlogPostCard({ post }: { post: any }) {
           </div>
         </div>
 
-        <CardTitle className="text-xl font-lora italic text-primary line-clamp-2">
+        <CardTitle className="text-xl font-lora italic text-primary line-clamp-2 leading-tight">
           <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
             {post.title}
           </Link>
@@ -360,18 +384,21 @@ function BlogPostCard({ post }: { post: any }) {
       </CardHeader>
 
       <CardContent className="text-left flex-grow">
-        <p className="text-foreground/80 line-clamp-3">{post.excerpt}</p>
+        <p className="text-gray-600 line-clamp-3 leading-relaxed">{post.excerpt}</p>
       </CardContent>
 
       <CardFooter className="text-left pt-0 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <User className="h-3 w-3 text-primary" />
-          <span className="text-sm text-muted-foreground">{post.author}</span>
+          <span className="text-sm text-gray-600">{post.author}</span>
         </div>
 
-        <Link href={`/blog/${post.slug}`} className="link-with-arrow group/link">
+        <Link
+          href={`/blog/${post.slug}`}
+          className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-all duration-300 group/link text-sm font-medium"
+        >
           <span>Oku</span>
-          <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+          <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
         </Link>
       </CardFooter>
     </Card>
@@ -381,18 +408,22 @@ function BlogPostCard({ post }: { post: any }) {
 // Kaynak Kartı
 function ResourceCard({ resource }: { resource: any }) {
   return (
-    <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm h-full">
-      <CardHeader className="text-center">
-        <div className="flex justify-center mb-4">{resource.icon}</div>
-        <CardTitle className="text-xl font-lora italic text-primary">{resource.title}</CardTitle>
+    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm h-full">
+      <CardHeader className="text-center pb-4">
+        <div className="flex justify-center mb-6">{resource.icon}</div>
+        <CardTitle className="text-xl font-lora italic text-[#8fa4d3] mb-4">{resource.title}</CardTitle>
       </CardHeader>
 
       <CardContent className="text-center">
-        <p className="text-foreground/80">{resource.description}</p>
+        <p className="text-[#8fa4d3]/90 leading-relaxed">{resource.description}</p>
       </CardContent>
 
-      <CardFooter className="justify-center">
-        <Button asChild variant="outline" className="rounded-full border-primary/20 hover:bg-primary/10">
+      <CardFooter className="justify-center pt-6">
+        <Button
+          asChild
+          variant="outline"
+          className="rounded-full border-[#8fa4d3]/30 text-[#8fa4d3] hover:bg-[#8fa4d3]/10 px-8 py-2"
+        >
           <Link href={resource.link}>Keşfet</Link>
         </Button>
       </CardFooter>

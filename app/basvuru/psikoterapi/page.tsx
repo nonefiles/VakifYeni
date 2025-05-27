@@ -11,7 +11,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { SectionDivider } from "@/components/section-divider"
 
 export default function PsikoterapiBasvuruPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -42,8 +41,6 @@ export default function PsikoterapiBasvuruPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Form Section */}
       <section className="py-16 bg-[#ECECE8]">

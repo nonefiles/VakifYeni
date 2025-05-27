@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { SectionDivider } from "@/components/section-divider"
 
 export default function GrupTerapileriBasvuruPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -36,8 +35,6 @@ export default function GrupTerapileriBasvuruPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Form Section */}
       <section className="py-16 bg-[#ECECE8]">

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { HeartHandshake, Users, BookOpen } from "lucide-react"
-import { SectionDivider } from "@/components/section-divider"
 
 export default function DonatePage() {
   return (
@@ -23,8 +22,6 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
 
       {/* Impact Section */}
       <section className="py-16 bg-[#ECECE8]">
@@ -50,8 +47,6 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider className="rotate-180" />
 
       {/* Donation Form */}
       <section className="py-16 bg-gradient-to-b from-[#ECECE8] to-[#eff6ff]/30">

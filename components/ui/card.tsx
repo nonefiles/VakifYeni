@@ -6,7 +6,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
   <div
     ref={ref}
     className={cn(
-      "rounded-2xl border-2 border-primary/20 bg-white text-card-foreground shadow-sm transition-all duration-300 hover:shadow-md",
+      "rounded-3xl border-2 border-primary/20 bg-white/80 backdrop-blur-sm text-card-foreground shadow-soft transition-all duration-500 hover:shadow-glow hover:scale-105 hover:bg-white/95",
       className,
     )}
     {...props}
@@ -25,8 +25,12 @@ const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HT
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
-      style={{ color: "#2563eb", fontFamily: "Lora, 'Lora Fallback', serif" }}
+      className={cn("text-2xl font-semibold leading-none tracking-tight transition-colors duration-300", className)}
+      style={{
+        color: "#000000",
+        fontFamily: "Aristotelica Display Trial, sans-serif",
+        fontStyle: "normal",
+      }}
       {...props}
     />
   ),
@@ -35,13 +39,21 @@ CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
   ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn("text-base text-foreground/70", className)} {...props} />
+    <p
+      ref={ref}
+      className={cn("text-base leading-relaxed", className)}
+      style={{
+        color: "#000000",
+        fontFamily: "Aristotelica Display Trial, sans-serif",
+      }}
+      {...props}
+    />
   ),
 )
 CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-8 pt-0 bg-white", className)} {...props} />,
+  ({ className, ...props }, ref) => <div ref={ref} className={cn("p-8 pt-0", className)} {...props} />,
 )
 CardContent.displayName = "CardContent"
 

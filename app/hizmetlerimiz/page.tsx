@@ -2,7 +2,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { HeartHandshake, Users, BookOpen, Calendar, Building, School, ArrowRight } from "lucide-react"
-import { SectionDivider } from "@/components/section-divider"
 
 export default function ServicesPage() {
   return (
@@ -18,7 +17,6 @@ export default function ServicesPage() {
             </p>
           </div>
         </div>
-        <SectionDivider type="wave" color="blue" position="bottom" />
       </section>
 
       {/* Psychological Support Section */}
@@ -121,7 +119,6 @@ export default function ServicesPage() {
             </Card>
           </div>
         </div>
-        <SectionDivider type="curve" color="white" position="bottom" />
       </section>
 
       {/* Education Section */}
@@ -210,7 +207,6 @@ export default function ServicesPage() {
             </Card>
           </div>
         </div>
-        <SectionDivider type="tilt" color="blue" position="bottom" />
       </section>
 
       {/* Institute Project */}

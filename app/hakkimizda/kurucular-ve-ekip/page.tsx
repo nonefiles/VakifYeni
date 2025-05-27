@@ -47,16 +47,6 @@ const teamMembers: TeamMember[] = [
     title: "Psikolog",
     image: "/images/team/zeliha-gultekin.jpg",
   },
-  {
-    name: "Mert Tokatlı",
-    title: "Klinik Psikolog",
-    image: "/images/team/mert-tokatli.jpg",
-  },
-  {
-    name: "Tuğba Doğanay",
-    title: "Sosyal Medya Uzmanı",
-    image: "/placeholder.svg?height=300&width=300&query=professional female social media specialist",
-  },
 ]
 
 export default function KurucularVeEkipPage() {
@@ -93,7 +83,7 @@ export default function KurucularVeEkipPage() {
                   </div>
                 </div>
                 <div className="lg:w-2/3 p-8">
-                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-primary">{founder.name}</h3>
+                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-white">{founder.name}</h3>
                   <p className="text-xl text-primary mb-4 italic">{founder.title}</p>
 
                   {founder.description && (
@@ -120,28 +110,44 @@ export default function KurucularVeEkipPage() {
         </div>
       )}
 
-      {/* Team Members Section */}
+      {/* Team Members Section - Vertical 9:16 Layout */}
       <div>
         <h2 className="text-3xl font-bold mb-10 text-left font-lora italic text-primary">Ekibimiz</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {otherMembers.map((member, index) => (
             <Card
               key={index}
-              className="border-0 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group aspect-square"
+              className="card-dynamic group overflow-hidden hover:shadow-glow transition-all duration-500 aspect-[9/16]"
             >
-              <CardContent className="p-0 h-full relative">
-                <Image
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <CardContent className="p-0 h-full flex flex-col">
+                {/* Image Section - Takes most of the space */}
+                <div className="relative overflow-hidden flex-1">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    width={300}
+                    height={533}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
 
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                  <h3 className="text-sm font-bold font-lora italic text-white leading-tight mb-1">{member.name}</h3>
-                  <p className="text-xs text-white/90 leading-relaxed">Gönüllü {member.title}</p>
+                {/* Content Section - Bottom portion */}
+                <div className="p-4 text-center bg-white">
+                  <h3
+                    className="text-lg font-bold mb-1 text-black leading-tight"
+                    style={{ fontFamily: "Aristotelica Display Trial, sans-serif" }}
+                  >
+                    {member.name}
+                  </h3>
+                  <p
+                    className="text-primary font-medium text-sm"
+                    style={{ fontFamily: "Aristotelica Display Trial, sans-serif" }}
+                  >
+                    Gönüllü {member.title}
+                  </p>
+                  <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mt-2"></div>
                 </div>
               </CardContent>
             </Card>

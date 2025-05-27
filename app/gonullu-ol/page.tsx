@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { HeartHandshake, Users, BookOpen, Calendar, Building, School } from "lucide-react"
-import { SectionDivider } from "@/components/section-divider"
+// import { SectionDivider } from "@/components/section-divider"
 
 export default function VolunteerPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -38,7 +38,7 @@ export default function VolunteerPage() {
         </div>
       </section>
 
-      <SectionDivider />
+      {/* <SectionDivider /> */}
 
       {/* Volunteer Areas */}
       <section className="py-16 bg-[#ECECE8]">
@@ -80,7 +80,7 @@ export default function VolunteerPage() {
         </div>
       </section>
 
-      <SectionDivider className="rotate-180" />
+      {/* <SectionDivider className="rotate-180" /> */}
 
       {/* Application Form */}
       <section className="py-16 bg-gradient-to-b from-[#ECECE8] to-[#eff6ff]/30">

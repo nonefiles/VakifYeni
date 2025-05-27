@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { SectionDivider } from "@/components/section-divider"
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react"
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6"
 import { FaXTwitter } from "react-icons/fa6"
@@ -55,8 +54,6 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
-        <SectionDivider className="text-white" />
       </section>
 
       {/* Contact Form Section */}

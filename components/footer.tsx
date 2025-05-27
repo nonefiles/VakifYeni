@@ -1,122 +1,140 @@
 import Link from "next/link"
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin, Heart } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6"
 
 export function Footer() {
   return (
-    <footer className="bg-card py-16 border-t border-border">
-      <div className="container">
+    <footer className="relative overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-secondary"></div>
+
+      {/* Pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32 float-element"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48 float-element"></div>
+        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element"></div>
+      </div>
+
+      <div className="container relative z-10 py-20 text-white">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <h3 className="mb-4 text-xl font-medium font-lora gradient-heading">Yol Arkadaşları</h3>
-            <p className="text-foreground/70 font-aristotelica">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
+              <Heart className="w-8 h-8 mr-3 text-primary" />
+              <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#FFFFFF" }}>
+                Yol Arkadaşları
+              </h3>
+            </div>
+            <p className="text-white/90 text-lg leading-relaxed mb-8 max-w-md">
               Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
-            <div className="mt-6 flex space-x-4">
-              <Link
-                href="https://www.facebook.com/profile.php?id=100089335227245"
-                className="text-foreground/70 hover:text-primary transition-colors"
-              >
-                <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
-                href="https://instagram.com/yilmazyolarkadaslari"
-                className="text-foreground/70 hover:text-primary transition-colors"
-              >
-                <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
-                href="https://x.com/yol_psikoloji?t=AsIOscmnvwC9b6tET1iXCQ&s=09"
-                className="text-foreground/70 hover:text-primary transition-colors"
-              >
-                <FaXTwitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                href="https://www.youtube.com/@YolArkada%C5%9Flar%C4%B1Dan%C4%B1%C5%9Fmanl%C4%B1k"
-                className="text-foreground/70 hover:text-primary transition-colors"
-              >
-                <Youtube size={20} />
-                <span className="sr-only">Youtube</span>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k"
-                className="text-foreground/70 hover:text-primary transition-colors"
-              >
-                <Linkedin size={20} />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
+
+            {/* Social Media */}
+            <div className="flex space-x-4">
+              {[
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100089335227245", label: "Facebook" },
+                { icon: Instagram, href: "https://instagram.com/yilmazyolarkadaslari", label: "Instagram" },
+                {
+                  icon: FaXTwitter,
+                  href: "https://x.com/yol_psikoloji?t=AsIOscmnvwC9b6tET1iXCQ&s=09",
+                  label: "Twitter",
+                },
+                {
+                  icon: Youtube,
+                  href: "https://www.youtube.com/@YolArkada%C5%9Flar%C4%B1Dan%C4%B1%C5%9Fmanl%C4%B1k",
+                  label: "Youtube",
+                },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k",
+                  label: "LinkedIn",
+                },
+              ].map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon size={20} />
+                  <span className="sr-only">{social.label}</span>
+                </Link>
+              ))}
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-xl font-medium font-lora gradient-heading">Hızlı Bağlantılar</h3>
-            <ul className="space-y-2 text-foreground/70 font-aristotelica">
-              <li>
-                <Link href="/hakkimizda" className="hover:text-primary transition-colors">
-                  Hakkımızda
-                </Link>
-              </li>
-              <li>
-                <Link href="/hizmetlerimiz" className="hover:text-primary transition-colors">
-                  Hizmetlerimiz
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-primary transition-colors">
-                  Blog/Kaynaklar
-                </Link>
-              </li>
-              <li>
-                <Link href="/gonullu-bagis" className="hover:text-primary transition-colors">
-                  Gönüllü Ol/Bağış Yap
-                </Link>
-              </li>
-              <li>
-                <Link href="/iletisim" className="hover:text-primary transition-colors">
-                  İletişim
-                </Link>
-              </li>
+            <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#FFFFFF" }}>
+              Hızlı Bağlantılar
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { name: "Hakkımızda", href: "/hakkimizda" },
+                { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
+                { name: "Blog/Kaynaklar", href: "/blog" },
+                { name: "Gönüllü Ol/Bağış Yap", href: "/gonullu-bagis" },
+                { name: "İletişim", href: "/iletisim" },
+              ].map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
-            <h3 className="mb-4 text-xl font-medium font-lora gradient-heading">İletişim</h3>
-            <ul className="space-y-4 text-foreground/70 font-aristotelica">
-              <li className="flex items-start">
-                <MapPin size={20} className="mr-2 mt-1 flex-shrink-0 text-primary" />
-                <span>Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</span>
+            <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#FFFFFF" }}>
+              İletişim
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3">
+                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary" />
+                <span className="text-white/80 text-sm leading-relaxed">
+                  Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
+                </span>
               </li>
-              <li className="flex items-center">
-                <Phone size={20} className="mr-2 flex-shrink-0 text-primary" />
-                <span>+90 539 889 33 75</span>
+              <li className="flex items-center space-x-3">
+                <Phone size={20} className="flex-shrink-0 text-primary" />
+                <span className="text-white/80">+90 539 889 33 75</span>
               </li>
-              <li className="flex items-center">
-                <Mail size={20} className="mr-2 flex-shrink-0 text-primary" />
-                <span>info@yolarkadaslari.org</span>
+              <li className="flex items-center space-x-3">
+                <Mail size={20} className="flex-shrink-0 text-primary" />
+                <span className="text-white/80">info@yolarkadaslari.org</span>
               </li>
             </ul>
-          </div>
 
-          <div>
-            <h3 className="mb-4 text-xl font-medium font-lora gradient-heading">Çalışma Saatleri</h3>
-            <ul className="space-y-2 text-foreground/70 font-aristotelica">
-              <li className="flex justify-between">
-                <span>Pazartesi - Cumartesi:</span>
-                <span>09:00 - 20:00</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Pazar:</span>
-                <span>Kapalı</span>
-              </li>
-            </ul>
+            {/* Working Hours */}
+            <div className="mt-8">
+              <h4 className="mb-4 text-lg font-semibold font-lora italic" style={{ color: "#FFFFFF" }}>
+                Çalışma Saatleri
+              </h4>
+              <div className="space-y-2 text-sm text-white/80">
+                <div className="flex justify-between">
+                  <span>Pazartesi - Cumartesi:</span>
+                  <span>09:00 - 20:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Pazar:</span>
+                  <span>Kapalı</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-foreground/60 font-aristotelica">
-          <p>© {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.</p>
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-white/20 text-center">
+          <p className="text-white/70 text-sm">
+            © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
+          </p>
         </div>
       </div>
     </footer>
