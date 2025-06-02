@@ -13,15 +13,12 @@ export function Footer() {
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element"></div>
       </div>
 
-      <div className="container relative z-10 py-20 text-gray-800">
+      <div className="container relative z-10 py-20 text-gray-800 text-center">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={48} height={48} className="mr-3" />
-              <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#000000" }}>
-                Yol Arkadaşları
-              </h3>
+          <div className="lg:col-span-2 flex flex-col items-center">
+            <div className="flex justify-center mb-6">
+              <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={300} height={48} className="mr-3" />
             </div>
             <p className="text-gray-800/90 text-lg leading-relaxed mb-4 max-w-md">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
@@ -31,7 +28,7 @@ export function Footer() {
             </p>
 
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center">
               {[
                 { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100089335227245", label: "Facebook" },
                 { icon: Instagram, href: "https://instagram.com/yilmazyolarkadaslari", label: "Instagram" },
@@ -66,7 +63,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center">
             <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
               Hızlı Bağlantılar
             </h3>
@@ -91,23 +88,23 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center">
             <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
               İletişim
             </h3>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3">
-                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary" />
+              <li className="flex items-start justify-center">
+                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-2" />
                 <span className="text-gray-800/80 text-sm leading-relaxed">
                   Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone size={20} className="flex-shrink-0 text-primary" />
+              <li className="flex items-center justify-center">
+                <Phone size={20} className="flex-shrink-0 text-primary mr-2" />
                 <span className="text-gray-800/80">+90 539 889 33 75</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail size={20} className="flex-shrink-0 text-primary" />
+              <li className="flex items-center justify-center">
+                <Mail size={20} className="flex-shrink-0 text-primary mr-2" />
                 <span className="text-gray-800/80">info@yolarkadaslari.org</span>
               </li>
             </ul>
@@ -118,12 +115,12 @@ export function Footer() {
                 Çalışma Saatleri
               </h4>
               <div className="space-y-2 text-sm text-gray-800/80">
-                <div className="flex justify-between">
-                  <span>Pazartesi - Cumartesi:</span>
+                <div className="flex justify-center">
+                  <span className="mr-2">Pazartesi - Cumartesi:</span>
                   <span>09:00 - 20:00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Pazar:</span>
+                <div className="flex justify-center">
+                  <span className="mr-2">Pazar:</span>
                   <span>Kapalı</span>
                 </div>
               </div>
