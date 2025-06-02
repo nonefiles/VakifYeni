@@ -29,7 +29,7 @@ export default function Home() {
             {/* Main heading */}
             <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in">
               <span className="block text-foreground">Ruh Sağlığı Bir Ayrıcalık</span>
-              <span className="block gradient-text">Değil haktır</span>
+              <span className="block gradient-text">Değil Haktır</span>
             </h1>
 
             {/* Description */}
@@ -91,13 +91,14 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-secondary font-lora italic">Misyonumuz</h3>
 
                   <p className="text-foreground/80 leading-relaxed">
-                    Herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmak. Maddi imkânları kısıtlı
-                    olan bireyler için ücretsiz psikoterapi fırsatları sunmak.
+                      Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmayı hedefliyoruz.
                   </p>
-
                   <p className="text-foreground/80 leading-relaxed">
-                    İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun
-                    kolektif gücüdür.
+                      Bu yolculukta, maddi imkânları kısıtlı olan bireyler için ücretsiz psikoterapi fırsatları sunuyor, genç uzmanların gelişimine katkı sağlayarak onların mesleki yolculuklarında bir rehber olmayı amaçlıyoruz. Ayrıca, toplumsal ruh sağlığına katkı sağlayacak eğitim ve etkinlikler düzenliyoruz.
+                  </p>
+                  <p className="text-foreground/80 leading-relaxed">
+                        İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun kolektif gücüdür.
+                        Ve biz, bu gücü çoğaltmak ve herkese ulaşmak için burada, her adımda yanınızdayız.
                   </p>
                 </div>
               </div>
