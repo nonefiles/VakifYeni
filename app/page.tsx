@@ -72,24 +72,6 @@ export default function Home() {
                 <h2 className="text-responsive-lg font-medium">Biz Kimiz?</h2>
                 <div className="w-24 h-1 bg-gradient-primary rounded-full"></div>
               </div>
-
-              <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica">
-                20 yılı aşkın deneyimle; uzman gönüllüler, psikoloji alanındaki güçlü iş birlikleri ve toplum temelli
-                yaklaşımımızla bir vakıftan fazlasıyız: Ruh sağlığı için dayanışma ağıyız.
-              </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-foreground/70">Desteklenen Kişi</div>
-                </div>
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-secondary mb-2">20+</div>
-                  <div className="text-sm text-foreground/70">Yıl Deneyim</div>
-                </div>
-              </div>
-
               <Button asChild variant="outline" size="lg" className="group">
                 <Link href="/hakkimizda">
                   Daha Fazla Bilgi
