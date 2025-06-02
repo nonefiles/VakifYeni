@@ -26,7 +26,7 @@ export function Footer() {
               </h3>
             </div>
             <p className="text-gray-800/90 text-lg leading-relaxed mb-8 max-w-md">
-              Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
+              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz. 
             </p>
 
             {/* Social Media */}
