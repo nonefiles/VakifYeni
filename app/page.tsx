@@ -200,8 +200,6 @@ export default function Home() {
               <h2 className="text-responsive-lg font-medium mb-6">Birlikte Büyüyen Bir Yapı</h2>
               <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto"></div>
             </div>
-
-            <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
               {/* Background pattern */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
