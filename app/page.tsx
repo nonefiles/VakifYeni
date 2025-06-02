@@ -195,30 +195,6 @@ export default function Home() {
               {/* Background pattern */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
-
-              <div className="relative z-10 space-y-8">
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">20+</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Yıl Deneyim</h4>
-                    <p className="text-sm text-foreground/70">Uzman kadromuzla</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">500+</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Desteklenen Kişi</h4>
-                    <p className="text-sm text-foreground/70">Ücretsiz hizmet</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">100%</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Gönüllü Kadro</h4>
-                    <p className="text-sm text-foreground/70">Uzman desteği</p>
-                  </div>
                 </div>
 
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
@@ -230,7 +206,7 @@ export default function Home() {
                   <p>
                     Danışmanlık merkezi hem uzmanlık alt yapısını hem de ekip gücünü vakfın hizmetine açtı. Bu iş
                     birliği sayesinde vakıf, henüz yeni kurulmuş olsa da uzmanlığı güçlü, erişimi geniş, yoldaşlığı
-                    güven veren bir yapı olarak hizmet verebiliyor.
+                    güven veren bir yapı olarak hizmet verebiliyor.Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
                   </p>
                 </div>
 
