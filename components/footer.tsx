@@ -6,9 +6,6 @@ import { FaXTwitter } from "react-icons/fa6"
 export function Footer() {
   return (
     <footer className="relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-secondary"></div>
-
       <div className="container relative z-10 py-20 text-gray-800" style={{ backgroundColor: "#ecf6fc" }}>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
