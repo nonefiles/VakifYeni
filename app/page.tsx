@@ -28,14 +28,15 @@ export default function Home() {
 
             {/* Main heading */}
             <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in">
-              <span className="block text-foreground">Ruh Sağlığında</span>
-              <span className="block gradient-text">Yeni Bir Başlangıç</span>
+              <span className="block text-foreground">Ruh Sağlığı Bir Ayrıcalık</span>
+              <span className="block gradient-text">Değil haktır</span>
             </h1>
 
             {/* Description */}
             <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up">
-              Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığı hizmetlerine erişimde fırsat eşitliğini savunuyor;
-              ücretsiz terapi, eğitim ve toplumsal projelerle yanınızda yürüyoruz.
+             Bu vakıf, bir ihtiyaçtan doğdu.
+            Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
+            İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
             </p>
 
             {/* CTA Buttons */}
