@@ -80,18 +80,6 @@ export default function Home() {
                 Bugün vakıf olarak yürüttüğümüz çalışmaların temeli, uzun süredir birlikte çalışan uzmanlarımızın danışmanlık merkezinde edindiği ortak deneyime dayanıyor. Bu zemin, bize hem mesleki bir derinlik hem de sahada karşılaştığımız ihtiyaçlara duyarlı bir yaklaşım kazandırdı.
               </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-foreground/70">Desteklenen Kişi</div>
-                </div>
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-secondary mb-2">20+</div>
-                  <div className="text-sm text-foreground/70">Yıl Deneyim</div>
-                </div>
-              </div>
-
               <Button asChild variant="outline" size="lg" className="group">
                 <Link href="/hakkimizda">
                   Daha Fazla Bilgi
