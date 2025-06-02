@@ -9,13 +9,6 @@ export function Footer() {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-secondary"></div>
 
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32 float-element"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48 float-element"></div>
-        <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element"></div>
-      </div>
-
       <div className="container relative z-10 py-20 text-gray-800" style={{ backgroundColor: "#ecf6fc" }}>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Section */}
