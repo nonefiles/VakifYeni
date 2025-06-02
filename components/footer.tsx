@@ -22,9 +22,6 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
               <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={48} height={48} className="mr-3" />
-              <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#000000" }}>
-                Yol Arkadaşları
-              </h3>
             </div>
             <p className="text-gray-800/90 text-lg leading-relaxed mb-4 max-w-md">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
