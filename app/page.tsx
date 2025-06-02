@@ -290,8 +290,9 @@ export default function Home() {
                 <h2 className="text-responsive-lg font-medium mb-8 text-white">Birlikte Daha Güçlüyüz</h2>
 
                 <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12">
-                  Gönüllü uzmanlarımızla büyüyor, bağışçılarımızın desteğiyle yol alıyoruz. Bu dayanışma ağının bir
-                  parçası olmak ister misiniz?
+                Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Sizde daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
+                Bu vakıf bir kişinin değil, birlikte iyileşmenin hayaliyle yola çıkanların vakfı.
+                Her destek, daha fazla insana ulaşmamızı sağlıyor.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
