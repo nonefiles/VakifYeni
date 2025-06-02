@@ -223,7 +223,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+    </div> 
       {/* FAQ Section */}
       <section className="py-32 blue-gradient-bg relative">
         <div className="animate-fade-in">
