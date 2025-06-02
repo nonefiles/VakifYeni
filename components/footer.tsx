@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin, Heart } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6"
 
 export function Footer() {
@@ -20,13 +21,16 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <Heart className="w-8 h-8 mr-3 text-primary" />
+              <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={48} height={48} className="mr-3" />
               <h3 className="text-3xl font-bold font-lora italic" style={{ color: "#000000" }}>
                 Yol Arkadaşları
               </h3>
             </div>
+            <p className="text-gray-800/90 text-lg leading-relaxed mb-4 max-w-md">
+              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
+            </p>
             <p className="text-gray-800/90 text-lg leading-relaxed mb-8 max-w-md">
-              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz. 
+              Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
 
             {/* Social Media */}
