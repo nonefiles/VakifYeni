@@ -28,15 +28,14 @@ export default function Home() {
 
             {/* Main heading */}
             <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in">
-              <span className="block text-foreground">Ruh Sağlığı Bir Ayrıcalık</span>
-              <span className="block gradient-text">Değil Haktır</span>
+              <span className="block text-foreground">Ruh Sağlığında</span>
+              <span className="block gradient-text">Yeni Bir Başlangıç</span>
             </h1>
 
             {/* Description */}
             <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up">
-             Bu vakıf, bir ihtiyaçtan doğdu.
-            Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
-            İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
+              Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığı hizmetlerine erişimde fırsat eşitliğini savunuyor;
+              ücretsiz terapi, eğitim ve toplumsal projelerle yanınızda yürüyoruz.
             </p>
 
             {/* CTA Buttons */}
@@ -72,6 +71,24 @@ export default function Home() {
                 <h2 className="text-responsive-lg font-medium">Biz Kimiz?</h2>
                 <div className="w-24 h-1 bg-gradient-primary rounded-full"></div>
               </div>
+
+              <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica">
+                20 yılı aşkın deneyimle; uzman gönüllüler, psikoloji alanındaki güçlü iş birlikleri ve toplum temelli
+                yaklaşımımızla bir vakıftan fazlasıyız: Ruh sağlığı için dayanışma ağıyız.
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
+                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-sm text-foreground/70">Desteklenen Kişi</div>
+                </div>
+                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
+                  <div className="text-3xl font-bold text-secondary mb-2">20+</div>
+                  <div className="text-sm text-foreground/70">Yıl Deneyim</div>
+                </div>
+              </div>
+
               <Button asChild variant="outline" size="lg" className="group">
                 <Link href="/hakkimizda">
                   Daha Fazla Bilgi
@@ -91,14 +108,13 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-secondary font-lora italic">Misyonumuz</h3>
 
                   <p className="text-foreground/80 leading-relaxed">
-                      Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmayı hedefliyoruz.
+                    Herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmak. Maddi imkânları kısıtlı
+                    olan bireyler için ücretsiz psikoterapi fırsatları sunmak.
                   </p>
+
                   <p className="text-foreground/80 leading-relaxed">
-                      Bu yolculukta, maddi imkânları kısıtlı olan bireyler için ücretsiz psikoterapi fırsatları sunuyor, genç uzmanların gelişimine katkı sağlayarak onların mesleki yolculuklarında bir rehber olmayı amaçlıyoruz. Ayrıca, toplumsal ruh sağlığına katkı sağlayacak eğitim ve etkinlikler düzenliyoruz.
-                  </p>
-                  <p className="text-foreground/80 leading-relaxed">
-                        İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun kolektif gücüdür.
-                        Ve biz, bu gücü çoğaltmak ve herkese ulaşmak için burada, her adımda yanınızdayız.
+                    İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun
+                    kolektif gücüdür.
                   </p>
                 </div>
               </div>
@@ -115,7 +131,7 @@ export default function Home() {
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-responsive-lg font-medium mb-6">İnsana Değer Veren Bir Yolculuk</h2>
+            <h2 className="text-responsive-lg font-medium mb-6">İnsana Hizmet Değer Veren Bir Yolculuk</h2>
             <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto mb-8"></div>
             <p className="text-responsive-md text-foreground/70 max-w-4xl mx-auto leading-relaxed">
               Maddi engellerin terapiye ve eğitime ulaşmanın önünde durmaması için bireylerle ve psikoloji
@@ -195,8 +211,8 @@ export default function Home() {
               {/* Background pattern */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
-                </div>
 
+              <div className="relative z-10 space-y-8">
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
                   <p>
                     Yol Arkadaşları Psikoloji Vakfı, bir hayalin meyvesi. Doğduğu yer ise uzun süredir yürütülen
@@ -206,7 +222,12 @@ export default function Home() {
                   <p>
                     Danışmanlık merkezi hem uzmanlık alt yapısını hem de ekip gücünü vakfın hizmetine açtı. Bu iş
                     birliği sayesinde vakıf, henüz yeni kurulmuş olsa da uzmanlığı güçlü, erişimi geniş, yoldaşlığı
-                    güven veren bir yapı olarak hizmet verebiliyor.Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
+                    güven veren bir yapı olarak hizmet verebiliyor.
+                  </p>
+
+                  <p>
+                    Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın
+                    tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
                   </p>
                 </div>
 
@@ -223,7 +244,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div> 
+
       {/* FAQ Section */}
       <section className="py-32 blue-gradient-bg relative">
         <div className="animate-fade-in">
@@ -249,9 +270,8 @@ export default function Home() {
                 <h2 className="text-responsive-lg font-medium mb-8 text-white">Birlikte Daha Güçlüyüz</h2>
 
                 <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12">
-                Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Sizde daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
-                Bu vakıf bir kişinin değil, birlikte iyileşmenin hayaliyle yola çıkanların vakfı.
-                Her destek, daha fazla insana ulaşmamızı sağlıyor.
+                  Gönüllü uzmanlarımızla büyüyor, bağışçılarımızın desteğiyle yol alıyoruz. Bu dayanışma ağının bir
+                  parçası olmak ister misiniz?
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
