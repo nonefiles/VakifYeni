@@ -162,6 +162,20 @@ export default function GonulluBagisPage() {
                       className="font-bold mb-2 text-[#2563eb]"
                       style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
                     >
+                      Alternatif Banka Hesabı
+                    </h4>
+                    <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
+                    <p className="mb-2">Banka: Ziraat Bankası</p>
+                    <p className="mb-2">Şube: Ankara Kızılay (5678)</p>
+                    <p className="mb-2">Hesap No: 0987654321</p>
+                    <p className="mb-2">IBAN: TR98 7654 3210 9876 5432 1098 76</p>
+                  </div>
+
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
                       Online Bağış
                     </h4>
                     <p className="mb-4">
