@@ -201,8 +201,6 @@ export default function FaaliyetlerimizPage() {
                 </div>
                 <div className="md:w-2/3 p-6">
                   <div className="flex items-center mb-4">
-                     <Award className="h-5 w-5 mr-2 text-primary" />
-                    <span className="text-sm text-muted-foreground font-aristotelica"></span>
                   </div>
                   <h2 className="text-2xl font-bold mb-4 font-lora">Çocuğun Yol Arkadaşı Projesi</h2>
                   <p className="mb-4 font-aristotelica">
