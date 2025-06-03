@@ -38,8 +38,8 @@ export default function HizmetlerimizPage() {
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Maddi koşullar nedeniyle özel terapiye erişemeyen bireylere, uzman psikologlarımız tarafından ücretsiz
-              psikoterapi hizmeti sunuyoruz. Başvuru formunu doldurarak değerlendirme sürecine katılabilirsiniz.
+            Bireysel psikoterapi hizmetimiz, kişisel gelişim ve ruhsal iyileşme süreçlerinde bilimsel yöntemler ışığında profesyonel destek sunar.
+            Güvenli ve saygılı bir ortamda, bireyin kendini anlaması ve zorluklarla başa çıkma becerilerini geliştirmesi hedeflenir.
             </p>
           </CardContent>
           <CardFooter>
@@ -75,9 +75,9 @@ export default function HizmetlerimizPage() {
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Benzer sorunları yaşayan bireylerin bir araya geldiği grup terapileri düzenliyoruz. Bu gruplar, yalnız
-              olmadığınızı hissetmenize, deneyimlerinizi paylaşmanıza ve başkalarının deneyimlerinden öğrenmenize olanak
-              tanır.
+            Grup terapileri, bireylerin ortak deneyimler ve destek ağı içinde farkındalık kazanmasını sağlayan, 
+            etkileşimsel ve bilimsel temelli bir terapi yaklaşımıdır. Katılımcılar, 
+            empati ve paylaşım yoluyla içsel kaynaklarını güçlendirir.
             </p>
           </CardContent>
           <CardFooter>
@@ -93,14 +93,14 @@ export default function HizmetlerimizPage() {
         <Card className="text-center border-0 shadow-md overflow-hidden flex flex-col">
           <div className="relative h-48">
             <Image
-              src="/placeholder.svg?height=300&width=500&text=Psikolojik Danışmanlık"
-              alt="Psikolojik Danışmanlık"
+              src="/placeholder.svg?height=300&width=500&text=Ücretsiz Çift/Aile Psikoterapisi"
+              alt="Ücretsiz Çift/Aile Psikoterapisi"
               fill
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
               <div className="p-4 text-white">
-                <h3 className="text-xl font-bold font-lora">Psikolojik Danışmanlık</h3>
+                <h3 className="text-xl font-bold font-lora">Ücretsiz Çift/Aile Psikoterapisi</h3>
               </div>
             </div>
           </div>
@@ -108,13 +108,13 @@ export default function HizmetlerimizPage() {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto -mt-16 border-4 border-white">
               <Brain className="h-8 w-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-lora">Psikolojik Danışmanlık</CardTitle>
-            <CardDescription className="font-aristotelica">Profesyonel rehberlik</CardDescription>
+            <CardTitle className="text-2xl font-lora">Ücretsiz Çift/Aile Psikoterapisi</CardTitle>
+            <CardDescription className="font-aristotelica"></CardDescription>
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Yaşamın zorlu dönemlerinde, kariyer seçimlerinde veya ilişkilerde yaşanan sorunlarda kısa süreli
-              danışmanlık hizmeti sunuyoruz. Bu hizmet, belirli bir konuda rehberlik ve destek almanızı sağlar.
+            Çift ve aile terapisi, ilişkisel dinamiklerin derinlemesine incelendiği, iletişim ve bağ kurma süreçlerinin güçlendirildiği bilimsel temelli bir müdahaledir. 
+            Aile sistemleri içinde karşılaşılan sorunların çözümünde iş birliği ve anlayış ön plandadır.
             </p>
           </CardContent>
           <CardFooter>
@@ -130,14 +130,14 @@ export default function HizmetlerimizPage() {
         <Card className="text-center border-0 shadow-md overflow-hidden flex flex-col">
           <div className="relative h-48">
             <Image
-              src="/placeholder.svg?height=300&width=500&text=Eğitim ve Seminerler"
-              alt="Eğitim ve Seminerler"
+              src="/placeholder.svg?height=300&width=500&text=Kurumsal Eğitimler"
+              alt="Kurumsal Eğitimler"
               fill
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
               <div className="p-4 text-white">
-                <h3 className="text-xl font-bold font-lora">Eğitim ve Seminerler</h3>
+                <h3 className="text-xl font-bold font-lora">Kurumsal Eğitimler</h3>
               </div>
             </div>
           </div>
@@ -145,13 +145,13 @@ export default function HizmetlerimizPage() {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto -mt-16 border-4 border-white">
               <BookOpen className="h-8 w-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-lora">Eğitim ve Seminerler</CardTitle>
+            <CardTitle className="text-2xl font-lora">Kurumsal Eğitimler</CardTitle>
             <CardDescription className="font-aristotelica">Bilgi ve farkındalık</CardDescription>
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Ruh sağlığı, kişisel gelişim, ebeveynlik, ilişkiler ve daha birçok konuda eğitim ve seminerler
-              düzenliyoruz. Bu etkinlikler, bilgi edinmenizi ve farkındalığınızı artırmanızı sağlar.
+            Kurumsal eğitim programlarımız, iş yerindeki psikososyal sağlığı desteklemek ve çalışanların dayanıklılık, iletişim gibi becerilerini artırmak üzere bilimsel temelli içeriklerle hazırlanır.
+            Sağlıklı iş ortamları için sürdürülebilir çözümler sunarız.
             </p>
           </CardContent>
           <CardFooter>
@@ -187,8 +187,8 @@ export default function HizmetlerimizPage() {
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Çeşitli konularda interaktif atölye çalışmaları düzenliyoruz. Bu atölyeler, teorik bilgiyi pratiğe
-              dökmenizi, deneyimsel öğrenme yaşamanızı ve yeni beceriler kazanmanızı sağlar.
+            Psikoloji atölyelerimiz, katılımcıların kişisel farkındalıklarını artırmayı ve yaşam becerilerini geliştirmeyi hedefleyen, deneyimsel öğrenme yöntemlerine dayalı bilimsel temelli programlardır. 
+            Etkileşimli ortamda yeni perspektifler kazanılır.
             </p>
           </CardContent>
           <CardFooter>
@@ -204,14 +204,14 @@ export default function HizmetlerimizPage() {
         <Card className="text-center border-0 shadow-md overflow-hidden flex flex-col">
           <div className="relative h-48">
             <Image
-              src="/placeholder.svg?height=300&width=500&text=Süpervizyon"
-              alt="Süpervizyon"
+              src="/placeholder.svg?height=300&width=500&text=Ücretsiz Çocuk/Ergen Psikoterapisi"
+              alt="Ücretsiz Çocuk/Ergen Psikoterapisi"
               fill
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
               <div className="p-4 text-white">
-                <h3 className="text-xl font-bold font-lora">Süpervizyon</h3>
+                <h3 className="text-xl font-bold font-lora">Ücretsiz Çocuk/Ergen Psikoterapisi</h3>
               </div>
             </div>
           </div>
@@ -219,13 +219,13 @@ export default function HizmetlerimizPage() {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto -mt-16 border-4 border-white">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <CardTitle className="text-2xl font-lora">Süpervizyon</CardTitle>
-            <CardDescription className="font-aristotelica">Uzman gelişimi</CardDescription>
+            <CardTitle className="text-2xl font-lora">Ücretsiz Çocuk/Ergen Psikoterapisi</CardTitle>
+            <CardDescription className="font-aristotelica"></CardDescription>
           </CardHeader>
           <CardContent className="font-aristotelica flex-grow">
             <p>
-              Psikoloji alanında çalışan genç uzmanlara ve öğrencilere süpervizyon desteği sunuyoruz. Bu hizmet, mesleki
-              gelişimlerine katkıda bulunmayı ve kaliteli hizmet sunmalarını sağlamayı amaçlar.
+            Çocuk ve ergen psikoterapisinde, bireylerin gelişim süreçlerini desteklemek ve zorluklarla başa çıkma becerilerini geliştirmek üzere bilimsel yöntemlerle çalışılır.
+            Güvenli ve empatik bir ortamda, çocukların ve gençlerin kendini anlaması ve iletişim becerilerini geliştirir.
             </p>
           </CardContent>
           <CardFooter>
