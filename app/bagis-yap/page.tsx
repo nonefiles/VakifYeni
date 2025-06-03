@@ -1,345 +1,209 @@
-import type React from "react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { HeartHandshake, Users, BookOpen } from "lucide-react"
+import { Heart, Handshake, ArrowRight, CheckCircle } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
-export default function DonatePage() {
+export default function GonulluBagisPage() {
   return (
-    <div className="bg-gradient-to-b from-[#ECECE8] to-[#f8f9fa]">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#eff6ff]/50 to-[#ECECE8]">
-        <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold gradient-heading md:text-5xl font-lora">Bağış Yap</h1>
-          <div className="mx-auto max-w-3xl text-left">
-            <p className="text-lg text-foreground/80 font-aristotelica">
-              Bağışlarınız, ücretsiz terapi hizmetleri ve sosyal sorumluluk projelerimizin sürdürülebilirliğini sağlamak
-              için çok kıymetli.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="container py-16 md:py-24 text-center bg-white">
+      <h1
+        className="text-4xl md:text-5xl font-bold mb-8 text-center text-[#2563eb]"
+        style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+      >
+        Destek Ol
+      </h1>
+      <p className="text-lg text-center max-w-3xl mx-auto mb-12 font-aristotelica">
+        Yol Arkadaşları Psikoloji Vakfı'na gönüllü olarak veya bağış yaparak destek olabilir, ruh sağlığı hizmetlerine
+        erişimde fırsat eşitliği yaratma vizyonumuza katkıda bulunabilirsiniz.
+      </p>
 
-      {/* Impact Section */}
-      <section className="py-16 bg-[#ECECE8]">
-        <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold gradient-heading font-lora">Bağışınızın Etkisi</h2>
+      <Tabs defaultValue="gonullu" className="max-w-4xl mx-auto">
+        <TabsList className="grid w-full grid-cols-2 mb-8 rounded-full bg-accent/30 p-1">
+          <TabsTrigger
+            value="gonullu"
+            className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
+          >
+            Gönüllü Ol
+          </TabsTrigger>
+          <TabsTrigger
+            value="bagis"
+            className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
+          >
+            Bağış Yap
+          </TabsTrigger>
+        </TabsList>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            <ImpactCard
-              icon={<HeartHandshake className="h-10 w-10 text-primary" />}
-              title="50 TL"
-              description="Bir kişinin 1 seans ücretsiz psikoterapi almasını sağlar."
-            />
-            <ImpactCard
-              icon={<Users className="h-10 w-10 text-primary" />}
-              title="200 TL"
-              description="Bir grup terapisi oturumunun gerçekleştirilmesine katkı sağlar."
-            />
-            <ImpactCard
-              icon={<BookOpen className="h-10 w-10 text-primary" />}
-              title="500 TL"
-              description="Bir psikoloji atölyesinin düzenlenmesini mümkün kılar."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Donation Form */}
-      <section className="py-16 bg-gradient-to-b from-[#ECECE8] to-[#eff6ff]/30">
-        <div className="container">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-10 text-left text-3xl font-bold gradient-heading font-lora">Bağış Yap</h2>
-
-            <Card className="bg-white/80 backdrop-blur-sm border border-primary/10">
+        <TabsContent value="gonullu">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="text-center">
               <CardHeader>
-                <CardTitle className="text-left font-lora gradient-heading">Bağış Formu</CardTitle>
-                <CardDescription className="text-left font-aristotelica">
-                  Bağışınızla, psikolojik desteğe ihtiyaç duyan ancak maddi imkânları kısıtlı olan bireylere umut
-                  olabilirsiniz.
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto">
+                  <Handshake className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                  Gönüllü Olmanın Önemi
+                </CardTitle>
+                <CardDescription className="font-aristotelica">Birlikte daha güçlüyüz</CardDescription>
+              </CardHeader>
+              <CardContent className="font-aristotelica">
+                <p className="mb-4">
+                  Gönüllülerimiz, vakfımızın en değerli kaynağıdır. Onların emekleri ve destekleri sayesinde, daha fazla
+                  kişiye ulaşabilir, daha fazla hayata dokunabiliriz.
+                </p>
+                <p>
+                  Gönüllü olmak, sadece başkalarına yardım etmek değil, aynı zamanda kişisel gelişim, yeni beceriler
+                  kazanma ve anlamlı bir topluluğun parçası olma fırsatıdır.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                  Gönüllü Alanları
+                </CardTitle>
+                <CardDescription className="font-aristotelica">
+                  Yetenek ve ilgi alanınıza göre destek olun
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Tabs defaultValue="credit-card" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3 mb-6 rounded-full bg-accent/30 p-1">
-                    <TabsTrigger
-                      value="credit-card"
-                      className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
-                    >
-                      Kredi Kartı
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="bank-transfer"
-                      className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
-                    >
-                      Banka Havalesi
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="other"
-                      className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white"
-                    >
-                      Diğer Yöntemler
-                    </TabsTrigger>
-                  </TabsList>
-
-                  <TabsContent value="credit-card" className="mt-6 space-y-6">
-                    <div className="space-y-4">
-                      <div className="space-y-2">
-                        <Label className="font-aristotelica">Bağış Tutarı</Label>
-                        <RadioGroup defaultValue="50">
-                          <div className="grid grid-cols-3 gap-4">
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="50" id="amount-50" className="sr-only" />
-                              <Label htmlFor="amount-50" className="cursor-pointer font-medium font-aristotelica">
-                                50 TL
-                              </Label>
-                            </div>
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="100" id="amount-100" className="sr-only" />
-                              <Label htmlFor="amount-100" className="cursor-pointer font-medium font-aristotelica">
-                                100 TL
-                              </Label>
-                            </div>
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="200" id="amount-200" className="sr-only" />
-                              <Label htmlFor="amount-200" className="cursor-pointer font-medium font-aristotelica">
-                                200 TL
-                              </Label>
-                            </div>
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="500" id="amount-500" className="sr-only" />
-                              <Label htmlFor="amount-500" className="cursor-pointer font-medium font-aristotelica">
-                                500 TL
-                              </Label>
-                            </div>
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="1000" id="amount-1000" className="sr-only" />
-                              <Label htmlFor="amount-1000" className="cursor-pointer font-medium font-aristotelica">
-                                1000 TL
-                              </Label>
-                            </div>
-                            <div className="flex items-center justify-center rounded-md border border-primary/20 p-4 hover:bg-accent transition-all duration-200">
-                              <RadioGroupItem value="other" id="amount-other" className="sr-only" />
-                              <Label htmlFor="amount-other" className="cursor-pointer font-medium font-aristotelica">
-                                Diğer
-                              </Label>
-                            </div>
-                          </div>
-                        </RadioGroup>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="custom-amount" className="font-aristotelica">
-                          Özel Tutar (TL)
-                        </Label>
-                        <Input
-                          id="custom-amount"
-                          type="number"
-                          placeholder="Tutar giriniz"
-                          className="border-primary/20 focus:border-primary"
-                        />
-                      </div>
-
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="font-aristotelica">
-                            Ad Soyad
-                          </Label>
-                          <Input id="name" className="border-primary/20 focus:border-primary" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="font-aristotelica">
-                            E-posta
-                          </Label>
-                          <Input id="email" type="email" className="border-primary/20 focus:border-primary" />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="card-number" className="font-aristotelica">
-                          Kart Numarası
-                        </Label>
-                        <Input
-                          id="card-number"
-                          placeholder="1234 5678 9012 3456"
-                          className="border-primary/20 focus:border-primary"
-                        />
-                      </div>
-
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="expiry" className="font-aristotelica">
-                            Son Kullanma Tarihi
-                          </Label>
-                          <Input id="expiry" placeholder="AA/YY" className="border-primary/20 focus:border-primary" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="cvv" className="font-aristotelica">
-                            CVV
-                          </Label>
-                          <Input id="cvv" placeholder="123" className="border-primary/20 focus:border-primary" />
-                        </div>
-                      </div>
-
-                      <Button className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300">
-                        Bağış Yap
-                      </Button>
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="bank-transfer" className="mt-6 space-y-6">
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-left font-lora">
-                        Banka Hesap Bilgileri
-                      </h3>
-                      <div className="space-y-4">
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Banka:</div>
-                          <div className="col-span-2 font-aristotelica">Ziraat Bankası</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Şube:</div>
-                          <div className="col-span-2 font-aristotelica">Ankara Şubesi (123)</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Hesap Adı:</div>
-                          <div className="col-span-2 font-aristotelica">Yol Arkadaşları Psikoloji Vakfı</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">IBAN:</div>
-                          <div className="col-span-2 font-aristotelica">TR12 3456 7890 1234 5678 9012 34</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Açıklama:</div>
-                          <div className="col-span-2 font-aristotelica">Bağış - [Adınız Soyadınız]</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="text-left text-sm text-gray-600 font-aristotelica">
-                      <p>
-                        Banka havalesi yaptıktan sonra, bağışınızın takibi için lütfen dekont bilgisini
-                        <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline">
-                          {" "}
-                          bagis@yolarkadaslari.org
-                        </a>{" "}
-                        adresine gönderiniz.
-                      </p>
-                    </div>
-                  </TabsContent>
-
-                  <TabsContent value="other" className="mt-6 space-y-6">
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-left font-lora">
-                        Diğer Bağış Yöntemleri
-                      </h3>
-                      <div className="space-y-4">
-                        <p className="text-gray-600 font-aristotelica text-left">
-                          Farklı bağış yöntemleri hakkında bilgi almak için lütfen bizimle iletişime geçin:
-                        </p>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Telefon:</div>
-                          <div className="col-span-2 font-aristotelica">+90 (XXX) XXX XX XX</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">E-posta:</div>
-                          <div className="col-span-2 font-aristotelica">
-                            <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline">
-                              bagis@yolarkadaslari.org
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-left font-lora">Ayni Bağışlar</h3>
-                      <p className="text-gray-600 font-aristotelica text-left">
-                        Vakfımıza ayni bağış (eşya, malzeme, hizmet vb.) yapmak isterseniz, lütfen bizimle iletişime
-                        geçin. İhtiyaç listemizi paylaşalım ve en uygun şekilde nasıl destek olabileceğinizi birlikte
-                        değerlendirelim.
-                      </p>
-                    </div>
-                  </TabsContent>
-                </Tabs>
+              <CardContent className="font-aristotelica">
+                <ul className="space-y-3 text-left">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
+                    <span>Psikolojik destek (uzman psikologlar için)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
+                    <span>Eğitim ve seminer organizasyonları</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
+                    <span>Sosyal medya ve içerik üretimi</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
+                    <span>İdari destek ve organizasyon</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
+                    <span>Etkinlik koordinasyonu</span>
+                  </li>
+                </ul>
               </CardContent>
-              <CardFooter className="flex flex-col space-y-4 text-left text-sm text-gray-600 font-aristotelica">
-                <p>Bağışlarınız için teşekkür ederiz. Bağışınızın makbuzu e-posta adresinize gönderilecektir.</p>
-                <p>
-                  Sorularınız için{" "}
-                  <a href="mailto:info@yolarkadaslari.org" className="text-primary hover:underline">
-                    info@yolarkadaslari.org
-                  </a>{" "}
-                  adresine e-posta gönderebilirsiniz.
-                </p>
+              <CardFooter>
+                <Button asChild className="w-full gradient-bg-primary">
+                  <Link href="/gonullu-ol">
+                    Gönüllü Başvuru Formu
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           </div>
-        </div>
-      </section>
+        </TabsContent>
 
-      {/* Transparency Section */}
-      <section className="py-16 bg-gradient-to-b from-[#eff6ff]/30 to-[#f8f9fa]">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-left">
-            <h2 className="mb-6 text-3xl font-bold gradient-heading font-lora">Şeffaflık İlkemiz</h2>
-            <p className="mb-8 text-lg text-foreground/80 font-aristotelica">
-              Yol Arkadaşları Psikoloji Vakfı olarak, bağışçılarımıza karşı şeffaf olmayı ve hesap verebilirliği temel
-              değerlerimiz arasında görüyoruz.
-            </p>
-            <div className="rounded-xl bg-white/80 backdrop-blur-sm p-6 text-left border border-primary/10">
-              <ul className="space-y-4 text-gray-600 font-aristotelica">
-                <li className="flex items-start">
-                  <span className="mr-2 mt-1 text-primary">•</span>
-                  <span>
-                    Tüm bağışlar, vakfımızın resmi hesaplarına kaydedilir ve yasal mevzuata uygun şekilde raporlanır.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 mt-1 text-primary">•</span>
-                  <span>Bağışlarınızın nasıl kullanıldığına dair düzenli raporlar web sitemizde yayınlanır.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 mt-1 text-primary">•</span>
-                  <span>Her yıl faaliyet raporumuz ve mali tablolarımız kamuoyuyla paylaşılır.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 mt-1 text-primary">•</span>
-                  <span>
-                    Bağışçılarımız, desteklerinin etkisini görebilmek için vakıf çalışmalarımızı yakından takip
-                    edebilirler.
-                  </span>
-                </li>
-              </ul>
-            </div>
+        <TabsContent value="bagis">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary mx-auto">
+                  <Heart className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle
+                  className="text-2xl italic text-[#2563eb]"
+                  style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                >
+                  Bağışınızın Etkisi
+                </CardTitle>
+                <CardDescription>Her katkı değerlidir</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-left">
+                  Bağışlarınız sayesinde, maddi imkânsızlıklar nedeniyle psikolojik desteğe erişemeyen bireylere
+                  ücretsiz hizmet sunuyor, genç uzmanların gelişimine katkıda bulunuyor ve toplumsal ruh sağlığı
+                  bilincini artırmak için çalışmalar yürütüyoruz.
+                </p>
+                <p className="text-left">
+                  Yapacağınız her bağış, bir kişinin hayatında fark yaratma potansiyeline sahiptir.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-left">
+              <CardHeader>
+                <CardTitle
+                  className="text-2xl italic text-[#2563eb]"
+                  style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                >
+                  Bağış Seçenekleri
+                </CardTitle>
+                <CardDescription>Size uygun yöntemi seçin</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
+                      Banka Havalesi
+                    </h4>
+                    <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
+                    <p className="mb-2">Banka: Türkiye İş Bankası</p>
+                    <p className="mb-2">Şube: Ankara Merkez (1234)</p>
+                    <p className="mb-2">Hesap No: 1234567890</p>
+                    <p className="mb-2">IBAN: TR12 3456 7890 1234 5678 9012 34</p>
+                  </div>
+
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
+                      Online Bağış
+                    </h4>
+                    <p className="mb-4">
+                      Güvenli ödeme altyapımız ile kredi kartı veya banka kartı ile bağış yapabilirsiniz.
+                    </p>
+                    <Button asChild className="w-full bg-primary text-white">
+                      <Link href="/bagis-yap">
+                        Online Bağış Yap
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+      </Tabs>
+
+      <div className="mt-16 text-center">
+        <h2 className="text-3xl font-bold mb-6 text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+          Destekçilerimiz
+        </h2>
+        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica">
+          Yol Arkadaşları Psikoloji Vakfı'na destek olan tüm kurumsal ve bireysel destekçilerimize teşekkür ederiz.
+        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto opacity-70">
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
           </div>
         </div>
-      </section>
+      </div>
     </div>
-  )
-}
-
-function ImpactCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode
-  title: string
-  description: string
-}) {
-  return (
-    <Card className="bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md text-left border border-primary/10">
-      <CardHeader>
-        <div className="flex justify-start">{icon}</div>
-        <CardTitle className="text-2xl font-lora gradient-heading">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-base font-aristotelica">{description}</CardDescription>
-      </CardContent>
-    </Card>
   )
 }
