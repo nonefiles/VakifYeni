@@ -148,6 +148,20 @@ export default function GonulluBagisPage() {
                       className="font-bold mb-2 text-[#2563eb]"
                       style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
                     >
+                      Banka Havalesi
+                    </h4>
+                    <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
+                    <p className="mb-2">Banka: Türkiye İş Bankası</p>
+                    <p className="mb-2">Şube: Ankara Merkez (1234)</p>
+                    <p className="mb-2">Hesap No: 1234567890</p>
+                    <p className="mb-2">IBAN: TR12 3456 7890 1234 5678 9012 34</p>
+                  </div>
+
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
                       Alternatif Banka Hesabı
                     </h4>
                     <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
