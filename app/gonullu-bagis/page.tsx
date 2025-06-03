@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Handshake, ArrowRight, CheckCircle } from "lucide-react"
+import { Heart, Users, ArrowRight, CheckCircle } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -40,7 +40,7 @@ export default function GonulluBagisPage() {
             <Card className="text-center">
               <CardHeader>
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto">
-                  <Handshake className="h-8 w-8 text-white" />
+                  <Users className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
                   Gönüllü Olmanın Önemi
@@ -142,18 +142,19 @@ export default function GonulluBagisPage() {
                 <CardDescription>Size uygun yöntemi seçin</CardDescription>
               </CardHeader>
               <CardContent>
+                <div className="space-y-6">
                   <div className="p-4 border rounded-lg">
                     <h4
                       className="font-bold mb-2 text-[#2563eb]"
                       style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
                     >
-                      Alternatif Banka Hesabı
+                      Banka Havalesi
                     </h4>
                     <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
-                    <p className="mb-2">Banka: Ziraat Bankası</p>
-                    <p className="mb-2">Şube: Ankara Kızılay (5678)</p>
-                    <p className="mb-2">Hesap No: 0987654321</p>
-                    <p className="mb-2">IBAN: TR98 7654 3210 9876 5432 1098 76</p>
+                    <p className="mb-2">Banka: Türkiye İş Bankası</p>
+                    <p className="mb-2">Şube: Ankara Merkez (1234)</p>
+                    <p className="mb-2">Hesap No: 1234567890</p>
+                    <p className="mb-2">IBAN: TR12 3456 7890 1234 5678 9012 34</p>
                   </div>
 
                   <div className="p-4 border rounded-lg">
