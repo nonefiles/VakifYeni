@@ -92,6 +92,15 @@ export default function VakifTuzuguPage() {
               <li>Gerekirse iktisadi işletmeler kurularak elde edilecek kazançlar</li>
             </ul>
           </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-3">Madde 6: Kuruluş Malvarlığı</h3>
+            <p>
+              Vakıf, kurucu Abdullah Yılmaz tarafından tahsis edilen 500.000 TL kuruluş malvarlığı ile kurulmuştur. Bu miktar zamanla yapılacak bağışlar ve katkılarla artırılabilir.
+            </p>
+          </div>
+        </div>
+
         <p className="mt-12 text-center text-sm text-muted-foreground">
           Not: Bu özet bilgilendirme amaçlıdır. Resmi ve tam metin için lütfen vakıf tüzüğünü indiriniz.
         </p>
