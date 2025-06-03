@@ -9,7 +9,7 @@ export default function VakifTuzuguPage() {
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-heading">Vakıf Tüzüğü</h1>
 
       <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-        Yol Arkadaşları Psikoloji Vakfı'nın tüzüğü, vakfımızın kuruluş amacını, yönetim yapısını ve faaliyet alanlarını
+        Yılmaz Yol Arkadaşları Vakfı'nın tüzüğü, vakfımızın kuruluş amacını, yönetim yapısını ve faaliyet alanlarını
         belirleyen resmi belgedir.
       </p>
 
@@ -42,31 +42,33 @@ export default function VakifTuzuguPage() {
 
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Tüzük Özeti</h2>
+        <h3 className="text-xl font-semibold mb-6 text-center">Yılmaz Yol Arkadaşları Vakfı</h3>
 
         <div className="space-y-8">
           <div>
             <h3 className="text-xl font-bold mb-3">Madde 1: Vakfın Adı ve Merkezi</h3>
-            <p>Vakfın adı "Yol Arkadaşları Psikoloji Vakfı"dır ve merkezi İstanbul'dadır.</p>
+            <p>Vakfın adı <strong>"Yılmaz Yol Arkadaşları Vakfı"</strong>dır. Kısa adı YYA'dır. Vakfın merkezi Ankara İli, Çankaya İlçesi, Aziziye Mahallesi, Cinnah Caddesi 66/7 adresindedir.</p>
           </div>
 
           <div>
             <h3 className="text-xl font-bold mb-3">Madde 2: Vakfın Amacı</h3>
             <p>
-              Vakfın amacı, psikolojik desteğe erişimde fırsat eşitliği yaratmak, maddi imkânsızlıklar nedeniyle
-              psikolojik desteğe ulaşamayan bireylere ücretsiz hizmet sunmak, genç uzmanların gelişimine katkıda
-              bulunmak ve toplumsal ruh sağlığı bilincini artırmaktır.
+              Vakfın amacı; Türk toplumunun ruh sağlığı alanında bilimsel ve sosyal gelişimini desteklemek, psikolojik destek hizmetlerini yaygınlaştırmak, doğal afetlerde insani yardım sağlamak ve sağlıklı bireylerden oluşan bir toplum için eğitim, terapi ve benzeri etkinliklerde bulunmaktır.
             </p>
           </div>
 
           <div>
             <h3 className="text-xl font-bold mb-3">Madde 3: Vakfın Faaliyet Alanları</h3>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Ücretsiz psikoterapi hizmetleri sunmak</li>
-              <li>Eğitim ve seminerler düzenlemek</li>
-              <li>Toplum temelli psikolojik destek projeleri geliştirmek</li>
-              <li>Genç uzmanların mesleki gelişimini desteklemek</li>
-              <li>Ruh sağlığı alanında bilimsel araştırmaları desteklemek</li>
-              <li>Toplumsal ruh sağlığı bilincini artırmaya yönelik yayınlar hazırlamak</li>
+              <li>Ruh sağlığı konusunda araştırmalar yapmak ve yayınlar hazırlamak</li>
+              <li>Maddi imkânsızlıklar nedeniyle desteğe erişemeyen bireylere bireysel ve grup terapileri sunmak</li>
+              <li>Ruh sağlığı alanında öğrencilere eğitim desteği sağlamak</li>
+              <li>Yurtiçi ve yurtdışı hibe ve fonlardan yararlanmak</li>
+              <li>Ruh sağlığı turizmi ve kalite yönetimi konularında projeler geliştirmek</li>
+              <li>Doğal afetlerde insani yardım çalışmaları yürütmek</li>
+              <li>İşçi ruh sağlığına yönelik projeler yapmak</li>
+              <li>Ruh sağlığı araştırma merkezi kurmak</li>
+              <li>Yazılı, görsel ve dijital yayınlar hazırlamak</li>
             </ul>
           </div>
 
@@ -76,7 +78,7 @@ export default function VakifTuzuguPage() {
               <li>Mütevelli Heyeti</li>
               <li>Yönetim Kurulu</li>
               <li>Denetim Kurulu</li>
-              <li>Danışma Kurulu</li>
+              <li>(İhtiyaca göre) Danışma Kurulu</li>
             </ul>
           </div>
 
@@ -84,10 +86,18 @@ export default function VakifTuzuguPage() {
             <h3 className="text-xl font-bold mb-3">Madde 5: Vakfın Gelirleri</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li>Bağışlar ve yardımlar</li>
-              <li>Vakıf faaliyetlerinden elde edilen gelirler</li>
-              <li>Vakıf malvarlığının getirileri</li>
-              <li>Diğer gelirler</li>
+              <li>Yurtiçi ve yurtdışından sağlanan hibeler</li>
+              <li>Vakfa ait malvarlığından elde edilen gelirler</li>
+              <li>Vakıf faaliyetlerinden ve projelerden sağlanan diğer gelirler</li>
+              <li>Gerekirse iktisadi işletmeler kurularak elde edilecek kazançlar</li>
             </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-bold mb-3">Madde 6: Kuruluş Malvarlığı</h3>
+            <p>
+              Vakıf, kurucu Abdullah Yılmaz tarafından tahsis edilen 500.000 TL kuruluş malvarlığı ile kurulmuştur. Bu miktar zamanla yapılacak bağışlar ve katkılarla artırılabilir.
+            </p>
           </div>
         </div>
 
