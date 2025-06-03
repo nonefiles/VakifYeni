@@ -21,31 +21,31 @@ const teamMembers: TeamMember[] = [
     name: "Öznur Ünsal",
     title: "Klinik Psikolog",
     image: "/images/team/oznur-unsal.jpg",
+    href:  "/hakkimizda/kurucular-ve-ekip/oznur-unsal",
   },
   {
     name: "Betül Çavumirza",
     title: "Psikolog",
     image: "/images/team/betul-cavumirza.jpeg",
+    href:  "/hakkimizda/kurucular-ve-ekip/betul-cavumirza",
   },
   {
     name: "Öykü Yıldız",
     title: "Uzman Psikolog & Aile Danışmanı",
     image: "/images/team/oyku-yildiz.jpg",
+    href:  "/hakkimizda/kurucular-ve-ekip/oyku-yildiz",
   },
   {
     name: "Onurcan Güler",
     title: "Psikolog",
     image: "/images/team/onurcan-guler.jpg",
+    href:  "/hakkimizda/kurucular-ve-ekip/onurcan-guler",
   },
   {
     name: "Duygu Sarıkaya",
     title: "Klinik Psikolog",
     image: "/images/team/duygu-sarikaya.jpg",
-  },
-  {
-    name: "Zeliha Gültekin",
-    title: "Psikolog",
-    image: "/images/team/zeliha-gultekin.jpg",
+    href:  "/hakkimizda/kurucular-ve-ekip/Duygu-Sarikaya",
   },
 ]
 
