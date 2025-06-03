@@ -30,7 +30,7 @@ export default function VakifTuzuguPage() {
 
             <div className="flex justify-center">
               <Button asChild className="flex items-center gap-2">
-                <Link href="public/images/vakif-tuzugu.pdf">
+                <Link href="/images/vakif-tuzugu.pdf" target="_blank">
                   <Download className="h-5 w-5" />
                   <span>Vakıf Tüzüğünü İndir (PDF)</span>
                 </Link>
