@@ -42,59 +42,30 @@ export default function VakifTuzuguPage() {
 
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Tüzük Özeti</h2>
-        <h3 className="text-xl font-semibold mb-6 text-center">Yılmaz Yol Arkadaşları Vakfı</h3>
 
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 1: Vakfın Adı ve Merkezi</h3>
-            <p>Vakfın adı <strong>"Yılmaz Yol Arkadaşları Vakfı"</strong>dır. Kısa adı YYA'dır. Vakfın merkezi Ankara İli, Çankaya İlçesi, Aziziye Mahallesi, Cinnah Caddesi 66/7 adresindedir.</p>
-          </div>
+        <div className="space-y-6 text-lg">
+          <p className="text-center font-semibold">
+            Ruh sağlığı alanında bilimsel ve sosyal gelişim için bir aradayız.
+          </p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 2: Vakfın Amacı</h3>
-            <p>
-              Vakfın amacı; Türk toplumunun ruh sağlığı alanında bilimsel ve sosyal gelişimini desteklemek, psikolojik destek hizmetlerini yaygınlaştırmak, doğal afetlerde insani yardım sağlamak ve sağlıklı bireylerden oluşan bir toplum için eğitim, terapi ve benzeri etkinliklerde bulunmaktır.
-            </p>
-          </div>
+          <p>
+            Yılmaz Yol Arkadaşları Vakfı; toplumun ruh sağlığına katkı sunmak, bu alandaki bilimsel ve sosyal gelişimi desteklemek amacıyla kurulmuştur. Vakfımız, bireylerin ve toplumun psikolojik iyi oluşunu önceleyen çalışmaları destekler, ihtiyaç sahiplerine ücretsiz psikolojik destek sunar ve ruh sağlığı alanında eğitim gören öğrencilere mesleki gelişim desteği sağlar.
+          </p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 3: Vakfın Faaliyet Alanları</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Ruh sağlığı konusunda araştırmalar yapmak ve yayınlar hazırlamak</li>
-              <li>Maddi imkânsızlıklar nedeniyle desteğe erişemeyen bireylere bireysel ve grup terapileri sunmak</li>
-              <li>Ruh sağlığı alanında öğrencilere eğitim desteği sağlamak</li>
-              <li>Yurtiçi ve yurtdışı hibe ve fonlardan yararlanmak</li>
-              <li>Ruh sağlığı turizmi ve kalite yönetimi konularında projeler geliştirmek</li>
-              <li>Doğal afetlerde insani yardım çalışmaları yürütmek</li>
-              <li>İşçi ruh sağlığına yönelik projeler yapmak</li>
-              <li>Ruh sağlığı araştırma merkezi kurmak</li>
-              <li>Yazılı, görsel ve dijital yayınlar hazırlamak</li>
-            </ul>
-          </div>
+          <p className="font-semibold">Ruh sağlığı alanında çağdaş, bütüncül ve toplum temelli yaklaşımlarla:</p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 4: Vakfın Organları</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Mütevelli Heyeti</li>
-              <li>Yönetim Kurulu</li>
-              <li>Denetim Kurulu</li>
-              <li>(İhtiyaca göre) Danışma Kurulu</li>
-            </ul>
-          </div>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Ücretsiz bireysel ve grup terapileri sunuyoruz,</li>
+            <li>Psikoloji sohbetleri, atölyeler ve eğitim programları düzenliyoruz,</li>
+            <li>Kurumlara özel psikolojik danışmanlık ve eğitimler sağlıyoruz,</li>
+            <li>Öğrencilere yönelik mesleki destek ve burs programları yürütüyoruz,</li>
+            <li>Doğal afetlerde insani yardım çalışmaları yürütüyoruz,</li>
+            <li>Ruh sağlığı alanında araştırmalar ve projeler geliştiriyoruz.</li>
+          </ul>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 5: Vakfın Gelirleri</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Bağışlar ve yardımlar</li>
-              <li>Yurtiçi ve yurtdışından sağlanan hibeler</li>
-              <li>Vakfa ait malvarlığından elde edilen gelirler</li>
-              <li>Vakıf faaliyetlerinden ve projelerden sağlanan diğer gelirler</li>
-              <li>Gerekirse iktisadi işletmeler kurularak elde edilecek kazançlar</li>
-            </ul>
-          </div>
-          
-          <div>
-          </div>
+          <p>
+            Vakıf, bu çalışmaları sürdürebilmek için bireyler, kurumlar ve topluluklarla iş birliği yapar; aynı zamanda bilimsel yayınlar, seminerler ve sosyal sorumluluk projeleriyle kamu yararına faaliyetlerde bulunur.
+          </p>
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">
