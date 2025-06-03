@@ -24,8 +24,8 @@ export default function DegerlerVeVizyonPage() {
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Psikolojik desteğin herkes için erişilebilir olması gerektiğine inanıyoruz. Maddi engelleri ortadan
-                kaldırmak için çalışıyoruz.
+              Psikolojik destek herkesin hakkıdır.
+              Hizmetlerimizi hiçbir ayrım gözetmeksizin, ihtiyaç temelli olarak sunarız.
               </p>
             </CardContent>
           </Card>
@@ -35,12 +35,11 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Dayanışma</h3>
+              <h3 className="text-xl font-bold">Bilimsellik</h3>
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Birlikte iyileşmenin ve birlikte büyümenin gücüne inanıyoruz. Dayanışma ruhuyla hareket ediyor,
-                toplumsal bağları güçlendiriyoruz.
+          Yürüttüğümüz her çalışmanın dayanağı bilimsel bilgi, etik ilkeler ve mesleki sorumluluktur.
               </p>
             </CardContent>
           </Card>
@@ -50,12 +49,11 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Award className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Profesyonellik</h3>
+              <h3 className="text-xl font-bold">Duyarlılık</h3>
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Tüm hizmetlerimizi etik ilkeler çerçevesinde, bilimsel temellere dayalı olarak ve profesyonel
-                standartlarda sunuyoruz.
+              Toplumun ve bireylerin farklı yaşam koşullarına ve ihtiyaçlarına hassasiyetle yaklaşırız.
               </p>
             </CardContent>
           </Card>
@@ -65,12 +63,11 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Kapsayıcılık</h3>
+              <h3 className="text-xl font-bold">Birliktelik</h3>
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Farklılıkları zenginlik olarak görüyor, hizmetlerimizi tüm toplum kesimlerini kapsayacak şekilde
-                tasarlıyoruz.
+            Yalnızca bireylerle değil, gönüllüler, uzmanlar ve kurumlarla kurduğumuz iş birlikleriyle daha kapsayıcı çözümler üretiriz.
               </p>
             </CardContent>
           </Card>
@@ -80,12 +77,11 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Lightbulb className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Yenilikçilik</h3>
+              <h3 className="text-xl font-bold">Güvenli Alan Yaratmak</h3>
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Değişen dünya ve toplum ihtiyaçlarına uyum sağlamak için sürekli kendimizi yeniliyor, yeni yaklaşımlar
-                geliştiriyoruz.
+              Psikolojik destek sunduğumuz her ortamda, kişilerin kendilerini ifade edebilecekleri, yargıdan uzak ve destekleyici bir alan oluşturmayı öncelikleriz.
               </p>
             </CardContent>
           </Card>
@@ -95,12 +91,11 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <School className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Sürekli Öğrenme</h3>
+              <h3 className="text-xl font-bold">Gelişim ve Paylaşım</h3>
             </CardHeader>
             <CardContent className="text-center">
               <p>
-                Bilginin sürekli geliştiğine inanıyor, kendimizi ve hizmetlerimizi güncel bilimsel bilgilerle
-                besliyoruz.
+            Bireyin içsel gelişimini, toplumsal fayda ile birlikte düşünür; öğrenmenin ve paylaşmanın dönüştürücü gücüne inanırız.
               </p>
             </CardContent>
           </Card>
@@ -115,45 +110,35 @@ export default function DegerlerVeVizyonPage() {
             <h3 className="text-2xl font-bold mb-6 text-center">Uzun Vadeli Vizyonumuz: Psikoloji Enstitüsü</h3>
 
             <p className="mb-6">
-              Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
-              araştırmayı bir araya getiren bir Psikoloji Enstitüsü kurmak. Bu yapı sayesinde, nitelikli uzmanların
-              yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin daha fazla insana
-              ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
+            Yol Arkadaşları Psikoloji Vakfı olarak,
+            herkesin psikolojik destek hizmetlerine ihtiyaç duyduğunda yalnız hissetmediği,
+            güvenli ve destekleyici alanlara kolaylıkla ulaşabildiği bir toplum hayal ediyoruz.
             </p>
 
             <p>
-              Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
-              profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
-              mümkün kılmayı amaçlıyor.
+            İnanıyoruz ki, bireyin kendini tanıma süreci,
+             yaşadığı zorluklarla başa çıkabilmesi, ilişkilerinde derinlik kurabilmesi
+             ve yaşamına anlam katabilmesi; sadece bireysel çabanın değil, aynı zamanda toplumun sağladığı imkânların da bir sonucudur.
+             Biz, bu imkânları eşitlemek için varız.
+            </p>
+
+            <p>
+            Psikolojik destek hizmetlerinin belirli kesimlerle sınırlı kalmaması, 
+            herkesin kendine ait bir gelişim alanı bulabilmesi ve bu sürecin bilimsel temellerle yürütülmesi gerektiğine inanıyoruz. Bu nedenle çalışmalarımızı; etik ilkelere bağlı, toplumun ihtiyaçlarına duyarlı ve mesleki olarak donanımlı bir yaklaşımla yürütüyoruz.
+            </p>
+
+            <p>
+            Uzun vadede, psikoloji alanında bilgi üretimini, 
+            hizmet sunumunu ve eğitimi bir araya getiren, çok boyutlu ve sürdürülebilir bir yapı kurmayı hedefliyoruz.
+            Bu hedefin temelinde ise; sadece bireylerin değil, ailelerin, kurumların ve toplumun bütününün ruhsal iyilik haline katkı sunma isteğimiz yatıyor.
+            </p>
+            
+            <p>
+            Toplumsal dönüşümün bireyin iç dünyasından başladığına inanıyor;
+            herkesin bu yolculukta yanında olmayı, güvenli bir eşlik sunmayı önemsiyoruz.
             </p>
           </CardContent>
         </Card>
-
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-10 text-center">Stratejik Hedeflerimiz</h2>
-
-          <div className="space-y-8">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-1/4 font-bold text-primary text-xl">2025</div>
-              <div className="md:w-3/4">
-                <h4 className="text-xl font-bold mb-2">Erişim Ağını Genişletme</h4>
-                <p>
-                  Türkiye'nin farklı bölgelerinde hizmet noktaları oluşturarak, daha fazla kişiye ücretsiz psikolojik
-                  destek sunmak.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-1/4 font-bold text-primary text-xl">2027</div>
-              <div className="md:w-3/4">
-                <h4 className="text-xl font-bold mb-2">Eğitim Programlarını Güçlendirme</h4>
-                <p>
-                  Genç uzmanların gelişimini destekleyecek kapsamlı eğitim programları oluşturmak ve uluslararası iş
-                  birlikleri geliştirmek.
-                </p>
-              </div>
-            </div>
 
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4 font-bold text-primary text-xl">2030</div>
