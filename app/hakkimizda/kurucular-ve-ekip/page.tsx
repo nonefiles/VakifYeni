@@ -21,33 +21,32 @@ const teamMembers: TeamMember[] = [
     name: "Öznur Ünsal",
     title: "Klinik Psikolog",
     image: "/images/team/oznur-unsal.jpg",
-    href: "",
   },
   {
     name: "Betül Çavumirza",
     title: "Psikolog",
     image: "/images/team/betul-cavumirza.jpeg",
-    href: "",
   },
   {
     name: "Öykü Yıldız",
     title: "Uzman Psikolog & Aile Danışmanı",
     image: "/images/team/oyku-yildiz.jpg",
-    href: "",
   },
   {
     name: "Onurcan Güler",
     title: "Psikolog",
     image: "/images/team/onurcan-guler.jpg",
-    href: "",
   },
   {
     name: "Duygu Sarıkaya",
     title: "Klinik Psikolog",
     image: "/images/team/duygu-sarikaya.jpg",
-    href: "",
   },
   {
+    name: "Zeliha Gültekin",
+    title: "Psikolog",
+    image: "/images/team/zeliha-gultekin.jpg",
+  },
 ]
 
 export default function KurucularVeEkipPage() {
@@ -95,31 +94,14 @@ export default function KurucularVeEkipPage() {
 
                   <div className="space-y-4 text-center">
                     <p>
-                  1967 yılında Adana’da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı.
-                  Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı.
-                  Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi’nde tamamlayarak “Klinik Psikoloji” yüksek lisansı yaptı.
+                      1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve
+                      iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve
+                      Sosyal Hizmet Uzmanlığı eğitimi aldı.
                     </p>
                     <p>
-                    Uzmanlık alanında derinleşirken hem bireysel hem de toplumsal gelişime katkı sunmayı öncelik haline getirdi.
-                    Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı. Bilişsel Davranışçı Terapi ve Şema Terapi eğitimlerini BDTD çatısı altında tamamladı.
+                      Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji"
+                      yüksek lisansı yaptı. Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı.
                     </p>
-                    <p>
-                    Eğitim ve psikoloji alanındaki birikimini sadece akademik zeminle sınırlamayıp, farklı disiplinlerle de zenginleştirdi.
-                    Gazetecilikten yazarlığa, öğretmenlikten akademisyenliğe uzanan çok yönlü bir kariyer inşa etti.
-                    Devlet okullarından özel kurumlara, üniversitelerden adalet akademilerine kadar birçok yapıda görev aldı.
-                    </p>
-                    <p>
-                    Eğitmen kimliğiyle, iletişimden hızlı okuma tekniklerine, algı yönetiminden adalet psikolojisine kadar geniş bir alanda binlerce kişiye dokundu. 
-                    Bu katkılarını yalnızca sınıf ortamlarıyla sınırlı tutmadı; çeşitli kurum ve kuruluşlarda verdiği eğitimlerle kamuya ve özel sektöre de yaydı.
-                    </p>
-                    <p>
-                    Üyelikleri arasında Amerikan Psikologlar Derneği (APA) ve Bilişsel Davranışçı Psikoterapiler Derneği (BDTD) yer almakta.
-                    Aynı zamanda Gönüllü Psikologlar ve Eğitmenler Derneği Yönetim Kurulu Üyesi ve Ankara Temsilcisi olarak da aktif görev almaktadır.
-                    </p>
-                    <p>
-                      Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı’nın kuruluşuna ilham verdi.
-                      Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
-                    </p>                    
                   </div>
                 </div>
               </div>
