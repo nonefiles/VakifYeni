@@ -54,12 +54,13 @@ export default function FaaliyetlerimizPage() {
                 <div className="md:w-2/3 p-6">
                   <div className="flex items-center mb-4">
                     <Calendar className="h-5 w-5 mr-2 text-primary" />
-                    <span className="text-sm text-muted-foreground font-aristotelica">Her Çarşamba, 19:00</span>
+                    <span className="text-sm text-muted-foreground font-aristotelica">Her Perşembe, 19:00</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Psikoloji Sohbetleri</h2>
+                  <h2 className="text-2xl font-bold mb-4 font-lora">Ücretsiz Psikoloji Sohbetleri</h2>
                   <p className="mb-4 font-aristotelica">
-                    Her hafta düzenlediğimiz Psikoloji Sohbetleri'nde, uzman konuklarımızla birlikte ruh sağlığı,
-                    psikoloji ve güncel konular hakkında interaktif sohbetler gerçekleştiriyoruz.
+                  Psikoloji sohbetlerimiz, zihnimizi açmak ve ruhumuzu beslemek için bir araya geldiğimiz özel buluşmalardır.
+                  Uzmanlarımızın rehberliğinde, güncel konuları içtenlikle paylaşır, anlamlı sohbetlerle farkındalık yaratırız.
+                  Bu sıcak ortamda yalnız olmadığınızı hissedecek, paylaştıkça güçleneceksiniz. 
                   </p>
                   <p className="mb-4 font-aristotelica">
                     Bu etkinlikler ücretsiz ve herkese açıktır. Katılım için önceden kayıt yaptırmanız gerekmektedir.
@@ -93,8 +94,9 @@ export default function FaaliyetlerimizPage() {
                   </div>
                   <h2 className="text-2xl font-bold mb-4 font-lora">Eğitim Seminerleri</h2>
                   <p className="mb-4 font-aristotelica">
-                    Ruh sağlığı, kişisel gelişim, ebeveynlik, ilişkiler ve daha birçok konuda düzenlediğimiz eğitim
-                    seminerleri ile bilgi ve farkındalık düzeyini artırmayı hedefliyoruz.
+                  Kurumsal eğitimlerimiz, iş yerlerinde daha sağlıklı ve dayanıklı bir kültür oluşturmayı amaçlar.
+                  İnsan odaklı yaklaşımlarımızla, iletişimi güçlendiren, motivasyonu artıran ve dayanışmayı pekiştiren çözümler sunarız.
+                  Birlikte, iş yaşamına sıcak ve anlamlı dokunuşlar yaparız.
                   </p>
                   <p className="mb-4 font-aristotelica">
                     Seminerlerimiz, hem genel katılıma açık hem de kurumlara özel olarak düzenlenebilmektedir.
@@ -128,8 +130,9 @@ export default function FaaliyetlerimizPage() {
                   </div>
                   <h2 className="text-2xl font-bold mb-4 font-lora">Atölye Çalışmaları</h2>
                   <p className="mb-4 font-aristotelica">
-                    Çeşitli konularda düzenlediğimiz interaktif atölye çalışmaları ile katılımcıların deneyimsel öğrenme
-                    yaşamalarını ve yeni beceriler kazanmalarını sağlıyoruz.
+                  Atölyelerimiz, kendinizi keşfetmeniz ve içsel yolculuğunuzda cesur adımlar atmanız için tasarlandı.
+                  Birlikte deneyimleyerek öğrenir, duygulara dokunur ve yeni farkındalıklar kazanırız.
+                  Her atölye, size özel bir alan yaratır; güvenle paylaşır, desteklenir ve büyürüz.
                   </p>
                   <p className="mb-4 font-aristotelica">
                     Atölyelerimiz, küçük gruplarla ve uygulamalı olarak gerçekleştirilmektedir.
@@ -198,17 +201,14 @@ export default function FaaliyetlerimizPage() {
                 </div>
                 <div className="md:w-2/3 p-6">
                   <div className="flex items-center mb-4">
-                    <Award className="h-5 w-5 mr-2 text-primary" />
-                    <span className="text-sm text-muted-foreground font-aristotelica">Mentorluk Programı</span>
+                    /* <Award className="h-5 w-5 mr-2 text-primary" />
+                    <span className="text-sm text-muted-foreground font-aristotelica">Mentorluk Programı</span> */
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Genç Uzmanlar Projesi</h2>
+                  <h2 className="text-2xl font-bold mb-4 font-lora">Çocuğun Yol Arkadaşı Projesi</h2>
                   <p className="mb-4 font-aristotelica">
-                    Psikoloji alanında yeni mezun olan veya kariyerinin başındaki genç uzmanlara mentorluk ve
-                    süpervizyon desteği sağlayan projedir.
-                  </p>
-                  <p className="mb-4 font-aristotelica">
-                    Proje kapsamında, genç uzmanlar deneyimli psikologlardan süpervizyon alır, mesleki gelişim
-                    eğitimlerine katılır ve vakıf bünyesinde staj yapma imkanı bulur.
+                  “Çocuğun Yol Arkadaşı” çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
+                   Yol Arkadaşları Danışmanlık Merkezi olarak, çocukların erken yaşlarda yetenek ve gelişim alanlarının keşfedilmesini önemsiyoruz. Çocukların sadece zekâ skoru üzerinden değil, çok yönlü bir yaklaşımla potansiyellerini fark etmelerine yardımcı olmayı hedefliyoruz.
+                   Bu proje, ailelere çocuklarının gelişim alanları hakkında rehberlik ve bilinç kazandırma amacını taşır.
                   </p>
                   <Button asChild className="mt-4 gradient-bg-primary">
                     <Link href="/projeler/genc-uzmanlar">
@@ -279,35 +279,6 @@ export default function FaaliyetlerimizPage() {
                 </Button>
               </CardContent>
             </Card>
-
-            <Card className="border-0 shadow-md overflow-hidden text-left">
-              <div className="relative h-48">
-                <Image
-                  src="/placeholder.svg?height=300&width=500&text=Podcast"
-                  alt="Podcast"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div className="p-4 text-white">
-                    <h3 className="text-xl font-bold font-lora">Podcast</h3>
-                  </div>
-                </div>
-              </div>
-              <CardContent className="pt-6">
-                <p className="font-aristotelica">
-                  Uzman psikologlarımız ve konuklarımızla birlikte hazırladığımız podcast serisi ile ruh sağlığı ve
-                  psikoloji konularını derinlemesine ele alıyoruz.
-                </p>
-                <Button asChild className="mt-4 w-full gradient-bg-primary">
-                  <Link href="/podcast">
-                    Podcast'leri Dinle
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
             <Card className="border-0 shadow-md overflow-hidden text-left">
               <div className="relative h-48">
                 <Image
