@@ -17,11 +17,7 @@ const teamMembers: TeamMember[] = [
     description: "İnsana dair her alan, anlamaya ve birlikte yürümeye davet eder.",
     isFounder: true,
   },
-  {
-    name: "Öznur Ünsal",
-    title: "Klinik Psikolog",
-    image: "/images/team/oznur-unsal.jpg",
-  },
+
   {
     name: "Betül Çavumirza",
     title: "Psikolog",
@@ -31,21 +27,6 @@ const teamMembers: TeamMember[] = [
     name: "Öykü Yıldız",
     title: "Uzman Psikolog & Aile Danışmanı",
     image: "/images/team/oyku-yildiz.jpg",
-  },
-  {
-    name: "Onurcan Güler",
-    title: "Psikolog",
-    image: "/images/team/onurcan-guler.jpg",
-  },
-  {
-    name: "Duygu Sarıkaya",
-    title: "Klinik Psikolog",
-    image: "/images/team/duygu-sarikaya.jpg",
-  },
-  {
-    name: "Zeliha Gültekin",
-    title: "Psikolog",
-    image: "/images/team/zeliha-gultekin.jpg",
   },
 ]
 
