@@ -148,6 +148,23 @@ export default function KurucularVeEkipPage() {
                     Gönüllü {member.title}
                   </p>
                   <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mt-2"></div>
+
+                  {/* Detaylı Bilgi Butonu */}
+                  <button
+                    className="mt-3 px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-sm rounded-full transition-all duration-300 font-medium flex items-center mx-auto"
+                    style={{ fontFamily: "Aristotelica Display Trial, sans-serif" }}
+                  >
+                    Detaylı Bilgi
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </CardContent>
             </Card>
