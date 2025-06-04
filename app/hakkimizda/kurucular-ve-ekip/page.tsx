@@ -18,11 +18,6 @@ const teamMembers: TeamMember[] = [
     isFounder: true,
   },
   {
-    name: "Öznur Ünsal",
-    title: "Klinik Psikolog",
-    image: "/images/team/oznur-unsal.jpg",
-  },
-  {
     name: "Betül Çavumirza",
     title: "Psikolog",
     image: "/images/team/betul-cavumirza.jpeg",
@@ -31,21 +26,6 @@ const teamMembers: TeamMember[] = [
     name: "Öykü Yıldız",
     title: "Uzman Psikolog & Aile Danışmanı",
     image: "/images/team/oyku-yildiz.jpg",
-  },
-  {
-    name: "Onurcan Güler",
-    title: "Psikolog",
-    image: "/images/team/onurcan-guler.jpg",
-  },
-  {
-    name: "Duygu Sarıkaya",
-    title: "Klinik Psikolog",
-    image: "/images/team/duygu-sarikaya.jpg",
-  },
-  {
-    name: "Zeliha Gültekin",
-    title: "Psikolog",
-    image: "/images/team/zeliha-gultekin.jpg",
   },
 ]
 
