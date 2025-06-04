@@ -94,14 +94,31 @@ export default function KurucularVeEkipPage() {
 
                   <div className="space-y-4 text-left">
                     <p>
-                      1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve
-                      iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve
-                      Sosyal Hizmet Uzmanlığı eğitimi aldı.
+                    1967 yılında Adana’da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı.
+                    Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı.
+                    Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi’nde tamamlayarak “Klinik Psikoloji” yüksek lisansı yaptı.
                     </p>
                     <p>
-                      Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji"
-                      yüksek lisansı yaptı. Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı.
+                    Uzmanlık alanında derinleşirken hem bireysel hem de toplumsal gelişime katkı sunmayı öncelik haline getirdi.
+                    Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı. Bilişsel Davranışçı Terapi ve Şema Terapi eğitimlerini BDTD çatısı altında tamamladı.                      
                     </p>
+                  <p>
+                    Eğitim ve psikoloji alanındaki birikimini sadece akademik zeminle sınırlamayıp, farklı disiplinlerle de zenginleştirdi.
+                    Gazetecilikten yazarlığa, öğretmenlikten akademisyenliğe uzanan çok yönlü bir kariyer inşa etti.
+                    Devlet okullarından özel kurumlara, üniversitelerden adalet akademilerine kadar birçok yapıda görev aldı.
+                  </p>
+                  <p>
+                  Eğitmen kimliğiyle, iletişimden hızlı okuma tekniklerine, algı yönetiminden adalet psikolojisine kadar geniş bir alanda binlerce kişiye dokundu. 
+                  Bu katkılarını yalnızca sınıf ortamlarıyla sınırlı tutmadı; çeşitli kurum ve kuruluşlarda verdiği eğitimlerle kamuya ve özel sektöre de yaydı.
+                  </p>
+                  <p>
+                  Üyelikleri arasında Amerikan Psikologlar Derneği (APA) ve Bilişsel Davranışçı Psikoterapiler Derneği (BDTD) yer almakta.
+                  Aynı zamanda Gönüllü Psikologlar ve Eğitmenler Derneği Yönetim Kurulu Üyesi ve Ankara Temsilcisi olarak da aktif görev almaktadır.
+                  </p>
+                  <p>
+                  Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı’nın kuruluşuna ilham verdi.
+                  Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
+                  </p>
                   </div>
                 </div>
               </div>
