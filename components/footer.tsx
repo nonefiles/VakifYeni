@@ -13,17 +13,17 @@ export function Footer() {
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element"></div>
       </div>
 
-      <div className="container relative z-10 py-20 px-4 md:px-8 mx-auto max-w-6xl text-gray-800 text-center">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
+      <div className="container relative z-10 py-12 px-6 md:px-12 mx-auto max-w-7xl text-gray-800 text-center">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {/* Brand Section */}
-          <div className="lg:col-span-2 flex flex-col items-center mx-auto max-w-md">
-            <div className="flex justify-center mb-6">
-              <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={300} height={48} className="mr-3" />
+          <div className="flex flex-col items-center mx-auto max-w-sm">
+            <div className="flex justify-center mb-4">
+              <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={200} height={32} className="mr-3" />
             </div>
-            <p className="text-gray-800/90 text-lg leading-relaxed mb-4 max-w-md">
+            <p className="text-gray-800/90 text-base leading-relaxed mb-3 max-w-sm">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </p>
-            <p className="text-gray-800/90 text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-800/90 text-base leading-relaxed mb-6 max-w-sm">
               Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
 
@@ -51,11 +51,11 @@ export function Footer() {
                 <Link
                   key={index}
                   href={social.href}
-                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <social.icon size={20} />
+                  <social.icon size={18} />
                   <span className="sr-only">{social.label}</span>
                 </Link>
               ))}
@@ -64,10 +64,10 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="text-center mx-auto">
-            <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
+            <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
               Hızlı Bağlantılar
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {[
                 { name: "Hakkımızda", href: "/hakkimizda" },
                 { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
@@ -78,7 +78,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-800/80 hover:text-gray-800 transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover"
+                    className="text-gray-800/80 hover:text-gray-800 transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover text-sm"
                   >
                     {link.name}
                   </Link>
@@ -87,34 +87,34 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info & Working Hours */}
           <div className="text-center mx-auto">
-            <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
+            <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
               İletişim
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3 mb-6">
               <li className="flex items-start justify-center">
-                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80 text-sm leading-relaxed text-center">
+                <MapPin size={18} className="mt-1 flex-shrink-0 text-primary mr-2" />
+                <span className="text-gray-800/80 text-xs leading-relaxed text-center">
                   Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
                 </span>
               </li>
               <li className="flex items-center justify-center">
-                <Phone size={20} className="flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80">+90 539 889 33 75</span>
+                <Phone size={18} className="flex-shrink-0 text-primary mr-2" />
+                <span className="text-gray-800/80 text-sm">+90 539 889 33 75</span>
               </li>
               <li className="flex items-center justify-center">
-                <Mail size={20} className="flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80">info@yolarkadaslari.org</span>
+                <Mail size={18} className="flex-shrink-0 text-primary mr-2" />
+                <span className="text-gray-800/80 text-sm">info@yolarkadaslari.org</span>
               </li>
             </ul>
 
             {/* Working Hours */}
-            <div className="mt-8">
-              <h4 className="mb-4 text-lg font-semibold font-lora italic" style={{ color: "#000000" }}>
+            <div>
+              <h4 className="mb-3 text-base font-semibold font-lora italic" style={{ color: "#000000" }}>
                 Çalışma Saatleri
               </h4>
-              <div className="space-y-2 text-sm text-gray-800/80">
+              <div className="space-y-1 text-xs text-gray-800/80">
                 <div className="flex justify-center">
                   <span className="mr-2">Pazartesi - Cumartesi:</span>
                   <span>09:00 - 20:00</span>
@@ -129,8 +129,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-gray-200/50 text-center mx-auto">
-          <p className="text-gray-800/70 text-sm">
+        <div className="mt-10 pt-6 border-t border-gray-200/50 text-center mx-auto">
+          <p className="text-gray-800/70 text-xs">
             © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
