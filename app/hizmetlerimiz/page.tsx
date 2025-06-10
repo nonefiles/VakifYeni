@@ -27,7 +27,7 @@ export default function ServicesPage() {
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <Card className="border border-primary/20">
+            <Card className="bg-white border border-primary/20">
               <CardHeader>
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
                   <HeartHandshake className="h-8 w-8 text-primary" />
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
             <Card className="border border-primary/20">
               <CardHeader>
-                <div class="max-w-3xl rounded-3xl bg-white p-8 shadow-sm border border-primary/20">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
                   <School className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-2xl text-primary font-lora italic text-left">
@@ -244,8 +244,11 @@ export default function ServicesPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button asChild className="bg-primary text-white">
-                  <Link href="/gonullu-ol">Gönüllü Ol</Link>
+                <Button asChild variant="outline" className="border-primary text-primary">
+                  <Link href="/gonullu-ol" className="link-with-arrow group">
+                    <span>Gönüllü Ol</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1" />
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
