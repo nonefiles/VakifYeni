@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,12 +10,14 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-accent py-16 md:py-24 relative blue-gradient-bg">
         <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
-          <div className="max-w-3xl">
-            <p className="text-lg text-left text-foreground/80">
-              Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
-              hizmetler sunuyoruz.
-            </p>
+          <div className="text-center">
+            <h1 className="mb-6 text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-foreground/80">
+                Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
+                hizmetler sunuyoruz.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -212,35 +215,46 @@ export default function ServicesPage() {
       {/* Institute Project */}
       <section className="py-16 white-gradient-bg relative">
         <div className="container">
-          <div className="max-w-3xl rounded-3xl bg-accent p-8 shadow-sm border border-primary/20">
-            <div className="mb-6 flex">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-primary/20">
-                <School className="h-10 w-10 text-primary" />
-              </div>
-            </div>
-            <h2 className="mb-6 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
-            <h3 className="mb-4 text-left text-xl font-bold text-primary/80 font-lora italic">
-              Geleceğe Doğru Adım Atıyoruz…
-            </h3>
-            <div className="prose max-w-none text-foreground/80 text-left">
-              <p>
-                Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
-                araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
-                nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
-                daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
-              </p>
-              <p>
-                Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
-                profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
-                mümkün kılmayı amaçlıyor.
-              </p>
-              <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
-            </div>
-            <div className="mt-8">
-              <Button asChild className="bg-primary text-white">
-                <Link href="/gonullu-ol">Gönüllü Ol</Link>
-              </Button>
-            </div>
+          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
+          
+          <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
+            <Card className="border border-primary/20">
+              <CardHeader>
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                  <School className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-primary font-lora italic text-left">
+                  Psikoloji Enstitüsü
+                </CardTitle>
+                <CardDescription className="text-base text-left">
+                  Geleceğe Doğru Adım Atıyoruz…
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="prose max-w-none text-foreground/80 text-left">
+                  <p>
+                    Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
+                    araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
+                    nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
+                    daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
+                  </p>
+                  <p>
+                    Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
+                    profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
+                    mümkün kılmayı amaçlıyor.
+                  </p>
+                  <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button asChild variant="outline" className="border-primary text-primary">
+                  <Link href="/gonullu-ol" className="link-with-arrow group">
+                    <span>Gönüllü Ol</span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
