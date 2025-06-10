@@ -9,7 +9,7 @@ export default function VakifTuzuguPage() {
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-heading">Vakıf Tüzüğü</h1>
 
       <p className="text-lg text-center max-w-3xl mx-auto mb-12">
-        Yol Arkadaşları Psikoloji Vakfı'nın tüzüğü, vakfımızın kuruluş amacını, yönetim yapısını ve faaliyet alanlarını
+        Yılmaz Yol Arkadaşları Vakfı'nın tüzüğü, vakfımızın kuruluş amacını, yönetim yapısını ve faaliyet alanlarını
         belirleyen resmi belgedir.
       </p>
 
@@ -30,7 +30,7 @@ export default function VakifTuzuguPage() {
 
             <div className="flex justify-center">
               <Button asChild className="flex items-center gap-2">
-                <Link href="#">
+                <Link href="/images/vakif-tuzugu.pdf" target="_blank">
                   <Download className="h-5 w-5" />
                   <span>Vakıf Tüzüğünü İndir (PDF)</span>
                 </Link>
@@ -43,52 +43,29 @@ export default function VakifTuzuguPage() {
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center">Tüzük Özeti</h2>
 
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 1: Vakfın Adı ve Merkezi</h3>
-            <p>Vakfın adı "Yol Arkadaşları Psikoloji Vakfı"dır ve merkezi İstanbul'dadır.</p>
-          </div>
+        <div className="space-y-6 text-lg">
+          <p className="text-center font-semibold">
+            Ruh sağlığı alanında bilimsel ve sosyal gelişim için bir aradayız.
+          </p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 2: Vakfın Amacı</h3>
-            <p>
-              Vakfın amacı, psikolojik desteğe erişimde fırsat eşitliği yaratmak, maddi imkânsızlıklar nedeniyle
-              psikolojik desteğe ulaşamayan bireylere ücretsiz hizmet sunmak, genç uzmanların gelişimine katkıda
-              bulunmak ve toplumsal ruh sağlığı bilincini artırmaktır.
-            </p>
-          </div>
+          <p>
+            Yılmaz Yol Arkadaşları Vakfı; toplumun ruh sağlığına katkı sunmak, bu alandaki bilimsel ve sosyal gelişimi desteklemek amacıyla kurulmuştur. Vakfımız, bireylerin ve toplumun psikolojik iyi oluşunu önceleyen çalışmaları destekler, ihtiyaç sahiplerine ücretsiz psikolojik destek sunar ve ruh sağlığı alanında eğitim gören öğrencilere mesleki gelişim desteği sağlar.
+          </p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 3: Vakfın Faaliyet Alanları</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Ücretsiz psikoterapi hizmetleri sunmak</li>
-              <li>Eğitim ve seminerler düzenlemek</li>
-              <li>Toplum temelli psikolojik destek projeleri geliştirmek</li>
-              <li>Genç uzmanların mesleki gelişimini desteklemek</li>
-              <li>Ruh sağlığı alanında bilimsel araştırmaları desteklemek</li>
-              <li>Toplumsal ruh sağlığı bilincini artırmaya yönelik yayınlar hazırlamak</li>
-            </ul>
-          </div>
+          <p className="font-semibold">Ruh sağlığı alanında çağdaş, bütüncül ve toplum temelli yaklaşımlarla:</p>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 4: Vakfın Organları</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Mütevelli Heyeti</li>
-              <li>Yönetim Kurulu</li>
-              <li>Denetim Kurulu</li>
-              <li>Danışma Kurulu</li>
-            </ul>
-          </div>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Ücretsiz bireysel ve grup terapileri sunuyoruz,</li>
+            <li>Psikoloji sohbetleri, atölyeler ve eğitim programları düzenliyoruz,</li>
+            <li>Kurumlara özel psikolojik danışmanlık ve eğitimler sağlıyoruz,</li>
+            <li>Öğrencilere yönelik mesleki destek ve burs programları yürütüyoruz,</li>
+            <li>Doğal afetlerde insani yardım çalışmaları yürütüyoruz,</li>
+            <li>Ruh sağlığı alanında araştırmalar ve projeler geliştiriyoruz.</li>
+          </ul>
 
-          <div>
-            <h3 className="text-xl font-bold mb-3">Madde 5: Vakfın Gelirleri</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Bağışlar ve yardımlar</li>
-              <li>Vakıf faaliyetlerinden elde edilen gelirler</li>
-              <li>Vakıf malvarlığının getirileri</li>
-              <li>Diğer gelirler</li>
-            </ul>
-          </div>
+          <p>
+            Vakıf, bu çalışmaları sürdürebilmek için bireyler, kurumlar ve topluluklarla iş birliği yapar; aynı zamanda bilimsel yayınlar, seminerler ve sosyal sorumluluk projeleriyle kamu yararına faaliyetlerde bulunur.
+          </p>
         </div>
 
         <p className="mt-12 text-center text-sm text-muted-foreground">

@@ -17,11 +17,7 @@ const teamMembers: TeamMember[] = [
     description: "İnsana dair her alan, anlamaya ve birlikte yürümeye davet eder.",
     isFounder: true,
   },
-  {
-    name: "Öznur Ünsal",
-    title: "Klinik Psikolog",
-    image: "/images/team/oznur-unsal.jpg",
-  },
+
   {
     name: "Betül Çavumirza",
     title: "Psikolog",
@@ -31,21 +27,6 @@ const teamMembers: TeamMember[] = [
     name: "Öykü Yıldız",
     title: "Uzman Psikolog & Aile Danışmanı",
     image: "/images/team/oyku-yildiz.jpg",
-  },
-  {
-    name: "Onurcan Güler",
-    title: "Psikolog",
-    image: "/images/team/onurcan-guler.jpg",
-  },
-  {
-    name: "Duygu Sarıkaya",
-    title: "Klinik Psikolog",
-    image: "/images/team/duygu-sarikaya.jpg",
-  },
-  {
-    name: "Zeliha Gültekin",
-    title: "Psikolog",
-    image: "/images/team/zeliha-gultekin.jpg",
   },
 ]
 
@@ -82,8 +63,8 @@ export default function KurucularVeEkipPage() {
                     />
                   </div>
                 </div>
-                <div className="lg:w-2/3 p-8 text-center">
-                  <h3 className="text-3xl font-bold mb-2 text-center font-lora italic text-white">{founder.name}</h3>
+                <div className="lg:w-2/3 p-8">
+                  <h3 className="text-3xl font-bold mb-2 text-left font-lora italic text-white">{founder.name}</h3>
                   <p className="text-xl text-primary mb-4 italic">{founder.title}</p>
 
                   {founder.description && (
@@ -92,16 +73,33 @@ export default function KurucularVeEkipPage() {
                     </p>
                   )}
 
-                  <div className="space-y-4 text-center">
+                  <div className="space-y-4 text-left">
                     <p>
-                      1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve
-                      iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve
-                      Sosyal Hizmet Uzmanlığı eğitimi aldı.
+                    1967 yılında Adana’da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı.
+                    Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı.
+                    Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi’nde tamamlayarak “Klinik Psikoloji” yüksek lisansı yaptı.
                     </p>
                     <p>
-                      Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji"
-                      yüksek lisansı yaptı. Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı.
+                    Uzmanlık alanında derinleşirken hem bireysel hem de toplumsal gelişime katkı sunmayı öncelik haline getirdi.
+                    Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı. Bilişsel Davranışçı Terapi ve Şema Terapi eğitimlerini BDTD çatısı altında tamamladı.                      
                     </p>
+                  <p>
+                    Eğitim ve psikoloji alanındaki birikimini sadece akademik zeminle sınırlamayıp, farklı disiplinlerle de zenginleştirdi.
+                    Gazetecilikten yazarlığa, öğretmenlikten akademisyenliğe uzanan çok yönlü bir kariyer inşa etti.
+                    Devlet okullarından özel kurumlara, üniversitelerden adalet akademilerine kadar birçok yapıda görev aldı.
+                  </p>
+                  <p>
+                  Eğitmen kimliğiyle, iletişimden hızlı okuma tekniklerine, algı yönetiminden adalet psikolojisine kadar geniş bir alanda binlerce kişiye dokundu. 
+                  Bu katkılarını yalnızca sınıf ortamlarıyla sınırlı tutmadı; çeşitli kurum ve kuruluşlarda verdiği eğitimlerle kamuya ve özel sektöre de yaydı.
+                  </p>
+                  <p>
+                  Üyelikleri arasında Amerikan Psikologlar Derneği (APA) ve Bilişsel Davranışçı Psikoterapiler Derneği (BDTD) yer almakta.
+                  Aynı zamanda Gönüllü Psikologlar ve Eğitmenler Derneği Yönetim Kurulu Üyesi ve Ankara Temsilcisi olarak da aktif görev almaktadır.
+                  </p>
+                  <p>
+                  Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı’nın kuruluşuna ilham verdi.
+                  Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
+                  </p>
                   </div>
                 </div>
               </div>
@@ -148,6 +146,23 @@ export default function KurucularVeEkipPage() {
                     Gönüllü {member.title}
                   </p>
                   <div className="w-8 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mt-2"></div>
+
+                  {/* Detaylı Bilgi Butonu */}
+                  <button
+                    className="mt-3 px-4 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-sm rounded-full transition-all duration-300 font-medium flex items-center mx-auto"
+                    style={{ fontFamily: "Aristotelica Display Trial, sans-serif" }}
+                  >
+                    Detaylı Bilgi
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
               </CardContent>
             </Card>

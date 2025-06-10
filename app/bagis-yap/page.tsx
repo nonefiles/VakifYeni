@@ -219,58 +219,6 @@ export default function DonatePage() {
                       </div>
                     </div>
 
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-left font-lora">İş Bankası</h3>
-                      <div className="space-y-4">
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Banka:</div>
-                          <div className="col-span-2 font-aristotelica">İş Bankası</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Şube:</div>
-                          <div className="col-span-2 font-aristotelica">İstanbul Şubesi (456)</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Hesap Adı:</div>
-                          <div className="col-span-2 font-aristotelica">Yol Arkadaşları Psikoloji Vakfı</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">IBAN:</div>
-                          <div className="col-span-2 font-aristotelica">TR98 7654 3210 9876 5432 1098 76</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Açıklama:</div>
-                          <div className="col-span-2 font-aristotelica">Bağış - [Adınız Soyadınız]</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-left font-lora">Garanti Bankası</h3>
-                      <div className="space-y-4">
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Banka:</div>
-                          <div className="col-span-2 font-aristotelica">Garanti Bankası</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Şube:</div>
-                          <div className="col-span-2 font-aristotelica">Ankara Şubesi (789)</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Hesap Adı:</div>
-                          <div className="col-span-2 font-aristotelica">Yol Arkadaşları Psikoloji Vakfı</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">IBAN:</div>
-                          <div className="col-span-2 font-aristotelica">TR45 6789 0123 4567 8901 2345 67</div>
-                        </div>
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="font-medium font-aristotelica">Açıklama:</div>
-                          <div className="col-span-2 font-aristotelica">Bağış - [Adınız Soyadınız]</div>
-                        </div>
-                      </div>
-                    </div>
-
                     <div className="text-left text-sm text-gray-600 font-aristotelica">
                       <p>
                         Banka havalesi yaptıktan sonra, bağışınızın takibi için lütfen dekont bilgisini
