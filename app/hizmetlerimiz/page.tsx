@@ -212,35 +212,43 @@ export default function ServicesPage() {
       {/* Institute Project */}
       <section className="py-16 white-gradient-bg relative">
         <div className="container">
-          <div className="max-w-3xl rounded-3xl bg-sky-100 p-8 shadow-sm border border-sky-200">
-            <div className="mb-6 flex">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-sky-300">
-                <School className="h-10 w-10 text-sky-600" />
-              </div>
-            </div>
-            <h2 className="mb-6 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
-            <h3 className="mb-4 text-left text-xl font-bold text-primary/80 font-lora italic">
-              Geleceğe Doğru Adım Atıyoruz…
-            </h3>
-            <div className="prose max-w-none text-foreground/80 text-left">
-              <p>
-                Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
-                araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
-                nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
-                daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
-              </p>
-              <p>
-                Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
-                profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
-                mümkün kılmayı amaçlıyor.
-              </p>
-              <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
-            </div>
-            <div className="mt-8">
-              <Button asChild className="bg-primary text-white">
-                <Link href="/gonullu-ol">Gönüllü Ol</Link>
-              </Button>
-            </div>
+          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
+          
+          <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
+            <Card className="border border-primary/20">
+              <CardHeader>
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                  <School className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-primary font-lora italic text-left">
+                  Psikoloji Enstitüsü
+                </CardTitle>
+                <CardDescription className="text-base text-left">
+                  Geleceğe Doğru Adım Atıyoruz…
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="prose max-w-none text-foreground/80 text-left">
+                  <p>
+                    Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
+                    araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
+                    nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
+                    daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
+                  </p>
+                  <p>
+                    Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
+                    profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
+                    mümkün kılmayı amaçlıyor.
+                  </p>
+                  <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="bg-primary text-white">
+                  <Link href="/gonullu-ol">Gönüllü Ol</Link>
+                </Button>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </section>
