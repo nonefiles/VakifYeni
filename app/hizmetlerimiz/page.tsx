@@ -29,7 +29,7 @@ export default function ServicesPage() {
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <Card className="bg-white border border-primary/20">
+            <Card className="border border-primary/20">
               <CardHeader>
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
                   <HeartHandshake className="h-8 w-8 text-primary" />
