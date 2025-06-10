@@ -13,7 +13,7 @@ export default function DonatePage() {
         <div className="container">
           <h1 className="mb-6 text-center text-4xl font-bold gradient-heading md:text-5xl" style={{fontFamily: 'Lora', fontStyle: 'italic'}}>Bağış Yap</h1>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-lg text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
+            <p className="text-lg text-center text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
               Bağışlarınız, ücretsiz terapi hizmetleri ve sosyal sorumluluk projelerimizin sürdürülebilirliğini sağlamak
               için çok kıymetli.
             </p>
@@ -160,27 +160,27 @@ export default function DonatePage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold gradient-heading" style={{fontFamily: 'Lora', fontStyle: 'italic'}}>Şeffaflık İlkemiz</h2>
-            <p className="mb-8 text-lg text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
+            <p className="mb-8 text-lg text-center text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
               Yol Arkadaşları Psikoloji Vakfı olarak, bağışçılarımıza karşı şeffaf olmayı ve hesap verebilirliği temel
               değerlerimiz arasında görüyoruz.
             </p>
             <div className="rounded-xl bg-white/80 backdrop-blur-sm p-6 text-center border border-primary/10">
               <ul className="space-y-4 text-gray-600" style={{fontFamily: 'Arial, sans-serif'}}>
                 <li className="flex items-start justify-center">
-                  <span className="mr-2 mt-1 text-primary">•</span>
+                  <span className="mr-2 mt-1 text-left text-primary">•</span>
                   <span>
                     Tüm bağışlar, vakfımızın resmi hesaplarına kaydedilir ve yasal mevzuata uygun şekilde raporlanır.
                   </span>
                 </li>
-                <li className="flex items-start justify-center">
+                <li className="flex items-start justify-left">
                   <span className="mr-2 mt-1 text-primary">•</span>
                   <span>Bağışlarınızın nasıl kullanıldığına dair düzenli raporlar web sitemizde yayınlanır.</span>
                 </li>
-                <li className="flex items-start justify-center">
+                <li className="flex items-start justify-left">
                   <span className="mr-2 mt-1 text-primary">•</span>
                   <span>Her yıl faaliyet raporumuz ve mali tablolarımız kamuoyuyla paylaşılır.</span>
                 </li>
-                <li className="flex items-start justify-center">
+                <li className="flex items-start justify-left">
                   <span className="mr-2 mt-1 text-primary">•</span>
                   <span>
                     Bağışçılarımız, desteklerinin etkisini görebilmek için vakıf çalışmalarımızı yakından takip
