@@ -1,7 +1,6 @@
 // pages/blog.tsx veya app/blog/page.tsx
 
 import Link from "next/link"
-import Image from "next/image"
 import {
   Card,
   CardContent,
@@ -25,7 +24,27 @@ import {
 } from "lucide-react"
 
 const blogPosts = [
-  // ... (Yazı listesi olduğu gibi kalsın)
+  {
+    id: 1,
+    title: "Stresle Başa Çıkma Yolları",
+    description:
+      "Günlük hayatın stresinden uzaklaşmanın yollarını öğrenin.",
+    date: "2024-05-01",
+    author: "Uzman Psikolog Ayşe Yılmaz",
+    category: "Kişisel Gelişim",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Çocuklarda Duygusal Zeka Gelişimi",
+    description:
+      "Çocuklarda duygusal zekanın önemi ve nasıl desteklenebileceği.",
+    date: "2024-04-20",
+    author: "Psikolojik Danışman Mehmet Kara",
+    category: "Çocuk Psikolojisi",
+    featured: false,
+  },
+  // Diğer yazılar...
 ]
 
 const categories = [
@@ -72,9 +91,9 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen">
-      {/* ... HERO, KATEGORİ, YAZILAR ... */}
+      {/* Hero, kategori ve yazı bölümleri buraya eklenebilir */}
 
-      {/* Kaynaklar Bölümü - Bebek Mavisi Arkaplan */}
+      {/* Kaynaklar Bölümü */}
       <section className="py-20 bg-[#B3E5FC] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-0 w-72 h-72 bg-white rounded-full -translate-x-36 float-element"></div>
@@ -97,7 +116,6 @@ export default function BlogPage() {
   )
 }
 
-// Kaynak Kartı Bileşeni
 function ResourceCard({ resource }: { resource: any }) {
   return (
     <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm h-full p-6 flex flex-col justify-between">
