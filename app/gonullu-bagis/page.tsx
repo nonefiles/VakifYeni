@@ -69,25 +69,25 @@ export default function GonulluBagisPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="font-aristotelica">
-                <ul className="space-y-3 text-center">
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                <ul className="space-y-3 text-left">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Psikolojik destek (uzman psikologlar için)</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Eğitim ve seminer organizasyonları</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Sosyal medya ve içerik üretimi</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>İdari destek ve organizasyon</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Etkinlik koordinasyonu</span>
                   </li>
                 </ul>
