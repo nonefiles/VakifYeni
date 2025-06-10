@@ -109,42 +109,47 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info + Working Hours */}
           <div>
-            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
-              İletişim
-            </h3>
-            <ul className="space-y-4" aria-label="İletişim bilgileri">
-              <li className="flex items-start">
-                <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-3" />
-                <span className="text-gray-800/80 text-sm leading-relaxed font-aristoteles">
-                  Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={20} className="flex-shrink-0 text-primary mr-3" />
-                <span className="text-gray-800/80 font-aristoteles">+90 539 889 33 75</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={20} className="flex-shrink-0 text-primary mr-3" />
-                <span className="text-gray-800/80 font-aristoteles">info@yolarkadaslari.org</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Working Hours */}
-          <div>
-            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
-              Çalışma Saatleri
-            </h3>
-            <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles" aria-label="Çalışma saatleri">
-              <div className="flex justify-between">
-                <span>Pazartesi - Cumartesi:</span>
-                <span>09:00 - 20:00</span>
+            <div className="flex flex-col md:flex-row md:gap-8">
+              {/* Contact */}
+              <div>
+                <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
+                  İletişim
+                </h3>
+                <ul className="space-y-4" aria-label="İletişim bilgileri">
+                  <li className="flex items-start">
+                    <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-3" />
+                    <span className="text-gray-800/80 text-sm leading-relaxed font-aristoteles">
+                      Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
+                    </span>
+                  </li>
+                  <li className="flex items-center">
+                    <Phone size={20} className="flex-shrink-0 text-primary mr-3" />
+                    <span className="text-gray-800/80 font-aristoteles">+90 539 889 33 75</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Mail size={20} className="flex-shrink-0 text-primary mr-3" />
+                    <span className="text-gray-800/80 font-aristoteles">info@yolarkadaslari.org</span>
+                  </li>
+                </ul>
               </div>
-              <div className="flex justify-between">
-                <span>Pazar:</span>
-                <span>Kapalı</span>
+
+              {/* Working Hours */}
+              <div className="mt-8 md:mt-0">
+                <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
+                  Çalışma Saatleri
+                </h3>
+                <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles" aria-label="Çalışma saatleri">
+                  <div className="flex justify-between gap-4">
+                    <span>Pazartesi - Cumartesi:</span>
+                    <span>09:00 - 20:00</span>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <span>Pazar:</span>
+                    <span>Kapalı</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
