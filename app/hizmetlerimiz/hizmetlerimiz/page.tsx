@@ -1,249 +1,168 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { HeartHandshake, Users, BookOpen, Calendar, Building, School, ArrowRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Building2, GraduationCap, BookOpen, Users } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
-export default function ServicesPage() {
+export default function EnstituProjesiPage() {
   return (
-    <div>
+    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
       {/* Hero Section */}
-      <section className="bg-accent py-16 md:py-24 relative blue-gradient-bg">
-        <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
-          <div className="max-w-3xl">
-            <p className="text-lg text-left text-foreground/80">
-              Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
-              hizmetler sunuyoruz.
-            </p>
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold font-lora italic text-primary mb-6">Enstitü Projesi</h1>
+            <p className="text-lg md:text-xl text-gray-700 mb-8 italic">Geleceğe Doğru Adım Atıyoruz…</p>
           </div>
         </div>
       </section>
 
-      {/* Psychological Support Section */}
-      <section className="py-16 white-gradient-bg relative">
-        <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">
-            Psikolojik Destek Programları
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            <Card className="border border-primary/20">
-              <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                  <HeartHandshake className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-2xl text-primary font-lora italic text-left">
-                  Ücretsiz Psikoterapi Hizmeti
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose max-w-none text-foreground/80 text-left">
-                  <p>
-                    Psikolojik destek bir ayrıcalık değil, bir hak. Biz de Yol Arkadaşları Psikoloji Vakfı olarak bu
-                    hakka erişimde herkesin eşit koşullara sahip olmasını önemsiyoruz.
-                  </p>
-                  <p>
-                    Maddi koşullar nedeniyle özel terapiye ulaşamayan bireyler için ücretsiz psikoterapi hizmeti
-                    sunuyoruz. Bu hizmetten faydalanmak isteyen herkes, başvuru formumuzu doldurarak değerlendirme
-                    sürecine katılabilir.
-                  </p>
-                  <p>Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
-                  <ul>
-                    <li>
-                      <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
-                      anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
-                    </li>
-                    <li>
-                      <strong>Çocuk ve Ergen Psikoterapisi:</strong> Çocukların ve ergenlerin gelişimsel, duygusal ve
-                      sosyal zorluklarıyla sağlıklı şekilde baş edebilmeleri için aileyle iş birliği içinde yürütülür.
-                    </li>
-                    <li>
-                      <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
-                      çatışmaları anlamak ve çözümlemek amacıyla sunulur.
-                    </li>
-                  </ul>
-                  <p>
-                    Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
-                    gizlilik ilkesiyle gerçekleştirilir.
-                  </p>
-                  <p>Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="bg-primary text-white">
-                  <Link href="/basvuru/psikoterapi">Başvuru Yap</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="border border-primary/20">
-              <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-2xl text-primary font-lora italic text-left">Grup Terapileri</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose max-w-none text-foreground/80 text-left">
-                  <p>
-                    Yalnız hissettiğinizde, duygularınızı paylaşmak için bir alan aradığınızda, benzer yaşantılardan
-                    geçen kişilerle bir araya gelmenin iyileştirici gücü bambaşkadır.
-                  </p>
-                  <p>
-                    Yol Arkadaşları Psikoloji Vakfı olarak, farklı yaşantılara ve ihtiyaçlara yönelik tematik grup
-                    terapileri sunuyoruz. Bu çalışmalarda, bir terapist eşliğinde güvenli bir alanda buluşur, kendinizi
-                    ifade etme, başkalarını duyma ve birlikte iyileşme fırsatı bulursunuz.
-                  </p>
-                  <p>
-                    Grup terapilerimiz, özellikle sosyal destek ihtiyacı duyan, zorlayıcı duygularla baş etmekte
-                    zorlanan ya da kendini daha yakından tanımak isteyen bireyler için uygundur. Katılımcılar, benzer
-                    deneyimlerden gelen diğer bireylerle bir araya gelerek yalnız olmadıklarını fark eder; karşılıklı
-                    paylaşım sayesinde hem kendi yollarını hem de başkalarının yolculuklarını anlamlandırma imkânı
-                    bulur.
-                  </p>
-                  <p>
-                    Tüm gruplar, alanında uzman terapistler eşliğinde yürütülür ve gizlilik ilkesi temel alınarak
-                    oluşturulmuş güvenli bir ortamda gerçekleştirilir.
-                  </p>
-                  <p>
-                    Her adımda yanınızda olmak için buradayız. Grup terapilerimizle ilgili güncel içerikler, başvuru
-                    süreci ve tematik programlarımız için bizi takip etmeye devam edin.
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="bg-primary text-white">
-                  <Link href="/basvuru/grup-terapileri">Başvuru Yap</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className="bg-accent py-16 blue-gradient-bg relative">
-        <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">Eğitim ve Seminerler</h2>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="bg-white border border-primary/20">
-              <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                  <BookOpen className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Psikoloji Sohbetleri</CardTitle>
-                <CardDescription className="text-base text-left">
-                  Bilgiyle besleniyor, söyleşilerle derinleşiyoruz...
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground/80 text-left">
-                  Her hafta, Yol Arkadaşları Danışmanlık Merkezi'nin uzman desteğiyle gerçekleştirdiğimiz psikoloji
-                  sohbetlerinde, birlikte düşünüyor, birlikte öğreniyoruz. Bu sohbetler; psikolojiye ilgi duyan, zihnini
-                  açmak ve iç dünyasını tanımak isteyen herkes için...
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="border-primary text-primary">
-                  <Link href="/hizmetlerimiz/psikoloji-sohbetleri" className="link-with-arrow group">
-                    <span>Detaylı Bilgi</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="bg-white border border-primary/20">
-              <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                  <Calendar className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Psikoloji Atölyeleri</CardTitle>
-                <CardDescription className="text-base text-left">Deneyimleyerek öğreniyoruz...</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground/80 text-left">
-                  Bilgiye yalnızca ulaşmanın değil, onu birlikte deneyimlemenin de dönüştürücü gücüne inanıyoruz. Atölye
-                  çalışmalarımız, katılımcıların hem kendilerini tanımalarına hem de psikoloji bilgilerini pratikle
-                  derinleştirmelerine alan açıyor.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="border-primary text-primary">
-                  <Link href="/hizmetlerimiz/psikoloji-atolyeleri" className="link-with-arrow group">
-                    <span>Detaylı Bilgi</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="bg-white border border-primary/20">
-              <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-                  <Building className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Kurumsal Eğitimler</CardTitle>
-                <CardDescription className="text-base text-left">
-                  İyi oluş, sadece bireylerin değil kurumların da gücüdür.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground/80 text-left">
-                  İş yerlerinde psikolojik iyi oluşun sürdürülebilir başarıyla doğrudan ilişkili olduğuna inanıyoruz.
-                  Kurumsal eğitim ve seminer programlarımız, çalışanların ruh sağlığını desteklemeyi, iletişim
-                  becerilerini geliştirmeyi ve kurumsal iklimi güçlendirmeyi hedefliyor.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="outline" className="border-primary text-primary">
-                  <Link href="/hizmetlerimiz/kurumsal-egitimler" className="link-with-arrow group">
-                    <span>Detaylı Bilgi</span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Institute Project */}
-      <section className="py-16 white-gradient-bg relative">
-        <div className="container">
-          <div className="max-w-3xl rounded-3xl bg-accent p-8 shadow-sm border border-primary/20">
-            <div className="mb-6 flex">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-primary/20">
-                <School className="h-10 w-10 text-primary" />
-              </div>
-            </div>
-            <h2 className="mb-6 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
-            <h3 className="mb-4 text-left text-xl font-bold text-primary/80 font-lora italic">
-              Geleceğe Doğru Adım Atıyoruz…
-            </h3>
-            <div className="prose max-w-none text-foreground/80 text-left">
+      {/* Content Section */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg max-w-none">
               <p>
                 Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
                 araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
                 nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
                 daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
               </p>
-              <p>
+
+              <p className="font-medium text-lg mt-6">
                 Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
                 profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
                 mümkün kılmayı amaçlıyor.
               </p>
+
               <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
+
+              <p className="text-lg font-bold mt-8">
+                Enstitü Projesine katkı sunmak ve gönüllü ekibimize katılmak isterseniz
+                <Link href="/gonullu-ol" className="text-primary hover:text-accent ml-1">
+                  gönüllülük formumuzu
+                </Link>{" "}
+                doldurabilirsiniz.
+              </p>
             </div>
-            <div className="mt-8">
-              <Button asChild className="bg-primary text-white">
-                <Link href="/gonullu-ol">Gönüllü Ol</Link>
-              </Button>
+
+            <div className="mt-12 flex flex-col md:flex-row justify-center gap-6">
+              <Link href="/gonullu-ol">
+                <Button className="w-full md:w-auto bg-primary hover:bg-primary/80 text-white px-8 py-6 rounded-full text-lg">
+                  Gönüllü Ol <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/bagis-yap">
+                <Button
+                  variant="outline"
+                  className="w-full md:w-auto border-primary text-primary hover:bg-primary/10 px-8 py-6 rounded-full text-lg"
+                >
+                  Bağış Yap
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Vision Section */}
+      <section className="py-12 md:py-16 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold font-lora italic text-primary mb-10 text-center">Enstitü Vizyonumuz</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="relative">
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <Image
+                    src="/placeholder.svg?height=400&width=600"
+                    alt="Psikoloji Enstitüsü"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center">
+                <h3 className="text-2xl font-bold font-lora italic text-primary mb-4">Neden Bir Enstitü?</h3>
+                <p className="text-gray-700 mb-4">
+                  Psikoloji alanında eğitim, uygulama ve araştırmayı bir araya getiren bir enstitü, toplum ruh sağlığına
+                  daha kapsamlı ve sürdürülebilir bir katkı sunmamızı sağlayacak.
+                </p>
+                <p className="text-gray-700">
+                  Bu yapı, hem profesyonellerin gelişimine hem de toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı
+                  projeleri mümkün kılacak.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars Section */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold font-lora italic text-primary mb-10 text-center">
+              Enstitünün Temel Alanları
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <CardContent className="p-6">
+                  <GraduationCap className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-bold mb-3">Eğitim</h3>
+                  <p className="text-gray-700">
+                    Meslek içi eğitimler, sertifika programları ve profesyonel gelişim fırsatları.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <CardContent className="p-6">
+                  <Users className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-bold mb-3">Uygulama</h3>
+                  <p className="text-gray-700">
+                    Genç uzmanlar için süpervizyon ve uygulama alanları, toplum temelli hizmetler.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <CardContent className="p-6">
+                  <BookOpen className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-bold mb-3">Araştırma</h3>
+                  <p className="text-gray-700">Toplum ruh sağlığına yönelik araştırmalar ve bilimsel yayınlar.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <CardContent className="p-6">
+                  <Building2 className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-xl font-bold mb-3">Toplum Hizmetleri</h3>
+                  <p className="text-gray-700">
+                    Dezavantajlı gruplara yönelik ücretsiz psikolojik destek ve toplum temelli projeler.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-16 text-center">
+              <p className="text-lg text-gray-700 mb-6">Enstitü projemize katkıda bulunmak ister misiniz?</p>
+              <div className="flex flex-col md:flex-row justify-center gap-4">
+                <Link href="/gonullu-ol">
+                  <Button className="bg-primary hover:bg-primary/80 text-white">Gönüllü Ol</Button>
+                </Link>
+                <Link href="/bagis-yap">
+                  <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                    Bağış Yap
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
