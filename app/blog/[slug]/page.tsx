@@ -1,11 +1,11 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { CalendarIcon, Clock, Facebook, Linkedin, Mail, User } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { CalendarIcon, Clock, Facebook, Linkedin, Mail, User } from "lucide-react";
 
-// Örnek blog yazısı
+// Example blog post
 const blogPost = {
   id: 1,
   title: "Psikolojik Sağlamlık: Zorluklarla Başa Çıkma Becerisi",
@@ -21,55 +21,55 @@ const blogPost = {
   image: "/placeholder.svg?height=600&width=1200",
   content: `
     <p>Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkabilme ve bu zorluklar karşısında uyum sağlayabilme becerisidir. Diğer bir deyişle, stresli durumlar, travmalar veya zorluklar karşısında kendini toparlayabilme ve hatta bu deneyimlerden güçlenerek çıkabilme kapasitesidir.</p>
-    
+
     <h2>Psikolojik Sağlamlığın Önemi</h2>
-    
+
     <p>Hayat, kaçınılmaz olarak zorluklar, kayıplar ve değişimlerle doludur. Psikolojik sağlamlık, bu zorluklarla karşılaştığımızda bize destek olan, ayakta kalmamızı sağlayan ve ileriye bakmamıza yardımcı olan bir özelliktir. Araştırmalar, psikolojik sağlamlığı yüksek olan bireylerin:</p>
-    
+
     <ul>
       <li>Stresle daha etkili başa çıkabildiklerini</li>
       <li>Daha az depresyon ve kaygı yaşadıklarını</li>
       <li>Travmatik olaylardan sonra daha hızlı toparlandıklarını</li>
       <li>Daha yüksek yaşam doyumu ve mutluluk düzeylerine sahip olduklarını göstermektedir.</li>
     </ul>
-    
+
     <h2>Psikolojik Sağlamlığı Artırmanın Yolları</h2>
-    
+
     <p>İyi haber şu ki, psikolojik sağlamlık doğuştan gelen sabit bir özellik değil, geliştirilebilen bir beceridir. İşte psikolojik sağlamlığınızı artırmak için uygulayabileceğiniz bazı stratejiler:</p>
-    
+
     <h3>1. Sosyal Bağlantılar Kurun</h3>
-    
+
     <p>Güçlü ve destekleyici ilişkiler, psikolojik sağlamlığın temel taşlarından biridir. Aileniz, arkadaşlarınız veya topluluk gruplarıyla bağlantıda kalmak, zor zamanlarda size duygusal destek sağlar ve yalnız olmadığınızı hissettirir.</p>
-    
+
     <h3>2. Olumlu Düşünmeyi Alışkanlık Haline Getirin</h3>
-    
+
     <p>Olumlu düşünme, zorlukları aşılmaz engeller olarak görmek yerine, üstesinden gelinebilecek meydan okumalar olarak görmeyi içerir. Bu, olayları daha dengeli bir perspektiften değerlendirmenize ve çözüm odaklı düşünmenize yardımcı olur.</p>
-    
+
     <h3>3. Değişimi Kabul Edin</h3>
-    
+
     <p>Değişim, hayatın kaçınılmaz bir parçasıdır. Değişimi kabul etmek ve ona uyum sağlamak, psikolojik sağlamlığın önemli bir bileşenidir. Değiştiremeyeceğiniz durumları kabul etmek ve enerjinizi değiştirebileceğiniz şeylere yönlendirmek, size kontrol hissi verir.</p>
-    
+
     <h3>4. Hedefler Belirleyin</h3>
-    
+
     <p>Gerçekçi hedefler belirlemek ve onlara doğru ilerlemek, size amaç duygusu verir ve motivasyonunuzu artırır. Küçük adımlarla başlayın ve her başarıyı kutlayın.</p>
-    
+
     <h3>5. Kendinize İyi Bakın</h3>
-    
+
     <p>Fiziksel sağlığınız, zihinsel sağlığınızı doğrudan etkiler. Düzenli egzersiz yapmak, dengeli beslenmek, yeterli uyku almak ve stresi yönetmek, psikolojik sağlamlığınızı destekler.</p>
-    
+
     <h3>6. Mindfulness Pratiği Yapın</h3>
-    
+
     <p>Mindfulness (bilinçli farkındalık), şimdiki ana odaklanmayı ve düşüncelerinizi, duygularınızı yargılamadan gözlemlemeyi içerir. Bu pratik, stres ve kaygıyı azaltır, duygusal düzenlemeyi geliştirir ve psikolojik sağlamlığı artırır.</p>
-    
+
     <h2>Sonuç</h2>
-    
+
     <p>Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkmamıza ve bu zorluklardan güçlenerek çıkmamıza yardımcı olan değerli bir beceridir. Bu beceriyi geliştirmek için zaman ayırmak, hem mevcut zorlukları aşmanıza hem de gelecekteki zorluklara daha hazırlıklı olmanıza yardımcı olacaktır.</p>
-    
+
     <p>Unutmayın, psikolojik sağlamlık bir süreçtir ve herkesin bu süreci yaşama şekli farklıdır. Kendinize karşı nazik olun ve gerektiğinde profesyonel destek almaktan çekinmeyin.</p>
   `,
-}
+};
 
-// İlgili yazılar
+// Related posts
 const relatedPosts = [
   {
     id: 2,
@@ -107,7 +107,7 @@ const relatedPosts = [
     slug: "duygusal-zeka",
     image: "/placeholder.svg?height=400&width=600",
   },
-]
+];
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
@@ -281,8 +281,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Related Posts - İlgili Yazılar (Faydalı Kaynaklar) */}
-      <section className="bg-sky-100 py-16">
+      {/* Related Posts */}
+      <section className="bg-blue-100 py-16">
         <div className="container">
           <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:text-3xl">İlgili Yazılar</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -347,5 +347,5 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
     </div>
-  )
+  );
 }
