@@ -1,433 +1,351 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Search, Clock, ArrowRight, Calendar, User, BookOpen, Film, PenTool, Filter } from "lucide-react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { CalendarIcon, Clock, Facebook, Linkedin, Mail, User } from "lucide-react"
 
-// Örnek blog yazıları
-const blogPosts = [
-  {
-    id: 1,
-    title: "Psikolojik Sağlamlık: Zorluklarla Başa Çıkma Becerisi",
-    excerpt:
-      "Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkabilme ve bu zorluklar karşısında uyum sağlayabilme becerisidir. Bu yazıda, psikolojik sağlamlığı artırmanın yollarını ele alıyoruz.",
-    date: "15 Mayıs 2023",
-    author: "Dr. Ayşe Yılmaz",
-    category: "Kişisel Gelişim",
-    readTime: "5 dakika",
-    slug: "psikolojik-saglamlik",
-    image: "/placeholder.svg?height=400&width=600&query=Psikolojik+Sağlamlık",
-    featured: true,
-  },
+// Örnek blog yazısı
+const blogPost = {
+  id: 1,
+  title: "Psikolojik Sağlamlık: Zorluklarla Başa Çıkma Becerisi",
+  excerpt:
+    "Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkabilme ve bu zorluklar karşısında uyum sağlayabilme becerisidir. Bu yazıda, psikolojik sağlamlığı artırmanın yollarını ele alıyoruz.",
+  date: "15 Mayıs 2023",
+  author: "Dr. Ayşe Yılmaz",
+  authorTitle: "Klinik Psikolog",
+  authorImage: "/placeholder.svg?height=100&width=100",
+  category: "Kişisel Gelişim",
+  readTime: "5 dakika",
+  slug: "psikolojik-saglamlik",
+  image: "/placeholder.svg?height=600&width=1200",
+  content: `
+    <p>Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkabilme ve bu zorluklar karşısında uyum sağlayabilme becerisidir. Diğer bir deyişle, stresli durumlar, travmalar veya zorluklar karşısında kendini toparlayabilme ve hatta bu deneyimlerden güçlenerek çıkabilme kapasitesidir.</p>
+    
+    <h2>Psikolojik Sağlamlığın Önemi</h2>
+    
+    <p>Hayat, kaçınılmaz olarak zorluklar, kayıplar ve değişimlerle doludur. Psikolojik sağlamlık, bu zorluklarla karşılaştığımızda bize destek olan, ayakta kalmamızı sağlayan ve ileriye bakmamıza yardımcı olan bir özelliktir. Araştırmalar, psikolojik sağlamlığı yüksek olan bireylerin:</p>
+    
+    <ul>
+      <li>Stresle daha etkili başa çıkabildiklerini</li>
+      <li>Daha az depresyon ve kaygı yaşadıklarını</li>
+      <li>Travmatik olaylardan sonra daha hızlı toparlandıklarını</li>
+      <li>Daha yüksek yaşam doyumu ve mutluluk düzeylerine sahip olduklarını göstermektedir.</li>
+    </ul>
+    
+    <h2>Psikolojik Sağlamlığı Artırmanın Yolları</h2>
+    
+    <p>İyi haber şu ki, psikolojik sağlamlık doğuştan gelen sabit bir özellik değil, geliştirilebilen bir beceridir. İşte psikolojik sağlamlığınızı artırmak için uygulayabileceğiniz bazı stratejiler:</p>
+    
+    <h3>1. Sosyal Bağlantılar Kurun</h3>
+    
+    <p>Güçlü ve destekleyici ilişkiler, psikolojik sağlamlığın temel taşlarından biridir. Aileniz, arkadaşlarınız veya topluluk gruplarıyla bağlantıda kalmak, zor zamanlarda size duygusal destek sağlar ve yalnız olmadığınızı hissettirir.</p>
+    
+    <h3>2. Olumlu Düşünmeyi Alışkanlık Haline Getirin</h3>
+    
+    <p>Olumlu düşünme, zorlukları aşılmaz engeller olarak görmek yerine, üstesinden gelinebilecek meydan okumalar olarak görmeyi içerir. Bu, olayları daha dengeli bir perspektiften değerlendirmenize ve çözüm odaklı düşünmenize yardımcı olur.</p>
+    
+    <h3>3. Değişimi Kabul Edin</h3>
+    
+    <p>Değişim, hayatın kaçınılmaz bir parçasıdır. Değişimi kabul etmek ve ona uyum sağlamak, psikolojik sağlamlığın önemli bir bileşenidir. Değiştiremeyeceğiniz durumları kabul etmek ve enerjinizi değiştirebileceğiniz şeylere yönlendirmek, size kontrol hissi verir.</p>
+    
+    <h3>4. Hedefler Belirleyin</h3>
+    
+    <p>Gerçekçi hedefler belirlemek ve onlara doğru ilerlemek, size amaç duygusu verir ve motivasyonunuzu artırır. Küçük adımlarla başlayın ve her başarıyı kutlayın.</p>
+    
+    <h3>5. Kendinize İyi Bakın</h3>
+    
+    <p>Fiziksel sağlığınız, zihinsel sağlığınızı doğrudan etkiler. Düzenli egzersiz yapmak, dengeli beslenmek, yeterli uyku almak ve stresi yönetmek, psikolojik sağlamlığınızı destekler.</p>
+    
+    <h3>6. Mindfulness Pratiği Yapın</h3>
+    
+    <p>Mindfulness (bilinçli farkındalık), şimdiki ana odaklanmayı ve düşüncelerinizi, duygularınızı yargılamadan gözlemlemeyi içerir. Bu pratik, stres ve kaygıyı azaltır, duygusal düzenlemeyi geliştirir ve psikolojik sağlamlığı artırır.</p>
+    
+    <h2>Sonuç</h2>
+    
+    <p>Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkmamıza ve bu zorluklardan güçlenerek çıkmamıza yardımcı olan değerli bir beceridir. Bu beceriyi geliştirmek için zaman ayırmak, hem mevcut zorlukları aşmanıza hem de gelecekteki zorluklara daha hazırlıklı olmanıza yardımcı olacaktır.</p>
+    
+    <p>Unutmayın, psikolojik sağlamlık bir süreçtir ve herkesin bu süreci yaşama şekli farklıdır. Kendinize karşı nazik olun ve gerektiğinde profesyonel destek almaktan çekinmeyin.</p>
+  `,
+}
+
+// İlgili yazılar
+const relatedPosts = [
   {
     id: 2,
-    title: "Çocuklarda Kaygı: Ebeveynler İçin Rehber",
+    title: "Stres Yönetimi: Günlük Hayatta Uygulayabileceğiniz Teknikler",
     excerpt:
-      "Çocuklarda kaygı bozuklukları giderek yaygınlaşıyor. Ebeveynler olarak çocuklarımızın kaygılarını nasıl anlayabilir ve onlara nasıl destek olabiliriz?",
-    date: "28 Nisan 2023",
+      "Günlük hayatın koşuşturması içinde stresle başa çıkmanın yolları nelerdir? İşte size pratik stres yönetimi teknikleri.",
+    date: "5 Mayıs 2023",
     author: "Uzm. Psk. Mehmet Kaya",
-    category: "Çocuk Psikolojisi",
-    readTime: "7 dakika",
-    slug: "cocuklarda-kaygi",
-    image: "/placeholder.svg?height=400&width=600&query=Çocuklarda+Kaygı",
-    featured: false,
+    category: "Kişisel Gelişim",
+    readTime: "6 dakika",
+    slug: "stres-yonetimi",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 3,
-    title: "İlişkilerde Sağlıklı İletişim Kurmanın Yolları",
+    title: "Öz-şefkat: Kendimize Karşı Daha Nazik Olmanın Yolları",
     excerpt:
-      "İlişkilerimizde yaşadığımız sorunların çoğu, iletişim eksikliğinden kaynaklanır. Peki, partnerimizle, ailemizle veya arkadaşlarımızla nasıl daha sağlıklı iletişim kurabiliriz?",
-    date: "10 Nisan 2023",
-    author: "Uzm. Psk. Dan. Zeynep Demir",
-    category: "İlişkiler",
-    readTime: "6 dakika",
-    slug: "iliskilerde-saglikli-iletisim",
-    image: "/placeholder.svg?height=400&width=600&query=Sağlıklı+İletişim",
-    featured: true,
+      "Kendimize karşı sert ve eleştirel olmak yerine, öz-şefkat göstermenin psikolojik sağlığımıza katkıları nelerdir?",
+    date: "20 Nisan 2023",
+    author: "Dr. Zeynep Demir",
+    category: "Kişisel Gelişim",
+    readTime: "7 dakika",
+    slug: "oz-sefkat",
+    image: "/placeholder.svg?height=400&width=600",
   },
   {
     id: 4,
-    title: "Mindfulness: Şimdiki Ana Odaklanma Pratiği",
+    title: "Duygusal Zeka: İlişkilerimizi Güçlendirmenin Anahtarı",
     excerpt:
-      "Mindfulness, zihnimizi şimdiki ana getirme ve yargılamadan farkındalık geliştirme pratiğidir. Bu yazıda, günlük hayatımıza mindfulness'ı nasıl entegre edebileceğimizi anlatıyoruz.",
-    date: "2 Mart 2023",
-    author: "Dr. Ali Yıldız",
-    category: "Farkındalık",
+      "Duygusal zeka, hem kendimizi hem de başkalarını anlamak için neden bu kadar önemlidir? İlişkilerimize nasıl katkı sağlar?",
+    date: "10 Nisan 2023",
+    author: "Uzm. Psk. Ali Yıldız",
+    category: "İlişkiler",
     readTime: "8 dakika",
-    slug: "mindfulness-simdiki-ana-odaklanma",
-    image: "/placeholder.svg?height=400&width=600&query=Mindfulness",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Travma Sonrası Büyüme: Zorlukların Ötesinde Gelişim",
-    excerpt:
-      "Travmatik deneyimler sonrasında insanlar sadece iyileşmekle kalmaz, aynı zamanda kişisel olarak büyüme ve gelişme potansiyeline de sahiptir. Bu fenomene 'travma sonrası büyüme' denir.",
-    date: "15 Şubat 2023",
-    author: "Uzm. Psk. Deniz Yalçın",
-    category: "Travma",
-    readTime: "10 dakika",
-    slug: "travma-sonrasi-buyume",
-    image: "/placeholder.svg?height=400&width=600&query=Travma+Sonrası+Büyüme",
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "Depresyonla Başa Çıkma Stratejileri",
-    excerpt:
-      "Depresyon, günümüzde en yaygın ruhsal sorunlardan biridir. Bu yazıda, depresyonla başa çıkmak için kullanabileceğiniz etkili stratejileri ve tedavi yöntemlerini ele alıyoruz.",
-    date: "5 Ocak 2023",
-    author: "Prof. Dr. Ahmet Kara",
-    category: "Ruh Sağlığı",
-    readTime: "9 dakika",
-    slug: "depresyonla-basa-cikma",
-    image: "/placeholder.svg?height=400&width=600&query=Depresyon+Tedavi",
-    featured: false,
+    slug: "duygusal-zeka",
+    image: "/placeholder.svg?height=400&width=600",
   },
 ]
 
-// Kategoriler
-const categories = [
-  "Tümü",
-  "Kişisel Gelişim",
-  "Çocuk Psikolojisi",
-  "İlişkiler",
-  "Farkındalık",
-  "Travma",
-  "Ruh Sağlığı",
-  "Terapi",
-]
-
-// Kaynaklar
-const resources = [
-  {
-    id: 1,
-    title: "Psikoloji Alanında Önerilen Kitaplar",
-    description: "Uzmanlarımızın seçtiği, psikoloji ve kişisel gelişim alanında ufkunuzu genişletecek kitap önerileri.",
-    icon: <BookOpen className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/kitaplar",
-  },
-  {
-    id: 2,
-    title: "Terapötik Film Önerileri",
-    description: "Psikolojik konuları derinlemesine ele alan, düşündürücü ve ilham verici film tavsiyeleri.",
-    icon: <Film className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/filmler",
-  },
-  {
-    id: 3,
-    title: "Akademik Makaleler ve Araştırmalar",
-    description: "Psikoloji alanındaki güncel akademik çalışmalar ve araştırma sonuçları.",
-    icon: <PenTool className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/makaleler",
-  },
-]
-
-export default function BlogPage() {
-  // Öne çıkan yazıları filtrele
-  const featuredPosts = blogPosts.filter((post) => post.featured)
-  const regularPosts = blogPosts.filter((post) => !post.featured)
-
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Hero Section */}
-      <section className="bg-gradient-primary py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 -translate-y-48 float-element"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 translate-y-32 float-element"></div>
-        </div>
-
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-lora italic text-white">Blog ve Kaynaklar</h1>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
-              Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın hazırladığı içerikler, öneriler ve
-              kaynaklar.
-            </p>
-
-            {/* Arama Kutusu */}
-            <div className="relative max-w-2xl mx-auto">
-              <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
-              <Input
-                placeholder="Blog yazılarında ara..."
-                className="pl-16 pr-6 py-8 rounded-full bg-white/95 backdrop-blur-sm border-0 shadow-lg text-lg placeholder:text-gray-500"
-              />
-              <Button className="absolute right-3 top-1/2 transform -translate-y-1/2 rounded-full px-8 py-3 bg-primary text-white hover:bg-primary/90 transition-all duration-300">
-                Ara
-              </Button>
+      <section className="bg-blue-50 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-4 flex items-center gap-2">
+              <Badge variant="outline" className="text-blue-600">
+                {blogPost.category}
+              </Badge>
+              <span className="flex items-center text-sm text-gray-500">
+                <CalendarIcon size={14} className="mr-1" />
+                {blogPost.date}
+              </span>
+              <span className="flex items-center text-sm text-gray-500">
+                <Clock size={14} className="mr-1" />
+                {blogPost.readTime}
+              </span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Kategori Filtreleme */}
-      <section className="py-8 bg-white/80 backdrop-blur-sm sticky top-20 z-20 border-b border-primary/10">
-        <div className="container">
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-3 overflow-x-auto pb-2 hide-scrollbar">
-              {categories.map((category, index) => (
-                <Button
-                  key={index}
-                  variant={index === 0 ? "default" : "outline"}
-                  className={rounded-full whitespace-nowrap transition-all duration-300 ${
-                    index === 0
-                      ? "bg-primary text-white shadow-lg"
-                      : "border-primary/30 hover:bg-primary/10 hover:border-primary/50"
-                  }}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-
-            <Button
-              variant="outline"
-              className="rounded-full border-primary/30 flex items-center gap-2 hover:bg-primary/10"
-            >
-              <Filter className="h-4 w-4" />
-              <span>Filtrele</span>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Öne Çıkan Yazılar */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50/50">
-        <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 font-lora italic text-primary text-center">
-            Öne Çıkan Yazılar
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {featuredPosts.map((post) => (
-              <FeaturedPostCard key={post.id} post={post} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tüm Blog Yazıları */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-lora italic text-primary">Son Yazılar</h2>
-
+            <h1 className="mb-6 text-3xl font-bold text-gray-800 md:text-4xl lg:text-5xl">{blogPost.title}</h1>
             <div className="flex items-center gap-3">
-              <span className="text-sm text-gray-600">Sırala:</span>
-              <select className="text-sm border border-primary/20 rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 text-primary cursor-pointer">
-                <option>En Yeni</option>
-                <option>En Popüler</option>
-                <option>A-Z</option>
-              </select>
+              <div className="h-12 w-12 overflow-hidden rounded-full">
+                <Image
+                  src={blogPost.authorImage || "/placeholder.svg"}
+                  alt={blogPost.author}
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-medium text-gray-800">{blogPost.author}</p>
+                <p className="text-sm text-gray-500">{blogPost.authorTitle}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {regularPosts.map((post) => (
-              <BlogPostCard key={post.id} post={post} />
-            ))}
-          </div>
-
-          <div className="mt-16 flex justify-center">
-            <Button
-              variant="outline"
-              className="rounded-full border-primary/30 px-10 py-3 hover:bg-primary/10 transition-all duration-300"
-            >
-              Daha Fazla Göster
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* Kaynaklar Bölümü - Bebek Mavisi Arkaplan */}
-        <section className="py-20 bg-[#B3E5FC] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/4 left-0 w-72 h-72 bg-white rounded-full -translate-x-36 float-element"></div>
-            <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-white rounded-full translate-x-48 float-element"></div>
-          </div>
-        
-          <div className="container relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 font-lora italic text-primary text-center">
-              Faydalı Kaynaklar
-            </h2>
-        
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {resources.map((resource) => (
-                <ResourceCard key={resource.id} resource={resource} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-      {/* Bülten Aboneliği */}
-      <section className="py-20 bg-gradient-to-b from-gray-50/50 to-white">
+      {/* Featured Image */}
+      <section className="py-8">
         <div className="container">
-          <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 md:p-16 shadow-lg border border-primary/10">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-lora italic text-primary">Bültene Abone Olun</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Yeni blog yazıları, kaynaklar ve etkinliklerden haberdar olmak için e-posta listemize kaydolun.
-              </p>
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-xl">
+            <Image
+              src={blogPost.image || "/placeholder.svg"}
+              alt={blogPost.title}
+              width={1200}
+              height={600}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Content */}
+      <section className="py-8">
+        <div className="container">
+          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-4">
+            {/* Share Sidebar */}
+            <div className="hidden md:block">
+              <div className="sticky top-24 space-y-4">
+                <p className="text-sm font-medium text-gray-500">Paylaş</p>
+                <div className="flex flex-col space-y-2">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    <Facebook size={18} />
+                    <span className="sr-only">Facebook'ta Paylaş</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    <Linkedin size={18} />
+                    <span className="sr-only">LinkedIn'de Paylaş</span>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    <Mail size={18} />
+                    <span className="sr-only">E-posta ile Paylaş</span>
+                  </Button>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <Input
-                type="email"
-                placeholder="E-posta adresiniz"
-                className="flex-1 bg-white border-primary/20 rounded-full py-6 px-6 text-lg placeholder:text-gray-500"
-              />
-              <Button className="bg-primary text-white rounded-full px-10 py-6 text-lg hover:bg-primary/90 transition-all duration-300">
-                Abone Ol
-              </Button>
+            {/* Main Content */}
+            <div className="md:col-span-3">
+              <article className="prose max-w-none prose-headings:text-gray-800 prose-p:text-gray-600 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
+                <div dangerouslySetInnerHTML={{ __html: blogPost.content }} />
+              </article>
+
+              {/* Tags */}
+              <div className="mt-8 flex flex-wrap gap-2">
+                <span className="text-sm font-medium text-gray-500">Etiketler:</span>
+                <Badge variant="outline" className="text-blue-600">
+                  Psikolojik Sağlamlık
+                </Badge>
+                <Badge variant="outline" className="text-blue-600">
+                  Stres Yönetimi
+                </Badge>
+                <Badge variant="outline" className="text-blue-600">
+                  Kişisel Gelişim
+                </Badge>
+                <Badge variant="outline" className="text-blue-600">
+                  Mindfulness
+                </Badge>
+              </div>
+
+              {/* Author Bio */}
+              <div className="mt-12 rounded-xl bg-blue-50 p-6">
+                <div className="flex flex-col items-center gap-4 sm:flex-row">
+                  <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      src={blogPost.authorImage || "/placeholder.svg"}
+                      alt={blogPost.author}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-xl font-bold text-gray-800">{blogPost.author}</h3>
+                    <p className="mb-3 text-sm text-gray-500">{blogPost.authorTitle}</p>
+                    <p className="text-gray-600">
+                      Klinik psikoloji alanında 15 yıllık deneyime sahip olan Dr. Ayşe Yılmaz, özellikle travma,
+                      psikolojik sağlamlık ve stres yönetimi konularında uzmanlaşmıştır. Yol Arkadaşları Psikoloji
+                      Vakfı'nda gönüllü olarak hizmet vermektedir.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Share Buttons (Mobile) */}
+              <div className="mt-8 flex items-center justify-center gap-4 md:hidden">
+                <p className="text-sm font-medium text-gray-500">Paylaş:</p>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  <Facebook size={18} />
+                  <span className="sr-only">Facebook'ta Paylaş</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  <Linkedin size={18} />
+                  <span className="sr-only">LinkedIn'de Paylaş</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full border-blue-200 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+                >
+                  <Mail size={18} />
+                  <span className="sr-only">E-posta ile Paylaş</span>
+                </Button>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Posts */}
+      <section className="bg-gray-50 py-16">
+        <div className="container">
+          <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:text-3xl">İlgili Yazılar</h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPosts.map((post) => (
+              <Card key={post.id} className="overflow-hidden">
+                <div className="overflow-hidden">
+                  <Image
+                    src={post.image || "/placeholder.svg"}
+                    alt={post.title}
+                    width={400}
+                    height={200}
+                    className="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <CardHeader className="p-4 pb-2">
+                  <div className="mb-2 flex items-center gap-2">
+                    <Badge variant="outline" className="text-blue-600">
+                      {post.category}
+                    </Badge>
+                    <span className="flex items-center text-xs text-gray-500">
+                      <Clock size={12} className="mr-1" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <CardTitle className="text-lg">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-blue-600">
+                      {post.title}
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0">
+                  <CardDescription className="line-clamp-2">{post.excerpt}</CardDescription>
+                </CardContent>
+                <CardFooter className="flex items-center justify-between p-4 pt-0">
+                  <span className="flex items-center text-xs text-gray-500">
+                    <User size={12} className="mr-1" />
+                    {post.author}
+                  </span>
+                  <Button asChild variant="link" className="h-auto p-0 text-blue-600">
+                    <Link href={`/blog/${post.slug}`}>Devamını Oku</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl rounded-xl bg-blue-600 p-8 text-center text-white md:p-12">
+            <h2 className="mb-4 text-2xl font-bold md:text-3xl">Ücretsiz Psikoloji Sohbetlerimize Katılın</h2>
+            <p className="mb-8">
+              Her hafta düzenlediğimiz psikoloji sohbetlerinde uzmanlarımızla bir araya gelin, sorularınızı sorun ve
+              bilgi alışverişinde bulunun.
+            </p>
+            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+              <Link href="/hizmetlerimiz/psikoloji-sohbetleri">Etkinlik Takvimini Görüntüle</Link>
+            </Button>
           </div>
         </div>
       </section>
     </div>
-  )
-}
-
-// Öne Çıkan Yazı Kartı
-function FeaturedPostCard({ post }: { post: any }) {
-  return (
-    <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group h-full">
-      <div className="grid md:grid-cols-2 h-full">
-        <div className="relative h-64 md:h-full overflow-hidden">
-          <Image
-            src={post.image || "/placeholder.svg"}
-            alt={post.title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
-          <Badge className="absolute top-6 left-6 bg-primary text-white px-4 py-2 text-sm font-medium">
-            {post.category}
-          </Badge>
-        </div>
-
-        <div className="p-8 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                <span>{post.date}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                <span>{post.readTime}</span>
-              </div>
-            </div>
-
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary line-clamp-2 leading-tight">
-              <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
-                {post.title}
-              </Link>
-            </h3>
-
-            <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{post.excerpt}</p>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <User className="h-4 w-4 text-primary" />
-              <span className="text-sm text-gray-600">{post.author}</span>
-            </div>
-
-            <Link
-              href={`/blog/${post.slug}`}
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 group/link font-medium"
-            >
-              <span>Devamını Oku</span>
-              <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Card>
-  )
-}
-
-// Blog Yazı Kartı
-function BlogPostCard({ post }: { post: any }) {
-  return (
-    <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group h-full flex flex-col">
-      <div className="relative h-56 overflow-hidden">
-        <Image
-          src={post.image || "/placeholder.svg"}
-          alt={post.title}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <Badge className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 text-sm">{post.category}</Badge>
-      </div>
-
-      <CardHeader className="text-left pb-3">
-        <div className="flex items-center justify-between mb-3 text-sm text-gray-500">
-          <div className="flex items-center gap-1">
-            <Calendar className="h-3 w-3" />
-            <span>{post.date}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Clock className="h-3 w-3" />
-            <span>{post.readTime}</span>
-          </div>
-        </div>
-
-        <CardTitle className="text-xl font-lora italic text-primary line-clamp-2 leading-tight">
-          <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
-            {post.title}
-          </Link>
-        </CardTitle>
-      </CardHeader>
-
-      <CardContent className="text-left flex-grow">
-        <p className="text-gray-600 line-clamp-3 leading-relaxed">{post.excerpt}</p>
-      </CardContent>
-
-      <CardFooter className="text-left pt-0 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <User className="h-3 w-3 text-primary" />
-          <span className="text-sm text-gray-600">{post.author}</span>
-        </div>
-
-        <Link
-          href={`/blog/${post.slug}`}
-          className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-all duration-300 group/link text-sm font-medium"
-        >
-          <span>Oku</span>
-          <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-        </Link>
-      </CardFooter>
-    </Card>
-  )
-}
-
-// Kaynak Kartı
-function ResourceCard({ resource }: { resource: any }) {
-  return (
-    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm h-full">
-      <CardHeader className="text-center pb-4">
-        <div className="flex justify-center mb-6">{resource.icon}</div>
-        <CardTitle className="text-xl font-lora italic text-[#8fa4d3] mb-4">{resource.title}</CardTitle>
-      </CardHeader>
-
-      <CardContent className="text-center">
-        <p className="text-[#8fa4d3]/90 leading-relaxed">{resource.description}</p>
-      </CardContent>
-
-      <CardFooter className="justify-center pt-6">
-        <Button
-          asChild
-          variant="outline"
-          className="rounded-full border-[#8fa4d3]/30 text-[#8fa4d3] hover:bg-[#8fa4d3]/10 px-8 py-2"
-        >
-          <Link href={resource.link}>Keşfet</Link>
-        </Button>
-      </CardFooter>
-    </Card>
   )
 }
