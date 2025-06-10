@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* About Section - Enhanced */}
-      <section className="py-32 white-gradient-bg">
+      <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left content */}
@@ -152,15 +152,15 @@ export default function Home() {
               </div>
 
               {/* Floating elements */}
-              <div className="top-6 right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
-              <div className="bottom-6 left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
+              <div className="-top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
+              <div className="-bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section - Dynamic Grid */}
-      <section className="py-32 blue-gradient-bg">
+      <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-responsive-lg font-medium mb-6 font-lora italic">İnsana Değer Veren Bir Yolculuk</h2>
@@ -231,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Partnership Section - Enhanced */}
-      <section className="py-32 white-gradient-bg">
+      <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
@@ -277,19 +277,19 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 blue-gradient-bg">
+      <section className="py-32 blue-gradient-bg relative">
         <div className="animate-fade-in">
           <FaqSection />
         </div>
       </section>
 
       {/* CTA Section - Dynamic */}
-      <section className="py-32 white-gradient-bg">
+      <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in">
               {/* Gradient background */}
-              <div className="inset-0 bg-gradient-to-r from-blue-100 to-blue-200"></div>
+              <div className="inset-0 bg-[#EBF5FC]"></div>
 
               {/* Pattern overlay */}
               <div className="inset-0 opacity-10">
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section - Modern */}
-      <section className="py-32 blue-gradient-bg">
+      <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-responsive-lg font-medium mb-8 font-lora italic">Haberdar Olun</h2>
