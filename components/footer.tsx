@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="text-center mx-auto">
-            <h3 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
+            <h3 className="mb-4 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
               Hızlı Bağlantılar
             </h3>
             <ul className="space-y-2">
@@ -89,10 +89,10 @@ export function Footer() {
 
           {/* Contact Info & Working Hours */}
           <div className="text-center mx-auto">
-            <div className="flex justify-center items-start gap-8">
+            <div className="flex justify-center items-start gap-6">
               {/* Contact Info */}
               <div>
-                <h3 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
+                <h3 className="mb-4 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
                   İletişim
                 </h3>
                 <ul className="space-y-3">
@@ -115,17 +115,17 @@ export function Footer() {
 
               {/* Working Hours */}
               <div>
-                <h4 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
+                <h4 className="mb-3 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
                   Çalışma Saatleri
                 </h4>
-                <div className="space-y-1 text-base text-gray-800/80 font-aristoteles">
+                <div className="space-y-1 text-sm text-gray-800/80">
                   <div className="flex justify-start">
-                    <span className="mr-2">Pazartesi Cumartesi:</span>
-                    <span>09:00 20:00</span>
+                    <span className="mr-2 font-aristoteles">Pazartesi - Cumartesi:</span>
+                    <span className="font-aristoteles">09:00 - 20:00</span>
                   </div>
                   <div className="flex justify-start">
-                    <span className="mr-2">Pazar:</span>
-                    <span>Kapalı</span>
+                    <span className="mr-2 font-aristoteles">Pazar:</span>
+                    <span className="font-aristoteles">Kapalı</span>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-10 pt-6 border-t border-gray-200/50 text-center mx-auto">
-          <p className="text-gray-800/70 text-base font-aristoteles">
+          <p className="text-gray-800/70 text-xs">
             © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
