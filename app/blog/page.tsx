@@ -242,17 +242,12 @@ export default function BlogPage() {
       </section>
 
       {/* Kaynaklar Bölümü */}
-      <section className="py-20 bg-gradient-secondary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-0 w-72 h-72 bg-white rounded-full -translate-x-36 float-element"></div>
-          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-white rounded-full translate-x-48 float-element"></div>
-        </div>
-
+      <section className="py-20 bg-blue-200 relative overflow-hidden">
         <div className="container relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-16 font-lora italic text-white text-center">
             Faydalı Kaynaklar
           </h2>
-
+      
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {resources.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
