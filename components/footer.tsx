@@ -87,12 +87,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info & Working Hours */}
+          {/* Contact Info */}
           <div>
             <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
               İletişim
             </h3>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-3" />
                 <span className="text-gray-800/80 text-sm leading-relaxed font-aristoteles">
@@ -108,21 +108,21 @@ export function Footer() {
                 <span className="text-gray-800/80 font-aristoteles">info@yolarkadaslari.org</span>
               </li>
             </ul>
+          </div>
 
-            {/* Working Hours */}
-            <div>
-              <h4 className="mb-4 text-lg font-semibold font-lora italic" style={{ color: "#000000" }}>
-                Çalışma Saatleri
-              </h4>
-              <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles">
-                <div className="flex justify-between">
-                  <span>Pazartesi - Cumartesi:</span>
-                  <span>09:00 - 20:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pazar:</span>
-                  <span>Kapalı</span>
-                </div>
+          {/* Working Hours */}
+          <div>
+            <h3 className="mb-6 text-xl font-bold font-lora italic" style={{ color: "#000000" }}>
+              Çalışma Saatleri
+            </h3>
+            <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles">
+              <div className="flex justify-between">
+                <span>Pazartesi - Cumartesi:</span>
+                <span>09:00 - 20:00</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Pazar:</span>
+                <span>Kapalı</span>
               </div>
             </div>
           </div>
