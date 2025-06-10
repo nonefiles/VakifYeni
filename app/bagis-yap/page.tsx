@@ -147,12 +147,12 @@ export default function DonatePage() {
             <h2 className="mb-6 text-3xl font-bold gradient-heading" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
               Şeffaflık İlkemiz
             </h2>
-            <p className="mb-8 text-lg text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
+            <p className="mb-8 text-lg text-center text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
               Yol Arkadaşları Psikoloji Vakfı olarak, bağışçılarımıza karşı şeffaf olmayı ve hesap verebilirliği temel
               değerlerimiz arasında görüyoruz.
             </p>
             <div className="rounded-xl bg-white/80 backdrop-blur-sm p-6 border border-primary/10">
-              <ul className="space-y-4 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+              <ul className="space-y-4 text-left text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
                 {[
                   "Tüm bağışlar, vakfımızın resmi hesaplarına kaydedilir ve yasal mevzuata uygun şekilde raporlanır.",
                   "Bağışlarınızın nasıl kullanıldığına dair düzenli raporlar web sitemizde yayınlanır.",
