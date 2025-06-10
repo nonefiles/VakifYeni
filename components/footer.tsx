@@ -119,13 +119,11 @@ export function Footer() {
                   Çalışma Saatleri
                 </h4>
                 <div className="space-y-1 text-sm text-gray-800/80">
-                  <div className="flex justify-start">
-                    <span className="mr-2 font-aristoteles">Pazartesi - Cumartesi:</span>
-                    <span className="font-aristoteles">09:00 - 20:00</span>
+                  <div className="font-aristoteles">
+                    Pazartesi - Cumartesi: 09:00 - 20:00
                   </div>
-                  <div className="flex justify-start">
-                    <span className="mr-2 font-aristoteles">Pazar:</span>
-                    <span className="font-aristoteles">Kapalı</span>
+                  <div className="font-aristoteles">
+                    Pazar: Kapalı
                   </div>
                 </div>
               </div>
@@ -135,7 +133,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-10 pt-6 border-t border-gray-200/50 text-center mx-auto">
-          <p className="text-gray-800/70 text-xs">
+          <p className="text-gray-800/70 text-base font-aristoteles">
             © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
