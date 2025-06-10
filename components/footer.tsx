@@ -120,8 +120,8 @@ export function Footer() {
                 </h4>
                 <div className="space-y-1 text-base text-gray-800/80 font-aristoteles">
                   <div className="flex justify-start">
-                    <span className="mr-2">Pazartesi - Cumartesi:</span>
-                    <span>09:00 - 20:00</span>
+                    <span className="mr-2">Pazartesi Cumartesi:</span>
+                    <span>09:00 20:00</span>
                   </div>
                   <div className="flex justify-start">
                     <span className="mr-2">Pazar:</span>
