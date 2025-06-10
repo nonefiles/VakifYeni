@@ -9,12 +9,14 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-accent py-16 md:py-24 relative blue-gradient-bg">
         <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
-          <div className="max-w-3xl">
-            <p className="text-lg text-left text-foreground/80">
-              Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
-              hizmetler sunuyoruz.
-            </p>
+          <div className="text-center">
+            <h1 className="mb-6 text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-foreground/80">
+                Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
+                hizmetler sunuyoruz.
+              </p>
+            </div>
           </div>
         </div>
       </section>
