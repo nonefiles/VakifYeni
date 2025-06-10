@@ -1,4 +1,4 @@
-import Link from "next/link"
+accent import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { HeartHandshake, Users, BookOpen, Calendar, Building, School, ArrowRight } from "lucide-react"
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
             <Card className="border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white">
                   <School className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-2xl text-primary font-lora italic text-left">
