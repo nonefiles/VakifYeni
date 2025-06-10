@@ -281,8 +281,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* Related Posts */}
-      <section className="bg-gray-50 py-16">
+      {/* Related Posts - İlgili Yazılar (Faydalı Kaynaklar) */}
+      <section className="bg-sky-100 py-16">
         <div className="container">
           <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:text-3xl">İlgili Yazılar</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
