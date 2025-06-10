@@ -20,10 +20,10 @@ export function Footer() {
             <div className="flex justify-center mb-4">
               <Image src="/images/logo.png" alt="Yol Arkadaşları Logo" width={200} height={32} className="mr-3" />
             </div>
-            <p className="text-gray-800/90 text-base leading-relaxed mb-3 max-w-sm">
+            <p className="text-gray-800/90 text-base leading-relaxed mb-3 max-w-sm font-aristoteles">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </p>
-            <p className="text-gray-800/90 text-base leading-relaxed mb-6 max-w-sm">
+            <p className="text-gray-800/90 text-base leading-relaxed mb-6 max-w-sm font-aristoteles">
               Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
 
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="text-center mx-auto">
-            <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
+            <h3 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
               Hızlı Bağlantılar
             </h3>
             <ul className="space-y-2">
@@ -78,7 +78,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
-                    className="text-gray-800/80 hover:text-gray-800 transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover text-sm"
+                    className="text-gray-800/80 hover:text-gray-800 transition-all duration-300 hover:translate-x-1 inline-block glow-on-hover text-base font-aristoteles"
                   >
                     {link.name}
                   </Link>
@@ -92,33 +92,33 @@ export function Footer() {
             <div className="flex justify-center items-start gap-8">
               {/* Contact Info */}
               <div>
-                <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
+                <h3 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
                   İletişim
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start justify-start">
                     <MapPin size={18} className="mt-1 flex-shrink-0 text-primary mr-2" />
-                    <span className="text-gray-800/80 text-xs leading-relaxed text-left">
+                    <span className="text-gray-800/80 text-base leading-relaxed text-left font-aristoteles">
                       Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
                     </span>
                   </li>
                   <li className="flex items-center justify-start">
                     <Phone size={18} className="flex-shrink-0 text-primary mr-2" />
-                    <span className="text-gray-800/80 text-sm">+90 539 889 33 75</span>
+                    <span className="text-gray-800/80 text-base font-aristoteles">+90 539 889 33 75</span>
                   </li>
                   <li className="flex items-center justify-start">
                     <Mail size={18} className="flex-shrink-0 text-primary mr-2" />
-                    <span className="text-gray-800/80 text-sm">info@yolarkadaslari.org</span>
+                    <span className="text-gray-800/80 text-base font-aristoteles">info@yolarkadaslari.org</span>
                   </li>
                 </ul>
               </div>
 
               {/* Working Hours */}
               <div>
-                <h4 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
+                <h4 className="mb-4 text-lg font-lora italic" style={{ color: "#000000" }}>
                   Çalışma Saatleri
                 </h4>
-                <div className="space-y-1 text-xs text-gray-800/80">
+                <div className="space-y-1 text-base text-gray-800/80 font-aristoteles">
                   <div className="flex justify-start">
                     <span className="mr-2">Pazartesi - Cumartesi:</span>
                     <span>09:00 - 20:00</span>
@@ -135,7 +135,7 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="mt-10 pt-6 border-t border-gray-200/50 text-center mx-auto">
-          <p className="text-gray-800/70 text-xs">
+          <p className="text-gray-800/70 text-base font-aristoteles">
             © {new Date().getFullYear()} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
