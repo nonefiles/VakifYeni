@@ -1,4 +1,4 @@
-[⚠️ Suspicious Content] import Link from "next/link"
+import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
