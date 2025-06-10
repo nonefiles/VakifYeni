@@ -26,7 +26,7 @@ export default function DonatePage() {
         <div className="container">
           <h2 className="mb-10 text-center text-3xl font-bold gradient-heading" style={{fontFamily: 'Lora', fontStyle: 'italic'}}>Bağışınızın Etkisi</h2>
           <div className="text-center">
-            <p className="text-lg text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
+            <p className="text-lg text-center text-foreground/80" style={{fontFamily: 'Arial, sans-serif'}}>
               Bağışlarınız, ihtiyaç sahibi bireylere psikolojik destek sağlamak için kullanılmaktadır.
             </p>
           </div>
