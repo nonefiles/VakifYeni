@@ -9,7 +9,7 @@ export default function GonulluBagisPage() {
   return (
     <div className="container py-16 md:py-24 text-center bg-white">
       <h1
-        className="text-4xl md:text-5xl font-bold mb-8 text-center text-[#2563eb] italic"
+        className="text-4xl md:text-5xl font-bold mb-8 text-center text-[#2563eb]"
         style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
       >
         Destek Ol
@@ -42,12 +42,12 @@ export default function GonulluBagisPage() {
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
                   Gönüllü Olmanın Önemi
                 </CardTitle>
-                <CardDescription className="font-aristotelica text-center">Birlikte daha güçlüyüz</CardDescription>
+                <CardDescription className="font-aristotelica">Birlikte daha güçlüyüz</CardDescription>
               </CardHeader>
-              <CardContent className="font-aristotelica text-center">
+              <CardContent className="font-aristotelica">
                 <p className="mb-4">
                   Gönüllülerimiz, vakfımızın en değerli kaynağıdır. Onların emekleri ve destekleri sayesinde, daha fazla
                   kişiye ulaşabilir, daha fazla hayata dokunabiliriz.
@@ -61,33 +61,33 @@ export default function GonulluBagisPage() {
 
             <Card className="text-center">
               <CardHeader>
-                <CardTitle className="text-2xl text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
                   Gönüllü Alanları
                 </CardTitle>
-                <CardDescription className="font-aristotelica text-center">
+                <CardDescription className="font-aristotelica">
                   Yetenek ve ilgi alanınıza göre destek olun
                 </CardDescription>
               </CardHeader>
               <CardContent className="font-aristotelica">
-                <ul className="space-y-3 text-center">
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                <ul className="space-y-3 text-left">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Psikolojik destek (uzman psikologlar için)</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Eğitim ve seminer organizasyonları</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Sosyal medya ve içerik üretimi</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>İdari destek ve organizasyon</span>
                   </li>
-                  <li className="flex items-center justify-center">
-                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0" />
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 mr-2 text-primary shrink-0 mt-0.5" />
                     <span>Etkinlik koordinasyonu</span>
                   </li>
                 </ul>
@@ -105,8 +105,33 @@ export default function GonulluBagisPage() {
         </TabsContent>
 
         <TabsContent value="bagis">
-          <div className="max-w-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             <Card className="text-center">
+              <CardHeader>
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary mx-auto">
+                  <Heart className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle
+                  className="text-2xl italic text-[#2563eb]"
+                  style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                >
+                  Bağışınızın Etkisi
+                </CardTitle>
+                <CardDescription>Her katkı değerlidir</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-left">
+                  Bağışlarınız sayesinde, maddi imkânsızlıklar nedeniyle psikolojik desteğe erişemeyen bireylere
+                  ücretsiz hizmet sunuyor, genç uzmanların gelişimine katkıda bulunuyor ve toplumsal ruh sağlığı
+                  bilincini artırmak için çalışmalar yürütüyoruz.
+                </p>
+                <p className="text-left">
+                  Yapacağınız her bağış, bir kişinin hayatında fark yaratma potansiyeline sahiptir.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-left">
               <CardHeader>
                 <CardTitle
                   className="text-2xl italic text-[#2563eb]"
@@ -114,22 +139,40 @@ export default function GonulluBagisPage() {
                 >
                   Bağış Seçenekleri
                 </CardTitle>
-                <CardDescription className="font-aristotelica text-center">Size uygun yöntemi seçin</CardDescription>
+                <CardDescription>Size uygun yöntemi seçin</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="p-4 border rounded-lg">
-                  <h4
-                    className="font-bold mb-2 text-[#2563eb] italic text-center"
-                    style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
-                  >
-                    Banka Havalesi
-                  </h4>
-                  <div className="font-aristotelica text-center">
+                <div className="space-y-6">
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
+                      Banka Havalesi
+                    </h4>
                     <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
                     <p className="mb-2">Banka: Türkiye İş Bankası</p>
                     <p className="mb-2">Şube: Ankara Merkez (1234)</p>
                     <p className="mb-2">Hesap No: 1234567890</p>
                     <p className="mb-2">IBAN: TR12 3456 7890 1234 5678 9012 34</p>
+                  </div>
+
+                  <div className="p-4 border rounded-lg">
+                    <h4
+                      className="font-bold mb-2 text-[#2563eb]"
+                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                    >
+                      Online Bağış
+                    </h4>
+                    <p className="mb-4">
+                      Güvenli ödeme altyapımız ile kredi kartı veya banka kartı ile bağış yapabilirsiniz.
+                    </p>
+                    <Button asChild className="w-full bg-primary text-white">
+                      <Link href="/bagis-yap">
+                        Online Bağış Yap
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </CardContent>
@@ -139,12 +182,27 @@ export default function GonulluBagisPage() {
       </Tabs>
 
       <div className="mt-16 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+        <h2 className="text-3xl font-bold mb-6 text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
           Destekçilerimiz
         </h2>
-        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica text-center">
+        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica">
           Yol Arkadaşları Psikoloji Vakfı'na destek olan tüm kurumsal ve bireysel destekçilerimize teşekkür ederiz.
         </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto opacity-70">
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+          <div className="flex items-center justify-center p-4">
+            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
+          </div>
+        </div>
       </div>
     </div>
   )
