@@ -378,33 +378,20 @@ function DynamicServiceCard({
 }) {
   return (
     <Card
-      className={`group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center ${
-        featured
-          ? "bg-gradient-primary text-white border-none shadow-glow-lg"
-          : "bg-white/80 border border-primary/10 hover:shadow-glow"
-      }`}
+      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
     >
-      {/* Background pattern for featured cards */}
-      {featured && (
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
-        </div>
-      )}
-
       <CardHeader className="relative z-10">
         <div
-          className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto ${
-            featured ? "bg-white/20" : "bg-primary/10"
-          }`}
+          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
         >
-          <div className={featured ? "text-white" : "text-primary"}>{icon}</div>
+          <div className="text-primary">{icon}</div>
         </div>
 
-        <CardTitle className={`text-xl font-lora italic ${featured ? "text-white" : "text-secondary"}`}>{title}</CardTitle>
+        <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
       </CardHeader>
 
       <CardContent className="relative z-10">
-        <CardDescription className={`text-base leading-relaxed font-aristotelica ${featured ? "text-white/90" : "text-foreground/80"}`}>
+        <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
           {description}
         </CardDescription>
       </CardContent>
@@ -412,9 +399,7 @@ function DynamicServiceCard({
       <CardFooter className="relative z-10 justify-center">
         <Link
           href={link}
-          className={`inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica ${
-            featured ? "text-white hover:text-white/80" : "text-primary hover:text-accent"
-          }`}
+          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
         >
           <span>Daha Fazla Bilgi</span>
           <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
