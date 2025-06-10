@@ -217,7 +217,7 @@ export default function ServicesPage() {
           <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
             <Card className="border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div class="max-w-3xl rounded-3xl bg-white p-8 shadow-sm border border-primary/20">
                   <School className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-2xl text-primary font-lora italic text-left">
