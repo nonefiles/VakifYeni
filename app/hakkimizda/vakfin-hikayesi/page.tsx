@@ -39,52 +39,6 @@ export default function VakfinHikayesiPage() {
             sayede, henüz yeni kurulmuş olmamıza rağmen, güçlü bir uzmanlık altyapısı ve geniş bir erişim ağıyla hizmet
             verebiliyoruz.
           </p>
-
-          <h2 className="text-2xl font-bold mt-12 mb-6">Kilometre Taşları</h2>
-
-          <div className="space-y-8">
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2010</div>
-              <div className="md:w-3/4">
-                <p>Gönüllü danışmanlık hizmetlerinin başlaması</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2015</div>
-              <div className="md:w-3/4">
-                <p>İlk toplum temelli psikolojik destek projesinin hayata geçirilmesi</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2018</div>
-              <div className="md:w-3/4">
-                <p>Danışmanlık merkezinin açılması ve profesyonel kadronun oluşturulması</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2020</div>
-              <div className="md:w-3/4">
-                <p>Yol Arkadaşları Psikoloji Vakfı'nın resmi olarak kurulması</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2022</div>
-              <div className="md:w-3/4">
-                <p>Ücretsiz psikoterapi hizmetlerinin başlaması ve ilk 100 danışana ulaşılması</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-1/4 font-bold text-primary">2023</div>
-              <div className="md:w-3/4">
-                <p>Psikoloji Enstitüsü projesinin başlatılması ve yeni merkez binasına taşınma</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
