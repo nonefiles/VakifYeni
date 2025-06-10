@@ -211,11 +211,12 @@ export default function ServicesPage() {
 
       {/* Institute Project */}
       <section className="py-16 white-gradient-bg relative">
-       <div className="container">
-        <div className="max-w-3xl rounded-3xl p-8 shadow-sm border border-primary/20" style={{ backgroundColor: '#BFEFFF' }}>
-          <div className="mb-6 flex">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-primary/20">
-              <School className="h-10 w-10 text-primary" />
+        <div className="container">
+          <div className="max-w-3xl rounded-3xl bg-accent p-8 shadow-sm border border-primary/20">
+            <div className="mb-6 flex">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-primary/20">
+                <School className="h-10 w-10 text-primary" />
+              </div>
             </div>
           </div>
             </div>
