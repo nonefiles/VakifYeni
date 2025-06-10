@@ -12,10 +12,10 @@ export default function Home() {
       {/* Hero Section - Dynamic */}
       <section className="min-h-screen flex items-center relative hero-section">
         {/* Floating background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
-          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-secondary/5 rounded-full float-element"></div>
+        <div className="inset-0 overflow-hidden">
+          <div className="top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
+          <div className="top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
+          <div className="bottom-40 left-1/4 w-40 h-40 bg-secondary/5 rounded-full float-element"></div>
         </div>
 
         <div className="container relative z-10">
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* About Section - Enhanced */}
-      <section className="py-32 white-gradient-bg relative">
+      <section className="py-32 white-gradient-bg">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left content */}
@@ -75,7 +75,7 @@ export default function Home() {
               <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
                 Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığının yaşamın temel bir hakkı olduğuna inanıyor ve bu hakka herkesin erişebilmesi için çalışıyoruz. Psikoloji biliminin dönüştürücü gücünü, hem bireylerin hem de toplumun hizmetine sunmayı amaçlayan bir topluluk hareketiyiz.
               </p>
-              
+
               <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
                 Bugün vakıf olarak yürüttüğümüz çalışmaların temeli, uzun süredir birlikte çalışan uzmanlarımızın danışmanlık merkezinde edindiği ortak deneyime dayanıyor. Bu zemin, bize hem mesleki bir derinlik hem de sahada karşılaştığımız ihtiyaçlara duyarlı bir yaklaşım kazandırdı.
               </p>
@@ -87,36 +87,36 @@ export default function Home() {
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                
+
                 {/* Social Media Icons */}
                 <div className="flex items-center gap-4">
-                  <Link 
-                    href="https://instagram.com/yolarkadaslarivakfi" 
-                    target="_blank" 
+                  <Link
+                    href="https://instagram.com/yolarkadaslarivakfi"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
                   >
                     <Instagram className="w-5 h-5" />
                   </Link>
-                  <Link 
-                    href="https://twitter.com/yolarkadaslarivakfi" 
-                    target="_blank" 
+                  <Link
+                    href="https://twitter.com/yolarkadaslarivakfi"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
                   >
                     <Twitter className="w-5 h-5" />
                   </Link>
-                  <Link 
-                    href="https://facebook.com/yolarkadaslarivakfi" 
-                    target="_blank" 
+                  <Link
+                    href="https://facebook.com/yolarkadaslarivakfi"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
                   >
                     <Facebook className="w-5 h-5" />
                   </Link>
-                  <Link 
-                    href="https://linkedin.com/company/yolarkadaslarivakfi" 
-                    target="_blank" 
+                  <Link
+                    href="https://linkedin.com/company/yolarkadaslarivakfi"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
                   >
@@ -143,7 +143,7 @@ export default function Home() {
                   <p className="text-foreground/80 leading-relaxed font-aristotelica">
                     Bu yolculukta, maddi imkânları kısıtlı olan bireyler için ücretsiz psikoterapi fırsatları sunuyor, genç uzmanların gelişimine katkı sağlayarak onların mesleki yolculuklarında bir rehber olmayı amaçlıyoruz. Ayrıca, toplumsal ruh sağlığına katkı sağlayacak eğitim ve etkinlikler düzenliyoruz.
                   </p>
-                  
+
                   <p className="text-foreground/80 leading-relaxed font-aristotelica">
                     İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun kolektif gücüdür.
                     Ve biz, bu gücü çoğaltmak ve herkese ulaşmak için burada, her adımda yanınızdayız.
@@ -152,15 +152,15 @@ export default function Home() {
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
+              <div className="top-6 right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
+              <div className="bottom-6 left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section - Dynamic Grid */}
-      <section className="py-32 blue-gradient-bg relative">
+      <section className="py-32 blue-gradient-bg">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-responsive-lg font-medium mb-6 font-lora italic">İnsana Değer Veren Bir Yolculuk</h2>
@@ -231,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Partnership Section - Enhanced */}
-      <section className="py-32 white-gradient-bg relative">
+      <section className="py-32 white-gradient-bg">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
@@ -241,8 +241,8 @@ export default function Home() {
 
             <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
               {/* Background pattern */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
+              <div className="top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
+              <div className="bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
 
               <div className="relative z-10 space-y-8 text-center">
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-aristotelica">
@@ -256,7 +256,7 @@ export default function Home() {
                     birliği sayesinde vakıf, henüz yeni kurulmuş olsa da uzmanlığı güçlü, erişimi geniş, yoldaşlığı
                     güven veren bir yapı olarak hizmet verebiliyor.
                   </p>
-                  
+
                   <p>
                     Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
                   </p>
@@ -277,24 +277,24 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 blue-gradient-bg relative">
+      <section className="py-32 blue-gradient-bg">
         <div className="animate-fade-in">
           <FaqSection />
         </div>
       </section>
 
       {/* CTA Section - Dynamic */}
-      <section className="py-32 white-gradient-bg relative">
+      <section className="py-32 white-gradient-bg">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in">
               {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-primary opacity-90"></div>
+              <div className="inset-0 bg-gradient-to-r from-blue-100 to-blue-200"></div>
 
               {/* Pattern overlay */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
+              <div className="inset-0 opacity-10">
+                <div className="top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
+                <div className="bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
               </div>
 
               <div className="relative z-10 p-16 text-center text-white">
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section - Modern */}
-      <section className="py-32 blue-gradient-bg relative">
+      <section className="py-32 blue-gradient-bg">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-responsive-lg font-medium mb-8 font-lora italic">Haberdar Olun</h2>
@@ -351,7 +351,7 @@ export default function Home() {
                 <Button className="rounded-full px-8">Abone Ol</Button>
               </div>
             </div>
-            
+
             <div className="mt-12 text-sm text-foreground/60 font-aristotelica">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </div>
