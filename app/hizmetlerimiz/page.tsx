@@ -211,15 +211,15 @@ export default function ServicesPage() {
 
       {/* Institute Project */}
       <section className="py-16 white-gradient-bg relative">
-         <div className="container">
-           <div className="max-w-3xl rounded-3xl bg-blue-100 p-8 shadow-sm border border-blue-200">
-             <div className="mb-6 flex">
-               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-blue-200">
-                 <School className="h-10 w-10 text-blue-400" />
-               </div>
-             </div>
-           </div>
-         </div>
+            <div className="container">
+            <div className="max-w-3xl rounded-3xl bg-sky-100 p-8 shadow-sm border border-sky-200">
+              <div className="mb-6 flex">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white border border-sky-300">
+                  <School className="h-10 w-10 text-sky-600" />
+                </div>
+              </div>
+            </div>
+          </div>
             <h2 className="mb-6 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
             <h3 className="mb-4 text-left text-xl font-bold text-primary/80 font-lora italic">
               Geleceğe Doğru Adım Atıyoruz…
