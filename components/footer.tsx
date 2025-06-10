@@ -89,39 +89,44 @@ export function Footer() {
 
           {/* Contact Info & Working Hours */}
           <div className="text-center mx-auto">
-            <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
-              İletişim
-            </h3>
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start justify-center">
-                <MapPin size={18} className="mt-1 flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80 text-xs leading-relaxed text-center">
-                  Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
-                </span>
-              </li>
-              <li className="flex items-center justify-center">
-                <Phone size={18} className="flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80 text-sm">+90 539 889 33 75</span>
-              </li>
-              <li className="flex items-center justify-center">
-                <Mail size={18} className="flex-shrink-0 text-primary mr-2" />
-                <span className="text-gray-800/80 text-sm">info@yolarkadaslari.org</span>
-              </li>
-            </ul>
+            <div className="flex justify-center items-start gap-8">
+              {/* Contact Info */}
+              <div>
+                <h3 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
+                  İletişim
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start justify-start">
+                    <MapPin size={18} className="mt-1 flex-shrink-0 text-primary mr-2" />
+                    <span className="text-gray-800/80 text-xs leading-relaxed text-left">
+                      Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara
+                    </span>
+                  </li>
+                  <li className="flex items-center justify-start">
+                    <Phone size={18} className="flex-shrink-0 text-primary mr-2" />
+                    <span className="text-gray-800/80 text-sm">+90 539 889 33 75</span>
+                  </li>
+                  <li className="flex items-center justify-start">
+                    <Mail size={18} className="flex-shrink-0 text-primary mr-2" />
+                    <span className="text-gray-800/80 text-sm">info@yolarkadaslari.org</span>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Working Hours */}
-            <div>
-              <h4 className="mb-3 text-base font-semibold font-lora italic" style={{ color: "#000000" }}>
-                Çalışma Saatleri
-              </h4>
-              <div className="space-y-1 text-xs text-gray-800/80">
-                <div className="flex justify-center">
-                  <span className="mr-2">Pazartesi - Cumartesi:</span>
-                  <span>09:00 - 20:00</span>
-                </div>
-                <div className="flex justify-center">
-                  <span className="mr-2">Pazar:</span>
-                  <span>Kapalı</span>
+              {/* Working Hours */}
+              <div>
+                <h4 className="mb-4 text-lg font-bold font-lora italic" style={{ color: "#000000" }}>
+                  Çalışma Saatleri
+                </h4>
+                <div className="space-y-1 text-xs text-gray-800/80">
+                  <div className="flex justify-start">
+                    <span className="mr-2">Pazartesi - Cumartesi:</span>
+                    <span>09:00 - 20:00</span>
+                  </div>
+                  <div className="flex justify-start">
+                    <span className="mr-2">Pazar:</span>
+                    <span>Kapalı</span>
+                  </div>
                 </div>
               </div>
             </div>
