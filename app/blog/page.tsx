@@ -322,7 +322,7 @@ function FeaturedPostCard({ post }: { post: any }) {
             </div>
 
             <h3 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary line-clamp-2 leading-tight">
-              <Link href={/blog/${post.slug}} className="hover:text-primary/80 transition-colors">
+              <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
                 {post.title}
               </Link>
             </h3>
@@ -337,7 +337,7 @@ function FeaturedPostCard({ post }: { post: any }) {
             </div>
 
             <Link
-              href={/blog/${post.slug}}
+              href={`/blog/${post.slug}`}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 group/link font-medium"
             >
               <span>Devamını Oku</span>
@@ -378,7 +378,7 @@ function BlogPostCard({ post }: { post: any }) {
         </div>
 
         <CardTitle className="text-xl font-lora italic text-primary line-clamp-2 leading-tight">
-          <Link href={/blog/${post.slug}} className="hover:text-primary/80 transition-colors">
+          <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
             {post.title}
           </Link>
         </CardTitle>
@@ -395,7 +395,7 @@ function BlogPostCard({ post }: { post: any }) {
         </div>
 
         <Link
-          href={/blog/${post.slug}}
+          href={`/blog/${post.slug}`}
           className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-all duration-300 group/link text-sm font-medium"
         >
           <span>Oku</span>
