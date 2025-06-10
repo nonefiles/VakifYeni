@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Heart, Users, ArrowRight, CheckCircle } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function GonulluBagisPage() {
   return (
@@ -185,24 +184,9 @@ export default function GonulluBagisPage() {
         <h2 className="text-3xl font-bold mb-6 text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
           Destekçilerimiz
         </h2>
-        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica">
+        <p className="text-lg max-w-3xl mx-auto font-aristotelica">
           Yol Arkadaşları Psikoloji Vakfı'na destek olan tüm kurumsal ve bireysel destekçilerimize teşekkür ederiz.
         </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto opacity-70">
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-        </div>
       </div>
     </div>
   )
