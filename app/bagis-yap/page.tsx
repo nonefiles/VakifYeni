@@ -28,7 +28,7 @@ export default function DonatePage() {
           <h2 className="mb-10 text-3xl font-bold gradient-heading" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
             Bağışınızın Etkisi
           </h2>
-          <p className="text-lg text-center text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
+          <p className="text-lg text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
             Bağışlarınız, ihtiyaç sahibi bireylere psikolojik destek sağlamak için kullanılmaktadır.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function DonatePage() {
             <h2 className="mb-6 text-3xl font-bold gradient-heading" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
               Şeffaflık İlkemiz
             </h2>
-            <p className="mb-8 text-lg text-center text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
+            <p className="mb-8 text-lg text-foreground/80" style={{ fontFamily: 'Arial, sans-serif' }}>
               Yol Arkadaşları Psikoloji Vakfı olarak, bağışçılarımıza karşı şeffaf olmayı ve hesap verebilirliği temel
               değerlerimiz arasında görüyoruz.
             </p>
@@ -159,7 +159,7 @@ export default function DonatePage() {
                   "Her yıl faaliyet raporumuz ve mali tablolarımız kamuoyuyla paylaşılır.",
                   "Bağışçılarımız, desteklerinin etkisini görebilmek için vakıf çalışmalarımızı yakından takip edebilirler."
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start justify-center">
+                  <li key={idx} className="flex items-start">
                     <span className="mr-2 mt-1 text-primary">•</span>
                     <span>{item}</span>
                   </li>
