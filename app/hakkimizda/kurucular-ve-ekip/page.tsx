@@ -101,39 +101,25 @@ export default function KurucularVeEkipPage() {
                         )}
                       </div>
 
-                      <div className="space-y-6 text-slate-700 leading-relaxed">
-                        <p className="first-letter:text-5xl first-letter:font-light first-letter:text-primary first-letter:float-left first-letter:mr-2 first-letter:mt-1">
-                          1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı.
-                          Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı.
-                          Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji" yüksek lisansı yaptı.
+                      <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
+                        <p className="first-letter:text-5xl first-letter:font-light first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 text-justify">
+                          1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı. Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji" yüksek lisansı yaptı.
                         </p>
                         
-                        <div className="grid md:grid-cols-2 gap-6">
-                          <div>
-                            <p>
-                              Uzmanlık alanında derinleşirken hem bireysel hem de toplumsal gelişime katkı sunmayı öncelik haline getirdi.
-                              Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı.
-                            </p>
-                          </div>
-                          <div>
-                            <p>
-                              Bilişsel Davranışçı Terapi ve Şema Terapi eğitimlerini BDTD çatısı altında tamamladı.
-                              Eğitim ve psikoloji alanındaki birikimini farklı disiplinlerle de zenginleştirdi.
-                            </p>
-                          </div>
-                        </div>
+                        <p className="text-justify">
+                          Uzmanlık alanında derinleşirken hem bireysel hem de toplumsal gelişime katkı sunmayı öncelik haline getirdi. Hasan Kalyoncu Üniversitesi'nden Aile Danışmanlığı eğitimi aldı. Bilişsel Davranışçı Terapi ve Şema Terapi eğitimlerini BDTD çatısı altında tamamladı. Eğitim ve psikoloji alanındaki birikimini sadece akademik zeminle sınırlamayıp, farklı disiplinlerle de zenginleştirdi.
+                        </p>
 
-                        <div className="bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-lg border-l-4 border-primary/30">
-                          <p className="font-medium text-slate-800 mb-2">Uzmanlık Alanları</p>
-                          <p className="text-sm text-slate-600">
-                            Gazetecilikten yazarlığa, öğretmenlikten akademisyenliğe uzanan çok yönlü bir kariyer inşa etti.
-                            Devlet okollarından özel kurumlara, üniversitelerden adalet akademilerine kadar birçok yapıda görev aldı.
-                          </p>
-                        </div>
+                        <p className="text-justify">
+                          Gazetecilikten yazarlığa, öğretmenlikten akademisyenliğe uzanan çok yönlü bir kariyer inşa etti. Devlet okullarından özel kurumlara, üniversitelerden adalet akademilerine kadar birçok yapıda görev aldı. Eğitmen kimliğiyle, iletişimden hızlı okuma tekniklerine, algı yönetiminden adalet psikolojisine kadar geniş bir alanda binlerce kişiye dokundu.
+                        </p>
 
-                        <p>
-                          Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı'nın kuruluşuna ilham verdi.
-                          Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
+                        <p className="text-justify">
+                          Bu katkılarını yalnızca sınıf ortamlarıyla sınırlı tutmadı; çeşitli kurum ve kuruluşlarda verdiği eğitimlerle kamuya ve özel sektöre de yaydı. Üyelikleri arasında Amerikan Psikologlar Derneği (APA) ve Bilişsel Davranışçı Psikoterapiler Derneği (BDTD) yer almakta. Aynı zamanda Gönüllü Psikologlar ve Eğitmenler Derneği Yönetim Kurulu Üyesi ve Ankara Temsilcisi olarak da aktif görev almaktadır.
+                        </p>
+
+                        <p className="text-justify">
+                          Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı'nın kuruluşuna ilham verdi. Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
                         </p>
                       </div>
 
@@ -223,10 +209,8 @@ export default function KurucularVeEkipPage() {
               </svg>
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-light text-slate-800 mb-6">
-              Birlikte Büyüyen Bir 
-              <span className="text-primary font-medium"> Aile</span>
-            </h3>
+            <h3 className="text-4xl md:text-5xl font-light text-primary mb-4">Birlikte Büyüyen Bir Aile</h3>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
             
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-8">
               Yol Arkadaşları Psikoloji Vakfı ekibi, farklı uzmanlık alanlarından gelen profesyonellerin birlikteliğiyle
