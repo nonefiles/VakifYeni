@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
-    <div className="bg-background overflow-hidden">
+      <div className="bg-background overflow-hidden"></div>
       {/* Hero Section - Dynamic */}
       <section className="min-h-screen flex items-center relative hero-section">
         {/* Floating background elements */}
