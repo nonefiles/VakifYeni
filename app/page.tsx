@@ -1,4 +1,4 @@
-import type React from "react";Add commentMore actions
+import type React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -178,7 +178,6 @@ export default function Home() {
                 title: "Ücretsiz Psikoterapi",
                 description: "Yetişkin, çift/aile, çocuk/ergen psikoterapisi hizmetleri sunuyoruz.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: true,
                 delay: "stagger-1",
               },
               {
@@ -186,7 +185,6 @@ export default function Home() {
                 title: "Grup Terapileri",
                 description: "Benzer deneyimlerden geçen kişilerle bir araya gelerek iyileşme fırsatı.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: false,
                 delay: "stagger-2",
               },
               {
@@ -194,7 +192,6 @@ export default function Home() {
                 title: "Psikoloji Sohbetleri",
                 description: "Ruh sağlığı alanında toplumsal farkındalık yaratmak için ücretsiz sohbetler.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: false,
                 delay: "stagger-3",
               },
               {
@@ -202,7 +199,6 @@ export default function Home() {
                 title: "Psikolojik Atölyeler",
                 description: "Deneyimleyerek öğrenme fırsatı sunan interaktif atölye çalışmaları.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: false,
                 delay: "stagger-4",
               },
               {
@@ -210,7 +206,6 @@ export default function Home() {
                 title: "Kurumsal Eğitimler",
                 description: "İş yerlerinde psikolojik iyi oluşu destekleyen eğitim programları.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: false,
                 delay: "stagger-5",
               },
               {
@@ -218,12 +213,31 @@ export default function Home() {
                 title: "Enstitü Hedefimiz",
                 description: "Psikoloji alanında eğitim, uygulama ve araştırmayı bir araya getiren bir enstitü.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
-                featured: true,
                 delay: "stagger-6",
               },
             ].map((service, index) => (
               <div key={index} className={`animate-slide-in-up ${service.delay}`}>
-                <DynamicServiceCard {...service} />
+                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-105">
+                  <CardHeader className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-primary/10 text-primary">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl font-lora italic">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <CardDescription className="text-base leading-relaxed font-aristotelica">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="pt-6">
+                    <Button asChild className="w-full group" variant="outline">
+                      <Link href={service.link}>
+                        Detayları Gör
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
               </div>
             ))}
           </div>
@@ -359,52 +373,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
-}
-
-// Dynamic Service Card Component
-function DynamicServiceCard({
-  icon,
-  title,
-  description,
-  link,
-  featured = false,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-  featured?: boolean;
-}) {
-  return (
-    <Card
-      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
-    >
-      <CardHeader className="relative z-10">
-        <div
-          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
-        >
-          <div className="text-primary">{icon}</div>
-        </div>
-
-        <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
-      </CardHeader>
-
-      <CardContent className="relative z-10">
-        <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
-          {description}
-        </CardDescription>
-      </CardContent>
-
-      <CardFooter className="relative z-10 justify-center">
-        <Link
-          href={link}
-          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
-        >
-          <span>Daha Fazla Bilgi</span>
-          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-        </Link>
-      </CardFooter>
-    </Card>
   );
 }
