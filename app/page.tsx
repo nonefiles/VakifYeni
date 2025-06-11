@@ -10,8 +10,7 @@ export default function Home() {
   return (
     <div className="bg-background overflow-hidden">
       {/* Hero Section - Dynamic */}
-      <section className="min-h-screen flex items-center relative hero-section">
-        {/* Floating background elements */}
+      <section className="min-h-screen flex items-center justify-center relative hero-section">
         <div className="inset-0 overflow-hidden">
           <div className="top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
           <div className="top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
@@ -20,25 +19,21 @@ export default function Home() {
 
         <div className="container relative z-10">
           <div className="mx-auto max-w-5xl text-center">
-            {/* Badge */}
             <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-secondary border border-primary/20 mb-8 animate-fade-in glow-on-hover">
               <Star className="w-4 h-4 mr-2 text-primary" />
               Herkes için psikolojik destek
             </div>
 
-            {/* Main heading */}
             <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in text-center">
               <span className="block text-foreground font-lora italic">Ruh sağlığı bir ayrıcalık </span>
               <span className="block gradient-text font-lora italic">değil haktır.</span>
             </h1>
 
-            {/* Description */}
             <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up text-center">
               Bu vakıf, bir ihtiyaçtan doğdu. Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
               İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0 justify-center animate-scale-in">
               <Button asChild size="lg" className="shadow-glow">
                 <Link href="/gonullu-ol">
@@ -53,7 +48,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
@@ -65,7 +59,6 @@ export default function Home() {
       <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left content */}
             <div className="space-y-8 animate-slide-in-left text-center lg:text-left">
               <div className="space-y-4 text-center">
                 <h2 className="text-responsive-lg font-medium font-lora italic">Biz Kimiz?</h2>
@@ -88,7 +81,6 @@ export default function Home() {
                   </Link>
                 </Button>
 
-                {/* Social Media Icons */}
                 <div className="flex items-center gap-4">
                   <Link
                     href="https://instagram.com/yolarkadaslarivakfi"
@@ -126,7 +118,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right content */}
             <div className="relative animate-slide-in-right">
               <div className="interactive-card p-12 rounded-4xl text-center">
                 <div className="space-y-6">
@@ -151,7 +142,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Floating elements */}
               <div className="-top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
               <div className="-bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
             </div>
@@ -284,14 +274,13 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in" style={{ backgroundColor: '#EBF5FC' }}>
-              {/* Gradient background */}
               <div className="inset-0 bg-gradient-primary opacity-90"></div>
 
               <div className="relative z-10 p-16 text-center text-white">
                 <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic">Birlikte Daha Güçlüyüz</h2>
 
                 <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12 font-aristotelica">
-                  Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Sizde daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
+                  Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Siz de daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
                   Bu vakıf bir kişinin değil, birlikte iyileşmenin hayaliyle yola çıkanların vakfı.
                   Her destek, daha fazla insana ulaşmamızı sağlıyor.
                 </p>
@@ -352,45 +341,22 @@ export default function Home() {
   );
 }
 
-// Dynamic Service Card Component
-function DynamicServiceCard({
-  icon,
-  title,
-  description,
-  link,
-  featured = false,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-  featured?: boolean;
-}) {
+function DynamicServiceCard({ icon, title, description, link, featured = false }) {
   return (
-    <Card
-      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
-    >
+    <Card className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow">
       <CardHeader className="relative z-10">
-        <div
-          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
-        >
+        <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10">
           <div className="text-primary">{icon}</div>
         </div>
-
         <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
       </CardHeader>
-
       <CardContent className="relative z-10">
         <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
           {description}
         </CardDescription>
       </CardContent>
-
       <CardFooter className="relative z-10 justify-center">
-        <Link
-          href={link}
-          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
-        >
+        <Link href={link} className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent">
           <span>Daha Fazla Bilgi</span>
           <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
