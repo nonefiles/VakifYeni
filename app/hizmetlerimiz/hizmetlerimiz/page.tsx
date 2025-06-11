@@ -12,7 +12,7 @@ export default function ServicesPage() {
           <div className="text-center">
             <h1 className="mb-6 text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-foreground/80">
+              <p className="mt-8 flex text-center flex-wrap gap-3 text-lg text-foreground/80">
                 Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
                 hizmetler sunuyoruz.
               </p>
@@ -40,16 +40,16 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Psikolojik destek bir ayrıcalık değil, bir hak. Biz de Yol Arkadaşları Psikoloji Vakfı olarak bu
                     hakka erişimde herkesin eşit koşullara sahip olmasını önemsiyoruz.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Maddi koşullar nedeniyle özel terapiye ulaşamayan bireyler için ücretsiz psikoterapi hizmeti
                     sunuyoruz. Bu hizmetten faydalanmak isteyen herkes, başvuru formumuzu doldurarak değerlendirme
                     sürecine katılabilir.
                   </p>
-                  <p>Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
                   <ul className="text-left inline-block">
                     <li>
                       <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
@@ -64,11 +64,11 @@ export default function ServicesPage() {
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
                   </ul>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
                     gizlilik ilkesiyle gerçekleştirilir.
                   </p>
-                  <p>Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
                 </div>
               </CardContent>
               <CardFooter className="justify-center">
@@ -87,27 +87,27 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Yalnız hissettiğinizde, duygularınızı paylaşmak için bir alan aradığınızda, benzer yaşantılardan
                     geçen kişilerle bir araya gelmenin iyileştirici gücü bambaşkadır.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Yol Arkadaşları Psikoloji Vakfı olarak, farklı yaşantılara ve ihtiyaçlara yönelik tematik grup
                     terapileri sunuyoruz. Bu çalışmalarda, bir terapist eşliğinde güvenli bir alanda buluşur, kendinizi
                     ifade etme, başkalarını duyma ve birlikte iyileşme fırsatı bulursunuz.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Grup terapilerimiz, özellikle sosyal destek ihtiyacı duyan, zorlayıcı duygularla baş etmekte
                     zorlanan ya da kendini daha yakından tanımak isteyen bireyler için uygundur. Katılımcılar, benzer
                     deneyimlerden gelen diğer bireylerle bir araya gelerek yalnız olmadıklarını fark eder; karşılıklı
                     paylaşım sayesinde hem kendi yollarını hem de başkalarının yolculuklarını anlamlandırma imkânı
                     bulur.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Tüm gruplar, alanında uzman terapistler eşliğinde yürütülür ve gizlilik ilkesi temel alınarak
                     oluşturulmuş güvenli bir ortamda gerçekleştirilir.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Her adımda yanınızda olmak için buradayız. Grup terapilerimizle ilgili güncel içerikler, başvuru
                     süreci ve tematik programlarımız için bizi takip etmeye devam edin.
                   </p>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-center">
+                <p className="mt-8 flex text-center flex-wrap gap-3 text-foreground/80">
                   Her hafta, Yol Arkadaşları Danışmanlık Merkezi'nin uzman desteğiyle gerçekleştirdiğimiz psikoloji
                   sohbetlerinde, birlikte düşünüyor, birlikte öğreniyoruz. Bu sohbetler; psikolojiye ilgi duyan, zihnini
                   açmak ve iç dünyasını tanımak isteyen herkes için...
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                 <CardDescription className="text-base text-center">Deneyimleyerek öğreniyoruz...</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-center">
+                <p className="mt-8 flex text-center flex-wrap gap-3 text-foreground/80">
                   Bilgiye yalnızca ulaşmanın değil, onu birlikte deneyimlemenin de dönüştürücü gücüne inanıyoruz. Atölye
                   çalışmalarımız, katılımcıların hem kendilerini tanımalarına hem de psikoloji bilgilerini pratikle
                   derinleştirmelerine alan açıyor.
@@ -192,7 +192,7 @@ export default function ServicesPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-center">
+                <p className="mt-8 flex text-center flex-wrap gap-3 text-foreground/80">
                   İş yerlerinde psikolojik iyi oluşun sürdürülebilir başarıyla doğrudan ilişkili olduğuna inanıyoruz.
                   Kurumsal eğitim ve seminer programlarımız, çalışanların ruh sağlığını desteklemeyi, iletişim
                   becerilerini geliştirmeyi ve kurumsal iklimi güçlendirmeyi hedefliyor.
@@ -231,18 +231,18 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
                     araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
                     nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
                     daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
                   </p>
-                  <p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">
                     Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
                     profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
                     mümkün kılmayı amaçlıyor.
                   </p>
-                  <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
+                  <p className="mt-8 flex text-center flex-wrap gap-3">Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
                 </div>
               </CardContent>
               <CardFooter className="justify-center">
