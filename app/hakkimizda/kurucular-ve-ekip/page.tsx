@@ -185,44 +185,6 @@ export default function KurucularVeEkipPage() {
           </div>
         </div>
       </section>
-
-      {/* Team Philosophy Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-        <div className="container relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full mb-8">
-              <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-              </svg>
-            </div>
-            
-            <h3 className="text-4xl md:text-5xl font-light text-primary mb-4">Birlikte Büyüyen Bir Aile</h3>
-            <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-            
-            <p className="text-lg text-slate-600 leading-relaxed font-light mb-8">
-              Yol Arkadaşları Psikoloji Vakfı ekibi, farklı uzmanlık alanlarından gelen profesyonellerin birlikteliğiyle
-              güçlü bir yapı oluşturmaktadır. Her ekip üyemiz, ruh sağlığı hizmetlerine erişimi demokratikleştirme
-              vizyonumuz doğrultusunda gönüllü olarak hizmet vermektedir.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                <div className="text-slate-600">Yıllık Deneyim</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">3</div>
-                <div className="text-slate-600">Uzman Psikolog</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                <div className="text-slate-600">Gönüllü Hizmet</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
