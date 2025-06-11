@@ -110,13 +110,6 @@ export default function KurucularVeEkipPage() {
                           Yıllar içinde biriken bu deneyim ve sorumluluk duygusu, Yol Arkadaşları Psikoloji Vakfı'nın kuruluşuna ilham verdi. Bu vakıf aracılığıyla bireylerin psikolojik destek, eğitim ve toplumsal gelişim alanlarında erişilebilir hizmetlere ulaşabilmesini hedefliyor.
                         </p>
                       </div>
-
-                      {/* Membership badges */}
-                      <div className="mt-8 flex flex-wrap gap-3">
-                        <span className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full font-medium">APA Üyesi</span>
-                        <span className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full font-medium">BDTD Üyesi</span>
-                        <span className="px-4 py-2 bg-primary/10 text-primary text-sm rounded-full font-medium">GPED Ankara Temsilcisi</span>
-                      </div>
                     </div>
                   </div>
                 </CardContent>
