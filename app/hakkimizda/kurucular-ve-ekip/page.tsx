@@ -153,18 +153,6 @@ export default function KurucularVeEkipPage() {
                       className="object-cover group-hover:scale-110 transition-transform duration-1000"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    
-                    {/* Floating info card */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-lg transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="font-semibold text-slate-800 mb-1">{member.name}</h3>
-                      <p className="text-primary text-sm mb-2">Gönüllü {member.title}</p>
-                      <div className="flex items-center text-xs text-slate-600">
-                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        Aktif Gönüllü
-                      </div>
-                    </div>
                   </div>
 
                   {/* Main Info */}
