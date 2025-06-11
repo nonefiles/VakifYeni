@@ -1,10 +1,10 @@
-import type React from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { HeartHandshake, Users, BookOpen, Calendar, School, Building, ArrowRight, Sparkles, Star } from "lucide-react"
-import { FaqSection } from "@/components/faq-section"
-import { Input } from "@/components/ui/input"
+import type React from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeartHandshake, Users, BookOpen, Calendar, School, Building, ArrowRight, Sparkles, Star, Instagram, Twitter, Facebook, Linkedin } from "lucide-react";
+import { FaqSection } from "@/components/faq-section";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
@@ -12,10 +12,10 @@ export default function Home() {
       {/* Hero Section - Dynamic */}
       <section className="min-h-screen flex items-center relative hero-section">
         {/* Floating background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
-          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-secondary/5 rounded-full float-element"></div>
+        <div className="inset-0 overflow-hidden">
+          <div className="top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
+          <div className="top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
+          <div className="bottom-40 left-1/4 w-40 h-40 bg-secondary/5 rounded-full float-element"></div>
         </div>
 
         <div className="container relative z-10">
@@ -27,15 +27,15 @@ export default function Home() {
             </div>
 
             {/* Main heading */}
-            <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in">
-              <span className="block text-foreground">Ruh Sağlığında</span>
-              <span className="block gradient-text">Yeni Bir Başlangıç</span>
+            <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in text-center">
+              <span className="block text-foreground font-lora italic">Ruh sağlığı bir ayrıcalık </span>
+              <span className="block gradient-text font-lora italic">değil haktır.</span>
             </h1>
 
             {/* Description */}
-            <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up">
-              Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığı hizmetlerine erişimde fırsat eşitliğini savunuyor;
-              ücretsiz terapi, eğitim ve toplumsal projelerle yanınızda yürüyoruz.
+            <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up text-center">
+              Bu vakıf, bir ihtiyaçtan doğdu. Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
+              İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
             </p>
 
             {/* CTA Buttons */}
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -66,62 +66,94 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left content */}
-            <div className="space-y-8 animate-slide-in-left">
-              <div className="space-y-4">
-                <h2 className="text-responsive-lg font-medium">Biz Kimiz?</h2>
-                <div className="w-24 h-1 bg-gradient-primary rounded-full"></div>
+            <div className="space-y-8 animate-slide-in-left text-center lg:text-left">
+              <div className="space-y-4 text-center">
+                <h2 className="text-responsive-lg font-medium font-lora italic">Biz Kimiz?</h2>
+                <div className="w-24 h-1 bg-gradient-primary rounded-full mx-auto lg:mx-0"></div>
               </div>
 
-              <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica">
-                20 yılı aşkın deneyimle; uzman gönüllüler, psikoloji alanındaki güçlü iş birlikleri ve toplum temelli
-                yaklaşımımızla bir vakıftan fazlasıyız: Ruh sağlığı için dayanışma ağıyız.
+              <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
+                Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığının yaşamın temel bir hakkı olduğuna inanıyor ve bu hakka herkesin erişebilmesi için çalışıyoruz. Psikoloji biliminin dönüştürücü gücünü, hem bireylerin hem de toplumun hizmetine sunmayı amaçlayan bir topluluk hareketiyiz.
               </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-foreground/70">Desteklenen Kişi</div>
-                </div>
-                <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-primary/10 glow-on-hover">
-                  <div className="text-3xl font-bold text-secondary mb-2">20+</div>
-                  <div className="text-sm text-foreground/70">Yıl Deneyim</div>
+              <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
+                Bugün vakıf olarak yürüttüğümüz çalışmaların temeli, uzun süredir birlikte çalışan uzmanlarımızın danışmanlık merkezinde edindiği ortak deneyime dayanıyor. Bu zemin, bize hem mesleki bir derinlik hem de sahada karşılaştığımız ihtiyaçlara duyarlı bir yaklaşım kazandırdı.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Button asChild variant="outline" size="lg" className="group">
+                  <Link href="/hakkimizda">
+                    Daha Fazla Bilgi
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+
+                {/* Social Media Icons */}
+                <div className="flex items-center gap-4">
+                  <Link
+                    href="https://instagram.com/yolarkadaslarivakfi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="https://twitter.com/yolarkadaslarivakfi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="https://facebook.com/yolarkadaslarivakfi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="https://linkedin.com/company/yolarkadaslarivakfi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gradient-primary text-white hover:shadow-glow transition-all duration-300 hover:scale-110"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </Link>
                 </div>
               </div>
-
-              <Button asChild variant="outline" size="lg" className="group">
-                <Link href="/hakkimizda">
-                  Daha Fazla Bilgi
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
             </div>
 
             {/* Right content */}
             <div className="relative animate-slide-in-right">
-              <div className="interactive-card p-12 rounded-4xl">
+              <div className="interactive-card p-12 rounded-4xl text-center">
                 <div className="space-y-6">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <HeartHandshake className="w-8 h-8 text-white" />
                   </div>
 
                   <h3 className="text-2xl font-bold text-secondary font-lora italic">Misyonumuz</h3>
 
-                  <p className="text-foreground/80 leading-relaxed">
-                    Herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmak. Maddi imkânları kısıtlı
-                    olan bireyler için ücretsiz psikoterapi fırsatları sunmak.
+                  <p className="text-foreground/80 leading-relaxed font-aristotelica">
+                    Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmayı hedefliyoruz.
                   </p>
 
-                  <p className="text-foreground/80 leading-relaxed">
-                    İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun
-                    kolektif gücüdür.
+                  <p className="text-foreground/80 leading-relaxed font-aristotelica">
+                    Bu yolculukta, maddi imkânları kısıtlı olan bireyler için ücretsiz psikoterapi fırsatları sunuyor, genç uzmanların gelişimine katkı sağlayarak onların mesleki yolculuklarında bir rehber olmayı amaçlıyoruz. Ayrıca, toplumsal ruh sağlığına katkı sağlayacak eğitim ve etkinlikler düzenliyoruz.
+                  </p>
+
+                  <p className="text-foreground/80 leading-relaxed font-aristotelica">
+                    İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun kolektif gücüdür.
+                    Ve biz, bu gücü çoğaltmak ve herkese ulaşmak için burada, her adımda yanınızdayız.
                   </p>
                 </div>
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
+              <div className="-top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
+              <div className="-bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
             </div>
           </div>
         </div>
@@ -131,9 +163,9 @@ export default function Home() {
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-responsive-lg font-medium mb-6">İnsana Hizmet Değer Veren Bir Yolculuk</h2>
+            <h2 className="text-responsive-lg font-medium mb-6 font-lora italic">İnsana Değer Veren Bir Yolculuk</h2>
             <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto mb-8"></div>
-            <p className="text-responsive-md text-foreground/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-responsive-md text-foreground/70 max-w-4xl mx-auto leading-relaxed font-aristotelica">
               Maddi engellerin terapiye ve eğitime ulaşmanın önünde durmaması için bireylerle ve psikoloji
               öğrencileriyle omuz omuza çalışıyoruz.
             </p>
@@ -145,7 +177,7 @@ export default function Home() {
                 icon: <HeartHandshake className="h-8 w-8" />,
                 title: "Ücretsiz Psikoterapi",
                 description: "Yetişkin, çift/aile, çocuk/ergen psikoterapisi hizmetleri sunuyoruz.",
-                link: "/hizmetlerimiz/ucretsiz-psikoterapi",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: true,
                 delay: "stagger-1",
               },
@@ -153,7 +185,7 @@ export default function Home() {
                 icon: <Users className="h-8 w-8" />,
                 title: "Grup Terapileri",
                 description: "Benzer deneyimlerden geçen kişilerle bir araya gelerek iyileşme fırsatı.",
-                link: "/hizmetlerimiz/grup-terapileri",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: false,
                 delay: "stagger-2",
               },
@@ -161,7 +193,7 @@ export default function Home() {
                 icon: <BookOpen className="h-8 w-8" />,
                 title: "Psikoloji Sohbetleri",
                 description: "Ruh sağlığı alanında toplumsal farkındalık yaratmak için ücretsiz sohbetler.",
-                link: "/hizmetlerimiz/psikoloji-sohbetleri",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: false,
                 delay: "stagger-3",
               },
@@ -169,7 +201,7 @@ export default function Home() {
                 icon: <Calendar className="h-8 w-8" />,
                 title: "Psikolojik Atölyeler",
                 description: "Deneyimleyerek öğrenme fırsatı sunan interaktif atölye çalışmaları.",
-                link: "/hizmetlerimiz/psikolojik-atolyeler",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: false,
                 delay: "stagger-4",
               },
@@ -177,7 +209,7 @@ export default function Home() {
                 icon: <Building className="h-8 w-8" />,
                 title: "Kurumsal Eğitimler",
                 description: "İş yerlerinde psikolojik iyi oluşu destekleyen eğitim programları.",
-                link: "/hizmetlerimiz/kurumsal-egitimler",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: false,
                 delay: "stagger-5",
               },
@@ -185,7 +217,7 @@ export default function Home() {
                 icon: <School className="h-8 w-8" />,
                 title: "Enstitü Hedefimiz",
                 description: "Psikoloji alanında eğitim, uygulama ve araştırmayı bir araya getiren bir enstitü.",
-                link: "/hizmetlerimiz/enstitu-projesi",
+                link: "/hizmetlerimiz/hizmetlerimiz",
                 featured: true,
                 delay: "stagger-6",
               },
@@ -203,41 +235,12 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-responsive-lg font-medium mb-6">Birlikte Büyüyen Bir Yapı</h2>
+              <h2 className="text-responsive-lg font-medium mb-6 font-lora italic">Birlikte Büyüyen Bir Yapı</h2>
               <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto"></div>
             </div>
 
-            <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
-              {/* Background pattern */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
-
-              <div className="relative z-10 space-y-8">
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">20+</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Yıl Deneyim</h4>
-                    <p className="text-sm text-foreground/70">Uzman kadromuzla</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">500+</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Desteklenen Kişi</h4>
-                    <p className="text-sm text-foreground/70">Ücretsiz hizmet</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-2xl font-bold text-white">100%</span>
-                    </div>
-                    <h4 className="font-semibold text-secondary mb-2">Gönüllü Kadro</h4>
-                    <p className="text-sm text-foreground/70">Uzman desteği</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
+              <div className="relative z-10 space-y-8 text-center">
+                <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-aristotelica">
                   <p>
                     Yol Arkadaşları Psikoloji Vakfı, bir hayalin meyvesi. Doğduğu yer ise uzun süredir yürütülen
                     danışmanlık merkezinin deneyimi ve insanlarla kurduğu ilişki.
@@ -247,6 +250,10 @@ export default function Home() {
                     Danışmanlık merkezi hem uzmanlık alt yapısını hem de ekip gücünü vakfın hizmetine açtı. Bu iş
                     birliği sayesinde vakıf, henüz yeni kurulmuş olsa da uzmanlığı güçlü, erişimi geniş, yoldaşlığı
                     güven veren bir yapı olarak hizmet verebiliyor.
+                  </p>
+
+                  <p>
+                    Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
                   </p>
                 </div>
 
@@ -275,22 +282,15 @@ export default function Home() {
       <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="max-w-5xl mx-auto">
-            <div className="relative overflow-hidden rounded-4xl animate-scale-in">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-primary opacity-90"></div>
-
-              {/* Pattern overlay */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
-              </div>
+            <div className="relative overflow-hidden rounded-4xl animate-scale-in" style={{ backgroundColor: '#EBF5FC' }}>
 
               <div className="relative z-10 p-16 text-center text-white">
-                <h2 className="text-responsive-lg font-medium mb-8 text-white">Birlikte Daha Güçlüyüz</h2>
+                <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic">Birlikte Daha Güçlüyüz</h2>
 
-                <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12">
-                  Gönüllü uzmanlarımızla büyüyor, bağışçılarımızın desteğiyle yol alıyoruz. Bu dayanışma ağının bir
-                  parçası olmak ister misiniz?
+                <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12 font-aristotelica">
+                  Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Sizde daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
+                  Bu vakıf bir kişinin değil, birlikte iyileşmenin hayaliyle yola çıkanların vakfı.
+                  Her destek, daha fazla insana ulaşmamızı sağlıyor.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -322,9 +322,9 @@ export default function Home() {
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="text-responsive-lg font-medium mb-8">Haberdar Olun</h2>
+            <h2 className="text-responsive-lg font-medium mb-8 font-lora italic">Haberdar Olun</h2>
 
-            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto font-aristotelica">
               Etkinliklerimizden, projelerimizden ve yeni gelişmelerden haberdar olmak için bültenimize abone olun.
             </p>
 
@@ -333,16 +333,20 @@ export default function Home() {
                 <Input
                   type="email"
                   placeholder="E-posta adresiniz"
-                  className="flex-1 border-0 bg-transparent focus:ring-0 focus:outline-none"
+                  className="flex-1 border-0 bg-transparent focus:ring-0 focus:outline-none font-aristotelica"
                 />
                 <Button className="rounded-full px-8">Abone Ol</Button>
               </div>
+            </div>
+
+            <div className="mt-12 text-sm text-foreground/60 font-aristotelica">
+              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
 
 // Dynamic Service Card Component
@@ -353,56 +357,41 @@ function DynamicServiceCard({
   link,
   featured = false,
 }: {
-  icon: React.ReactNode
-  title: string
-  description: string
-  link: string
-  featured?: boolean
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  link: string;
+  featured?: boolean;
 }) {
   return (
     <Card
-      className={`group relative overflow-hidden transition-all duration-500 hover:scale-105 ${
-        featured
-          ? "bg-gradient-primary text-white border-none shadow-glow-lg"
-          : "bg-white/80 border border-primary/10 hover:shadow-glow"
-      }`}
+      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
     >
-      {/* Background pattern for featured cards */}
-      {featured && (
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-16 translate-x-16"></div>
-        </div>
-      )}
-
       <CardHeader className="relative z-10">
         <div
-          className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 ${
-            featured ? "bg-white/20" : "bg-primary/10"
-          }`}
+          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
         >
-          <div className={featured ? "text-white" : "text-primary"}>{icon}</div>
+          <div className="text-primary">{icon}</div>
         </div>
 
-        <CardTitle className={`text-xl ${featured ? "text-white" : "text-secondary"}`}>{title}</CardTitle>
+        <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
       </CardHeader>
 
       <CardContent className="relative z-10">
-        <CardDescription className={`text-base leading-relaxed ${featured ? "text-white/90" : "text-foreground/80"}`}>
+        <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
           {description}
         </CardDescription>
       </CardContent>
 
-      <CardFooter className="relative z-10">
+      <CardFooter className="relative z-10 justify-center">
         <Link
           href={link}
-          className={`inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 ${
-            featured ? "text-white hover:text-white/80" : "text-primary hover:text-accent"
-          }`}
+          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
         >
           <span>Daha Fazla Bilgi</span>
           <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </CardFooter>
     </Card>
-  )
+  );
 }
