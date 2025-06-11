@@ -15,21 +15,21 @@ export default function VakfinHikayesiPage() {
           />
         </div>
         <div className="prose max-w-none text-center">
-          <p className="text-lg mb-6">
+          <p className="text-lg mb-6 text-center">
             Yol Arkadaşları Psikoloji Vakfı, uzun yıllar boyunca psikoloji alanında çalışan profesyonellerin, ruh
             sağlığı hizmetlerine erişimde yaşanan eşitsizlikleri giderme arzusuyla kurulmuştur.
           </p>
-          <p className="mb-6">
+          <p className="mb-6 text-center">
             Vakfımızın temelleri, 2010 yılında bir grup psikolog ve psikiyatristin bir araya gelerek başlattığı gönüllü
             danışmanlık hizmetleriyle atıldı. Yıllar içinde büyüyen bu dayanışma ağı, 2020 yılında resmi olarak vakıf
             statüsü kazandı.
           </p>
-          <p className="mb-6">
+          <p className="mb-6 text-center">
             Vakfımız, maddi imkânsızlıklar nedeniyle psikolojik desteğe ulaşamayan bireylere ücretsiz hizmet sunmak,
             genç uzmanların gelişimine katkıda bulunmak ve toplumsal ruh sağlığı bilincini artırmak amacıyla
             çalışmalarını sürdürmektedir.
           </p>
-          <p className="mb-6">
+          <p className="mb-6 text-center">
             Danışmanlık merkezimizin yıllara dayanan deneyimi ve birikimi, vakfımızın temelini oluşturmaktadır. Bu
             sayede, henüz yeni kurulmuş olmamıza rağmen, güçlü bir uzmanlık altyapısı ve geniş bir erişim ağıyla hizmet
             verebiliyoruz.
