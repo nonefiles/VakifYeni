@@ -288,14 +288,6 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in" style={{ backgroundColor: '#EBF5FC' }}>
-              {/* Gradient background */}
-              <div className="inset-0 bg-gradient-primary opacity-90"></div>
-
-              {/* Pattern overlay */}
-              <div className="inset-0 opacity-10">
-                <div className="top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
-                <div className="bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
-              </div>
 
               <div className="relative z-10 p-16 text-center text-white">
                 <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic">Birlikte Daha Güçlüyüz</h2>
