@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -25,22 +24,22 @@ export default function ServicesPage() {
       {/* Psychological Support Section */}
       <section className="py-16 white-gradient-bg relative">
         <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">
+          <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">
             Psikolojik Destek Programları
           </h2>
 
           <div className="grid gap-8 md:grid-cols-2">
             <Card className="border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <HeartHandshake className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-primary font-lora italic text-left">
+                <CardTitle className="text-2xl text-primary font-lora italic text-center">
                   Ücretsiz Psikoterapi Hizmeti
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="prose max-w-none text-foreground/80 text-left">
+                <div className="prose max-w-none text-foreground/80 text-center">
                   <p>
                     Psikolojik destek bir ayrıcalık değil, bir hak. Biz de Yol Arkadaşları Psikoloji Vakfı olarak bu
                     hakka erişimde herkesin eşit koşullara sahip olmasını önemsiyoruz.
@@ -51,7 +50,7 @@ export default function ServicesPage() {
                     sürecine katılabilir.
                   </p>
                   <p>Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
-                  <ul>
+                  <ul className="text-left inline-block">
                     <li>
                       <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
@@ -72,7 +71,7 @@ export default function ServicesPage() {
                   <p>Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
                 </div>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild className="bg-primary text-white">
                   <Link href="/basvuru/psikoterapi">Başvuru Yap</Link>
                 </Button>
@@ -81,13 +80,13 @@ export default function ServicesPage() {
 
             <Card className="border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <Users className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-primary font-lora italic text-left">Grup Terapileri</CardTitle>
+                <CardTitle className="text-2xl text-primary font-lora italic text-center">Grup Terapileri</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="prose max-w-none text-foreground/80 text-left">
+                <div className="prose max-w-none text-foreground/80 text-center">
                   <p>
                     Yalnız hissettiğinizde, duygularınızı paylaşmak için bir alan aradığınızda, benzer yaşantılardan
                     geçen kişilerle bir araya gelmenin iyileştirici gücü bambaşkadır.
@@ -114,7 +113,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild className="bg-primary text-white">
                   <Link href="/basvuru/grup-terapileri">Başvuru Yap</Link>
                 </Button>
@@ -127,27 +126,27 @@ export default function ServicesPage() {
       {/* Education Section */}
       <section className="bg-accent py-16 blue-gradient-bg relative">
         <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">Eğitim ve Seminerler</h2>
+          <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">Eğitim ve Seminerler</h2>
 
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="bg-white border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <BookOpen className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Psikoloji Sohbetleri</CardTitle>
-                <CardDescription className="text-base text-left">
+                <CardTitle className="text-xl text-primary font-lora italic text-center">Psikoloji Sohbetleri</CardTitle>
+                <CardDescription className="text-base text-center">
                   Bilgiyle besleniyor, söyleşilerle derinleşiyoruz...
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-left">
+                <p className="text-foreground/80 text-center">
                   Her hafta, Yol Arkadaşları Danışmanlık Merkezi'nin uzman desteğiyle gerçekleştirdiğimiz psikoloji
                   sohbetlerinde, birlikte düşünüyor, birlikte öğreniyoruz. Bu sohbetler; psikolojiye ilgi duyan, zihnini
                   açmak ve iç dünyasını tanımak isteyen herkes için...
                 </p>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="border-primary text-primary">
                   <Link href="/hizmetlerimiz/psikoloji-sohbetleri" className="link-with-arrow group">
                     <span>Detaylı Bilgi</span>
@@ -159,20 +158,20 @@ export default function ServicesPage() {
 
             <Card className="bg-white border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Psikoloji Atölyeleri</CardTitle>
-                <CardDescription className="text-base text-left">Deneyimleyerek öğreniyoruz...</CardDescription>
+                <CardTitle className="text-xl text-primary font-lora italic text-center">Psikoloji Atölyeleri</CardTitle>
+                <CardDescription className="text-base text-center">Deneyimleyerek öğreniyoruz...</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-left">
+                <p className="text-foreground/80 text-center">
                   Bilgiye yalnızca ulaşmanın değil, onu birlikte deneyimlemenin de dönüştürücü gücüne inanıyoruz. Atölye
                   çalışmalarımız, katılımcıların hem kendilerini tanımalarına hem de psikoloji bilgilerini pratikle
                   derinleştirmelerine alan açıyor.
                 </p>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="border-primary text-primary">
                   <Link href="/hizmetlerimiz/psikoloji-atolyeleri" className="link-with-arrow group">
                     <span>Detaylı Bilgi</span>
@@ -184,22 +183,22 @@ export default function ServicesPage() {
 
             <Card className="bg-white border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <Building className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl text-primary font-lora italic text-left">Kurumsal Eğitimler</CardTitle>
-                <CardDescription className="text-base text-left">
+                <CardTitle className="text-xl text-primary font-lora italic text-center">Kurumsal Eğitimler</CardTitle>
+                <CardDescription className="text-base text-center">
                   İyi oluş, sadece bireylerin değil kurumların da gücüdür.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground/80 text-left">
+                <p className="text-foreground/80 text-center">
                   İş yerlerinde psikolojik iyi oluşun sürdürülebilir başarıyla doğrudan ilişkili olduğuna inanıyoruz.
                   Kurumsal eğitim ve seminer programlarımız, çalışanların ruh sağlığını desteklemeyi, iletişim
                   becerilerini geliştirmeyi ve kurumsal iklimi güçlendirmeyi hedefliyor.
                 </p>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="border-primary text-primary">
                   <Link href="/hizmetlerimiz/kurumsal-egitimler" className="link-with-arrow group">
                     <span>Detaylı Bilgi</span>
@@ -215,23 +214,23 @@ export default function ServicesPage() {
       {/* Institute Project */}
       <section className="py-16 white-gradient-bg relative">
         <div className="container">
-          <h2 className="mb-10 text-left text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
+          <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
           
           <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
             <Card className="border border-primary/20">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
                   <School className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-primary font-lora italic text-left">
+                <CardTitle className="text-2xl text-primary font-lora italic text-center">
                   Psikoloji Enstitüsü
                 </CardTitle>
-                <CardDescription className="text-base text-left">
+                <CardDescription className="text-base text-center">
                   Geleceğe Doğru Adım Atıyoruz…
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="prose max-w-none text-foreground/80 text-left">
+                <div className="prose max-w-none text-foreground/80 text-center">
                   <p>
                     Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
                     araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
@@ -246,7 +245,7 @@ export default function ServicesPage() {
                   <p>Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
                 </div>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="border-primary text-primary">
                   <Link href="/gonullu-ol" className="link-with-arrow group">
                     <span>Gönüllü Ol</span>
