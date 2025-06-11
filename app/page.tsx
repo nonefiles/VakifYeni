@@ -34,7 +34,7 @@ export default function Home() {
               İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
             </p>
 
-            <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0 justify-center animate-scale-in">
+            <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0 justify-center animate-scale-in mb-16">
               <Button asChild size="lg" className="shadow-glow">
                 <Link href="/gonullu-ol">
                   <Sparkles className="w-5 h-5 mr-2" />
@@ -45,12 +45,13 @@ export default function Home() {
                 <Link href="/bagis-yap">Bağış Yap</Link>
               </Button>
             </div>
-          </div>
-        </div>
 
-        <div className="bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+            {/* Scroll Göstergesi - Butonların hemen altına hizalandı */}
+            <div className="flex justify-center animate-bounce">
+              <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -292,12 +293,7 @@ export default function Home() {
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-white/80 text-white bg-transparent hover:bg-white hover:text-primary group shadow-2xl font-semibold hover:scale-105 transition-all duration-300 backdrop-blur-sm"
-                  >
+                  <Button asChild size="lg" variant="white" className="group shadow-2xl border-2 border-white/30 bg-white/95 text-primary font-semibold hover:bg-white hover:scale-105 transition-all duration-300 backdrop-blur-sm">
                     <Link href="/bagis-yap">
                       Bağış Yap
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
