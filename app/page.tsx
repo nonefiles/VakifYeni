@@ -160,7 +160,6 @@ export default function Home() {
       </section>
 
       {/* Services Section - Dynamic Grid */}
-     /* Services Section - Dynamic Grid */}More actions
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
