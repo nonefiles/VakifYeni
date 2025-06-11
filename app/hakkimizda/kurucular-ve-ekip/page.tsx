@@ -37,8 +37,8 @@ export default function KurucularVeEkipPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       {/* Hero Section */}
       <div className="container py-16 md:py-24">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-left font-lora italic text-primary">Kurucular ve Ekip</h1>
-        <p className="text-lg text-left max-w-3xl mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-heading">Kurucular ve Ekip</h1>
+        <p className="text-lg text-center max-w-3xl mx-auto mb-12">
           Yol Arkadaşları Psikoloji Vakfı'nın arkasında, ruh sağlığı alanında uzmanlaşmış, vizyoner ve tutkulu bir ekip
           bulunmaktadır.
         </p>
