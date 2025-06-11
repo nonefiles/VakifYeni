@@ -160,6 +160,7 @@ export default function Home() {
       </section>
 
       {/* Services Section - Dynamic Grid */}
+     /* Services Section - Dynamic Grid */}More actions
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in">
@@ -223,27 +224,7 @@ export default function Home() {
               },
             ].map((service, index) => (
               <div key={index} className={`animate-slide-in-up ${service.delay}`}>
-                <Card className={`h-full transition-all duration-300 hover:shadow-lg hover:scale-105 ${service.featured ? 'border-primary shadow-md' : ''}`}>
-                  <CardHeader className="text-center">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${service.featured ? 'bg-gradient-primary text-white' : 'bg-primary/10 text-primary'}`}>
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl font-lora italic">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <CardDescription className="text-base leading-relaxed font-aristotelica">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter className="pt-6">
-                    <Button asChild className="w-full group" variant={service.featured ? "default" : "outline"}>
-                      <Link href={service.link}>
-                        Detayları Gör
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
+                <DynamicServiceCard {...service} />
               </div>
             ))}
           </div>
