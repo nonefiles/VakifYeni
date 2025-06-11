@@ -1,4 +1,4 @@
-import type React from "react";
+import type React from "react";More actions
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
-      <div className="bg-background overflow-hidden"></div>
+    <div className="bg-background overflow-hidden">
       {/* Hero Section - Dynamic */}
       <section className="min-h-screen flex items-center relative hero-section">
         {/* Floating background elements */}
@@ -239,6 +239,11 @@ export default function Home() {
               <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto"></div>
             </div>
 
+            <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
+              {/* Background pattern */}
+              <div className="top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
+              <div className="bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
+
               <div className="relative z-10 space-y-8 text-center">
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-aristotelica">
                   <p>
@@ -283,6 +288,14 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in" style={{ backgroundColor: '#EBF5FC' }}>
+              {/* Gradient background */}
+              <div className="inset-0 bg-gradient-primary opacity-90"></div>
+
+              {/* Pattern overlay */}
+              <div className="inset-0 opacity-10">
+                <div className="top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
+                <div className="bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
+              </div>
 
               <div className="relative z-10 p-16 text-center text-white">
                 <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic">Birlikte Daha Güçlüyüz</h2>
@@ -346,52 +359,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
-}
-
-// Dynamic Service Card Component
-function DynamicServiceCard({
-  icon,
-  title,
-  description,
-  link,
-  featured = false,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-  featured?: boolean;
-}) {
-  return (
-    <Card
-      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
-    >
-      <CardHeader className="relative z-10">
-        <div
-          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
-        >
-          <div className="text-primary">{icon}</div>
-        </div>
-
-        <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
-      </CardHeader>
-
-      <CardContent className="relative z-10">
-        <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
-          {description}
-        </CardDescription>
-      </CardContent>
-
-      <CardFooter className="relative z-10 justify-center">
-        <Link
-          href={link}
-          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
-        >
-          <span>Daha Fazla Bilgi</span>
-          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-        </Link>
-      </CardFooter>
-    </Card>
   );
 }
