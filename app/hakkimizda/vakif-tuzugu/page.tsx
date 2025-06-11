@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { FileText, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
+import Link from "next/link"
 export default function VakifTuzuguPage() {
   return (
     <div className="container py-16 md:py-24">
@@ -23,9 +23,11 @@ export default function VakifTuzuguPage() {
               Vakfımızın resmi senedini incelemek veya indirmek için aşağıdaki bağlantıyı kullanabilirsiniz.
             </p>
             <div className="flex justify-center">
-              <Button className="flex items-center gap-2" onClick={() => window.open('/images/vakif-tuzugu.pdf', '_blank')}>
-                <Download className="h-5 w-5" />
-                <span>Vakıf Tüzüğünü İndir (PDF)</span>
+              <Button asChild className="flex items-center gap-2">
+                <Link href="/images/vakif-tuzugu.pdf" target="_blank">
+                  <Download className="h-5 w-5" />
+                  <span>Vakıf Tüzüğünü İndir (PDF)</span>
+                </Link>
               </Button>
             </div>
           </CardContent>
@@ -37,11 +39,11 @@ export default function VakifTuzuguPage() {
           <p className="text-center font-semibold">
             Ruh sağlığı alanında bilimsel ve sosyal gelişim için bir aradayız.
           </p>
-          <p className="text-center">
+          <p>
             Yılmaz Yol Arkadaşları Vakfı; toplumun ruh sağlığına katkı sunmak, bu alandaki bilimsel ve sosyal gelişimi desteklemek amacıyla kurulmuştur. Vakfımız, bireylerin ve toplumun psikolojik iyi oluşunu önceleyen çalışmaları destekler, ihtiyaç sahiplerine ücretsiz psikolojik destek sunar ve ruh sağlığı alanında eğitim gören öğrencilere mesleki gelişim desteği sağlar.
           </p>
-          <p className="font-semibold text-center">Ruh sağlığı alanında çağdaş, bütüncül ve toplum temelli yaklaşımlarla:</p>
-          <ul className="list-disc space-y-2 text-center" style={{listStylePosition: 'inside'}}>
+          <p className="font-semibold">Ruh sağlığı alanında çağdaş, bütüncül ve toplum temelli yaklaşımlarla:</p>
+          <ul className="list-disc pl-6 space-y-2">
             <li>Ücretsiz bireysel ve grup terapileri sunuyoruz,</li>
             <li>Psikoloji sohbetleri, atölyeler ve eğitim programları düzenliyoruz,</li>
             <li>Kurumlara özel psikolojik danışmanlık ve eğitimler sağlıyoruz,</li>
@@ -49,7 +51,7 @@ export default function VakifTuzuguPage() {
             <li>Doğal afetlerde insani yardım çalışmaları yürütüyoruz,</li>
             <li>Ruh sağlığı alanında araştırmalar ve projeler geliştiriyoruz.</li>
           </ul>
-          <p className="text-center">
+          <p>
             Vakıf, bu çalışmaları sürdürebilmek için bireyler, kurumlar ve topluluklarla iş birliği yapar; aynı zamanda bilimsel yayınlar, seminerler ve sosyal sorumluluk projeleriyle kamu yararına faaliyetlerde bulunur.
           </p>
         </div>
