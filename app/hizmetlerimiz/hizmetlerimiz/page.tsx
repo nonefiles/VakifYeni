@@ -12,7 +12,7 @@ export default function ServicesPage() {
           <div className="text-center">
             <h1 className="mb-6 text-4xl font-bold text-primary md:text-5xl font-lora italic">Hizmetlerimiz</h1>
             <div className="max-w-3xl mx-auto">
-              <p className="mt-8 flex text-center flex-wrap gap-3 text-lg text-foreground/80">
+              <p className="mt-8 text-center text-lg text-foreground/80">
                 Yol Arkadaşları Psikoloji Vakfı olarak, psikolojik destek, eğitim ve toplumsal gelişim alanlarında çeşitli
                 hizmetler sunuyoruz.
               </p>
@@ -40,16 +40,16 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Psikolojik destek bir ayrıcalık değil, bir hak. Biz de Yol Arkadaşları Psikoloji Vakfı olarak bu
                     hakka erişimde herkesin eşit koşullara sahip olmasını önemsiyoruz.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Maddi koşullar nedeniyle özel terapiye ulaşamayan bireyler için ücretsiz psikoterapi hizmeti
                     sunuyoruz. Bu hizmetten faydalanmak isteyen herkes, başvuru formumuzu doldurarak değerlendirme
                     sürecine katılabilir.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
+                  <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
                   <ul className="text-left inline-block">
                     <li>
                       <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
@@ -64,11 +64,11 @@ export default function ServicesPage() {
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
                   </ul>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
                     gizlilik ilkesiyle gerçekleştirilir.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
+                  <p className="mt-8 text-center">Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
                 </div>
               </CardContent>
               <CardFooter className="justify-center">
@@ -87,27 +87,27 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Yalnız hissettiğinizde, duygularınızı paylaşmak için bir alan aradığınızda, benzer yaşantılardan
                     geçen kişilerle bir araya gelmenin iyileştirici gücü bambaşkadır.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Yol Arkadaşları Psikoloji Vakfı olarak, farklı yaşantılara ve ihtiyaçlara yönelik tematik grup
                     terapileri sunuyoruz. Bu çalışmalarda, bir terapist eşliğinde güvenli bir alanda buluşur, kendinizi
                     ifade etme, başkalarını duyma ve birlikte iyileşme fırsatı bulursunuz.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Grup terapilerimiz, özellikle sosyal destek ihtiyacı duyan, zorlayıcı duygularla baş etmekte
                     zorlanan ya da kendini daha yakından tanımak isteyen bireyler için uygundur. Katılımcılar, benzer
                     deneyimlerden gelen diğer bireylerle bir araya gelerek yalnız olmadıklarını fark eder; karşılıklı
                     paylaşım sayesinde hem kendi yollarını hem de başkalarının yolculuklarını anlamlandırma imkânı
                     bulur.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Tüm gruplar, alanında uzman terapistler eşliğinde yürütülür ve gizlilik ilkesi temel alınarak
                     oluşturulmuş güvenli bir ortamda gerçekleştirilir.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Her adımda yanınızda olmak için buradayız. Grup terapilerimizle ilgili güncel içerikler, başvuru
                     süreci ve tematik programlarımız için bizi takip etmeye devam edin.
                   </p>
