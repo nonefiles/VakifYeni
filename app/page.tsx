@@ -178,6 +178,7 @@ export default function Home() {
                 title: "Ücretsiz Psikoterapi",
                 description: "Yetişkin, çift/aile, çocuk/ergen psikoterapisi hizmetleri sunuyoruz.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: true,
                 delay: "stagger-1",
               },
               {
@@ -185,6 +186,7 @@ export default function Home() {
                 title: "Grup Terapileri",
                 description: "Benzer deneyimlerden geçen kişilerle bir araya gelerek iyileşme fırsatı.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: false,
                 delay: "stagger-2",
               },
               {
@@ -192,6 +194,7 @@ export default function Home() {
                 title: "Psikoloji Sohbetleri",
                 description: "Ruh sağlığı alanında toplumsal farkındalık yaratmak için ücretsiz sohbetler.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: false,
                 delay: "stagger-3",
               },
               {
@@ -199,6 +202,7 @@ export default function Home() {
                 title: "Psikolojik Atölyeler",
                 description: "Deneyimleyerek öğrenme fırsatı sunan interaktif atölye çalışmaları.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: false,
                 delay: "stagger-4",
               },
               {
@@ -206,6 +210,7 @@ export default function Home() {
                 title: "Kurumsal Eğitimler",
                 description: "İş yerlerinde psikolojik iyi oluşu destekleyen eğitim programları.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: false,
                 delay: "stagger-5",
               },
               {
@@ -213,31 +218,12 @@ export default function Home() {
                 title: "Enstitü Hedefimiz",
                 description: "Psikoloji alanında eğitim, uygulama ve araştırmayı bir araya getiren bir enstitü.",
                 link: "/hizmetlerimiz/hizmetlerimiz",
+                featured: true,
                 delay: "stagger-6",
               },
             ].map((service, index) => (
               <div key={index} className={`animate-slide-in-up ${service.delay}`}>
-                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-105">
-                  <CardHeader className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-primary/10 text-primary">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl font-lora italic">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <CardDescription className="text-base leading-relaxed font-aristotelica">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter className="pt-6">
-                    <Button asChild className="w-full group" variant="outline">
-                      <Link href={service.link}>
-                        Detayları Gör
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
+                <DynamicServiceCard {...service} />
               </div>
             ))}
           </div>
@@ -254,10 +240,6 @@ export default function Home() {
             </div>
 
             <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
-              {/* Background pattern */}
-              <div className="top-0 right-0 w-64 h-64 bg-gradient-primary opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
-              <div className="bottom-0 left-0 w-48 h-48 bg-gradient-secondary opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
-
               <div className="relative z-10 space-y-8 text-center">
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-aristotelica">
                   <p>
@@ -305,12 +287,6 @@ export default function Home() {
               {/* Gradient background */}
               <div className="inset-0 bg-gradient-primary opacity-90"></div>
 
-              {/* Pattern overlay */}
-              <div className="inset-0 opacity-10">
-                <div className="top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-32 -translate-y-32"></div>
-                <div className="bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-48 translate-y-48"></div>
-              </div>
-
               <div className="relative z-10 p-16 text-center text-white">
                 <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic">Birlikte Daha Güçlüyüz</h2>
 
@@ -321,7 +297,7 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button asChild size="lg" variant="white" className="group">
+                  <Button asChild size="lg" variant="white" className="group shadow-2xl border-2 border-white/30 bg-white/95 text-primary font-semibold hover:bg-white hover:scale-105 transition-all duration-300 backdrop-blur-sm">
                     <Link href="/gonullu-ol">
                       Gönüllü Ol
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -331,7 +307,7 @@ export default function Home() {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-primary group"
+                    className="border-2 border-white/80 text-white bg-transparent hover:bg-white hover:text-primary group shadow-2xl font-semibold hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                   >
                     <Link href="/bagis-yap">
                       Bağış Yap
@@ -373,5 +349,52 @@ export default function Home() {
         </div>
       </section>
     </div>
+  );
+}
+
+// Dynamic Service Card Component
+function DynamicServiceCard({
+  icon,
+  title,
+  description,
+  link,
+  featured = false,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  link: string;
+  featured?: boolean;
+}) {
+  return (
+    <Card
+      className="group relative overflow-hidden transition-all duration-500 hover:scale-105 text-center bg-white border border-primary/10 hover:shadow-glow"
+    >
+      <CardHeader className="relative z-10">
+        <div
+          className="inline-flex h-16 w-16 items-center justify-center rounded-2xl mb-4 transition-transform duration-300 group-hover:scale-110 mx-auto bg-primary/10"
+        >
+          <div className="text-primary">{icon}</div>
+        </div>
+
+        <CardTitle className="text-xl font-lora italic text-secondary">{title}</CardTitle>
+      </CardHeader>
+
+      <CardContent className="relative z-10">
+        <CardDescription className="text-base leading-relaxed font-aristotelica text-foreground/80">
+          {description}
+        </CardDescription>
+      </CardContent>
+
+      <CardFooter className="relative z-10 justify-center">
+        <Link
+          href={link}
+          className="inline-flex items-center gap-2 font-medium transition-all duration-300 group-hover:gap-4 font-aristotelica text-primary hover:text-accent"
+        >
+          <span>Daha Fazla Bilgi</span>
+          <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
+      </CardFooter>
+    </Card>
   );
 }
