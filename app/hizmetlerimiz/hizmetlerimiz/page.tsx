@@ -231,18 +231,18 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent>
                 <div className="prose max-w-none text-foreground/80 text-center">
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Yol Arkadaşları Psikoloji Vakfı olarak uzun vadeli vizyonumuz; psikoloji alanında eğitim, uygulama ve
                     araştırmayı bir araya getiren bir <strong>Psikoloji Enstitüsü</strong> kurmak. Bu yapı sayesinde,
                     nitelikli uzmanların yetişmesi, toplum temelli psikolojik hizmetlerin güçlenmesi ve bilimsel bilginin
                     daha fazla insana ulaşması için kalıcı bir zemin oluşturmayı hedefliyoruz.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">
+                  <p className="mt-8 text-center">
                     Enstitü; genç uzmanların gelişimini destekleyecek uygulama alanları sunmayı, meslek içi eğitimlerle
                     profesyonel standartları yükseltmeyi ve toplumun psikolojik iyi oluşuna yönelik daha kapsayıcı projeleri
                     mümkün kılmayı amaçlıyor.
                   </p>
-                  <p className="mt-8 flex text-center flex-wrap gap-3">Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
+                  <p className="mt-8 text-center">Bu proje, sadece bugünü değil geleceği de dönüştürme arzumuzun bir yansıması.</p>
                 </div>
               </CardContent>
               <CardFooter className="justify-center">
