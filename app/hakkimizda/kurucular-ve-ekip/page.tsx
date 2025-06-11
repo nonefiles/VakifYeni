@@ -36,24 +36,12 @@ export default function KurucularVeEkipPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent"></div>
-        <div className="container py-20 md:py-32 relative">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-light mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent leading-tight">
-              Kurucular
-              <span className="block text-4xl md:text-6xl mt-2 text-slate-700 font-extralight">
-                ve Ekip
-              </span>
-            </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mb-8"></div>
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light max-w-3xl">
-              Yol Arkadaşları Psikoloji Vakfı'nın arkasında, ruh sağlığı alanında uzmanlaşmış, 
-              <span className="text-primary font-medium"> vizyoner ve tutkulu </span>
-              bir ekip bulunmaktadır.
-            </p>
-          </div>
-        </div>
+      <div className="container py-16 md:py-24">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8 text-left font-lora italic text-primary">Kurucular ve Ekip</h1>
+        <p className="text-lg text-left max-w-3xl mb-12">
+          Yol Arkadaşları Psikoloji Vakfı'nın arkasında, ruh sağlığı alanında uzmanlaşmış, vizyoner ve tutkulu bir ekip
+          bulunmaktadır.
+        </p>
       </div>
 
       {/* Founder Section */}
@@ -102,7 +90,7 @@ export default function KurucularVeEkipPage() {
                       </div>
 
                       <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed">
-                        <p className="first-letter:text-5xl first-letter:font-light first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 text-justify">
+                        <p className="text-justify">
                           1967 yılında Adana'da doğan M. Abdullah Yılmaz, meslek yaşamını insanı anlamaya, eğitmeye ve iyileştirmeye adadı. Selçuk Üniversitesi'nde Edebiyat, Anadolu Üniversitesi'nde Sosyoloji ve Sosyal Hizmet Uzmanlığı eğitimi aldı. Psikoloji lisans fark derslerini Yakın Doğu Üniversitesi'nde tamamlayarak "Klinik Psikoloji" yüksek lisansı yaptı.
                         </p>
                         
