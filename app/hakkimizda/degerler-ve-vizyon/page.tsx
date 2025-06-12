@@ -21,10 +21,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Heart className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Erişilebilirlik</h3>
+              <h3 className="text-xl font-bold text-center">Erişilebilirlik</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Psikolojik destek herkesin hakkıdır. Hizmetlerimizi hiçbir ayrım gözetmeksizin, ihtiyaç temelli olarak sunarız.
               </p>
             </CardContent>
@@ -35,10 +35,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Award className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Bilimsellik</h3>
+              <h3 className="text-xl font-bold text-center">Bilimsellik</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Yürüttüğümüz her çalışmanın dayanağı bilimsel bilgi, etik ilkeler ve mesleki sorumluluktur.
               </p>
             </CardContent>
@@ -49,10 +49,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Duyarlılık</h3>
+              <h3 className="text-xl font-bold text-center">Duyarlılık</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Toplumun ve bireylerin farklı yaşam koşullarına ve ihtiyaçlarına hassasiyetle yaklaşırız.
               </p>
             </CardContent>
@@ -63,10 +63,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Birliktelik</h3>
+              <h3 className="text-xl font-bold text-center">Birliktelik</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Yalnızca bireylerle değil, gönüllüler, uzmanlar ve kurumlarla kurduğumuz iş birlikleriyle daha kapsayıcı çözümler üretiriz.
               </p>
             </CardContent>
@@ -77,10 +77,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <Lightbulb className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Güvenli Alan Yaratmak</h3>
+              <h3 className="text-xl font-bold text-center">Güvenli Alan Yaratmak</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Psikolojik destek sunduğumuz her ortamda, kişilerin kendilerini ifade edebilecekleri, yargıdan uzak ve destekleyici bir alan oluşturmayı öncelikleriz.
               </p>
             </CardContent>
@@ -91,10 +91,10 @@ export default function DegerlerVeVizyonPage() {
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary">
                 <School className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Gelişim ve Paylaşım</h3>
+              <h3 className="text-xl font-bold text-center">Gelişim ve Paylaşım</h3>
             </CardHeader>
             <CardContent className="text-center">
-              <p>
+              <p className="mb-6 text-center">
                 Bireyin içsel gelişimini, toplumsal fayda ile birlikte düşünür; öğrenmenin ve paylaşmanın dönüştürücü gücüne inanırız.
               </p>
             </CardContent>
@@ -106,8 +106,8 @@ export default function DegerlerVeVizyonPage() {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-10 text-center">Vizyonumuz</h2>
         <Card className="border-0 shadow-lg bg-[#e0ffff] text-gray-800">
-          <CardContent className="p-8">
-            <p>
+          <CardContent className="p-8 text-center">
+            <p className="mb-6 text-center">
               Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik destek hizmetlerine ihtiyaç duyduğunda yalnız hissetmediği, güvenli ve destekleyici alanlara kolaylıkla ulaşabildiği bir toplum hayal ediyoruz.<br /><br />
               İnanıyoruz ki, bireyin kendini tanıma süreci, yaşadığı zorluklarla başa çıkabilmesi, ilişkilerinde derinlik kurabilmesi ve yaşamına anlam katabilmesi; sadece bireysel çabanın değil, aynı zamanda toplumun sağladığı imkânların da bir sonucudur. Biz, bu imkânları eşitlemek için varız.<br /><br />
               Psikolojik destek hizmetlerinin belirli kesimlerle sınırlı kalmaması, herkesin kendine ait bir gelişim alanı bulabilmesi ve bu sürecin bilimsel temellerle yürütülmesi gerektiğine inanıyoruz. Bu nedenle çalışmalarımızı; etik ilkelere bağlı, toplumun ihtiyaçlarına duyarlı ve mesleki olarak donanımlı bir yaklaşımla yürütüyoruz.<br /><br />

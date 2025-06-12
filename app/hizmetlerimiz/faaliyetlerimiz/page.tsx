@@ -39,7 +39,7 @@ export default function FaaliyetlerimizPage() {
 
         <TabsContent value="etkinlikler">
           <div className="grid gap-8">
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <div className="relative h-full min-h-[300px]">
@@ -52,30 +52,32 @@ export default function FaaliyetlerimizPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center mb-4">
                     <Calendar className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-sm text-muted-foreground font-aristotelica">Her Perşembe, 19:00</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Ücretsiz Psikoloji Sohbetleri</h2>
-                  <p className="mb-4 font-aristotelica">
+                  <h2 className="text-2xl font-bold mb-4 font-lora text-center">Ücretsiz Psikoloji Sohbetleri</h2>
+                  <p className="mb-4 font-aristotelica text-center">
                   Psikoloji sohbetlerimiz, zihnimizi açmak ve ruhumuzu beslemek için bir araya geldiğimiz özel buluşmalardır.
                   Uzmanlarımızın rehberliğinde, güncel konuları içtenlikle paylaşır, anlamlı sohbetlerle farkındalık yaratırız.
                   Bu sıcak ortamda yalnız olmadığınızı hissedecek, paylaştıkça güçleneceksiniz. 
                   </p>
-                  <p className="mb-4 font-aristotelica">
+                  <p className="mb-4 font-aristotelica text-center">
                     Bu etkinlikler ücretsiz ve herkese açıktır. Katılım için önceden kayıt yaptırmanız gerekmektedir.
                   </p>
-                  <Button asChild className="mt-4 gradient-bg-primary">
-                    <Link href="/etkinlikler">
-                      Etkinlik Takvimi
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button asChild className="mt-4 gradient-bg-primary">
+                      <Link href="/etkinlikler">
+                        Etkinlik Takvimi
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
 
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <div className="relative h-full min-h-[300px]">
@@ -88,30 +90,32 @@ export default function FaaliyetlerimizPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center mb-4">
                     <BookOpen className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-sm text-muted-foreground font-aristotelica">Aylık Programlar</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Eğitim Seminerleri</h2>
-                  <p className="mb-4 font-aristotelica">
+                  <h2 className="text-2xl font-bold mb-4 font-lora text-center">Eğitim Seminerleri</h2>
+                  <p className="mb-4 font-aristotelica text-center">
                   Kurumsal eğitimlerimiz, iş yerlerinde daha sağlıklı ve dayanıklı bir kültür oluşturmayı amaçlar.
                   İnsan odaklı yaklaşımlarımızla, iletişimi güçlendiren, motivasyonu artıran ve dayanışmayı pekiştiren çözümler sunarız.
                   Birlikte, iş yaşamına sıcak ve anlamlı dokunuşlar yaparız.
                   </p>
-                  <p className="mb-4 font-aristotelica">
+                  <p className="mb-4 font-aristotelica text-center">
                     Seminerlerimiz, hem genel katılıma açık hem de kurumlara özel olarak düzenlenebilmektedir.
                   </p>
-                  <Button asChild className="mt-4 gradient-bg-primary">
-                    <Link href="/etkinlikler">
-                      Yaklaşan Seminerler
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button asChild className="mt-4 gradient-bg-primary">
+                      <Link href="/etkinlikler">
+                        Yaklaşan Seminerler
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
 
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <div className="relative h-full min-h-[300px]">
@@ -124,25 +128,27 @@ export default function FaaliyetlerimizPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center mb-4">
                     <Users className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-sm text-muted-foreground font-aristotelica">İnteraktif Çalışmalar</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Atölye Çalışmaları</h2>
-                  <p className="mb-4 font-aristotelica">
+                  <h2 className="text-2xl font-bold mb-4 font-lora text-center">Atölye Çalışmaları</h2>
+                  <p className="mb-4 font-aristotelica text-center">
                   Atölyelerimiz, kendinizi keşfetmeniz ve içsel yolculuğunuzda cesur adımlar atmanız için tasarlandı.
                   Birlikte deneyimleyerek öğrenir, duygulara dokunur ve yeni farkındalıklar kazanırız.
                   Her atölye, size özel bir alan yaratır; güvenle paylaşır, desteklenir ve büyürüz.
                   </p>
-                  <p className="mb-4 font-aristotelica">
+                  <p className="mb-4 font-aristotelica text-center">
                     Atölyelerimiz, küçük gruplarla ve uygulamalı olarak gerçekleştirilmektedir.
                   </p>
-                  <Button asChild className="mt-4 gradient-bg-primary">
-                    <Link href="/etkinlikler">
-                      Atölye Programı
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button asChild className="mt-4 gradient-bg-primary">
+                      <Link href="/etkinlikler">
+                        Atölye Programı
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -151,7 +157,7 @@ export default function FaaliyetlerimizPage() {
 
         <TabsContent value="projeler">
           <div className="grid gap-8">
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <div className="relative h-full min-h-[300px]">
@@ -164,30 +170,32 @@ export default function FaaliyetlerimizPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center mb-4">
                     <Globe className="h-5 w-5 mr-2 text-primary" />
                     <span className="text-sm text-muted-foreground font-aristotelica">Devam Eden Proje</span>
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Toplum Ruh Sağlığı Projesi</h2>
-                  <p className="mb-4 font-aristotelica">
+                  <h2 className="text-2xl font-bold mb-4 font-lora text-center">Toplum Ruh Sağlığı Projesi</h2>
+                  <p className="mb-4 font-aristotelica text-center">
                     Dezavantajlı bölgelerde yaşayan bireylerin psikolojik desteğe erişimini artırmak ve ruh sağlığı
                     farkındalığını geliştirmek amacıyla yürüttüğümüz projedir.
                   </p>
-                  <p className="mb-4 font-aristotelica">
+                  <p className="mb-4 font-aristotelica text-center">
                     Proje kapsamında, ücretsiz psikoterapi hizmetleri, eğitim seminerleri ve farkındalık etkinlikleri
                     düzenlenmektedir.
                   </p>
-                  <Button asChild className="mt-4 gradient-bg-primary">
-                    <Link href="/projeler/toplum-ruh-sagligi">
-                      Proje Detayları
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button asChild className="mt-4 gradient-bg-primary">
+                      <Link href="/projeler/toplum-ruh-sagligi">
+                        Proje Detayları
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
 
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <div className="relative h-full min-h-[300px]">
@@ -200,20 +208,22 @@ export default function FaaliyetlerimizPage() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center justify-center mb-4">
                   </div>
-                  <h2 className="text-2xl font-bold mb-4 font-lora">Çocuğun Yol Arkadaşı Projesi</h2>
-                  <p className="mb-4 font-aristotelica">
-                  “Çocuğun Yol Arkadaşı” çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
+                  <h2 className="text-2xl font-bold mb-4 font-lora text-center">Çocuğun Yol Arkadaşı Projesi</h2>
+                  <p className="mb-4 font-aristotelica text-center">
+                  "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
                    Yol Arkadaşları Danışmanlık Merkezi olarak, çocukların erken yaşlarda yetenek ve gelişim alanlarının keşfedilmesini önemsiyoruz. Çocukların sadece zekâ skoru üzerinden değil, çok yönlü bir yaklaşımla potansiyellerini fark etmelerine yardımcı olmayı hedefliyoruz.
                    Bu proje, ailelere çocuklarının gelişim alanları hakkında rehberlik ve bilinç kazandırma amacını taşır.
                   </p>
-                  <Button asChild className="mt-4 gradient-bg-primary">
-                    <Link href="/projeler/genc-uzmanlar">
-                      Proje Detayları
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button asChild className="mt-4 gradient-bg-primary">
+                      <Link href="/projeler/genc-uzmanlar">
+                        Proje Detayları
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>
@@ -222,7 +232,7 @@ export default function FaaliyetlerimizPage() {
 
         <TabsContent value="yayinlar">
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="relative h-48">
                 <Image
                   src="/placeholder.svg?height=300&width=500&text=Blog Yazıları"
@@ -231,13 +241,13 @@ export default function FaaliyetlerimizPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div className="p-4 text-white">
+                  <div className="p-4 text-white text-center w-full">
                     <h3 className="text-xl font-bold font-lora">Blog Yazıları</h3>
                   </div>
                 </div>
               </div>
               <CardContent className="pt-6">
-                <p className="font-aristotelica">
+                <p className="font-aristotelica text-center">
                   Uzman psikologlarımız tarafından hazırlanan, ruh sağlığı, psikoloji ve güncel konular hakkında
                   bilgilendirici blog yazıları.
                 </p>
@@ -250,7 +260,7 @@ export default function FaaliyetlerimizPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="relative h-48">
                 <Image
                   src="/placeholder.svg?height=300&width=500&text=E-Bültenler"
@@ -259,13 +269,13 @@ export default function FaaliyetlerimizPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div className="p-4 text-white">
+                  <div className="p-4 text-white text-center w-full">
                     <h3 className="text-xl font-bold font-lora">E-Bültenler</h3>
                   </div>
                 </div>
               </div>
               <CardContent className="pt-6">
-                <p className="font-aristotelica">
+                <p className="font-aristotelica text-center">
                   Aylık olarak yayınlanan e-bültenlerimiz ile vakıf faaliyetleri, etkinlikler ve psikoloji alanındaki
                   güncel gelişmeler hakkında bilgi edinebilirsiniz.
                 </p>
@@ -277,7 +287,7 @@ export default function FaaliyetlerimizPage() {
                 </Button>
               </CardContent>
             </Card>
-            <Card className="border-0 shadow-md overflow-hidden text-left">
+            <Card className="border-0 shadow-md overflow-hidden text-center">
               <div className="relative h-48">
                 <Image
                   src="/placeholder.svg?height=300&width=500&text=Kaynaklar"
@@ -286,13 +296,13 @@ export default function FaaliyetlerimizPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                  <div className="p-4 text-white">
+                  <div className="p-4 text-white text-center w-full">
                     <h3 className="text-xl font-bold font-lora">Kaynaklar</h3>
                   </div>
                 </div>
               </div>
               <CardContent className="pt-6">
-                <p className="font-aristotelica">
+                <p className="font-aristotelica text-center">
                   Ruh sağlığı ve psikoloji alanında faydalı kaynaklar, kitap önerileri, makaleler ve daha fazlası.
                 </p>
                 <Button asChild className="mt-4 w-full gradient-bg-primary">
@@ -308,8 +318,8 @@ export default function FaaliyetlerimizPage() {
       </Tabs>
 
       <div className="mt-16 bg-accent/20 p-8 rounded-lg max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 gradient-heading font-lora">Faaliyetlerimize Katılın</h2>
-        <p className="text-lg font-aristotelica mb-8">
+        <h2 className="text-3xl font-bold mb-6 gradient-heading font-lora text-center">Faaliyetlerimize Katılın</h2>
+        <p className="text-lg text-center font-aristotelica mb-8">
           Yol Arkadaşları Psikoloji Vakfı'nın düzenlediği etkinliklere katılarak, projelerimize destek olarak veya
           yayınlarımızı takip ederek siz de bu yolculuğun bir parçası olabilirsiniz.
         </p>

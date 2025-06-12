@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, ExternalLink } from "lucide-react"
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6"
-import { FaXTwitter } from "react-icons/fa6"
+import { MapPin, Phone, Mail, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -11,46 +9,46 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#EFF6FF] to-white py-20 md:py-28">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-left mb-8">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-lora italic">
               Bizimle İletişime Geçin
             </h1>
-            <p className="text-lg text-foreground/80 max-w-2xl">
+            <p className="text-lg text-center text-foreground/80 max-w-2xl mx-auto">
               Sorularınız, önerileriniz veya iş birliği talepleriniz için aşağıdaki iletişim kanallarından bize
               ulaşabilirsiniz.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Phone className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">Telefon</h3>
-              <p className="text-foreground/70 mb-4">Hafta içi 09:00 - 18:00 saatleri arasında bize ulaşabilirsiniz</p>
+              <p className="text-foreground/70 mb-4 text-center">Hafta içi 09:00 - 18:00 saatleri arasında bize ulaşabilirsiniz</p>
               <a href="tel:+905398893375" className="text-primary font-medium hover:underline">
                 +90 (539) 889 33 75
               </a>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Mail className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">E-posta</h3>
-              <p className="text-foreground/70 mb-4">Sorularınız için e-posta gönderebilirsiniz</p>
+              <p className="text-foreground/70 mb-4 text-center">Sorularınız için e-posta gönderebilirsiniz</p>
               <a href="mailto:info@yolarkadaslari.org" className="text-primary font-medium hover:underline">
                 info@yolarkadaslari.org
               </a>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MapPin className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">Adres</h3>
-              <p className="text-foreground/70 mb-4">Ankara, Türkiye</p>
-              <p className="text-primary font-medium">Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</p>
+              <p className="text-foreground/70 mb-4 text-center">Ankara, Türkiye</p>
+              <p className="text-primary font-medium text-center">Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</p>
             </div>
           </div>
         </div>
@@ -61,15 +59,15 @@ export default function ContactPage() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-6 font-lora italic text-left">Bize Yazın</h2>
-              <p className="text-foreground/80 mb-8 text-left">
+              <h2 className="text-3xl font-bold text-primary mb-6 font-lora italic text-center">Bize Yazın</h2>
+              <p className="text-foreground/80 mb-8 text-center">
                 Aşağıdaki formu doldurarak bize mesaj gönderebilirsiniz. En kısa sürede size geri dönüş yapacağız.
               </p>
 
-              <form className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                       Ad Soyad
                     </label>
                     <Input
@@ -79,7 +77,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                       E-posta
                     </label>
                     <Input
@@ -92,7 +90,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                     Konu
                   </label>
                   <Input
@@ -103,7 +101,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                     Mesajınız
                   </label>
                   <Textarea
@@ -114,7 +112,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <input
                     id="privacy"
                     type="checkbox"
@@ -125,15 +123,17 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                <Button type="submit" className="w-full md:w-auto">
-                  Mesajı Gönder
-                </Button>
-              </form>
+                <div className="text-center">
+                  <Button className="w-full md:w-auto">
+                    Mesajı Gönder
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className="lg:pl-8">
               <div className="bg-[#EFF6FF] rounded-2xl p-6 shadow-sm border border-primary/10 mb-8">
-                <h3 className="text-xl font-medium text-secondary mb-4 text-left font-lora italic">
+                <h3 className="text-xl font-medium text-secondary mb-4 text-center font-lora italic">
                   Çalışma Saatlerimiz
                 </h3>
                 <div className="space-y-3">
@@ -149,15 +149,15 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-[#EFF6FF] rounded-2xl p-6 shadow-sm border border-primary/10 mb-8">
-                <h3 className="text-xl font-medium text-secondary mb-4 text-left font-lora italic">Sosyal Medya</h3>
-                <div className="flex flex-wrap gap-4">
+                <h3 className="text-xl font-medium text-secondary mb-4 text-center font-lora italic">Sosyal Medya</h3>
+                <div className="flex flex-wrap gap-4 justify-center">
                   <a
                     href="https://www.facebook.com/profile.php?id=100089335227245"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaFacebookF className="w-5 h-5" />
+                    <Facebook className="w-5 h-5" />
                     <span className="sr-only">Facebook</span>
                   </a>
                   <a
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaInstagram className="w-5 h-5" />
+                    <Instagram className="w-5 h-5" />
                     <span className="sr-only">Instagram</span>
                   </a>
                   <a
@@ -175,8 +175,10 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaXTwitter className="w-5 h-5" />
-                    <span className="sr-only">Twitter</span>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span className="sr-only">X (Twitter)</span>
                   </a>
                   <a
                     href="https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k"
@@ -184,7 +186,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaLinkedinIn className="w-5 h-5" />
+                    <Linkedin className="w-5 h-5" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 </div>
@@ -203,11 +205,11 @@ export default function ContactPage() {
                     className="rounded-2xl"
                   />
                 </div>
-                <div className="p-4 bg-white">
-                  <div className="flex items-center justify-between">
+                <div className="p-4 bg-white text-center">
+                  <div className="flex flex-col items-center justify-center space-y-2">
                     <div>
                       <h4 className="font-medium text-secondary">Ofis Konumumuz</h4>
-                      <p className="text-sm text-foreground/70">Aziziye Mahallesi Cinnah Caddesi 66/7</p>
+                      <p className="text-sm text-foreground/70 text-center">Aziziye Mahallesi Cinnah Caddesi 66/7</p>
                     </div>
                     <a
                       href="https://www.google.com/maps/place/Yol+Arkada%C5%9Flar%C4%B1+Dan%C4%B1%C5%9Fmanl%C4%B1k+Hizmetleri/@39.8909123,32.8527483,17z/data=!3m1!4b1!4m6!3m5!1s0x14d34de55919549b:0xd50f7f8bc696e2b3!8m2!3d39.8909123!4d32.8553232!16s%2Fg%2F11sgwjzhys?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
@@ -229,9 +231,9 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="bg-gradient-to-b from-white to-[#EFF6FF] py-16">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="bg-primary/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-left border border-primary/20">
+          <div className="bg-primary/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center border border-primary/20">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 font-lora italic">Hızlı İletişim</h2>
-            <p className="text-foreground/80 mb-8 max-w-2xl">
+            <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
               Acil durumlar veya hızlı yanıt gerektiren konular için WhatsApp üzerinden de bize ulaşabilirsiniz.
             </p>
             <Button asChild className="bg-green-600 text-white hover:bg-green-700 border-2 border-green-700">

@@ -9,7 +9,7 @@ export default function GonulluBagisPage() {
   return (
     <div className="container py-16 md:py-24 text-center bg-white">
       <h1
-        className="text-4xl md:text-5xl font-bold mb-8 text-center text-[#2563eb]"
+        className="text-4xl md:text-5xl font-bold mb-8 text-center text-[#2563eb] italic"
         style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
       >
         Destek Ol
@@ -42,17 +42,17 @@ export default function GonulluBagisPage() {
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full gradient-bg-primary mx-auto">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                <CardTitle className="text-2xl text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
                   Gönüllü Olmanın Önemi
                 </CardTitle>
-                <CardDescription className="font-aristotelica">Birlikte daha güçlüyüz</CardDescription>
+                <CardDescription className="font-aristotelica text-center">Birlikte daha güçlüyüz</CardDescription>
               </CardHeader>
-              <CardContent className="font-aristotelica">
-                <p className="mb-4">
+              <CardContent className="font-aristotelica text-center">
+                <p className="mb-4 text-center">
                   Gönüllülerimiz, vakfımızın en değerli kaynağıdır. Onların emekleri ve destekleri sayesinde, daha fazla
                   kişiye ulaşabilir, daha fazla hayata dokunabiliriz.
                 </p>
-                <p>
+                <p className="mb-4 text-center">
                   Gönüllü olmak, sadece başkalarına yardım etmek değil, aynı zamanda kişisel gelişim, yeni beceriler
                   kazanma ve anlamlı bir topluluğun parçası olma fırsatıdır.
                 </p>
@@ -61,10 +61,10 @@ export default function GonulluBagisPage() {
 
             <Card className="text-center">
               <CardHeader>
-                <CardTitle className="text-2xl text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+                <CardTitle className="text-2xl text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
                   Gönüllü Alanları
                 </CardTitle>
-                <CardDescription className="font-aristotelica">
+                <CardDescription className="font-aristotelica text-center">
                   Yetenek ve ilgi alanınıza göre destek olun
                 </CardDescription>
               </CardHeader>
@@ -117,21 +117,21 @@ export default function GonulluBagisPage() {
                 >
                   Bağışınızın Etkisi
                 </CardTitle>
-                <CardDescription>Her katkı değerlidir</CardDescription>
+                <CardDescription className="font-aristotelica text-center">Her katkı değerlidir</CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-left">
+              <CardContent className="font-aristotelica text-center">
+                <p className="mb-4 text-center">
                   Bağışlarınız sayesinde, maddi imkânsızlıklar nedeniyle psikolojik desteğe erişemeyen bireylere
                   ücretsiz hizmet sunuyor, genç uzmanların gelişimine katkıda bulunuyor ve toplumsal ruh sağlığı
                   bilincini artırmak için çalışmalar yürütüyoruz.
                 </p>
-                <p className="text-left">
+                <p className="mb-4 text-center">
                   Yapacağınız her bağış, bir kişinin hayatında fark yaratma potansiyeline sahiptir.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-left">
+            <Card className="text-center">
               <CardHeader>
                 <CardTitle
                   className="text-2xl italic text-[#2563eb]"
@@ -139,40 +139,22 @@ export default function GonulluBagisPage() {
                 >
                   Bağış Seçenekleri
                 </CardTitle>
-                <CardDescription>Size uygun yöntemi seçin</CardDescription>
+                <CardDescription className="font-aristotelica text-center">Size uygun yöntemi seçin</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  <div className="p-4 border rounded-lg">
-                    <h4
-                      className="font-bold mb-2 text-[#2563eb]"
-                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
-                    >
-                      Banka Havalesi
-                    </h4>
+                <div className="p-4 border rounded-lg">
+                  <h4
+                    className="font-bold mb-2 text-[#2563eb] italic text-center"
+                    style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
+                  >
+                    Banka Havalesi
+                  </h4>
+                  <div className="font-aristotelica text-center">
                     <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
                     <p className="mb-2">Banka: Türkiye İş Bankası</p>
                     <p className="mb-2">Şube: Ankara Merkez (1234)</p>
                     <p className="mb-2">Hesap No: 1234567890</p>
                     <p className="mb-2">IBAN: TR12 3456 7890 1234 5678 9012 34</p>
-                  </div>
-
-                  <div className="p-4 border rounded-lg">
-                    <h4
-                      className="font-bold mb-2 text-[#2563eb]"
-                      style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}
-                    >
-                      Online Bağış
-                    </h4>
-                    <p className="mb-4">
-                      Güvenli ödeme altyapımız ile kredi kartı veya banka kartı ile bağış yapabilirsiniz.
-                    </p>
-                    <Button asChild className="w-full bg-primary text-white">
-                      <Link href="/bagis-yap">
-                        Online Bağış Yap
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
                   </div>
                 </div>
               </CardContent>
@@ -182,27 +164,12 @@ export default function GonulluBagisPage() {
       </Tabs>
 
       <div className="mt-16 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-[#2563eb]" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
+        <h2 className="text-3xl font-bold mb-6 text-[#2563eb] italic" style={{ fontFamily: "Lora, 'Lora Fallback', serif" }}>
           Destekçilerimiz
         </h2>
-        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica">
+        <p className="text-lg max-w-3xl mx-auto mb-12 font-aristotelica text-center">
           Yol Arkadaşları Psikoloji Vakfı'na destek olan tüm kurumsal ve bireysel destekçilerimize teşekkür ederiz.
         </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto opacity-70">
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-          <div className="flex items-center justify-center p-4">
-            <Image src="/placeholder.svg?height=80&width=160" alt="Destekçi Logo" width={160} height={80} />
-          </div>
-        </div>
       </div>
     </div>
   )
