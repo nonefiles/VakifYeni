@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, ExternalLink } from "lucide-react"
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa6"
-import { FaXTwitter } from "react-icons/fa6"
+import { MapPin, Phone, Mail, ExternalLink, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -11,18 +9,18 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#EFF6FF] to-white py-20 md:py-28">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-left mb-8">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-lora italic">
               Bizimle İletişime Geçin
             </h1>
-            <p className="text-lg text-foreground/80 max-w-2xl">
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               Sorularınız, önerileriniz veya iş birliği talepleriniz için aşağıdaki iletişim kanallarından bize
               ulaşabilirsiniz.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Phone className="h-7 w-7 text-primary" />
               </div>
@@ -33,7 +31,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Mail className="h-7 w-7 text-primary" />
               </div>
@@ -44,7 +42,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-start text-left transition-all hover:shadow-md hover:translate-y-[-4px]">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-primary/10 flex flex-col items-center text-center transition-all hover:shadow-md hover:translate-y-[-4px]">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <MapPin className="h-7 w-7 text-primary" />
               </div>
@@ -61,15 +59,15 @@ export default function ContactPage() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-6 font-lora italic text-left">Bize Yazın</h2>
-              <p className="text-foreground/80 mb-8 text-left">
+              <h2 className="text-3xl font-bold text-primary mb-6 font-lora italic text-center">Bize Yazın</h2>
+              <p className="text-foreground/80 mb-8 text-center">
                 Aşağıdaki formu doldurarak bize mesaj gönderebilirsiniz. En kısa sürede size geri dönüş yapacağız.
               </p>
 
-              <form className="space-y-6">
+              <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                       Ad Soyad
                     </label>
                     <Input
@@ -79,7 +77,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                       E-posta
                     </label>
                     <Input
@@ -92,7 +90,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                     Konu
                   </label>
                   <Input
@@ -103,7 +101,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2 text-center">
                     Mesajınız
                   </label>
                   <Textarea
@@ -114,7 +112,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <input
                     id="privacy"
                     type="checkbox"
@@ -125,15 +123,17 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                <Button type="submit" className="w-full md:w-auto">
-                  Mesajı Gönder
-                </Button>
-              </form>
+                <div className="text-center">
+                  <Button className="w-full md:w-auto">
+                    Mesajı Gönder
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className="lg:pl-8">
               <div className="bg-[#EFF6FF] rounded-2xl p-6 shadow-sm border border-primary/10 mb-8">
-                <h3 className="text-xl font-medium text-secondary mb-4 text-left font-lora italic">
+                <h3 className="text-xl font-medium text-secondary mb-4 text-center font-lora italic">
                   Çalışma Saatlerimiz
                 </h3>
                 <div className="space-y-3">
@@ -149,15 +149,15 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-[#EFF6FF] rounded-2xl p-6 shadow-sm border border-primary/10 mb-8">
-                <h3 className="text-xl font-medium text-secondary mb-4 text-left font-lora italic">Sosyal Medya</h3>
-                <div className="flex flex-wrap gap-4">
+                <h3 className="text-xl font-medium text-secondary mb-4 text-center font-lora italic">Sosyal Medya</h3>
+                <div className="flex flex-wrap gap-4 justify-center">
                   <a
                     href="https://www.facebook.com/profile.php?id=100089335227245"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaFacebookF className="w-5 h-5" />
+                    <Facebook className="w-5 h-5" />
                     <span className="sr-only">Facebook</span>
                   </a>
                   <a
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaInstagram className="w-5 h-5" />
+                    <Instagram className="w-5 h-5" />
                     <span className="sr-only">Instagram</span>
                   </a>
                   <a
@@ -175,7 +175,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaXTwitter className="w-5 h-5" />
+                    <Twitter className="w-5 h-5" />
                     <span className="sr-only">Twitter</span>
                   </a>
                   <a
@@ -184,7 +184,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <FaLinkedinIn className="w-5 h-5" />
+                    <Linkedin className="w-5 h-5" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
                 </div>
@@ -203,8 +203,8 @@ export default function ContactPage() {
                     className="rounded-2xl"
                   />
                 </div>
-                <div className="p-4 bg-white">
-                  <div className="flex items-center justify-between">
+                <div className="p-4 bg-white text-center">
+                  <div className="flex flex-col items-center justify-center space-y-2">
                     <div>
                       <h4 className="font-medium text-secondary">Ofis Konumumuz</h4>
                       <p className="text-sm text-foreground/70">Aziziye Mahallesi Cinnah Caddesi 66/7</p>
@@ -229,9 +229,9 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="bg-gradient-to-b from-white to-[#EFF6FF] py-16">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="bg-primary/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-left border border-primary/20">
+          <div className="bg-primary/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center border border-primary/20">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 font-lora italic">Hızlı İletişim</h2>
-            <p className="text-foreground/80 mb-8 max-w-2xl">
+            <p className="text-foreground/80 mb-8 max-w-2xl mx-auto">
               Acil durumlar veya hızlı yanıt gerektiren konular için WhatsApp üzerinden de bize ulaşabilirsiniz.
             </p>
             <Button asChild className="bg-green-600 text-white hover:bg-green-700 border-2 border-green-700">
