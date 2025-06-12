@@ -1,13 +1,14 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { FaCalendarAlt, FaMapMarkerAlt, FaSearch, FaFilter, FaList, FaCalendar, FaShareAlt, FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaCalendarAlt, FaMapMarkerAlt, FaSearch, FaFilter, FaList, FaCalendar, FaShareAlt } from "react-icons/fa";
 import { useState } from "react";
 import { format } from 'date-fns';
-import { tr } from 'date-fns/locale'; // Türkçe tarih formatı için
-import { AnimatePresence, motion } from "framer-motion"; // Animasyonlar için
+import { tr } from 'date-fns/locale';
+import { AnimatePresence, motion } from "framer-motion";
 
-// Örnek etkinlik veri seti
 const allEvents = [
   {
     id: 1,
@@ -62,39 +63,27 @@ const allEvents = [
 ];
 
 export default function EventsCalendarPage() {
-  // State yönetimi için hook'lar
-  const [viewMode, setViewMode] = useState("grid"); // grid, list veya calendar
+  const [viewMode, setViewMode] = useState("grid");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Tüm Kategoriler");
   const [selectedLocation, setSelectedLocation] = useState("Tüm Yerler");
   const [selectedMonth, setSelectedMonth] = useState(null);
 
-  // Filtrelenmiş etkinlikleri elde etmek için
   const filteredEvents = allEvents.filter(event => {
-    // Tarih filtresi
     const eventMonth = event.date.getMonth();
     const matchesMonth = selectedMonth === null || eventMonth === selectedMonth;
-
-    // Kategori filtresi
     const matchesCategory = selectedCategory === "Tüm Kategoriler" ||
                            event.category === selectedCategory;
-
-    // Yer filtresi
     const matchesLocation = selectedLocation === "Tüm Yerler" ||
                            event.location === selectedLocation;
-
-    // Arama terimi filtresi
     const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          event.description.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesMonth && matchesCategory && matchesLocation && matchesSearch;
   });
 
-  // Benzersiz kategorileri ve yerleri almak için
   const categories = ["Tüm Kategoriler", ...new Set(allEvents.map(event => event.category))];
   const locations = ["Tüm Yerler", ...new Set(allEvents.map(event => event.location))];
-
-  // Ayları Türkçe olarak almak için
   const months = [
     "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
     "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
