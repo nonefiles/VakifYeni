@@ -63,11 +63,11 @@ export default function EventsPage() {
   })
 
   return (
-    <div className="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div className="container space-y-16">
+    <div className="py-20 bg-gradient-to-b from-white to-blue-50 min-h-screen">
+      <div className="container space-y-20">
         {/* Page Title */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight">
+          <h1 className="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight drop-shadow-sm">
             Etkinlik Takvimi
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -76,12 +76,12 @@ export default function EventsPage() {
         </div>
 
         {/* Filters & Search */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center bg-white p-6 rounded-xl shadow-sm">
           <Input
             placeholder="Etkinlik ara..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-xs shadow-sm"
+            className="w-full sm:max-w-xs shadow-sm border-gray-300"
           />
 
           <div className="flex gap-2">
@@ -94,7 +94,7 @@ export default function EventsPage() {
                 key={btn.value}
                 variant={filter === btn.value ? "default" : "outline"}
                 onClick={() => setFilter(btn.value as any)}
-                className="capitalize"
+                className="capitalize rounded-full px-5"
               >
                 {btn.label}
               </Button>
@@ -110,16 +110,16 @@ export default function EventsPage() {
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between"
+                className="rounded-3xl border border-gray-200 bg-white p-6 shadow-md hover:shadow-2xl transition duration-300 flex flex-col justify-between"
               >
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-semibold text-blue-700">
+                    <h3 className="text-2xl font-bold text-blue-700">
                       {event.title}
                     </h3>
                     <span
                       className={clsx(
-                        "text-xs font-semibold px-2 py-1 rounded-full",
+                        "text-xs font-semibold px-3 py-1 rounded-full",
                         event.type === "online"
                           ? "bg-green-100 text-green-700"
                           : "bg-yellow-100 text-yellow-700"
@@ -140,7 +140,7 @@ export default function EventsPage() {
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <Button asChild className="mt-6 w-full bg-blue-600 text-white hover:bg-blue-700">
+                <Button asChild className="mt-6 w-full bg-blue-600 text-white hover:bg-blue-700 rounded-xl">
                   <Link href={event.link}>Detayları Gör</Link>
                 </Button>
               </div>
