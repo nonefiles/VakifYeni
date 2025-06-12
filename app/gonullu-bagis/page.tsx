@@ -48,11 +48,11 @@ export default function GonulluBagisPage() {
                 <CardDescription className="font-aristotelica text-center">Birlikte daha güçlüyüz</CardDescription>
               </CardHeader>
               <CardContent className="font-aristotelica text-center">
-                <p className="mb-4">
+                <p className="mb-4 text-center">
                   Gönüllülerimiz, vakfımızın en değerli kaynağıdır. Onların emekleri ve destekleri sayesinde, daha fazla
                   kişiye ulaşabilir, daha fazla hayata dokunabiliriz.
                 </p>
-                <p>
+                <p className="mb-4 text-center">
                   Gönüllü olmak, sadece başkalarına yardım etmek değil, aynı zamanda kişisel gelişim, yeni beceriler
                   kazanma ve anlamlı bir topluluğun parçası olma fırsatıdır.
                 </p>
