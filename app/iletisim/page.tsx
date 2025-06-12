@@ -25,7 +25,7 @@ export default function ContactPage() {
                 <Phone className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">Telefon</h3>
-              <p className="text-foreground/70 mb-4">Hafta içi 09:00 - 18:00 saatleri arasında bize ulaşabilirsiniz</p>
+              <p className="text-foreground/70 mb-4 text-center">Hafta içi 09:00 - 18:00 saatleri arasında bize ulaşabilirsiniz</p>
               <a href="tel:+905398893375" className="text-primary font-medium hover:underline">
                 +90 (539) 889 33 75
               </a>
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 <Mail className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">E-posta</h3>
-              <p className="text-foreground/70 mb-4">Sorularınız için e-posta gönderebilirsiniz</p>
+              <p className="text-foreground/70 mb-4 text-center">Sorularınız için e-posta gönderebilirsiniz</p>
               <a href="mailto:info@yolarkadaslari.org" className="text-primary font-medium hover:underline">
                 info@yolarkadaslari.org
               </a>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 <MapPin className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">Adres</h3>
-              <p className="text-foreground/70 mb-4">Ankara, Türkiye</p>
+              <p className="text-foreground/70 mb-4 text-center">Ankara, Türkiye</p>
               <p className="text-primary font-medium">Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</p>
             </div>
           </div>
