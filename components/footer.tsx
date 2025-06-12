@@ -9,9 +9,9 @@ export function Footer() {
   return (
     <footer className="bg-[#f7fafc] border-t border-gray-200">
       <div className="container mx-auto px-6 md:px-12 py-16 max-w-7xl text-gray-800">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
+          <div>
             <Image
               src="/images/logo.png"
               alt="Yol Arkadaşları Logo"
@@ -94,11 +94,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Working Hours */}
-          <div className="space-y-6 text-sm">
+          {/* Contact & Working Hours Combined */}
+          <div className="col-span-2 lg:col-span-1 space-y-8">
             <div>
               <h4 className="mb-4 text-base font-semibold text-gray-900">İletişim</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm">
                 <li className="flex items-start">
                   <MapPin size={18} className="text-primary mr-3 mt-0.5" />
                   <span>Aziziye Mah. Cinnah Cad. 66/7, 06630 Çankaya / Ankara</span>
@@ -116,7 +116,7 @@ export function Footer() {
 
             <div>
               <h4 className="mb-4 text-base font-semibold text-gray-900">Çalışma Saatleri</h4>
-              <div className="space-y-1">
+              <div className="space-y-1 text-sm">
                 <div className="flex justify-between">
                   <span>Pzt - Cmt</span>
                   <span>09:00 - 20:00</span>
@@ -130,7 +130,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
+        {/* Bottom Section */}
         <div className="mt-12 pt-6 border-t text-center text-sm text-gray-500">
           © {currentYear} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
         </div>
