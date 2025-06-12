@@ -7,7 +7,6 @@ import Link from "next/link"
 import { CalendarIcon, MapPinIcon } from "lucide-react"
 import clsx from "clsx"
 
-// Types
 
 interface Event {
   id: string
