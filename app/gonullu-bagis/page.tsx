@@ -120,12 +120,12 @@ export default function GonulluBagisPage() {
                 <CardDescription className="font-aristotelica text-center">Her katkı değerlidir</CardDescription>
               </CardHeader>
               <CardContent className="font-aristotelica text-center">
-                <p className="mb-4">
+                <p className="mb-4 text-center">
                   Bağışlarınız sayesinde, maddi imkânsızlıklar nedeniyle psikolojik desteğe erişemeyen bireylere
                   ücretsiz hizmet sunuyor, genç uzmanların gelişimine katkıda bulunuyor ve toplumsal ruh sağlığı
                   bilincini artırmak için çalışmalar yürütüyoruz.
                 </p>
-                <p>
+                <p className="mb-4 text-center">
                   Yapacağınız her bağış, bir kişinin hayatında fark yaratma potansiyeline sahiptir.
                 </p>
               </CardContent>
