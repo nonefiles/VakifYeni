@@ -4,8 +4,10 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { CalendarIcon, MapPinIcon, SearchIcon } from "lucide-react"
+import { CalendarIcon, MapPinIcon } from "lucide-react"
+import clsx from "clsx"
 
+// Sample Event Data
 type Event = {
   id: string
   title: string
@@ -61,70 +63,84 @@ export default function EventsPage() {
   })
 
   return (
-    <div className="py-16">
-      <div className="container space-y-12">
-        {/* Header */}
+    <div className="py-20 bg-gradient-to-b from-white to-blue-50">
+      <div className="container space-y-16">
+        {/* Page Title */}
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-green-700 mb-4">Etkinlik Takvimi</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Yol Arkadaşları Psikoloji Vakfı'nın yaklaşan seminer, atölye ve gönüllü etkinliklerini takip edin.
+          <h1 className="text-5xl font-extrabold text-blue-700 mb-4 tracking-tight">
+            Etkinlik Takvimi
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Yaklaşan etkinliklerimizle ruh sağlığı alanındaki yolculuğa siz de katılın.
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        {/* Filters & Search */}
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
           <Input
             placeholder="Etkinlik ara..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-xs"
+            className="w-full sm:max-w-xs shadow-sm"
           />
 
           <div className="flex gap-2">
-            <Button
-              variant={filter === "all" ? "default" : "outline"}
-              onClick={() => setFilter("all")}
-            >
-              Hepsi
-            </Button>
-            <Button
-              variant={filter === "online" ? "default" : "outline"}
-              onClick={() => setFilter("online")}
-            >
-              Online
-            </Button>
-            <Button
-              variant={filter === "offline" ? "default" : "outline"}
-              onClick={() => setFilter("offline")}
-            >
-              Yüz Yüze
-            </Button>
+            {[
+              { label: "Hepsi", value: "all" },
+              { label: "Online", value: "online" },
+              { label: "Yüz Yüze", value: "offline" },
+            ].map((btn) => (
+              <Button
+                key={btn.value}
+                variant={filter === btn.value ? "default" : "outline"}
+                onClick={() => setFilter(btn.value as any)}
+                className="capitalize"
+              >
+                {btn.label}
+              </Button>
+            ))}
           </div>
         </div>
 
-        {/* Event Cards */}
-        <div className="grid gap-8 md:grid-cols-2">
+        {/* Event Grid */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {filteredEvents.length === 0 ? (
             <p className="text-gray-500">Hiç etkinlik bulunamadı.</p>
           ) : (
             filteredEvents.map((event) => (
               <div
                 key={event.id}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+                className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between"
               >
-                <h3 className="text-2xl font-semibold text-green-700 mb-2">{event.title}</h3>
-                <p className="text-gray-600 mb-4">{event.description}</p>
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-1">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-semibold text-blue-700">
+                      {event.title}
+                    </h3>
+                    <span
+                      className={clsx(
+                        "text-xs font-semibold px-2 py-1 rounded-full",
+                        event.type === "online"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-yellow-100 text-yellow-700"
+                      )}
+                    >
+                      {event.type === "online" ? "Online" : "Yüz Yüze"}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-2 min-h-[48px]">
+                    {event.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
                     <CalendarIcon className="w-4 h-4" />
                     <span>{event.date} • {event.time}</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
                     <MapPinIcon className="w-4 h-4" />
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <Button asChild className="bg-green-600 text-white hover:bg-green-700">
+                <Button asChild className="mt-6 w-full bg-blue-600 text-white hover:bg-blue-700">
                   <Link href={event.link}>Detayları Gör</Link>
                 </Button>
               </div>
