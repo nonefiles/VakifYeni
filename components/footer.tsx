@@ -141,9 +141,9 @@ export function Footer() {
                   Çalışma Saatleri
                 </h3>
                 <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles" aria-label="Çalışma saatleri">
-                  <div className="flex justify-between gap-4">
-                    <span>Pazartesi - Cumartesi:</span>
-                    <span>09:00 - 20:00</span>
+                  <div className="flex text-center justify-between gap-4">
+                    <span>Pazartesi Cumartesi:</span>
+                    <span>09:00 20:00</span>
                   </div>
                   <div className="flex justify-between gap-4">
                     <span>Pazar:</span>
