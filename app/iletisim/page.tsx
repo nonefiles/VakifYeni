@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, ExternalLink, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { MapPin, Phone, Mail, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -48,7 +48,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-medium text-secondary mb-2">Adres</h3>
               <p className="text-foreground/70 mb-4 text-center">Ankara, Türkiye</p>
-              <p className="text-primary font-medium">Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</p>
+              <p className="text-primary font-medium text-center">Aziziye Mahallesi Cinnah Caddesi 66/7 P:06630 Çankaya Ankara</p>
             </div>
           </div>
         </div>
@@ -175,8 +175,10 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border-2 border-primary/20 transition-all hover:bg-primary hover:text-white"
                   >
-                    <Twitter className="w-5 h-5" />
-                    <span className="sr-only">Twitter</span>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <span className="sr-only">X (Twitter)</span>
                   </a>
                   <a
                     href="https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k"
@@ -207,7 +209,7 @@ export default function ContactPage() {
                   <div className="flex flex-col items-center justify-center space-y-2">
                     <div>
                       <h4 className="font-medium text-secondary">Ofis Konumumuz</h4>
-                      <p className="text-sm text-foreground/70">Aziziye Mahallesi Cinnah Caddesi 66/7</p>
+                      <p className="text-sm text-foreground/70 text-center">Aziziye Mahallesi Cinnah Caddesi 66/7</p>
                     </div>
                     <a
                       href="https://www.google.com/maps/place/Yol+Arkada%C5%9Flar%C4%B1+Dan%C4%B1%C5%9Fmanl%C4%B1k+Hizmetleri/@39.8909123,32.8527483,17z/data=!3m1!4b1!4m6!3m5!1s0x14d34de55919549b:0xd50f7f8bc696e2b3!8m2!3d39.8909123!4d32.8553232!16s%2Fg%2F11sgwjzhys?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
