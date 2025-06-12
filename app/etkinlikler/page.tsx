@@ -1,315 +1,151 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { FaCalendarAlt, FaMapMarkerAlt, FaSearch, FaFilter, FaList, FaCalendar, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
-import { format } from 'date-fns';
-import { tr } from 'date-fns/locale';
-import { AnimatePresence, motion } from "framer-motion";
 
-const allEvents = [
-  {
-    id: 1,
-    title: "Psikoloji Atölyesi",
-    date: new Date(2025, 5, 15),
-    location: "İstanbul",
-    description: "Psikoloji alanında uzmanlar tarafından verilecek bir atölye çalışması.",
-    image: "/images/events/psychology-workshop.jpg",
-    category: "Atölye",
-    price: "Ücretsiz"
-  },
-  {
-    id: 2,
-    title: "Ruh Sağlığı Semineri",
-    date: new Date(2025, 5, 22),
-    location: "Ankara",
-    description: "Ruh sağlığı konusunda farkındalık yaratmayı amaçlayan bir seminer.",
-    image: "/images/events/mental-health-seminar.jpg",
-    category: "Seminer",
-    price: "Ücretsiz"
-  },
-  {
-    id: 3,
-    title: "Aile Danışmanlığı Eğitimi",
-    date: new Date(2025, 5, 29),
-    location: "İzmir",
-    description: "Aile danışmanlığı konusunda eğitim verilecektir.",
-    image: "/images/events/family-counseling.jpg",
-    category: "Eğitim",
-    price: "250 TL"
-  },
-  {
-    id: 4,
-    title: "Çocuk Psikolojisi Konferansı",
-    date: new Date(2025, 6, 5),
-    location: "Online",
-    description: "Çocuk psikolojisi alanında uzmanlar tarafından verilecek bir konferans.",
-    image: "/images/events/child-psychology.jpg",
-    category: "Konferans",
-    price: "150 TL"
-  },
-  {
-    id: 5,
-    title: "Yoga ve Mindfulness Atölyesi",
-    date: new Date(2025, 6, 12),
-    location: "Antalya",
-    description: "Yoga ve mindfulness teknikleri üzerine pratik bir atölye.",
-    image: "/images/events/yoga-workshop.jpg",
-    category: "Atölye",
-    price: "200 TL"
-  },
-];
-
-export default function EventsCalendarPage() {
-  const [viewMode, setViewMode] = useState("grid");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Tüm Kategoriler");
-  const [selectedLocation, setSelectedLocation] = useState("Tüm Yerler");
-  const [selectedMonth, setSelectedMonth] = useState(null);
-
-  const filteredEvents = allEvents.filter(event => {
-    const eventMonth = event.date.getMonth();
-    const matchesMonth = selectedMonth === null || eventMonth === selectedMonth;
-    const matchesCategory = selectedCategory === "Tüm Kategoriler" ||
-                           event.category === selectedCategory;
-    const matchesLocation = selectedLocation === "Tüm Yerler" ||
-                           event.location === selectedLocation;
-    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         event.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-    return matchesMonth && matchesCategory && matchesLocation && matchesSearch;
-  });
-
-  const categories = ["Tüm Kategoriler", ...new Set(allEvents.map(event => event.category))];
-  const locations = ["Tüm Yerler", ...new Set(allEvents.map(event => event.location))];
-  const months = [
-    "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
-  ];
-
+export default function EventsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-500 to-blue-600 py-24 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="mb-6 text-4xl font-bold md:text-5xl">Etkinlik Takvimi</h1>
-            <p className="mx-auto max-w-3xl text-lg">
-              Yol Arkadaşları Psikoloji Vakfı olarak düzenlediğimiz etkinliklerimizle ilgili detayları burada bulabilirsiniz.
+      <section className="bg-blue-50 py-16 md:py-24">
+        <div className="container">
+          <h1 className="mb-6 text-center text-4xl font-bold text-blue-600 md:text-5xl">Etkinlik Takvimi</h1>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-lg text-gray-600">
+              Yol Arkadaşları Psikoloji Vakfı'nın düzenlediği etkinlikleri burada bulabilirsiniz.
             </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button className="bg-white text-green-600 hover:bg-gray-100">
-                <Link href="#events-section">Etkinlikleri Keşfet</Link>
-              </Button>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Filtre ve Arama Bölümü */}
-      <section className="bg-white py-8 shadow-sm">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-1 items-center gap-2 rounded-lg bg-gray-100 p-3">
-              <FaSearch className="text-gray-500" />
-              <input
-                type="text"
-                placeholder="Etkinlik ara..."
-                className="w-full bg-transparent outline-none"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-
-            <div className="flex gap-2">
-              <div className="flex w-full flex-col gap-2 md:w-auto md:flex-row">
-                <select
-                  className="rounded-lg border border-gray-300 p-2"
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                >
-                  {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
-
-                <select
-                  className="rounded-lg border border-gray-300 p-2"
-                  value={selectedLocation}
-                  onChange={(e) => setSelectedLocation(e.target.value)}
-                >
-                  {locations.map(location => (
-                    <option key={location} value={location}>{location}</option>
-                  ))}
-                </select>
-
-                <select
-                  className="rounded-lg border border-gray-300 p-2"
-                  value={selectedMonth !== null ? selectedMonth : ""}
-                  onChange={(e) => setSelectedMonth(e.target.value ? parseInt(e.target.value) : null)}
-                >
-                  <option value="">Tüm Aylar</option>
-                  {months.map((month, index) => (
-                    <option key={index} value={index}>{month}</option>
-                  ))}
-                </select>
+      {/* Events Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-3xl font-bold text-blue-600 text-center">Etkinliklerimiz</h2>
+            <div className="space-y-8">
+              <div className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="mb-2 text-xl font-bold text-blue-600">Psikoloji Semineri</h3>
+                <p className="mb-1 text-gray-600">Tarih: 15 Haziran 2025</p>
+                <p className="mb-1 text-gray-600">Saat: 14:00 - 16:00</p>
+                <p className="mb-1 text-gray-600">Yer: Online</p>
+                <p className="text-gray-600">
+                  Psikolojinin temel kavramları ve günlük hayattaki uygulamaları üzerinedir.
+                </p>
               </div>
-
-              <div className="flex gap-2">
-                <Button
-                  variant={viewMode === "grid" ? "default" : "outline"}
-                  onClick={() => setViewMode("grid")}
-                  className="h-10 w-10 p-0"
-                >
-                  <FaCalendar className="text-lg" />
-                </Button>
-                <Button
-                  variant={viewMode === "list" ? "default" : "outline"}
-                  onClick={() => setViewMode("list")}
-                  className="h-10 w-10 p-0"
-                >
-                  <FaList className="text-lg" />
-                </Button>
+              <div className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="mb-2 text-xl font-bold text-blue-600">Atölye Çalışması: Stres Yönetimi</h3>
+                <p className="mb-1 text-gray-600">Tarih: 20 Haziran 2025</p>
+                <p className="mb-1 text-gray-600">Saat: 10:00 - 12:00</p>
+                <p className="mb-1 text-gray-600">Yer: İstanbul Merkez Ofis</p>
+                <p className="text-gray-600">
+                  Stresle başa çıkma tekniklerini öğrenmek için pratik bir atölye çalışması.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Etkinlikler Bölümü */}
-      <section id="events-section" className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold text-green-600">Yaklaşan Etkinlikler</h2>
-
-          {viewMode === "grid" ? (
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <AnimatePresence>
-                {filteredEvents.length > 0 ? (
-                  filteredEvents.map((event) => (
-                    <motion.div
-                      key={event.id}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden rounded-xl bg-white shadow-lg"
-                    >
-                      <div className="relative h-48 w-full">
-                        <Image
-                          src={event.image}
-                          alt={event.title}
-                          layout="fill"
-                          objectFit="cover"
-                          className="transition-transform duration-300 hover:scale-105"
-                        />
-                        <div className="absolute right-2 top-2 rounded-lg bg-green-600 px-2 py-1 text-xs text-white">
-                          {event.price}
-                        </div>
-                      </div>
-                      <div className="p-6">
-                        <div className="mb-4 flex flex-wrap items-center justify-between">
-                          <div className="flex items-center text-gray-500">
-                            <FaCalendarAlt className="mr-2" />
-                            <span>{format(event.date, 'dd MMMM yyyy', { locale: tr })}</span>
-                          </div>
-                          <span className="rounded-lg bg-blue-100 px-2 py-1 text-xs text-blue-600">
-                            {event.category}
-                          </span>
-                        </div>
-                        <div className="mb-4 flex items-center text-gray-500">
-                          <FaMapMarkerAlt className="mr-2" />
-                          <span>{event.location}</span>
-                        </div>
-                        <h3 className="mb-2 text-xl font-bold text-green-600">{event.title}</h3>
-                        <p className="mb-4 text-gray-600">{event.description}</p>
-                        <div className="flex justify-between">
-                          <Button className="bg-green-600 text-white hover:bg-green-700">
-                            <Link href={`/etkinlikler/${event.id}`}>Detayları Gör</Link>
-                          </Button>
-                          <Button variant="ghost" className="text-gray-600 hover:text-green-600">
-                            <FaShareAlt className="mr-2" />
-                            Paylaş
-                          </Button>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))
-                ) : (
-                  <div className="col-span-full text-center py-12">
-                    <p className="text-gray-600">Herhangi bir etkinlik bulunamadı.</p>
-                  </div>
-                )}
-              </AnimatePresence>
+      {/* Featured Events Section */}
+      <section className="bg-blue-50 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-10 text-center text-3xl font-bold text-blue-600">Önemli Etkinlikler</h2>
+            <div className="flex flex-col items-center gap-8 rounded-xl bg-white p-8 shadow-sm md:flex-row md:items-start">
+              <div className="shrink-0">
+                <div className="relative h-48 w-48 overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/events/feature1.jpg"
+                    alt="Önemli Etkinlik 1"
+                    width={200}
+                    height={200}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="mb-2 text-2xl font-bold text-blue-600">Yıllık Psikoloji Konferansı</h3>
+                <p className="mb-1 text-gray-600">Tarih: 10 Temmuz 2025</p>
+                <p className="mb-1 text-gray-600">Saat: 09:00 - 17:00</p>
+                <p className="mb-4 italic text-gray-600">
+                  "Psikolojinin Geleceği: Yeni Yaklaşımlar ve Uygulamalar"
+                </p>
+                <p className="text-gray-600">
+                  Uluslararası konuşmacıların katılımıyla, psikoloji alanındaki son gelişmeleri ele alacağımız bir günlük konferansımız.
+                </p>
+              </div>
             </div>
-          ) : (
-            // Liste görünümü
-            <div className="space-y-6">
-              {filteredEvents.map((event) => (
-                <motion.div
-                  key={event.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden rounded-xl bg-white shadow-md"
-                >
-                  <div className="flex flex-col md:flex-row">
-                    <div className="relative h-48 w-full md:w-64">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                    <div className="flex-1 p-6">
-                      <div className="mb-4 flex flex-wrap items-center justify-between">
-                        <div className="flex items-center text-gray-500">
-                          <FaCalendarAlt className="mr-2" />
-                          <span>{format(event.date, 'dd MMMM yyyy', { locale: tr })}</span>
-                        </div>
-                        <span className="rounded-lg bg-blue-100 px-2 py-1 text-xs text-blue-600">
-                          {event.category}
-                        </span>
-                      </div>
-                      <div className="mb-4 flex items-center text-gray-500">
-                        <FaMapMarkerAlt className="mr-2" />
-                        <span>{event.location}</span>
-                      </div>
-                      <h3 className="mb-2 text-xl font-bold text-green-600">{event.title}</h3>
-                      <p className="mb-4 text-gray-600">{event.description}</p>
-                      <div className="flex justify-between">
-                        <Button className="bg-green-600 text-white hover:bg-green-700">
-                          <Link href={`/etkinlikler/${event.id}`}>Detayları Gör</Link>
-                        </Button>
-                        <Button variant="ghost" className="text-gray-600 hover:text-green-600">
-                          <FaShareAlt className="mr-2" />
-                          Paylaş
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* CTA Bölümü */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold text-green-600">Etkinliklerimize Katılın</h2>
-          <p className="mx-auto mb-8 max-w-3xl text-lg text-gray-600">
-            Etkinliklerimize katılmak veya daha fazla bilgi almak için bizimle iletişime geçin.
-          </p>
-          <Button className="bg-green-600 text-white hover:bg-green-700">
-            <Link href="/iletisim">İletişime Geç</Link>
-          </Button>
+      {/* Categories Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-10 text-center text-3xl font-bold text-blue-600">Etkinlik Kategorileri</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-xl bg-blue-50 p-6 text-center">
+                <h3 className="mb-4 text-xl font-bold text-blue-600">Eğitimler</h3>
+                <p className="text-gray-600">
+                  Psikolojik sağlık, gelişim ve terapi yöntemleri üzerine düzenlenen eğitimler.
+                </p>
+              </div>
+              <div className="rounded-xl bg-blue-50 p-6 text-center">
+                <h3 className="mb-4 text-xl font-bold text-blue-600">Seminerler</h3>
+                <p className="text-gray-600">
+                  Uzmanlar tarafından verilen ve çeşitli psikoloji konularını ele alan seminerler.
+                </p>
+              </div>
+              <div className="rounded-xl bg-blue-50 p-6 text-center">
+                <h3 className="mb-4 text-xl font-bold text-blue-600">Atölye Çalışmaları</h3>
+                <p className="text-gray-600">
+                  Pratik becerilerin geliştirildiği interaktif çalışmalar.
+                </p>
+              </div>
+              <div className="rounded-xl bg-blue-50 p-6 text-center">
+                <h3 className="mb-4 text-xl font-bold text-blue-600">Sosyal Etkinlikler</h3>
+                <p className="text-gray-600">
+                  Dayanışma ve topluluk ruhunu güçlendiren sosyal etkinlikler.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 rounded-xl bg-[#eff6ff] p-8 text-gray-800 text-center">
+              <h3 className="mb-4 text-2xl font-bold">Gelecek Etkinlikler</h3>
+              <p className="mb-6">
+                Yol Arkadaşları Psikoloji Vakfı olarak, düzenlediğimiz etkinliklerle bireylerin psikolojik sağlıklarına katkıda bulunmayı ve toplumsal bilinç oluşturmayı hedefliyoruz.
+              </p>
+              <p className="mb-6">
+                Etkinliklerimizle ilgili güncel bilgilere ulaşmak ve katılım sağlamak için bizi takip etmeye devam edin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="bg-gray-50 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-blue-600">Etkinliklerimize Katılın</h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Etkinliklerimize katılmak ve güncel bilgilere ulaşmak için aşağıdaki bağlantıları kullanabilirsiniz.
+            </p>
+            <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+                <Link href="/etkinlik-kayit">Etkinliklere Kaydol</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
+              >
+                <Link href="/etkinlik-detay">Etkinlik Detayları</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
