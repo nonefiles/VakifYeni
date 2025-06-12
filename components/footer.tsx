@@ -1,22 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
-import {
-  Facebook,
-  Instagram,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-} from "lucide-react"
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden bg-[#ecf6fc] text-gray-800">
-      {/* Background Floating Elements */}
+    <footer className="relative overflow-hidden bg-[#ecf6fc]">
+      {/* Pattern overlay */}
       <div
         className="absolute inset-0 pointer-events-none opacity-10"
         aria-hidden="true"
@@ -26,10 +18,10 @@ export function Footer() {
         <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16 float-element" />
       </div>
 
-      <div className="container relative z-10 py-12 px-6 md:px-12 mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 items-start">
-          {/* Logo & About */}
-          <div>
+      <div className="container relative z-10 py-12 px-6 md:px-12 mx-auto max-w-7xl text-gray-800">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 items-start">
+          {/* Brand Section */}
+          <div className="lg:col-span-2 flex flex-col items-start">
             <div className="mb-6">
               <Image
                 src="/images/logo.png"
@@ -40,53 +32,31 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-800/90 leading-relaxed mb-4 font-aristoteles">
-              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı
-              olduğuna inanıyoruz.
+              İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </p>
-            <p className="text-gray-800/90 leading-relaxed mb-6 font-aristoteles">
-              Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma
-              ağı.
+            <p className="text-gray-800/90 leading-relaxed mb-8 font-aristoteles">
+              Herkes için psikolojik destek mümkün. Ruh sağlığı için dayanışma ağı.
             </p>
 
             {/* Social Media */}
             <nav aria-label="Sosyal Medya">
               <ul className="flex space-x-4">
-                {[
-                  {
-                    icon: Facebook,
-                    href: "https://www.facebook.com/profile.php?id=100089335227245",
-                    label: "Facebook",
-                  },
-                  {
-                    icon: Instagram,
-                    href: "https://instagram.com/yilmazyolarkadaslari",
-                    label: "Instagram",
-                  },
-                  {
-                    icon: FaXTwitter,
-                    href: "https://x.com/yol_psikoloji?t=AsIOscmnvwC9b6tET1iXCQ&s=09",
-                    label: "Twitter",
-                  },
-                  {
-                    icon: Youtube,
-                    href: "https://www.youtube.com/@YolArkada%C5%9Flar%C4%B1Dan%C4%B1%C5%9Fmanl%C4%B1k",
-                    label: "YouTube",
-                  },
-                  {
-                    icon: Linkedin,
-                    href: "https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k",
-                    label: "LinkedIn",
-                  },
+                {[ 
+                  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100089335227245", label: "Facebook" },
+                  { icon: Instagram, href: "https://instagram.com/yilmazyolarkadaslari", label: "Instagram" },
+                  { icon: FaXTwitter, href: "https://x.com/yol_psikoloji?t=AsIOscmnvwC9b6tET1iXCQ&s=09", label: "Twitter" },
+                  { icon: Youtube, href: "https://www.youtube.com/@YolArkada%C5%9Flar%C4%B1Dan%C4%B1%C5%9Fmanl%C4%B1k", label: "YouTube" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/company/yol-arkada%C5%9Flar%C4%B1-psikolojik-dan%C4%B1%C5%9Fmanl%C4%B1k", label: "LinkedIn" },
                 ].map((social, index) => (
                   <li key={index}>
                     <Link
                       href={social.href}
                       aria-label={social.label}
-                      className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 hover:scale-110 glow-on-hover text-gray-700"
+                      className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-110 glow-on-hover text-gray-700"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <social.icon size={18} />
+                      <social.icon size={20} />
                     </Link>
                   </li>
                 ))}
@@ -96,9 +66,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
-              Hızlı Bağlantılar
-            </h3>
+            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">Hızlı Bağlantılar</h3>
             <ul className="space-y-3" aria-label="Hızlı bağlantılar">
               {[
                 { name: "Hakkımızda", href: "/hakkimizda" },
@@ -119,28 +87,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact + Working Hours in Grid */}
+          {/* Contact + Working Hours */}
           <div>
-            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">
-              İletişim
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h3 className="mb-6 text-xl font-bold font-lora italic text-black">İletişim</h3>
+            <div className="flex flex-col md:flex-row gap-8">
               {/* Contact Info */}
-              <ul className="space-y-4 text-sm font-aristoteles">
+              <ul className="space-y-4 text-sm font-aristoteles w-full md:w-1/2">
                 <li className="flex items-start">
-                  <MapPin
-                    size={20}
-                    className="mt-1 flex-shrink-0 text-primary mr-3"
-                  />
-                  <span>
-                    Aziziye Mah. Cinnah Cad. 66/7, 06630 Çankaya / Ankara
-                  </span>
+                  <MapPin size={20} className="mt-1 flex-shrink-0 text-primary mr-3" />
+                  <span>Aziziye Mah. Cinnah Cad. 66/7, 06630 Çankaya / Ankara</span>
                 </li>
                 <li className="flex items-center">
-                  <Phone
-                    size={20}
-                    className="flex-shrink-0 text-primary mr-3"
-                  />
+                  <Phone size={20} className="flex-shrink-0 text-primary mr-3" />
                   <span>+90 539 889 33 75</span>
                 </li>
                 <li className="flex items-center">
@@ -150,14 +108,11 @@ export function Footer() {
               </ul>
 
               {/* Working Hours */}
-              <div>
+              <div className="w-full md:w-1/2">
                 <h4 className="mb-4 text-base font-semibold text-black font-lora italic">
                   Çalışma Saatleri
                 </h4>
-                <div
-                  className="space-y-2 text-sm text-gray-800/80 font-aristoteles"
-                  aria-label="Çalışma saatleri"
-                >
+                <div className="space-y-2 text-sm text-gray-800/80 font-aristoteles">
                   <div className="flex justify-between gap-4">
                     <span>Pazartesi - Cumartesi:</span>
                     <span>09:00 - 20:00</span>
@@ -172,11 +127,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Footer */}
+        {/* Footer Bottom */}
         <div className="mt-16 pt-8 border-t border-gray-200/50 text-center">
           <p className="text-gray-800/70 text-sm font-aristoteles">
-            © {currentYear} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları
-            saklıdır.
+            © {currentYear} Yol Arkadaşları Psikoloji Vakfı. Tüm hakları saklıdır.
           </p>
         </div>
       </div>
