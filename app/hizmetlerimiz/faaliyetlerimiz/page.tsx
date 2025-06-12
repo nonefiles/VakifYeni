@@ -309,7 +309,7 @@ export default function FaaliyetlerimizPage() {
 
       <div className="mt-16 bg-accent/20 p-8 rounded-lg max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 gradient-heading font-lora">Faaliyetlerimize Katılın</h2>
-        <p className="text-lg font-aristotelica mb-8">
+        <p className="text-lg text-center font-aristotelica mb-8">
           Yol Arkadaşları Psikoloji Vakfı'nın düzenlediği etkinliklere katılarak, projelerimize destek olarak veya
           yayınlarımızı takip ederek siz de bu yolculuğun bir parçası olabilirsiniz.
         </p>
