@@ -1,136 +1,137 @@
-'use client'
+"use client"
 
 import { useState } from "react"
-import { format } from "date-fns"
-import { motion } from "framer-motion"
-import { CalendarDays, MapPin, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { CalendarIcon, MapPinIcon, SearchIcon } from "lucide-react"
 
-const events = [
+type Event = {
+  id: string
+  title: string
+  date: string
+  time: string
+  location: string
+  type: "online" | "offline"
+  description: string
+  link: string
+}
+
+const eventsData: Event[] = [
   {
-    id: 1,
-    title: "Ruh Sağlığı Semineri",
+    id: "1",
+    title: "Ruh Sağlığına Giriş Semineri",
     date: "2025-06-28",
     time: "19:00",
-    location: "Online (Zoom)",
-    description: "Temel psikoloji kavramları hakkında kapsamlı seminer.",
-    category: "Eğitim"
+    location: "Zoom",
+    type: "online",
+    description: "Temel psikolojik kavramların ele alınacağı seminer.",
+    link: "/etkinlikler/ruhsagligi-semineri",
   },
   {
-    id: 2,
+    id: "2",
     title: "Gönüllü Buluşması",
     date: "2025-07-06",
     time: "14:00",
-    location: "İstanbul",
-    description: "Gönüllülerle kaynaşma ve planlama buluşması.",
-    category: "Toplantı"
+    location: "İstanbul Ofisi",
+    type: "offline",
+    description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği.",
+    link: "/etkinlikler/gonullu-bulusmasi",
   },
   {
-    id: 3,
+    id: "3",
     title: "Şema Terapi Atölyesi",
     date: "2025-07-20",
     time: "10:00",
     location: "Ankara",
-    description: "Uygulamalı şema terapi eğitimi ve süpervizyon.",
-    category: "Atölye"
+    type: "offline",
+    description: "Uygulamalı Şema Terapi atölyesi.",
+    link: "/etkinlikler/sema-terapi-atolyesi",
   },
 ]
 
 export default function EventsPage() {
-  const [filter, setFilter] = useState("")
-  const filteredEvents = events.filter(event =>
-    event.title.toLowerCase().includes(filter.toLowerCase()) ||
-    event.category.toLowerCase().includes(filter.toLowerCase())
-  )
+  const [search, setSearch] = useState("")
+  const [filter, setFilter] = useState<"all" | "online" | "offline">("all")
+
+  const filteredEvents = eventsData.filter((event) => {
+    const matchesSearch = event.title.toLowerCase().includes(search.toLowerCase())
+    const matchesFilter = filter === "all" || event.type === filter
+    return matchesSearch && matchesFilter
+  })
 
   return (
-    <div className="container py-12 space-y-10">
-      {/* Hero */}
-      <section className="text-center">
-        <motion.h1
-          className="text-4xl font-bold text-green-700 md:text-5xl"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Etkinlik Takvimi
-        </motion.h1>
-        <p className="mt-4 text-gray-600">
-          Yaklaşan seminer, atölye ve buluşmalar hakkında bilgi alın.
-        </p>
-      </section>
-
-      {/* Filtre */}
-      <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <Input
-          placeholder="Etkinlik ara..."
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          className="w-full md:w-1/3"
-        />
-        <Select onValueChange={setFilter}>
-          <SelectTrigger className="md:w-1/4">
-            <SelectValue placeholder="Kategori Seçin" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="">Tümü</SelectItem>
-            <SelectItem value="Eğitim">Eğitim</SelectItem>
-            <SelectItem value="Toplantı">Toplantı</SelectItem>
-            <SelectItem value="Atölye">Atölye</SelectItem>
-          </SelectContent>
-        </Select>
-      </section>
-
-      {/* Etkinlik Kartları */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredEvents.map(event => (
-          <Card key={event.id} className="hover:shadow-md transition-all">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <CalendarDays className="w-4 h-4" />
-                {format(new Date(event.date), "dd MMMM yyyy")} •
-                <Clock className="w-4 h-4" />
-                {event.time}
-              </div>
-              <h3 className="text-xl font-semibold text-green-700">{event.title}</h3>
-              <p className="text-gray-600">{event.location}</p>
-
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button size="sm" variant="outline" className="mt-2">Detayları Gör</Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-lg">
-                  <h3 className="text-xl font-bold text-green-700">{event.title}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{event.category} • {event.location}</p>
-                  <p className="mt-4 text-gray-700">{event.description}</p>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Tarih: {format(new Date(event.date), "dd MMMM yyyy")} | Saat: {event.time}
-                  </p>
-                </DialogContent>
-              </Dialog>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
-
-      {/* CTA */}
-      <section className="text-center mt-12 space-y-6">
-        <h2 className="text-3xl font-bold text-green-700">Sen de Katıl!</h2>
-        <p className="text-gray-600">
-          Etkinliklerimize katılmak için gönüllü olabilir veya bizimle iletişime geçebilirsiniz.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild className="bg-green-600 text-white hover:bg-green-700">
-            <a href="/gonullu-ol">Gönüllü Ol</a>
-          </Button>
-          <Button asChild variant="outline" className="border-green-700 text-green-700 hover:bg-green-50">
-            <a href="/iletisim">İletişim</a>
-          </Button>
+    <div className="py-16">
+      <div className="container space-y-12">
+        {/* Header */}
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-green-700 mb-4">Etkinlik Takvimi</h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Yol Arkadaşları Psikoloji Vakfı'nın yaklaşan seminer, atölye ve gönüllü etkinliklerini takip edin.
+          </p>
         </div>
-      </section>
+
+        {/* Filters */}
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <Input
+            placeholder="Etkinlik ara..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full sm:max-w-xs"
+          />
+
+          <div className="flex gap-2">
+            <Button
+              variant={filter === "all" ? "default" : "outline"}
+              onClick={() => setFilter("all")}
+            >
+              Hepsi
+            </Button>
+            <Button
+              variant={filter === "online" ? "default" : "outline"}
+              onClick={() => setFilter("online")}
+            >
+              Online
+            </Button>
+            <Button
+              variant={filter === "offline" ? "default" : "outline"}
+              onClick={() => setFilter("offline")}
+            >
+              Yüz Yüze
+            </Button>
+          </div>
+        </div>
+
+        {/* Event Cards */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {filteredEvents.length === 0 ? (
+            <p className="text-gray-500">Hiç etkinlik bulunamadı.</p>
+          ) : (
+            filteredEvents.map((event) => (
+              <div
+                key={event.id}
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+              >
+                <h3 className="text-2xl font-semibold text-green-700 mb-2">{event.title}</h3>
+                <p className="text-gray-600 mb-4">{event.description}</p>
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                  <div className="flex items-center gap-1">
+                    <CalendarIcon className="w-4 h-4" />
+                    <span>{event.date} • {event.time}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPinIcon className="w-4 h-4" />
+                    <span>{event.location}</span>
+                  </div>
+                </div>
+                <Button asChild className="bg-green-600 text-white hover:bg-green-700">
+                  <Link href={event.link}>Detayları Gör</Link>
+                </Button>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   )
 }
