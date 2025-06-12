@@ -6,10 +6,13 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { CalendarIcon, MapPinIcon } from "lucide-react"
 import clsx from "clsx"
+import { motion, AnimatePresence } from "framer-motion"
+
+// Types
 
 type EventType = "online" | "offline"
 
-type Event = {
+interface Event {
   id: string
   title: string
   date: string
@@ -19,6 +22,8 @@ type Event = {
   description: string
   link: string
 }
+
+// Dummy data
 
 const events: Event[] = [
   {
@@ -53,58 +58,58 @@ const events: Event[] = [
   },
 ]
 
-const filterOptions = [
+const filterTabs = [
   { label: "Hepsi", value: "all" },
   { label: "Online", value: "online" },
   { label: "Yüz Yüze", value: "offline" },
 ] as const
 
-type Filter = (typeof filterOptions)[number]["value"]
+// Card Component
 
 const EventCard = ({ event }: { event: Event }) => (
-  <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+  <motion.div
+    layout
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    transition={{ duration: 0.3 }}
+    className="group rounded-3xl border border-gray-100 bg-white p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+  >
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-blue-700 group-hover:text-blue-600 transition">
           {event.title}
         </h3>
         <span
           className={clsx(
-            "text-xs font-medium px-3 py-1 rounded-full",
+            "text-xs font-semibold px-3 py-1 rounded-full",
             event.type === "online"
               ? "bg-emerald-100 text-emerald-700"
-              : "bg-amber-100 text-amber-700"
+              : "bg-yellow-100 text-yellow-700"
           )}
         >
           {event.type === "online" ? "Online" : "Yüz Yüze"}
         </span>
       </div>
-
-      <p className="text-sm text-gray-600 min-h-[48px]">
-        {event.description}
-      </p>
-
-      <div className="flex flex-col gap-1 text-sm text-gray-500">
-        <div className="flex items-center gap-2">
-          <CalendarIcon className="w-4 h-4" />
-          <span>{event.date} • {event.time}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <MapPinIcon className="w-4 h-4" />
-          <span>{event.location}</span>
-        </div>
+      <p className="text-gray-600 text-sm min-h-[48px]">{event.description}</p>
+      <div className="flex items-center gap-2 text-sm text-gray-500">
+        <CalendarIcon className="w-4 h-4" />
+        <span>{event.date} • {event.time}</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm text-gray-500">
+        <MapPinIcon className="w-4 h-4" />
+        <span>{event.location}</span>
       </div>
     </div>
-
-    <Button asChild className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 transition">
+    <Button asChild className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl">
       <Link href={event.link}>Detayları Gör</Link>
     </Button>
-  </div>
+  </motion.div>
 )
 
 export default function EventsPage() {
   const [search, setSearch] = useState("")
-  const [filter, setFilter] = useState<Filter>("all")
+  const [filter, setFilter] = useState<"all" | "online" | "offline">("all")
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -115,16 +120,14 @@ export default function EventsPage() {
   }, [search, filter])
 
   return (
-    <main className="min-h-screen py-20 bg-gradient-to-b from-white to-sky-50">
-      <section className="container space-y-16">
-        <header className="text-center space-y-4">
-          <h1 className="text-5xl font-bold tracking-tight text-blue-700 drop-shadow-sm">
-            Etkinlik Takvimi
-          </h1>
+    <main className="min-h-screen py-20 bg-gradient-to-b from-white to-blue-50">
+      <div className="container space-y-16">
+        <div className="text-center space-y-4">
+          <h1 className="text-5xl font-bold text-blue-700 drop-shadow-sm">Etkinlik Takvimi</h1>
           <p className="text-gray-600 text-lg max-w-xl mx-auto">
             Katılabileceğiniz yaklaşan ruh sağlığı etkinliklerini keşfedin.
           </p>
-        </header>
+        </div>
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 bg-white p-6 rounded-2xl shadow border border-gray-100">
           <Input
@@ -133,15 +136,14 @@ export default function EventsPage() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full sm:max-w-xs"
           />
-
           <div className="flex gap-2">
-            {filterOptions.map(({ label, value }) => (
+            {filterTabs.map(({ label, value }) => (
               <Button
                 key={value}
                 onClick={() => setFilter(value)}
                 variant={filter === value ? "default" : "ghost"}
                 className={clsx(
-                  "capitalize rounded-full px-5 border",
+                  "capitalize rounded-full px-5",
                   filter === value
                     ? "bg-blue-600 text-white hover:bg-blue-700"
                     : "border-gray-300 text-gray-600 hover:bg-gray-100"
@@ -154,15 +156,22 @@ export default function EventsPage() {
         </div>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredEvents.length === 0 ? (
-            <p className="text-gray-500 col-span-full text-center">Hiç etkinlik bulunamadı.</p>
-          ) : (
-            filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))
-          )}
+          <AnimatePresence>
+            {filteredEvents.length === 0 ? (
+              <motion.p
+                key="no-events"
+                className="text-gray-500 col-span-full text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                Hiç etkinlik bulunamadı.
+              </motion.p>
+            ) : (
+              filteredEvents.map((event) => <EventCard key={event.id} event={event} />)
+            )}
+          </AnimatePresence>
         </section>
-      </section>
+      </div>
     </main>
   )
 }
