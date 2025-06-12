@@ -141,8 +141,8 @@ export default function BlogPage() {
 
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-lora italic text-white">Blog ve Kaynaklar</h1>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 font-lora italic text-white text-center">Blog ve Kaynaklar</h1>
+            <p className="text-xl text-white/90 mb-12 leading-relaxed text-center">
               Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın hazırladığı içerikler, öneriler ve
               kaynaklar.
             </p>
@@ -212,7 +212,7 @@ export default function BlogPage() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-lora italic text-primary">Son Yazılar</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-lora italic text-primary text-center">Son Yazılar</h2>
 
             <div className="flex items-center gap-3">
               <span className="text-sm text-gray-600">Sırala:</span>
@@ -261,8 +261,8 @@ export default function BlogPage() {
         <div className="container">
           <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-accent/5 rounded-3xl p-12 md:p-16 shadow-lg border border-primary/10">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-lora italic text-primary">Bültene Abone Olun</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-lora italic text-primary text-center">Bültene Abone Olun</h2>
+              <p className="text-lg text-gray-600 leading-relaxed text-center">
                 Yeni blog yazıları, kaynaklar ve etkinliklerden haberdar olmak için e-posta listemize kaydolun.
               </p>
             </div>
@@ -304,7 +304,7 @@ function FeaturedPostCard({ post }: { post: any }) {
 
         <div className="p-8 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
+            <div className="flex items-center justify-center gap-4 mb-4 text-sm text-gray-500">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 <span>{post.date}</span>
@@ -315,16 +315,16 @@ function FeaturedPostCard({ post }: { post: any }) {
               </div>
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary line-clamp-2 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-lora italic text-primary line-clamp-2 leading-tight text-center">
               <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
                 {post.title}
               </Link>
             </h3>
 
-            <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{post.excerpt}</p>
+            <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed text-center">{post.excerpt}</p>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center flex-col gap-4">
             <div className="flex items-center gap-2">
               <User className="h-4 w-4 text-primary" />
               <span className="text-sm text-gray-600">{post.author}</span>
@@ -359,8 +359,8 @@ function BlogPostCard({ post }: { post: any }) {
         <Badge className="absolute bottom-4 left-4 bg-primary text-white px-3 py-1 text-sm">{post.category}</Badge>
       </div>
 
-      <CardHeader className="text-left pb-3">
-        <div className="flex items-center justify-between mb-3 text-sm text-gray-500">
+      <CardHeader className="text-center pb-3">
+        <div className="flex items-center justify-center gap-4 mb-3 text-sm text-gray-500">
           <div className="flex items-center gap-1">
             <Calendar className="h-3 w-3" />
             <span>{post.date}</span>
@@ -371,18 +371,18 @@ function BlogPostCard({ post }: { post: any }) {
           </div>
         </div>
 
-        <CardTitle className="text-xl font-lora italic text-primary line-clamp-2 leading-tight">
+        <CardTitle className="text-xl font-lora italic text-primary line-clamp-2 leading-tight text-center">
           <Link href={`/blog/${post.slug}`} className="hover:text-primary/80 transition-colors">
             {post.title}
           </Link>
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="text-left flex-grow">
-        <p className="text-gray-600 line-clamp-3 leading-relaxed">{post.excerpt}</p>
+      <CardContent className="text-center flex-grow">
+        <p className="text-gray-600 line-clamp-3 leading-relaxed text-center">{post.excerpt}</p>
       </CardContent>
 
-      <CardFooter className="text-left pt-0 flex items-center justify-between">
+      <CardFooter className="text-center pt-0 flex items-center justify-center flex-col gap-3">
         <div className="flex items-center gap-2">
           <User className="h-3 w-3 text-primary" />
           <span className="text-sm text-gray-600">{post.author}</span>
@@ -406,11 +406,11 @@ function ResourceCard({ resource }: { resource: any }) {
     <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm h-full">
       <CardHeader className="text-center pb-4">
         <div className="flex justify-center mb-6">{resource.icon}</div>
-        <CardTitle className="text-xl font-lora italic text-[#8fa4d3] mb-4">{resource.title}</CardTitle>
+        <CardTitle className="text-xl font-lora italic text-[#8fa4d3] mb-4 text-center">{resource.title}</CardTitle>
       </CardHeader>
 
       <CardContent className="text-center">
-        <p className="text-[#8fa4d3]/90 leading-relaxed">{resource.description}</p>
+        <p className="text-[#8fa4d3]/90 leading-relaxed text-center">{resource.description}</p>
       </CardContent>
 
       <CardFooter className="justify-center pt-6">
