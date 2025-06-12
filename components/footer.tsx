@@ -1,10 +1,10 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
-import { FaXTwitter } from "react-icons/fa6"
+import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#f7fafc] border-t border-gray-200">
@@ -94,37 +94,36 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Working Hours Combined */}
-          <div className="col-span-2 lg:col-span-1 space-y-8">
-            <div>
-              <h4 className="mb-4 text-base font-semibold text-gray-900">İletişim</h4>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start">
-                  <MapPin size={18} className="text-primary mr-3 mt-0.5" />
-                  <span>Aziziye Mah. Cinnah Cad. 66/7, 06630 Çankaya / Ankara</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone size={18} className="text-primary mr-3" />
-                  <span>+90 539 889 33 75</span>
-                </li>
-                <li className="flex items-center">
-                  <Mail size={18} className="text-primary mr-3" />
-                  <span>info@yolarkadaslari.org</span>
-                </li>
-              </ul>
-            </div>
+          {/* Contact Section */}
+          <div>
+            <h4 className="mb-4 text-base font-semibold text-gray-900">İletişim</h4>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start">
+                <MapPin size={18} className="text-primary mr-3 mt-0.5" />
+                <span>Aziziye Mah. Cinnah Cad. 66/7, 06630 Çankaya / Ankara</span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="text-primary mr-3" />
+                <span>+90 539 889 33 75</span>
+              </li>
+              <li className="flex items-center">
+                <Mail size={18} className="text-primary mr-3" />
+                <span>info@yolarkadaslari.org</span>
+              </li>
+            </ul>
+          </div>
 
-            <div>
-              <h4 className="mb-4 text-base font-semibold text-gray-900">Çalışma Saatleri</h4>
-              <div className="space-y-1 text-sm">
-                <div className="flex justify-between">
-                  <span>Pzt - Cmt</span>
-                  <span>09:00 - 20:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pazar</span>
-                  <span>Kapalı</span>
-                </div>
+          {/* Working Hours Section */}
+          <div>
+            <h4 className="mb-4 text-base font-semibold text-gray-900">Çalışma Saatleri</h4>
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between">
+                <span>Pzt - Cmt</span>
+                <span>09:00 - 20:00</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Pazar</span>
+                <span>Kapalı</span>
               </div>
             </div>
           </div>
@@ -136,7 +135,7 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
