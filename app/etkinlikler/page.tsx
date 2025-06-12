@@ -1,171 +1,106 @@
-"use client"; // Add this line at the top
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-export default function UltraModernEventsPage() {
-  const [activeCategory, setActiveCategory] = useState("Tüm Etkinlikler");
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const events = [
-    {
-      name: "Psikoloji Semineri",
-      date: "15 Haziran 2025",
-      time: "14:00 - 16:00",
-      location: "Online",
-      description: "Psikolojinin temel kavramları ve günlük hayattaki uygulamaları üzerinedir.",
-      category: "Seminerler",
-      image: "/images/events/seminar.jpg",
-    },
-    {
-      name: "Stres Yönetimi Atölyesi",
-      date: "20 Haziran 2025",
-      time: "10:00 - 12:00",
-      location: "İstanbul Merkez Ofis",
-      description: "Stresle başa çıkma tekniklerini öğrenmek için pratik bir atölye çalışması.",
-      category: "Atölye Çalışmaları",
-      image: "/images/events/workshop.jpg",
-    },
-    {
-      name: "Yıllık Psikoloji Konferansı",
-      date: "10 Temmuz 2025",
-      time: "09:00 - 17:00",
-      location: "İstanbul Kongre Merkezi",
-      description: "Uluslararası konuşmacıların katılımıyla, psikoloji alanındaki son gelişmeleri ele alacağımız bir günlük konferansımız.",
-      category: "Konferanslar",
-      image: "/images/events/conference.jpg",
-    },
-  ];
-
-  const categories = ["Tüm Etkinlikler", "Seminerler", "Atölye Çalışmaları", "Konferanslar"];
-
-  const filteredEvents = events.filter((event) => {
-    const matchesCategory = activeCategory === "Tüm Etkinlikler" || event.category === activeCategory;
-    const matchesSearch = event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         event.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
+export default function EventsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-500 to-purple-600 py-32 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-4 text-4xl font-bold md:text-5xl"
-          >
-            Etkinlik Takvimi
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl"
-          >
-            Yol Arkadaşları Psikoloji Vakfı'nın düzenlediği etkinlikleri keşfedin ve katılın.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-          <div className="w-full md:w-1/2 lg:w-1/3">
-            <input
-              type="text"
-              placeholder="Etkinlik ara..."
-              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <div className="flex space-x-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full ${activeCategory === category ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"}`}
-              >
-                {category}
-              </button>
-            ))}
+      <section className="bg-green-50 py-16 md:py-24">
+        <div className="container">
+          <h1 className="mb-6 text-center text-4xl font-bold text-green-700 md:text-5xl">Etkinlik Takvimi</h1>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-lg text-gray-600">
+              Yol Arkadaşları Psikoloji Vakfı olarak düzenlediğimiz atölye, seminer ve buluşmalarla bir araya geliyoruz.
+              Siz de bu etkinliklerde yer almak ister misiniz?
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {filteredEvents.map((event, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="overflow-hidden rounded-xl bg-white shadow-lg"
-            >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={event.image}
-                  alt={event.name}
-                  layout="fill"
-                  objectFit="cover"
-                />
+      {/* Events List Section */}
+      <section className="py-16">
+        <div className="container">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-10 text-center text-3xl font-bold text-green-700">Yaklaşan Etkinlikler</h2>
+
+            <div className="space-y-8">
+              {/* Event Card */}
+              <div className="rounded-xl border p-6 shadow-sm bg-white">
+                <div className="md:flex md:items-center md:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-green-700">Ruh Sağlığına Giriş Semineri</h3>
+                    <p className="text-gray-600 mt-2">
+                      Temel psikolojik kavramların konuşulacağı bu seminerde, alan uzmanlarıyla ruh sağlığı üzerine derinlemesine sohbet edeceğiz.
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">Tarih: 28 Haziran 2025 • Saat: 19:00 • Yer: Online (Zoom)</p>
+                  </div>
+                  <Button asChild className="mt-4 md:mt-0 bg-green-600 text-white hover:bg-green-700">
+                    <Link href="/etkinlikler/ruhsagligi-semineri">Detaylar</Link>
+                  </Button>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-blue-600">{event.name}</h3>
-                <p className="mb-1 text-gray-600">Tarih: {event.date}</p>
-                <p className="mb-1 text-gray-600">Saat: {event.time}</p>
-                <p className="mb-1 text-gray-600">Yer: {event.location}</p>
-                <p className="text-gray-600">{event.description}</p>
-                <Link href="/etkinlik-kayit" className="mt-4 inline-block">
-                  <span className="text-blue-500 hover:underline">Detaylar ve Kaydol</span>
-                </Link>
+
+              {/* Event Card */}
+              <div className="rounded-xl border p-6 shadow-sm bg-white">
+                <div className="md:flex md:items-center md:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-green-700">Gönüllü Buluşması</h3>
+                    <p className="text-gray-600 mt-2">
+                      Vakfımızda aktif rol alan gönüllülerimizle tanışmak ve yeni gönüllülerle kaynaşmak için yüz yüze buluşuyoruz.
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">Tarih: 6 Temmuz 2025 • Saat: 14:00 • Yer: İstanbul Ofisi</p>
+                  </div>
+                  <Button asChild className="mt-4 md:mt-0 bg-green-600 text-white hover:bg-green-700">
+                    <Link href="/etkinlikler/gonullu-bulusmasi">Detaylar</Link>
+                  </Button>
+                </div>
               </div>
-            </motion.div>
-          ))}
+
+              {/* Event Card */}
+              <div className="rounded-xl border p-6 shadow-sm bg-white">
+                <div className="md:flex md:items-center md:justify-between">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-green-700">Şema Terapi Atölyesi</h3>
+                    <p className="text-gray-600 mt-2">
+                      Şema terapi alanına ilgi duyan psikoloji öğrencileri ve uzmanları için uygulamalı bir atölye çalışması.
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">Tarih: 20 Temmuz 2025 • Saat: 10:00 • Yer: Ankara</p>
+                  </div>
+                  <Button asChild className="mt-4 md:mt-0 bg-green-600 text-white hover:bg-green-700">
+                    <Link href="/etkinlikler/sema-terapi-atolyesi">Detaylar</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-blue-500 to-purple-600 py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6 text-3xl font-bold"
-          >
-            Etkinliklerimize Katılın
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8 text-lg"
-          >
-            Etkinliklerimize katılmak ve güncel bilgilere ulaşmak için aşağıdaki bağlantıları kullanabilirsiniz.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
-          >
-            <Link href="/etkinlik-kayit" className="rounded-lg bg-white px-6 py-3 text-blue-600 hover:bg-gray-100">
-              Etkinliklere Kaydol
-            </Link>
-            <Link href="/etkinlik-detay" className="rounded-lg border border-white px-6 py-3 hover:bg-white hover:text-blue-600">
-              Etkinlik Detayları
-            </Link>
-          </motion.div>
+      <section className="bg-gray-50 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-green-700">Sen de Katıl!</h2>
+            <p className="mb-8 text-lg text-gray-600">
+              Etkinliklerimizde yer almak, gelişmek ve katkı sunmak istiyorsan hemen kayıt ol ya da gönüllü ekibimize katıl!
+            </p>
+            <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+              <Button asChild size="lg" className="bg-green-600 text-white hover:bg-green-700">
+                <Link href="/gonullu-ol">Gönüllü Ol</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-green-700 text-green-700 hover:bg-green-50 hover:text-green-800"
+              >
+                <Link href="/iletisim">Bize Ulaş</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
-  );
+  )
 }
