@@ -13,7 +13,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4 font-lora italic">
               Bizimle İletişime Geçin
             </h1>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg text-center text-foreground/80 max-w-2xl mx-auto">
               Sorularınız, önerileriniz veya iş birliği talepleriniz için aşağıdaki iletişim kanallarından bize
               ulaşabilirsiniz.
             </p>
