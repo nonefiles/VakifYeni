@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Clock, Users, Tag, Search, Filter, ExternalLink, Bookmark, Share2 } from "lucide-react"
+import { Calendar, MapPin, Clock, Users, Search, Filter, ExternalLink, Bookmark, Share2 } from "lucide-react"
 
 interface Event {
   id: string
@@ -218,7 +218,7 @@ export default function EventsPage() {
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-        <div className="container relative">
+        <div className="container relative max-w-6xl mx-auto px-4">
           <div className="text-center space-y-6 max-w-4xl mx-auto">
             <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-700 via-purple-600 to-blue-800 bg-clip-text text-transparent">
               Etkinlik Takvimi
@@ -243,7 +243,7 @@ export default function EventsPage() {
 
       {/* Featured Events */}
       {featuredEvents.length > 0 && (
-        <section className="container py-12">
+        <section className="container max-w-6xl mx-auto px-4 py-12">
           <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Öne Çıkan Etkinlikler</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuredEvents.map((event) => (
@@ -283,7 +283,7 @@ export default function EventsPage() {
         </section>
       )}
 
-      <div className="container space-y-8 pb-20">
+      <div className="container max-w-6xl mx-auto px-4 space-y-8 pb-20">
         {/* Search and Filters */}
         <section className="bg-white rounded-3xl shadow-lg p-8 border">
           <div className="space-y-6">
@@ -384,11 +384,6 @@ export default function EventsPage() {
               <div className="max-w-md mx-auto space-y-4">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
                   <Search className="w-8 h-8 text-gray-400" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800">Etkinlik bulunamadı</h3>
-                <p className="text-gray-600">Arama kriterlerinizi değiştirerek tekrar deneyin.</p>
-              </div>-100 rounded-full flex items-center justify-center mx-auto">
-                  <SearchIcon className="w-8 h-8 text-gray-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800">Etkinlik bulunamadı</h3>
                 <p className="text-gray-600">Arama kriterlerinizi değiştirerek tekrar deneyin.</p>
