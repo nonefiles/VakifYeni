@@ -247,10 +247,10 @@ export default function EventsPage() {
         <div className="bg-white rounded-3xl shadow-lg p-8 border">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {events.map((event) => (
-              <div key={event.id} className="p-4 border rounded-lg">
+              <div key={event.id} className="p-4 border rounded-lg text-center">
                 <h3 className="text-lg font-bold text-center">{event.title}</h3>
-                <p className="text-sm text-gray-600 text-center">{formatDate(event.date)}</p>
-                <p className="text-sm text-gray-600 text-center">{event.time}</p>
+                <p className="text-sm text-gray-600">{formatDate(event.date)}</p>
+                <p className="text-sm text-gray-600">{event.time}</p>
               </div>
             ))}
           </div>
@@ -267,19 +267,19 @@ export default function EventsPage() {
                 <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                   ÖNE ÇIKAN
                 </div>
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-800 pr-20 text-center">
+                <div className="space-y-4 text-center">
+                  <h3 className="text-xl font-bold text-gray-800">
                     {event.title}
                   </h3>
-                  <p className="text-sm text-gray-600 line-clamp-2 text-center">
+                  <p className="text-sm text-gray-600 line-clamp-2">
                     {event.description}
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-gray-500 justify-center">
+                    <div className="flex justify-center items-center gap-2 text-gray-500">
                       <Calendar className="w-4 h-4" />
                       <span>{formatDate(event.date)} • {event.time}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-500 justify-center">
+                    <div className="flex justify-center items-center gap-2 text-gray-500">
                       <MapPin className="w-4 h-4" />
                       <span>{event.location}</span>
                     </div>
@@ -299,20 +299,20 @@ export default function EventsPage() {
       <div className="container max-w-6xl mx-auto px-4 space-y-8 pb-20">
         {/* Search and Filters */}
         <section className="bg-white rounded-3xl shadow-lg p-8 border">
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             {/* Search Bar */}
-            <div className="relative">
+            <div className="relative mx-auto max-w-md">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input
                 placeholder="Etkinlik, eğitmen veya konu ara..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-12 h-12 text-lg rounded-2xl border-2 focus:border-blue-500"
+                className="pl-12 h-12 text-lg rounded-2xl border-2 focus:border-blue-500 w-full"
               />
             </div>
 
             {/* Quick Filters */}
-            <div className="flex flex-wrap gap-3 items-center">
+            <div className="flex flex-wrap gap-3 items-center justify-center">
               <span className="text-sm font-medium text-gray-600">Hızlı Filtreler:</span>
               {[
                 { label: "Hepsi", value: "all" },
@@ -331,7 +331,7 @@ export default function EventsPage() {
               <Button
                 variant="outline"
                 onClick={() => setShowFilters(!showFilters)}
-                className="rounded-full px-4 py-2 text-sm ml-auto"
+                className="rounded-full px-4 py-2 text-sm"
               >
                 <Filter className="w-4 h-4 mr-2" />
                 Gelişmiş Filtreler
@@ -342,8 +342,8 @@ export default function EventsPage() {
             {showFilters && (
               <div className="border-t pt-6 space-y-4">
                 <div className="grid gap-4 md:grid-cols-3">
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-center">Kategori</label>
+                  <div className="text-center">
+                    <label className="block text-sm font-medium mb-2">Kategori</label>
                     <select
                       value={categoryFilter}
                       onChange={(e) => setCategoryFilter(e.target.value)}
@@ -354,8 +354,8 @@ export default function EventsPage() {
                       ))}
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-center">Seviye</label>
+                  <div className="text-center">
+                    <label className="block text-sm font-medium mb-2">Seviye</label>
                     <select
                       value={difficultyFilter}
                       onChange={(e) => setDifficultyFilter(e.target.value)}
@@ -366,8 +366,8 @@ export default function EventsPage() {
                       ))}
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-center">Sıralama</label>
+                  <div className="text-center">
+                    <label className="block text-sm font-medium mb-2">Sıralama</label>
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value as any)}
@@ -386,8 +386,8 @@ export default function EventsPage() {
 
         {/* Events Grid */}
         <section>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-800 text-center">
+          <div className="flex justify-center items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-800">
               Tüm Etkinlikler ({filteredEvents.length})
             </h2>
           </div>
@@ -410,10 +410,10 @@ export default function EventsPage() {
                   className="bg-white border rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group hover:-translate-y-1"
                 >
                   {/* Event Header */}
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-start justify-between">
+                  <div className="p-6 space-y-4 text-center">
+                    <div className="flex justify-center items-start">
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
+                        <div className="flex justify-center items-center gap-2 mb-2">
                           <span className={`text-xs font-medium px-2 py-1 rounded-full ${
                             event.type === "online" ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
                           }`}>
@@ -423,40 +423,32 @@ export default function EventsPage() {
                             {getDifficultyText(event.difficulty)}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors text-center">
+                        <h3 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                           {event.title}
                         </h3>
-                        <p className="text-sm text-gray-500 mt-1 text-center">{event.category}</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <Button size="sm" variant="ghost" className="p-2 rounded-full">
-                          <Bookmark className="w-4 h-4" />
-                        </Button>
-                        <Button size="sm" variant="ghost" className="p-2 rounded-full">
-                          <Share2 className="w-4 h-4" />
-                        </Button>
+                        <p className="text-sm text-gray-500 mt-1">{event.category}</p>
                       </div>
                     </div>
 
-                    <p className="text-sm text-gray-600 line-clamp-3 text-center">
+                    <p className="text-sm text-gray-600 line-clamp-3">
                       {event.description}
                     </p>
 
                     {/* Event Details */}
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 text-gray-500 justify-center">
+                      <div className="flex justify-center items-center gap-2 text-gray-500">
                         <Calendar className="w-4 h-4" />
                         <span>{formatDate(event.date)}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-500 justify-center">
+                      <div className="flex justify-center items-center gap-2 text-gray-500">
                         <Clock className="w-4 h-4" />
                         <span>{event.time} • {event.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-500 justify-center">
+                      <div className="flex justify-center items-center gap-2 text-gray-500">
                         <MapPin className="w-4 h-4" />
                         <span>{event.location}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-500 justify-center">
+                      <div className="flex justify-center items-center gap-2 text-gray-500">
                         <Users className="w-4 h-4" />
                         <span>{event.instructor}</span>
                       </div>
@@ -479,17 +471,11 @@ export default function EventsPage() {
 
                   {/* Event Footer */}
                   <div className="px-6 pb-6 space-y-4">
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-center items-center">
                       <div>
                         <span className="text-2xl font-bold text-blue-600">
                           ÜCRETSİZ
                         </span>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm font-medium text-gray-800">
-                          {event.registered}/{event.capacity}
-                        </div>
-                        <div className="text-xs text-gray-500">kişi kayıtlı</div>
                       </div>
                     </div>
 
