@@ -153,13 +153,17 @@ export default function EventsPage() {
                 onChange={(date) => setSelectedDate(date as Date)}
                 value={selectedDate}
                 className="border-none"
-                tileClassName={({ date, view }) =>
-                  view === 'month' && date.getDay() === 0
-                    ? 'sunday'
-                    : view === 'month' && date.getDay() === 6
-                    ? 'saturday'
-                    : null
-                }
+                tileClassName={({ date, view }) => {
+                  if (view === 'month') {
+                    if (date.getDay() === 0) {
+                      return 'sunday';
+                    }
+                    if (date.getDay() === 6) {
+                      return 'saturday';
+                    }
+                  }
+                  return null;
+                }}
               />
             </div>
           </div>
