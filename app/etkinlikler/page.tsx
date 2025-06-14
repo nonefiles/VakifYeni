@@ -4,7 +4,6 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 
 const events = [
   {
@@ -149,11 +148,20 @@ export default function EventsPage() {
           </div>
         ) : (
           <div className="flex justify-center">
-            <Calendar
-              onChange={(date) => setSelectedDate(date as Date)}
-              value={selectedDate}
-              locale="tr-TR"
-            />
+            <div className="shadow-lg rounded-lg p-4 bg-white">
+              <Calendar
+                onChange={(date) => setSelectedDate(date as Date)}
+                value={selectedDate}
+                className="border-none"
+                tileClassName={({ date, view }) =>
+                  view === 'month' && date.getDay() === 0
+                    ? 'sunday'
+                    : view === 'month' && date.getDay() === 6
+                    ? 'saturday'
+                    : null
+                }
+              />
+            </div>
           </div>
         )}
 
