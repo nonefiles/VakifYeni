@@ -63,7 +63,7 @@ export function FaqSection() {
     <div className="container">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="mb-8 text-4xl font-medium md:text-5xl font-lora gradient-heading">Sıkça Sorulan Sorular</h2>
-        <p className="mb-12 text-xl text-foreground/80 leading-relaxed font-aristotelica">
+        <p className="mb-12 text-xl text-center text-foreground/80 leading-relaxed font-aristotelica">
           Yol Arkadaşları Psikoloji Vakfı hakkında merak edilenler
         </p>
       </div>
