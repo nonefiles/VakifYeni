@@ -1,8 +1,10 @@
-import React, { useState, useMemo, useEffect } from "react";
+"use client";
+
+import React, { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CalendarIcon, MapPinIcon, SearchIcon, FilterIcon } from "lucide-react";
+import { CalendarIcon, MapPinIcon, SearchIcon } from "lucide-react";
 import clsx from "clsx";
 import { format, parseISO } from "date-fns";
 import { tr } from "date-fns/locale";
