@@ -1,15 +1,29 @@
-"use client";
+// Tiplerin tanımlanması"use client";
 
 import React, { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { CalendarIcon, MapPinIcon, SearchIcon } from "lucide-react";
-import clsx from "clsx";
-import { format, parseISO } from "date-fns";
-import { tr } from "date-fns/locale";
+import { Calendar, MapPin, Search, ArrowLeft } from "lucide-react";
 
-// Tiplerin tanımlanması
+// Tarih formatlama fonksiyonu
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const months = [
+    "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+  ];
+  
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  
+  return `${day} ${month} ${year}`;
+};
+
+// CSS sınıflarını birleştirme fonksiyonu
+const cn = (...classes: string[]) => {
+  return classes.filter(Boolean).join(' ');
+};
 interface Event {
   id: string;
   title: string;
@@ -21,6 +35,7 @@ interface Event {
   link: string;
   image?: string;
   category: string;
+  detailedDescription?: string;
 }
 
 type FilterType = "all" | "online" | "offline";
@@ -38,6 +53,7 @@ const events: Event[] = [
     description: "Temel psikolojik kavramların ele alınacağı seminer.",
     link: "/etkinlikler/ruhsagligi-semineri",
     category: "seminar",
+    detailedDescription: "Bu seminerde ruh sağlığının temel kavramları, stres yönetimi teknikleri ve günlük yaşamda psikolojik sağlığı koruma yöntemleri ele alınacaktır. Uzman psikologlar eşliğinde interaktif bir oturum olacak."
   },
   {
     id: "2",
@@ -49,6 +65,7 @@ const events: Event[] = [
     description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği.",
     link: "/etkinlikler/gonullu-bulusmasi",
     category: "meeting",
+    detailedDescription: "Derneğimizin gönüllüleri ile tanışma, deneyim paylaşımı ve gelecek projeler hakkında bilgi alış verişi yapacağımız samimi bir buluşma. Çay-kahve ikramları olacak."
   },
   {
     id: "3",
@@ -60,12 +77,174 @@ const events: Event[] = [
     description: "Uygulamalı Şema Terapi atölyesi.",
     link: "/etkinlikler/sema-terapi-atolyesi",
     category: "workshop",
+    detailedDescription: "Şema Terapi yaklaşımının temel prensipleri, şema modları ve terapi tekniklerinin uygulamalı olarak öğrenileceği profesyonel bir atölye çalışması. Sertifika verilecektir."
   },
 ];
 
+// Kayıt formu bileşeni
+const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ event, onBack }) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Kaydınız başarıyla alındı! Size onay e-postası göndereceğiz.");
+    // Burada form verilerini işleyebilirsiniz
+  };
+
+  const formattedDate = formatDate(event.date);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-20">
+      <div className="container max-w-4xl mx-auto">
+        <Button
+          onClick={onBack}
+          variant="ghost"
+          className="mb-6 text-blue-600 hover:text-blue-700"
+        >
+                      <ArrowLeft className="w-4 h-4 mr-2" />
+          Geri Dön
+        </Button>
+
+        <div className="bg-white rounded-3xl shadow-lg p-8">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Etkinlik Bilgileri */}
+            <div className="space-y-6">
+              <div>
+                <h1 className="text-3xl font-bold text-blue-800 mb-4">{event.title}</h1>
+                <div className="space-y-3 text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-blue-600" />
+                    <span className="font-medium">{formattedDate} • {event.time}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <span>{event.location}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={
+                        event.type === "online"
+                          ? "text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700"
+                          : "text-xs font-medium px-3 py-1 rounded-full bg-yellow-100 text-yellow-700"
+                      }
+                    >
+                      {event.type === "online" ? "Online" : "Yüz Yüze"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 p-6 rounded-xl">
+                <h3 className="text-lg font-semibold text-blue-800 mb-3">Etkinlik Hakkında</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {event.detailedDescription}
+                </p>
+              </div>
+            </div>
+
+            {/* Kayıt Formu */}
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Etkinliğe Kayıt Ol</h2>
+              
+              <div onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Ad *
+                  </label>
+                  <Input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    required
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="w-full"
+                    placeholder="Adınızı giriniz"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                    Soyad *
+                  </label>
+                  <Input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    required
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="w-full"
+                    placeholder="Soyadınızı giriniz"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Telefon Numarası *
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full"
+                    placeholder="0555 123 45 67"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    E-posta Adresi *
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full"
+                    placeholder="ornek@email.com"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl py-3 mt-6"
+                >
+                  Kayıt Ol
+                </Button>
+              </div>
+
+              <p className="text-xs text-gray-500 mt-4">
+                * Zorunlu alanlar. Bilgileriniz gizli tutulacak ve sadece etkinlik organizasyonu için kullanılacaktır.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Etkinlik kartı bileşeni
-const EventCard: React.FC<{ event: Event }> = ({ event }) => {
-  const formattedDate = format(parseISO(event.date), "dd MMMM yyyy", { locale: tr });
+const EventCard: React.FC<{ event: Event; onShowDetails: (event: Event) => void }> = ({ event, onShowDetails }) => {
+  const formattedDate = formatDate(event.date);
 
   return (
     <div className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col justify-between group">
@@ -82,12 +261,11 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
             {event.title}
           </h3>
           <span
-            className={clsx(
-              "text-xs font-medium px-3 py-1 rounded-full",
+            className={
               event.type === "online"
-                ? "bg-green-100 text-green-700"
-                : "bg-yellow-100 text-yellow-700"
-            )}
+                ? "text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700"
+                : "text-xs font-medium px-3 py-1 rounded-full bg-yellow-100 text-yellow-700"
+            }
           >
             {event.type === "online" ? "Online" : "Yüz Yüze"}
           </span>
@@ -97,22 +275,22 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
         </p>
         <div className="text-sm text-gray-500 space-y-1">
           <div className="flex items-center gap-2">
-            <CalendarIcon className="w-4 h-4" />
+            <Calendar className="w-4 h-4" />
             <span>
               {formattedDate} • {event.time}
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <MapPinIcon className="w-4 h-4" />
+            <MapPin className="w-4 h-4" />
             <span>{event.location}</span>
           </div>
         </div>
       </div>
       <Button
-        asChild
+        onClick={() => onShowDetails(event)}
         className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl"
       >
-        <Link href={event.link}>Detayları Gör</Link>
+        Detayları Gör
       </Button>
     </div>
   );
@@ -136,12 +314,11 @@ const FilterButtons: React.FC<{
           key={btn.value}
           variant={filter === btn.value ? "default" : "ghost"}
           onClick={() => setFilter(btn.value)}
-          className={clsx(
-            "capitalize px-5 rounded-full",
+          className={
             filter === btn.value
-              ? "bg-blue-600 text-white hover:bg-blue-700"
-              : "text-muted-foreground border"
-          )}
+              ? "capitalize px-5 rounded-full bg-blue-600 text-white hover:bg-blue-700"
+              : "capitalize px-5 rounded-full text-muted-foreground border"
+          }
         >
           {btn.label}
         </Button>
@@ -169,12 +346,11 @@ const CategoryFilter: React.FC<{
           key={cat.value}
           variant={category === cat.value ? "default" : "ghost"}
           onClick={() => setCategory(cat.value)}
-          className={clsx(
-            "capitalize px-5 rounded-full",
+          className={
             category === cat.value
-              ? "bg-purple-600 text-white hover:bg-purple-700"
-              : "text-muted-foreground border"
-          )}
+              ? "capitalize px-5 rounded-full bg-blue-600 text-white hover:bg-blue-700"
+              : "capitalize px-5 rounded-full text-muted-foreground border"
+          }
         >
           {cat.label}
         </Button>
@@ -188,6 +364,7 @@ const EventsPage: React.FC = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<FilterType>("all");
   const [category, setCategory] = useState<CategoryType>("all");
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -197,6 +374,19 @@ const EventsPage: React.FC = () => {
       return matchTitle && matchType && matchCategory;
     });
   }, [search, filter, category]);
+
+  const handleShowDetails = (event: Event) => {
+    setSelectedEvent(event);
+  };
+
+  const handleBackToList = () => {
+    setSelectedEvent(null);
+  };
+
+  // Eğer bir etkinlik seçilmişse, kayıt formunu göster
+  if (selectedEvent) {
+    return <RegistrationForm event={selectedEvent} onBack={handleBackToList} />;
+  }
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-20">
@@ -212,7 +402,7 @@ const EventsPage: React.FC = () => {
 
         <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-white p-6 rounded-2xl border shadow">
           <div className="relative w-full sm:max-w-xs">
-            <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <Input
               placeholder="Etkinlik ara..."
               value={search}
@@ -233,7 +423,7 @@ const EventsPage: React.FC = () => {
             </p>
           ) : (
             filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard key={event.id} event={event} onShowDetails={handleShowDetails} />
             ))
           )}
         </section>
