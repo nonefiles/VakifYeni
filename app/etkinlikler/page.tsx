@@ -1,4 +1,4 @@
-// Tiplerin tanımlanması"use client";
+"use client";
 
 import React, { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
@@ -12,11 +12,11 @@ const formatDate = (dateString: string) => {
     "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
     "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
   ];
-  
+
   const day = date.getDate();
   const month = months[date.getMonth()];
   const year = date.getFullYear();
-  
+
   return `${day} ${month} ${year}`;
 };
 
@@ -24,6 +24,7 @@ const formatDate = (dateString: string) => {
 const cn = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
+
 interface Event {
   id: string;
   title: string;
@@ -100,7 +101,6 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Kaydınız başarıyla alındı! Size onay e-postası göndereceğiz.");
-    // Burada form verilerini işleyebilirsiniz
   };
 
   const formattedDate = formatDate(event.date);
@@ -113,13 +113,12 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
           variant="ghost"
           className="mb-6 text-blue-600 hover:text-blue-700"
         >
-                      <ArrowLeft className="w-4 h-4 mr-2" />
+          <ArrowLeft className="w-4 h-4 mr-2" />
           Geri Dön
         </Button>
 
         <div className="bg-white rounded-3xl shadow-lg p-8">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Etkinlik Bilgileri */}
             <div className="space-y-6">
               <div>
                 <h1 className="text-3xl font-bold text-blue-800 mb-4">{event.title}</h1>
@@ -154,11 +153,10 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
               </div>
             </div>
 
-            {/* Kayıt Formu */}
             <div className="bg-gray-50 p-6 rounded-xl">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Etkinliğe Kayıt Ol</h2>
-              
-              <div onSubmit={handleSubmit} className="space-y-4">
+
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                     Ad *
@@ -229,7 +227,7 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
                 >
                   Kayıt Ol
                 </Button>
-              </div>
+              </form>
 
               <p className="text-xs text-gray-500 mt-4">
                 * Zorunlu alanlar. Bilgileriniz gizli tutulacak ve sadece etkinlik organizasyonu için kullanılacaktır.
@@ -383,7 +381,6 @@ const EventsPage: React.FC = () => {
     setSelectedEvent(null);
   };
 
-  // Eğer bir etkinlik seçilmişse, kayıt formunu göster
   if (selectedEvent) {
     return <RegistrationForm event={selectedEvent} onBack={handleBackToList} />;
   }
