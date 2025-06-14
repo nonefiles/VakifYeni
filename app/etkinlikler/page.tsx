@@ -1,16 +1,22 @@
 "use client"
 
-import { useState } from "react"
-import { format, addDays, startOfWeek, eachDayOfInterval, isSameDay } from "date-fns"
-import { tr } from "date-fns/locale"
+import { useState, useMemo } from "react"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { CalendarIcon, MapPinIcon } from "lucide-react"
+import clsx from "clsx"
+
 
 interface Event {
   id: string
   title: string
   date: string
   time: string
+  location: string
+  type: "online" | "offline"
   description: string
+  link: string
 }
 
 const events: Event[] = [
@@ -19,111 +25,128 @@ const events: Event[] = [
     title: "Ruh Sağlığına Giriş Semineri",
     date: "2025-06-28",
     time: "19:00",
-    description: "Temel psikolojik kavramların ele alınacağı kapsamlı seminer."
+    location: "Zoom",
+    type: "online",
+    description: "Temel psikolojik kavramların ele alınacağı seminer.",
+    link: "/etkinlikler/ruhsagligi-semineri",
   },
   {
     id: "2",
     title: "Gönüllü Buluşması",
     date: "2025-07-06",
     time: "14:00",
-    description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği."
+    location: "İstanbul Ofisi",
+    type: "offline",
+    description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği.",
+    link: "/etkinlikler/gonullu-bulusmasi",
   },
   {
     id: "3",
     title: "Şema Terapi Atölyesi",
     date: "2025-07-20",
     time: "10:00",
-    description: "Uygulamalı Şema Terapi atölyesi."
+    location: "Ankara",
+    type: "offline",
+    description: "Uygulamalı Şema Terapi atölyesi.",
+    link: "/etkinlikler/sema-terapi-atolyesi",
   },
-  {
-    id: "4",
-    title: "Stres Yönetimi Webinarı",
-    date: "2025-07-15",
-    time: "18:30",
-    description: "Günlük hayatta stresle başa çıkma teknikleri."
-  },
-  {
-    id: "5",
-    title: "Çocuk Psikolojisi Uzmanlık Kursu",
-    date: "2025-08-10",
-    time: "09:00",
-    description: "Çocuk psikolojisi alanında uzmanlaşmak isteyenler için kapsamlı kurs."
-  },
-  {
-    id: "6",
-    title: "Mindfulness ve Meditasyon",
-    date: "2025-07-25",
-    time: "20:00",
-    description: "Mindfulness pratiği ve meditasyon teknikleri."
-  }
 ]
 
 export default function EventsPage() {
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date())
+  const [search, setSearch] = useState("")
+  const [filter, setFilter] = useState<"all" | "online" | "offline">("all")
 
-  const today = new Date()
-  const startOfCurrentWeek = startOfWeek(today, { locale: tr })
-  const daysOfWeek = eachDayOfInterval({
-    start: startOfCurrentWeek,
-    end: addDays(startOfCurrentWeek, 6)
-  })
-
-  const filteredEvents = events.filter(event => isSameDay(new Date(event.date), selectedDate))
+  const filteredEvents = useMemo(() => {
+    return events.filter((event) => {
+      const matchTitle = event.title.toLowerCase().includes(search.toLowerCase())
+      const matchType = filter === "all" || event.type === filter
+      return matchTitle && matchType
+    })
+  }, [search, filter])
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <section className="container max-w-6xl mx-auto px-4 py-12 text-center">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-700 via-purple-600 to-blue-800 bg-clip-text text-transparent mb-4">
-          Etkinlik Takvimi
-        </h1>
-        <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Ruh sağlığı alanındaki yolculuğunuza bir adım atın. Uzman eğitmenlerle birlikte öğrenin, gelişin ve toplulukla bağlantı kurun.
-        </p>
-      </section>
+    <main className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-20">
+      <div className="container space-y-16">
+        <header className="text-center space-y-4">
+          <h1 className="text-5xl font-extrabold tracking-tight text-blue-700 drop-shadow-sm">
+            Etkinlik Takvimi
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ruh sağlığı alanındaki yolculuğunuza bir adım atın. Katılabileceğiniz etkinlikleri keşfedin.
+          </p>
+        </header>
 
-      <section className="container max-w-6xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-3xl shadow-lg p-6">
-          <div className="grid grid-cols-7 gap-4 mb-6">
-            {daysOfWeek.map(day => (
-              <button
-                key={day.toString()}
-                onClick={() => setSelectedDate(day)}
-                className={`py-2 rounded-xl transition-colors ${isSameDay(day, selectedDate) ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
+        <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-white p-6 rounded-2xl border shadow">
+          <Input
+            placeholder="Etkinlik ara..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full sm:max-w-xs"
+          />
+          <div className="flex gap-2">
+            {[
+              { label: "Hepsi", value: "all" },
+              { label: "Online", value: "online" },
+              { label: "Yüz Yüze", value: "offline" },
+            ].map((btn) => (
+              <Button
+                key={btn.value}
+                variant={filter === btn.value ? "default" : "ghost"}
+                onClick={() => setFilter(btn.value as any)}
+                className={clsx(
+                  "capitalize px-5 rounded-full",
+                  filter === btn.value ? "bg-blue-600 text-white hover:bg-blue-700" : "text-muted-foreground border"
+                )}
               >
-                <div className="text-sm font-medium">{format(day, "EEE", { locale: tr })}</div>
-                <div className="text-lg font-bold">{format(day, "d", { locale: tr })}</div>
-              </button>
+                {btn.label}
+              </Button>
             ))}
           </div>
+        </section>
 
-          <div className="space-y-4">
-            {filteredEvents.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-gray-500">Seçilen tarihte etkinlik bulunamadı.</p>
-              </div>
-            ) : (
-              filteredEvents.map(event => (
-                <div key={event.id} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                  <h2 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h2>
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full">
-                      ÜCRETSİZ
-                    </span>
-                    <span className="text-gray-600">
-                      {format(new Date(event.date), "d MMMM yyyy, EEEE", { locale: tr })} • {event.time}
+        <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredEvents.length === 0 ? (
+            <p className="text-center col-span-full text-muted-foreground">Hiç etkinlik bulunamadı.</p>
+          ) : (
+            filteredEvents.map((event) => (
+              <div
+                key={event.id}
+                className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col justify-between group"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600">
+                      {event.title}
+                    </h3>
+                    <span className={clsx(
+                      "text-xs font-medium px-3 py-1 rounded-full",
+                      event.type === "online" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"
+                    )}>
+                      {event.type === "online" ? "Online" : "Yüz Yüze"}
                     </span>
                   </div>
-                  <Link href={`/etkinlikler/${event.id}`} className="inline-block">
-                    <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl h-12 font-semibold transition-colors">
-                      Detayları Gör
-                    </button>
-                  </Link>
+                  <p className="text-sm text-muted-foreground min-h-[48px]">
+                    {event.description}
+                  </p>
+                  <div className="text-sm text-gray-500 space-y-1">
+                    <div className="flex items-center gap-2">
+                      <CalendarIcon className="w-4 h-4" />
+                      <span>{event.date} • {event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPinIcon className="w-4 h-4" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
                 </div>
-              ))
-            )}
-          </div>
-        </div>
-      </section>
+                <Button asChild className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl">
+                  <Link href={event.link}>Detayları Gör</Link>
+                </Button>
+              </div>
+            ))
+          )}
+        </section>
+      </div>
     </main>
   )
 }
