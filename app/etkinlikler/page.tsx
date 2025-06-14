@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 const events = [
   {
@@ -38,14 +40,12 @@ const events = [
 ];
 
 export default function EventsPage() {
-  const [view, setView] = useState("list");
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [view, setView] = useState<"list" | "calendar">("list");
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const toggleView = () => {
-    setView(view === "list" ? "calendar" : "list");
-  };
+  const [filterType, setFilterType] = useState<"all" | "online" | "offline">("all");
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const openModal = (event: any) => {
     setSelectedEvent(event);
@@ -56,9 +56,12 @@ export default function EventsPage() {
     setIsModalOpen(false);
   };
 
-  const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredEvents = events.filter((event) => {
+    const matchesSearchTerm = event.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesFilterType = filterType === "all" || event.type === filterType;
+    const matchesDate = selectedDate ? event.date === format(selectedDate, "yyyy-MM-dd") : true;
+    return matchesSearchTerm && matchesFilterType && matchesDate;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-10 px-4 sm:px-6 lg:px-8">
@@ -82,12 +85,23 @@ export default function EventsPage() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button
-            onClick={toggleView}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap"
-          >
-            {view === "list" ? "Takvim Görünümü" : "Liste Görünümü"}
-          </button>
+          <div className="flex space-x-4">
+            <select
+              className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value as "all" | "online" | "offline")}
+            >
+              <option value="all">Hepsi</option>
+              <option value="online">Online</option>
+              <option value="offline">Yüz Yüze</option>
+            </select>
+            <button
+              onClick={() => setView(view === "list" ? "calendar" : "list")}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap"
+            >
+              {view === "list" ? "Takvim Görünümü" : "Liste Görünümü"}
+            </button>
+          </div>
         </div>
 
         {view === "list" ? (
@@ -134,9 +148,12 @@ export default function EventsPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Takvim Görünümü</h2>
-            <p>Buraya takvim görünümü eklenecek.</p>
+          <div className="flex justify-center">
+            <Calendar
+              onChange={(date) => setSelectedDate(date as Date)}
+              value={selectedDate}
+              locale="tr-TR"
+            />
           </div>
         )}
 
