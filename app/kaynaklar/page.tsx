@@ -14,6 +14,7 @@ interface Resource {
   link: string;
   icon: React.ReactNode;
   category: string;
+  image?: string; // Optional image URL for the resource
 }
 
 // Resources data
@@ -26,6 +27,7 @@ const resources: Resource[] = [
     link: "https://vakifyeni.netlify.app/blog/kaynaklar/makaleler",
     icon: <FileText className="w-8 h-8 text-blue-600" />,
     category: "Makaleler",
+    image: "https://via.placeholder.com/300x200?text=Akademik+Makaleler", // Placeholder image URL
   },
   {
     id: "2",
@@ -35,6 +37,7 @@ const resources: Resource[] = [
     link: "https://vakifyeni.netlify.app/blog/kaynaklar/filmler",
     icon: <Film className="w-8 h-8 text-blue-600" />,
     category: "Filmler",
+    image: "https://via.placeholder.com/300x200?text=Film+Posteri", // Placeholder image URL
   },
   {
     id: "3",
@@ -44,6 +47,7 @@ const resources: Resource[] = [
     link: "https://vakifyeni.netlify.app/blog/kaynaklar/kitaplar",
     icon: <Book className="w-8 h-8 text-blue-600" />,
     category: "Kitaplar",
+    image: "https://via.placeholder.com/300x200?text=Kitap+Kapak", // Placeholder image URL
   },
 ];
 
@@ -51,13 +55,26 @@ const resources: Resource[] = [
 const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
   return (
     <div className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col group">
+      {resource.image && (
+        <div className="w-full h-48 overflow-hidden rounded-xl mb-4">
+          <img
+            src={resource.image}
+            alt={resource.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <div className="flex justify-center mb-4">{resource.icon}</div>
       <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600 mb-2 text-center">
         {resource.title}
       </h3>
-      <p className="text-sm text-muted-foreground mb-4 text-center">{resource.description}</p>
+      <p className="text-sm text-muted-foreground mb-4 text-center">
+        {resource.description}
+      </p>
       <div className="bg-blue-50 p-4 rounded-xl mb-4">
-        <p className="text-gray-700 leading-relaxed">{resource.detailedDescription}</p>
+        <p className="text-gray-700 leading-relaxed">
+          {resource.detailedDescription}
+        </p>
       </div>
       <Button
         onClick={() => window.open(resource.link, "_blank")}
