@@ -136,7 +136,7 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col group relative">
+    <div className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col group relative text-center">
       {service.urgent && (
         <div className="absolute -top-2 -right-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
           ACİL
@@ -153,16 +153,16 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
         {service.description}
       </p>
 
-      <div className="bg-blue-50 p-4 rounded-xl mb-4 space-y-3">
-        <div className="flex items-center gap-2">
+      <div className="bg-blue-50 p-4 rounded-xl mb-4 space-y-3 text-center">
+        <div className="flex items-center gap-2 justify-center">
           <MapPin className="w-4 h-4 text-gray-600" />
           <span className="text-sm text-gray-700">{service.location}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-center">
           <Phone className="w-4 h-4 text-gray-600" />
           <span className="text-sm text-gray-700">{service.phone}</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-center">
           <Clock className="w-4 h-4 text-gray-600" />
           <span className="text-sm text-gray-700">{service.hours}</span>
         </div>
@@ -170,11 +170,11 @@ const ServiceCard: React.FC<{ service: any }> = ({ service }) => {
 
       {isExpanded && (
         <div className="mb-4 space-y-3">
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-sm leading-relaxed text-center">
             {service.detailedDescription}
           </p>
           <div>
-            <h4 className="font-medium text-gray-800 mb-2">Sunulan Hizmetler:</h4>
+            <h4 className="font-medium text-gray-800 mb-2 text-center">Sunulan Hizmetler:</h4>
             <ul className="space-y-1">
               {service.services.map((serviceItem: string, index: number) => (
                 <li key={index} className="flex items-center gap-2 text-sm text-gray-600">
@@ -296,15 +296,15 @@ const CommunityMentalHealthPage: React.FC = () => {
         </header>
 
         {/* Emergency Alert */}
-        <section className="bg-red-50 border border-red-200 rounded-3xl p-6 max-w-4xl mx-auto">
-          <div className="flex items-start gap-4">
+        <section className="bg-red-50 border border-red-200 rounded-3xl p-6 max-w-4xl mx-auto text-center">
+          <div className="flex items-start gap-4 justify-center text-left">
             <AlertTriangle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" />
-            <div>
+            <div className="text-center">
               <h3 className="text-xl font-bold text-red-800 mb-2">Acil Durum?</h3>
               <p className="text-red-700 mb-4">
                 Kendinize veya başkalarına zarar verme düşünceleriniz varsa hemen yardım alın.
               </p>
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-3 flex-wrap justify-center">
                 <Button 
                   onClick={() => window.open("tel:183", "_blank")}
                   className="bg-red-600 hover:bg-red-700 text-white rounded-xl"
@@ -361,7 +361,7 @@ const CommunityMentalHealthPage: React.FC = () => {
 
         {/* Services Filter */}
         <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-white p-6 rounded-2xl border shadow">
-          <div className="relative w-full sm:max-w-xs">
+          <div className="relative w-full sm:max-w-xs mx-auto sm:mx-0">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <Input
               placeholder="Hizmet ara..."
