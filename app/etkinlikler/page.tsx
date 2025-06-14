@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
@@ -45,7 +47,7 @@ export default function EventsPage() {
     setView(view === "list" ? "calendar" : "list");
   };
 
-  const openModal = (event) => {
+  const openModal = (event: any) => {
     setSelectedEvent(event);
     setIsModalOpen(true);
   };
@@ -179,7 +181,7 @@ export default function EventsPage() {
   );
 }
 
-function RegistrationForm({ eventId }) {
+function RegistrationForm({ eventId }: { eventId: number }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -187,7 +189,7 @@ function RegistrationForm({ eventId }) {
     session: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -195,7 +197,7 @@ function RegistrationForm({ eventId }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Kayıt başarılı!");
