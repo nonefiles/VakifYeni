@@ -1,165 +1,260 @@
-// src/App.js
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useParams, Link } from 'react-router-dom';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import { format } from 'date-fns';
+import { useState } from "react";
+import { format } from "date-fns";
+import { tr } from "date-fns/locale";
 
-// Mock veri
-const mockEvents = [
-  { id: 1, title: 'Etkinlik 1', date: new Date(2023, 10, 15), description: 'Açıklama 1' },
-  { id: 2, title: 'Etkinlik 2', date: new Date(2023, 10, 20), description: 'Açıklama 2' },
+const events = [
+  {
+    id: 1,
+    title: "Ruh Sağlığına Giriş Semineri",
+    date: "2025-06-28",
+    time: "19:00",
+    location: "Zoom",
+    type: "online",
+    description: "Temel psikolojik kavramların ele alınacağı seminer.",
+    link: "/etkinlikler/ruhsagligi-semineri",
+  },
+  {
+    id: 2,
+    title: "Gönüllü Buluşması",
+    date: "2025-07-06",
+    time: "14:00",
+    location: "İstanbul Ofisi",
+    type: "offline",
+    description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği.",
+    link: "/etkinlikler/gonullu-bulusmasi",
+  },
+  {
+    id: 3,
+    title: "Şema Terapi Atölyesi",
+    date: "2025-07-20",
+    time: "10:00",
+    location: "Ankara",
+    type: "offline",
+    description: "Uygulamalı Şema Terapi atölyesi.",
+    link: "/etkinlikler/sema-terapi-atolyesi",
+  },
 ];
 
-const EventCalendar = () => {
-  const [date, setDate] = useState(new Date());
-  const [view, setView] = useState('calendar');
-
-  const handleDateChange = (newDate) => {
-    setDate(newDate);
-  };
+export default function EventsPage() {
+  const [view, setView] = useState("list");
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleView = () => {
-    setView(view === 'calendar' ? 'list' : 'calendar');
+    setView(view === "list" ? "calendar" : "list");
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Etkinlik Takvimi</h1>
-      <button
-        onClick={toggleView}
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        {view === 'calendar' ? 'Liste Görünümüne Geç' : 'Takvim Görünümüne Geç'}
-      </button>
+  const openModal = (event) => {
+    setSelectedEvent(event);
+    setIsModalOpen(true);
+  };
 
-      {view === 'calendar' ? (
-        <div className="bg-white p-4 rounded shadow">
-          <Calendar onChange={handleDateChange} value={date} />
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const filteredEvents = events.filter((event) =>
+    event.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <header className="text-center space-y-4 mb-12">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-blue-800">
+            Etkinlik Takvimi
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Ruh sağlığı alanındaki yolculuğunuza bir adım atın. Katılabileceğiniz etkinlikleri keşfedin.
+          </p>
+        </header>
+
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+          <div className="w-full md:w-1/3">
+            <input
+              type="text"
+              placeholder="Etkinlik ara..."
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <button
+            onClick={toggleView}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap"
+          >
+            {view === "list" ? "Takvim Görünümü" : "Liste Görünümü"}
+          </button>
         </div>
-      ) : (
-        <div className="w-full max-w-md bg-white rounded shadow p-4">
-          {mockEvents.map((event) => (
-            <div key={event.id} className="mb-4 p-4 border rounded">
-              <h2 className="text-xl font-bold">{event.title}</h2>
-              <p className="text-gray-600">{format(event.date, 'dd MMMM yyyy')}</p>
-              <p className="text-gray-800">{event.description}</p>
-              <span className="inline-block bg-green-200 text-green-800 px-2 py-1 rounded text-xs">
-                Ücretsiz
-              </span>
-              <Link to={`/etkinlik/${event.id}`}>
-                <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded">
+
+        {view === "list" ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredEvents.map((event) => (
+              <div
+                key={event.id}
+                className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-semibold text-blue-800">
+                      {event.title}
+                    </h3>
+                    <span className={`text-xs font-medium px-3 py-1 rounded-full ${
+                      event.type === "online"
+                        ? "bg-green-100 text-green-800"
+                        : "bg-yellow-100 text-yellow-800"
+                    }`}>
+                      {event.type === "online" ? "Online" : "Yüz Yüze"}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 min-h-[48px]">
+                    {event.description}
+                  </p>
+                  <div className="text-sm text-gray-500 space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span>
+                        {format(new Date(event.date), "PPPP", { locale: tr })} • {event.time}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => openModal(event)}
+                  className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 py-2 rounded-xl transition-colors"
+                >
                   Detayları Gör
                 </button>
-              </Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">Takvim Görünümü</h2>
+            <p>Buraya takvim görünümü eklenecek.</p>
+          </div>
+        )}
+
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-lg">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold">{selectedEvent.title}</h2>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <p className="mb-2">
+                <strong>Tarih:</strong> {selectedEvent.date} • {selectedEvent.time}
+              </p>
+              <p className="mb-2">
+                <strong>Lokasyon:</strong> {selectedEvent.location}
+              </p>
+              <p className="mb-4 text-gray-700">{selectedEvent.description}</p>
+              <RegistrationForm eventId={selectedEvent.id} />
             </div>
-          ))}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
-};
+}
 
-const EventDetail = () => {
-  const { id } = useParams();
+function RegistrationForm({ eventId }) {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    session: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    session: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
+    alert("Kayıt başarılı!");
   };
 
-  const event = mockEvents.find(event => event.id === parseInt(id));
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Etkinlik Detayı - {event.title}</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-md bg-white rounded shadow p-4">
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">
-            Ad
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">
-            Soyad
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            E-posta
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="session">
-            Oturum Seçimi
-          </label>
-          <select
-            id="session"
-            name="session"
-            value={formData.session}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded"
-          >
-            <option value="">Oturum Seçin</option>
-            <option value="session1">Oturum 1</option>
-            <option value="session2">Oturum 2</option>
-          </select>
-        </div>
-        <button type="submit" className="w-full px-4 py-2 bg-blue-500 text-white rounded">
-          Kayıt Ol
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="Ad"
+          value={formData.firstName}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Soyad"
+          value={formData.lastName}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="email"
+          name="email"
+          placeholder="E-posta"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
+      <div>
+        <select
+          name="session"
+          value={formData.session}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        >
+          <option value="">Oturum Seçin</option>
+          <option value="session1">Oturum 1</option>
+          <option value="session2">Oturum 2</option>
+        </select>
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-colors"
+      >
+        Kaydol
+      </button>
+    </form>
   );
-};
-
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<EventCalendar />} />
-        <Route path="/etkinlik/:id" element={<EventDetail />} />
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+}
