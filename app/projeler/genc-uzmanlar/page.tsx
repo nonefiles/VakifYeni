@@ -196,7 +196,7 @@ const CocugunYolArkadasi: React.FC = () => {
           <p className="text-gray-700 leading-relaxed text-lg mb-6 text-center">
             "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş,
             <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi</strong>
-            alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
+             alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
           </p>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
