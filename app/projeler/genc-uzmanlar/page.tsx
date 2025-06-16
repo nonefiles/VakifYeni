@@ -1,14 +1,16 @@
+"use client";
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
-  Users, 
-  Heart, 
-  Shield, 
-  Lightbulb, 
-  Search, 
-  MapPin, 
-  Phone, 
+import {
+  Users,
+  Heart,
+  Shield,
+  Lightbulb,
+  Search,
+  MapPin,
+  Phone,
   Clock,
   BookOpen,
   AlertTriangle,
@@ -25,7 +27,7 @@ import {
   HeartHandshake
 } from "lucide-react";
 
-// Süreç adımları
+// Process steps
 const processSteps = [
   {
     id: "1",
@@ -64,7 +66,7 @@ const processSteps = [
   }
 ];
 
-// Yol Arkadaşı faydaları
+// Benefits of the Yol Arkadaşı system
 const benefits = [
   {
     id: "1",
@@ -116,28 +118,28 @@ const benefits = [
   }
 ];
 
-// Aile yükümlülükleri
+// Family responsibilities
 const familyResponsibilities = [
   "Randevu saatlerine uyulması",
-  "Program değişikliklerinin önceden bildirilmesi", 
+  "Program değişikliklerinin önceden bildirilmesi",
   "Çocukla ilgili bilgilerin eksiksiz aktarılması",
   "Çalışma sırasında ebeveynlerin evde bulunması"
 ];
 
-// Süreç kartı bileşeni
+// Process card component
 const ProcessCard: React.FC<{ step: any; index: number }> = ({ step, index }) => {
   return (
     <div className="bg-white border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 flex flex-col group relative">
       <div className="absolute -top-4 left-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
         {index + 1}
       </div>
-      
+
       <div className="flex justify-center mb-4 mt-2">{step.icon}</div>
-      
+
       <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600 mb-2 text-center">
         {step.title}
       </h3>
-      
+
       <p className="text-sm text-gray-600 text-center leading-relaxed">
         {step.description}
       </p>
@@ -145,7 +147,7 @@ const ProcessCard: React.FC<{ step: any; index: number }> = ({ step, index }) =>
   );
 };
 
-// Fayda kartı bileşeni
+// Benefit card component
 const BenefitCard: React.FC<{ benefit: any }> = ({ benefit }) => {
   return (
     <div className="bg-white border rounded-2xl shadow-sm p-6 group hover:shadow-md transition-all duration-300 text-center">
@@ -160,7 +162,7 @@ const BenefitCard: React.FC<{ benefit: any }> = ({ benefit }) => {
   );
 };
 
-// Ana sayfa bileşeni
+// Main component
 const CocugunYolArkadasi: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
 
@@ -182,34 +184,34 @@ const CocugunYolArkadasi: React.FC = () => {
           </p>
         </header>
 
-        {/* Yol Arkadaşı Kimdir */}
+        {/* Who is Yol Arkadaşı? */}
         <section className="bg-white rounded-3xl p-8 shadow-sm border">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">
               Çocuğun Yol Arkadaşı Kimdir?
             </h2>
           </div>
-          
+
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-gray-700 leading-relaxed text-lg mb-6">
-              "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, 
-              <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi</strong> 
+              "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş,
+              <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi</strong>
               gibi alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
             </p>
-            
+
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="bg-blue-50 p-6 rounded-2xl text-center">
                 <BookOpen className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                 <h3 className="font-semibold text-blue-800 mb-2">Eğitimli Uzmanlar</h3>
                 <p className="text-sm text-gray-600">Psikoloji ve çocuk gelişimi alanında uzman</p>
               </div>
-              
+
               <div className="bg-green-50 p-6 rounded-2xl text-center">
                 <Target className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <h3 className="font-semibold text-green-800 mb-2">Hedef Odaklı</h3>
                 <p className="text-sm text-gray-600">Çocuğun potansiyelini keşfetmeye odaklanmış</p>
               </div>
-              
+
               <div className="bg-purple-50 p-6 rounded-2xl text-center">
                 <HeartHandshake className="w-8 h-8 text-purple-600 mx-auto mb-3" />
                 <h3 className="font-semibold text-purple-800 mb-2">Aile Dostu</h3>
@@ -219,7 +221,7 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* Süreç Adımları */}
+        {/* Process Steps */}
         <section className="space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">
@@ -229,7 +231,7 @@ const CocugunYolArkadasi: React.FC = () => {
               Çocuğunuzun gelişim yolculuğu 5 temel adımda gerçekleşir
             </p>
           </div>
-          
+
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {processSteps.map((step, index) => (
               <ProcessCard key={step.id} step={step} index={index} />
@@ -237,7 +239,7 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* Faydalar */}
+        {/* Benefits */}
         <section className="space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">
@@ -247,7 +249,7 @@ const CocugunYolArkadasi: React.FC = () => {
               Çocuğunuzun gelişimine katkı sağlayacak kapsamlı destek alanları
             </p>
           </div>
-          
+
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {benefits.map((benefit) => (
               <BenefitCard key={benefit.id} benefit={benefit} />
@@ -255,7 +257,7 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* Aile Yükümlülükleri */}
+        {/* Family Responsibilities */}
         <section className="bg-gradient-to-r from-orange-50 to-red-50 rounded-3xl p-8 border border-orange-200">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-orange-800 mb-4">
@@ -265,7 +267,7 @@ const CocugunYolArkadasi: React.FC = () => {
               Sürecin başarılı olabilmesi için ailelerin dikkat etmesi gereken önemli noktalar
             </p>
           </div>
-          
+
           <div className="max-w-3xl mx-auto">
             <div className="grid gap-4 sm:grid-cols-2">
               {familyResponsibilities.map((responsibility, index) => (
@@ -278,21 +280,21 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* Misyon */}
+        {/* Mission */}
         <section className="bg-white rounded-3xl p-8 shadow-sm border">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">
               Yol Arkadaşlarının Misyonu
             </h2>
           </div>
-          
+
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Yol Arkadaşları, çocuğun hem evde hem sosyal hayatta desteklenmesini sağlayarak 
-              yalnızlık hissini önlemeyi ve aile bağlarını güçlendirmeyi hedefler. Bu süreçte 
+              Yol Arkadaşları, çocuğun hem evde hem sosyal hayatta desteklenmesini sağlayarak
+              yalnızlık hissini önlemeyi ve aile bağlarını güçlendirmeyi hedefler. Bu süreçte
               çocuklar sosyal beceriler kazanırken aileler de çocuklarının gelişimine daha fazla katkı sağlar.
             </p>
-            
+
             <div className="flex justify-center space-x-8 flex-wrap gap-4">
               <div className="flex items-center gap-2 text-blue-600">
                 <Heart className="w-6 h-6" />
@@ -310,24 +312,24 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* İletişim */}
+        {/* Contact */}
         <section className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4">
             Çocuğunuzun Potansiyelini Keşfedin
           </h3>
           <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Yol Arkadaşları Danışmanlık Merkezi olarak, çocukların ihtiyaç duyduğu destek ve rehberliği 
+            Yol Arkadaşları Danışmanlık Merkezi olarak, çocukların ihtiyaç duyduğu destek ve rehberliği
             sağlamak üzere buradayız. Çocuğunuzun potansiyelini keşfetmesi için bizimle iletişime geçin.
           </p>
           <div className="flex gap-6 justify-center flex-wrap">
-            <Button 
+            <Button
               className="bg-white text-blue-600 hover:bg-gray-50 hover:scale-105 px-10 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-white"
             >
               <Phone className="w-6 h-6 mr-3" />
               Hemen Başvur
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 hover:scale-105 px-10 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent backdrop-blur-sm"
             >
               <Heart className="w-6 h-6 mr-3" />
@@ -336,7 +338,7 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
         </section>
 
-        {/* Özel Mesaj */}
+        {/* Special Message */}
         <section className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-200">
           <div className="text-center">
             <div className="flex justify-center mb-4">
@@ -348,8 +350,8 @@ const CocugunYolArkadasi: React.FC = () => {
               Her Çocuk Özeldir, Her Çocuk Değerlidir
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto italic">
-              "Çocukların sadece zekâ skoru üzerinden değil, çok yönlü bir yaklaşımla potansiyellerini 
-              fark etmelerine yardımcı olmayı hedefliyoruz. Çocuğunuzun eşsiz yeteneklerini keşfetmek 
+              "Çocukların sadece zekâ skoru üzerinden değil, çok yönlü bir yaklaşımla potansiyellerini
+              fark etmelerine yardımcı olmayı hedefliyoruz. Çocuğunuzun eşsiz yeteneklerini keşfetmek
               için birlikte çalışalım."
             </p>
           </div>
