@@ -194,8 +194,8 @@ const CocugunYolArkadasi: React.FC = () => {
 
           <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-700 leading-relaxed text-lg mb-6 text-center">
-            "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş,
-            <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda</strong>
+            "Çocuğun Yol Arkadaşı", çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, 
+            <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda </strong>
             eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
           </p>
 
@@ -346,14 +346,13 @@ const CocugunYolArkadasi: React.FC = () => {
                 <HeartHandshake className="w-8 h-8 text-white" />
               </div>
             </div>
-            <h2 className="text-3xl font-semibold text-center text-blue-800 mb-4 italic">
-              Çocuğun Yol Arkadaşı Kimdir?
-            </h2>
-            
-            <p className="text-gray-700 leading-relaxed text-lg mb-6 text-center">
-              "Çocuğun Yol Arkadaşı", çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş, 
-              <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi alanlarda </strong>
-              eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Her Çocuk Özeldir, Her Çocuk Değerlidir
+            </h3>
+            <p className="text-gray-700 text-lg max-w-3xl mx-auto italic text-center">
+              "Çocukların sadece zekâ skoru üzerinden değil, çok yönlü bir yaklaşımla potansiyellerini
+              fark etmelerine yardımcı olmayı hedefliyoruz. Çocuğunuzun eşsiz yeteneklerini keşfetmek
+              için birlikte çalışalım."
             </p>
           </div>
         </section>
