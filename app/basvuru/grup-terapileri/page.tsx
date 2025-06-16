@@ -102,37 +102,37 @@ export default function GrupTerapileriBasvuruPage() {
                         Hangi konularda grup terapisine katılmak istiyorsunuz?
                       </Label>
                       <div className="grid gap-2 md:grid-cols-2">
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="anxiety" />
                           <Label htmlFor="anxiety" className="font-normal font-aristotelica">
                             Kaygı Yönetimi
                           </Label>
                         </div>
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="depression" />
                           <Label htmlFor="depression" className="font-normal font-aristotelica">
                             Depresyon Desteği
                           </Label>
                         </div>
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="grief" />
                           <Label htmlFor="grief" className="font-normal font-aristotelica">
                             Yas Süreci
                           </Label>
                         </div>
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="relationships" />
                           <Label htmlFor="relationships" className="font-normal font-aristotelica">
                             İlişki Sorunları
                           </Label>
                         </div>
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="self-esteem" />
                           <Label htmlFor="self-esteem" className="font-normal font-aristotelica">
                             Özgüven Geliştirme
                           </Label>
                         </div>
-                        <div className="flex items-left justify-center space-x-2">
+                        <div className="flex items-center justify-start space-x-2">
                           <Checkbox id="trauma" />
                           <Label htmlFor="trauma" className="font-normal font-aristotelica">
                             Travma Sonrası Destek
@@ -164,19 +164,19 @@ export default function GrupTerapileriBasvuruPage() {
                       <Label className="font-aristotelica text-center block">Tercih ettiğiniz katılım şekli:</Label>
                       <RadioGroup defaultValue="both" className="flex justify-center">
                         <div className="flex flex-col space-y-2">
-                          <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-2 justify-start">
                             <RadioGroupItem value="online" id="online" />
                             <Label htmlFor="online" className="font-aristotelica">
                               Online
                             </Label>
                           </div>
-                          <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-2 justify-start">
                             <RadioGroupItem value="face-to-face" id="face-to-face" />
                             <Label htmlFor="face-to-face" className="font-aristotelica">
                               Yüz yüze
                             </Label>
                           </div>
-                          <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-2 justify-start">
                             <RadioGroupItem value="both" id="both" />
                             <Label htmlFor="both" className="font-aristotelica">
                               Her ikisi de uygun
