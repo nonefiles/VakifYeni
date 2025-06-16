@@ -162,7 +162,7 @@ export default function GrupTerapileriBasvuruPage() {
 
                     <div className="space-y-3">
                       <Label className="font-aristotelica text-center block">Tercih ettiğiniz katılım şekli:</Label>
-                      <RadioGroup defaultValue="both" className="flex justify-center">
+                      <RadioGroup defaultValue="both">
                         <div className="flex flex-col space-y-2">
                           <div className="flex items-center space-x-2 justify-start">
                             <RadioGroupItem value="online" id="online" />
