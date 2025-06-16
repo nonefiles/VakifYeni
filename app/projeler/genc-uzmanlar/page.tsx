@@ -193,11 +193,11 @@ const CocugunYolArkadasi: React.FC = () => {
           </div>
 
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gray-700 leading-relaxed text-lg mb-6 text-center">
-              "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş,
-              <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi</strong>
-               gibi alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
-            </p>
+          <p className="text-gray-700 leading-relaxed text-lg mb-6 text-center">
+            "Çocuğun Yol Arkadaşı" çocuk ve gençlere evde destek vermek için özel olarak eğitilmiş,
+            <strong className="text-blue-700"> Psikoloji, Psikolojik Danışmanlık ve Rehberlik, Sosyal Hizmet ve Çocuk Gelişimi gibi</strong>
+            alanlarda eğitim gören son sınıf öğrencileri veya mezunlardan oluşur.
+          </p>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="bg-blue-50 p-6 rounded-2xl text-center">
