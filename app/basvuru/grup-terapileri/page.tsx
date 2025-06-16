@@ -24,10 +24,10 @@ export default function GrupTerapileriBasvuruPage() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#eff6ff]/50 to-[#ECECE8]">
         <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold gradient-heading md:text-5xl font-lora">
+          <h1 className="mb-6 text-center text-4xl font-bold gradient-heading md:text-5xl font-lora">
             Grup Terapileri Başvurusu
           </h1>
-          <div className="mx-auto max-w-3xl text-left">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-lg text-foreground/80 font-aristotelica">
               Benzer yaşantılardan geçen kişilerle bir araya gelerek iyileşme fırsatı bulun. Grup terapilerimize
               katılmak için aşağıdaki formu doldurun.
@@ -60,8 +60,8 @@ export default function GrupTerapileriBasvuruPage() {
             ) : (
               <Card className="bg-white/80 backdrop-blur-sm border border-primary/10">
                 <CardHeader>
-                  <CardTitle className="font-lora gradient-heading text-left">Grup Terapileri Başvuru Formu</CardTitle>
-                  <CardDescription className="text-left font-aristotelica">
+                  <CardTitle className="font-lora gradient-heading text-center">Grup Terapileri Başvuru Formu</CardTitle>
+                  <CardDescription className="text-center font-aristotelica">
                     Grup terapilerimiz, benzer deneyimlerden gelen bireylerle güvenli bir ortamda buluşma imkanı sunar.
                   </CardDescription>
                 </CardHeader>
@@ -69,70 +69,70 @@ export default function GrupTerapileriBasvuruPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="name" className="font-aristotelica">
+                        <Label htmlFor="name" className="font-aristotelica text-center block">
                           Ad Soyad
                         </Label>
-                        <Input id="name" required className="border-primary/20 focus:border-primary" />
+                        <Input id="name" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="age" className="font-aristotelica">
+                        <Label htmlFor="age" className="font-aristotelica text-center block">
                           Yaş
                         </Label>
-                        <Input id="age" type="number" required className="border-primary/20 focus:border-primary" />
+                        <Input id="age" type="number" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="phone" className="font-aristotelica">
+                        <Label htmlFor="phone" className="font-aristotelica text-center block">
                           Telefon
                         </Label>
-                        <Input id="phone" type="tel" required className="border-primary/20 focus:border-primary" />
+                        <Input id="phone" type="tel" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email" className="font-aristotelica">
+                        <Label htmlFor="email" className="font-aristotelica text-center block">
                           E-posta
                         </Label>
-                        <Input id="email" type="email" required className="border-primary/20 focus:border-primary" />
+                        <Input id="email" type="email" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
                     </div>
 
                     <div className="space-y-3">
-                      <Label className="font-aristotelica">
+                      <Label className="font-aristotelica text-center block">
                         Hangi konularda grup terapisine katılmak istiyorsunuz?
                       </Label>
                       <div className="grid gap-2 md:grid-cols-2">
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="anxiety" />
                           <Label htmlFor="anxiety" className="font-normal font-aristotelica">
                             Kaygı Yönetimi
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="depression" />
                           <Label htmlFor="depression" className="font-normal font-aristotelica">
                             Depresyon Desteği
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="grief" />
                           <Label htmlFor="grief" className="font-normal font-aristotelica">
                             Yas Süreci
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="relationships" />
                           <Label htmlFor="relationships" className="font-normal font-aristotelica">
                             İlişki Sorunları
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="self-esteem" />
                           <Label htmlFor="self-esteem" className="font-normal font-aristotelica">
                             Özgüven Geliştirme
                           </Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Checkbox id="trauma" />
                           <Label htmlFor="trauma" className="font-normal font-aristotelica">
                             Travma Sonrası Destek
@@ -142,51 +142,53 @@ export default function GrupTerapileriBasvuruPage() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="experience" className="font-aristotelica">
+                      <Label htmlFor="experience" className="font-aristotelica text-center block">
                         Daha önce grup terapisine katıldınız mı? Deneyiminizi paylaşır mısınız?
                       </Label>
-                      <Textarea id="experience" className="border-primary/20 focus:border-primary" rows={3} />
+                      <Textarea id="experience" className="border-primary/20 focus:border-primary text-center" rows={3} />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="expectations" className="font-aristotelica">
+                      <Label htmlFor="expectations" className="font-aristotelica text-center block">
                         Grup terapisinden beklentileriniz nelerdir?
                       </Label>
                       <Textarea
                         id="expectations"
                         required
-                        className="border-primary/20 focus:border-primary"
+                        className="border-primary/20 focus:border-primary text-center"
                         rows={3}
                       />
                     </div>
 
                     <div className="space-y-3">
-                      <Label className="font-aristotelica">Tercih ettiğiniz katılım şekli:</Label>
-                      <RadioGroup defaultValue="both">
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="online" id="online" />
-                          <Label htmlFor="online" className="font-aristotelica">
-                            Online
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="face-to-face" id="face-to-face" />
-                          <Label htmlFor="face-to-face" className="font-aristotelica">
-                            Yüz yüze
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="both" id="both" />
-                          <Label htmlFor="both" className="font-aristotelica">
-                            Her ikisi de uygun
-                          </Label>
+                      <Label className="font-aristotelica text-center block">Tercih ettiğiniz katılım şekli:</Label>
+                      <RadioGroup defaultValue="both" className="flex justify-center">
+                        <div className="flex flex-col space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="online" id="online" />
+                            <Label htmlFor="online" className="font-aristotelica">
+                              Online
+                            </Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="face-to-face" id="face-to-face" />
+                            <Label htmlFor="face-to-face" className="font-aristotelica">
+                              Yüz yüze
+                            </Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="both" id="both" />
+                            <Label htmlFor="both" className="font-aristotelica">
+                              Her ikisi de uygun
+                            </Label>
+                          </div>
                         </div>
                       </RadioGroup>
                     </div>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center justify-center space-x-2">
                       <Checkbox id="terms" required />
-                      <Label htmlFor="terms" className="font-normal font-aristotelica">
+                      <Label htmlFor="terms" className="font-normal font-aristotelica text-center">
                         Grup terapisi kurallarını kabul ediyorum ve gizlilik ilkesine uyacağımı beyan ederim.
                       </Label>
                     </div>
