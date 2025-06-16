@@ -188,7 +188,7 @@ export default function GrupTerapileriBasvuruPage() {
 
                     <div className="flex items-center justify-center space-x-2">
                       <Checkbox id="terms" required />
-                      <Label htmlFor="terms" className="font-normal font-aristotelica text-center">
+                      <Label htmlFor="terms" className="font-normal font-aristotelica text-left">
                         Grup terapisi kurallarını kabul ediyorum ve gizlilik ilkesine uyacağımı beyan ederim.
                       </Label>
                     </div>
