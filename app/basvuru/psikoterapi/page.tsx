@@ -25,7 +25,7 @@ export default function PsikoterapiBasvuruPage() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#eff6ff]/50 to-[#ECECE8]">
         <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold gradient-heading md:text-5xl font-lora">
+          <h1 className="mb-6 text-left text-center text-4xl font-bold gradient-heading md:text-5xl font-lora">
             Ücretsiz Psikoterapi Başvurusu
           </h1>
           <div className="mx-auto max-w-3xl text-left">
