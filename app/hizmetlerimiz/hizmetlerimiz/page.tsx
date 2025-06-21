@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     sürecine katılabilir.
                   </p>
                   <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
-                  <ul className="text-left inline-block">
+                  <ul className="text-center inline-block">
                     <li>
                       <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
@@ -148,7 +148,7 @@ export default function ServicesPage() {
               </CardContent>
               <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="border-primary text-primary">
-                  <Link href="/hizmetlerimiz/psikoloji-sohbetleri" className="link-with-arrow group">
+                  <Link href="/basvuru/psikoloji-sohbetleri" className="link-with-arrow group">
                     <span>Detaylı Bilgi</span>
                     <ArrowRight size={16} className="group-hover:translate-x-1" />
                   </Link>

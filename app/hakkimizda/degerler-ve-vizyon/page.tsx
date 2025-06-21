@@ -105,8 +105,8 @@ export default function DegerlerVeVizyonPage() {
       {/* Vizyonumuz */}
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-10 text-center">Vizyonumuz</h2>
-        <Card className="border-0 shadow-lg bg-[#e0ffff] text-gray-800">
-          <CardContent className="p-8 text-center">
+        <Card className="border-0 shadow-md">
+          <CardContent className="text-center">
             <p className="mb-6 text-center">
               Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik destek hizmetlerine ihtiyaç duyduğunda yalnız hissetmediği, güvenli ve destekleyici alanlara kolaylıkla ulaşabildiği bir toplum hayal ediyoruz.<br /><br />
               İnanıyoruz ki, bireyin kendini tanıma süreci, yaşadığı zorluklarla başa çıkabilmesi, ilişkilerinde derinlik kurabilmesi ve yaşamına anlam katabilmesi; sadece bireysel çabanın değil, aynı zamanda toplumun sağladığı imkânların da bir sonucudur. Biz, bu imkânları eşitlemek için varız.<br /><br />

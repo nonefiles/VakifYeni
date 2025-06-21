@@ -11,29 +11,20 @@ export default function Home() {
     <div className="bg-background overflow-hidden">
       {/* Hero Section - Dynamic */}
       <section className="min-h-screen flex items-center justify-center relative hero-section">
-        <div className="inset-0 overflow-hidden">
-          <div className="top-20 left-10 w-32 h-32 bg-primary/10 rounded-full float-element"></div>
-          <div className="top-40 right-20 w-24 h-24 bg-accent/10 rounded-full float-element"></div>
-          <div className="bottom-40 left-1/4 w-40 h-40 bg-secondary/5 rounded-full float-element"></div>
-        </div>
-
         <div className="container relative z-10">
           <div className="mx-auto max-w-5xl text-center">
             <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-secondary border border-primary/20 mb-8 animate-fade-in glow-on-hover">
               <Star className="w-4 h-4 mr-2 text-primary" />
               Herkes için psikolojik destek
             </div>
-
             <h1 className="mb-8 text-responsive-xl font-medium leading-tight animate-fade-in text-center">
               <span className="block text-foreground font-lora italic">Ruh sağlığı bir ayrıcalık </span>
               <span className="block gradient-text font-lora italic">değil haktır.</span>
             </h1>
-
             <p className="mb-12 text-responsive-md text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up text-center">
               Bu vakıf, bir ihtiyaçtan doğdu. Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
               İyilik hâlini sadece terapiyle değil; sohbetlerle, öğrenme alanlarıyla, birlikte güçlenerek destekliyoruz.
             </p>
-
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0 justify-center animate-scale-in mb-16">
               <Button asChild size="lg" className="shadow-glow">
                 <Link href="/gonullu-ol">
@@ -45,7 +36,6 @@ export default function Home() {
                 <Link href="/bagis-yap">Bağış Yap</Link>
               </Button>
             </div>
-
             {/* Scroll Göstergesi - Butonların hemen altına hizalandı */}
             <div className="flex justify-center animate-bounce">
               <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
@@ -55,7 +45,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* About Section - Enhanced */}
       <section className="py-32 white-gradient-bg relative">
         <div className="container">
@@ -65,15 +54,12 @@ export default function Home() {
                 <h2 className="text-responsive-lg font-medium font-lora italic text-center">Biz Kimiz?</h2>
                 <div className="w-24 h-1 bg-gradient-primary rounded-full mx-auto"></div>
               </div>
-
               <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
                 Yol Arkadaşları Psikoloji Vakfı olarak, ruh sağlığının yaşamın temel bir hakkı olduğuna inanıyor ve bu hakka herkesin erişebilmesi için çalışıyoruz. Psikoloji biliminin dönüştürücü gücünü, hem bireylerin hem de toplumun hizmetine sunmayı amaçlayan bir topluluk hareketiyiz.
               </p>
-
               <p className="text-lg text-foreground/80 leading-relaxed font-aristotelica text-center">
                 Bugün vakıf olarak yürüttüğümüz çalışmaların temeli, uzun süredir birlikte çalışan uzmanlarımızın danışmanlık merkezinde edindiği ortak deneyime dayanıyor. Bu zemin, bize hem mesleki bir derinlik hem de sahada karşılaştığımız ihtiyaçlara duyarlı bir yaklaşım kazandırdı.
               </p>
-
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Button asChild variant="outline" size="lg" className="group">
                   <Link href="/hakkimizda">
@@ -81,7 +67,6 @@ export default function Home() {
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-
                 <div className="flex items-center gap-4">
                   <Link
                     href="https://instagram.com/yolarkadaslarivakfi"
@@ -118,38 +103,31 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <div className="relative animate-slide-in-right">
               <div className="interactive-card p-12 rounded-4xl text-center">
                 <div className="space-y-6">
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <HeartHandshake className="w-8 h-8 text-white" />
                   </div>
-
                   <h3 className="text-2xl font-bold text-secondary font-lora italic text-center">Misyonumuz</h3>
-
                   <p className="text-foreground/80 leading-relaxed font-aristotelica text-center">
                     Yol Arkadaşları Psikoloji Vakfı olarak, herkesin psikolojik desteğe eşit şekilde ulaşabildiği bir dünya yaratmayı hedefliyoruz.
                   </p>
-
                   <p className="text-foreground/80 leading-relaxed font-aristotelica text-center">
                     Bu yolculukta, maddi imkânları kısıtlı olan bireyler için ücretsiz psikoterapi fırsatları sunuyor, genç uzmanların gelişimine katkı sağlayarak onların mesleki yolculuklarında bir rehber olmayı amaçlıyoruz. Ayrıca, toplumsal ruh sağlığına katkı sağlayacak eğitim ve etkinlikler düzenliyoruz.
                   </p>
-
                   <p className="text-foreground/80 leading-relaxed font-aristotelica text-center">
                     İnanıyoruz ki, bir arada olmanın iyileştirici gücü sadece bireysel bir deneyim değil, toplumun kolektif gücüdür.
                     Ve biz, bu gücü çoğaltmak ve herkese ulaşmak için burada, her adımda yanınızdayız.
                   </p>
                 </div>
               </div>
-
               <div className="-top-6 -right-6 w-12 h-12 bg-accent/20 rounded-full float-element"></div>
               <div className="-bottom-6 -left-6 w-8 h-8 bg-primary/20 rounded-full float-element"></div>
             </div>
           </div>
         </div>
       </section>
-
       {/* Services Section - Dynamic Grid */}
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
@@ -161,14 +139,13 @@ export default function Home() {
               öğrencileriyle omuz omuza çalışıyoruz.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: <HeartHandshake className="h-8 w-8" />,
                 title: "Ücretsiz Psikoterapi",
                 description: "Yetişkin, çift/aile, çocuk/ergen psikoterapisi hizmetleri sunuyoruz.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: "/basvuru/psikoterapi",
                 featured: true,
                 delay: "stagger-1",
               },
@@ -176,7 +153,7 @@ export default function Home() {
                 icon: <Users className="h-8 w-8" />,
                 title: "Grup Terapileri",
                 description: "Benzer deneyimlerden geçen kişilerle bir araya gelerek iyileşme fırsatı.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: " /basvuru/grup-terapileri",
                 featured: false,
                 delay: "stagger-2",
               },
@@ -184,7 +161,7 @@ export default function Home() {
                 icon: <BookOpen className="h-8 w-8" />,
                 title: "Psikoloji Sohbetleri",
                 description: "Ruh sağlığı alanında toplumsal farkındalık yaratmak için ücretsiz sohbetler.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: " /basvuru/psikoloji-sohbetleri",
                 featured: false,
                 delay: "stagger-3",
               },
@@ -192,7 +169,7 @@ export default function Home() {
                 icon: <Calendar className="h-8 w-8" />,
                 title: "Psikolojik Atölyeler",
                 description: "Deneyimleyerek öğrenme fırsatı sunan interaktif atölye çalışmaları.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: " /hizmetlerimiz/psikoloji-atolyeleri",
                 featured: false,
                 delay: "stagger-4",
               },
@@ -200,7 +177,7 @@ export default function Home() {
                 icon: <Building className="h-8 w-8" />,
                 title: "Kurumsal Eğitimler",
                 description: "İş yerlerinde psikolojik iyi oluşu destekleyen eğitim programları.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: " /hizmetlerimiz/kurumsal-egitimler",
                 featured: false,
                 delay: "stagger-5",
               },
@@ -208,7 +185,7 @@ export default function Home() {
                 icon: <School className="h-8 w-8" />,
                 title: "Enstitü Hedefimiz",
                 description: "Psikoloji alanında eğitim, uygulama ve araştırmayı bir araya getiren bir enstitü.",
-                link: "/hizmetlerimiz/hizmetlerimiz",
+                link: " /gonullu-ol",
                 featured: true,
                 delay: "stagger-6",
               },
@@ -220,7 +197,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Partnership Section - Enhanced */}
       <section className="py-32 white-gradient-bg relative">
         <div className="container">
@@ -229,7 +205,6 @@ export default function Home() {
               <h2 className="text-responsive-lg font-medium mb-6 font-lora italic text-center">Birlikte Büyüyen Bir Yapı</h2>
               <div className="w-32 h-1 bg-gradient-primary rounded-full mx-auto"></div>
             </div>
-
             <div className="interactive-card p-12 rounded-4xl relative overflow-hidden animate-scale-in">
               <div className="relative z-10 space-y-8 text-center">
                 <div className="space-y-6 text-lg text-foreground/80 leading-relaxed font-aristotelica">
@@ -237,18 +212,15 @@ export default function Home() {
                     Yol Arkadaşları Psikoloji Vakfı, bir hayalin meyvesi. Doğduğu yer ise uzun süredir yürütülen
                     danışmanlık merkezinin deneyimi ve insanlarla kurduğu ilişki.
                   </p>
-
                   <p className="text-center">
                     Danışmanlık merkezi hem uzmanlık alt yapısını hem de ekip gücünü vakfın hizmetine açtı. Bu iş
                     birliği sayesinde vakıf, henüz yeni kurulmuş olsa da uzmanlığı güçlü, erişimi geniş, yoldaşlığı
                     güven veren bir yapı olarak hizmet verebiliyor.
                   </p>
-
                   <p className="text-center">
                     Danışmanlık merkezinde de hâlâ ücretsiz ve düşük ücretli görüşmeler yapılmaya devam ediliyor vakfın tam olarak devreye girmediği noktada, bu merkez bir "köprü" görevi görüyor.
                   </p>
                 </div>
-
                 <div className="text-center pt-8">
                   <Button asChild size="lg" variant="accent" className="group">
                     <Link href="https://yolarkadaslari.com" target="_blank" rel="noopener noreferrer">
@@ -262,30 +234,25 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section className="py-32 blue-gradient-bg relative">
         <div className="animate-fade-in">
           <FaqSection />
         </div>
       </section>
-
       {/* CTA Section - Dynamic */}
       <section className="py-32 white-gradient-bg relative">
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <div className="relative overflow-hidden rounded-4xl animate-scale-in" style={{ backgroundColor: '#EBF5FC' }}>
               <div className="inset-0 bg-gradient-primary opacity-90"></div>
-
               <div className="relative z-10 p-16 text-center text-white">
                 <h2 className="text-responsive-lg font-medium mb-8 text-white font-lora italic text-center">Birlikte Daha Güçlüyüz</h2>
-
                 <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-12 font-aristotelica text-center">
                   Vakıf faaliyetlerimiz bağışlar ve gönüllü emeklerle devam ediyor. Siz de daha çok kişinin desteğe ulaşmasına katkı sağlayabilirsiniz.
                   Bu vakıf bir kişinin değil, birlikte iyileşmenin hayaliyle yola çıkanların vakfı.
                   Her destek, daha fazla insana ulaşmamızı sağlıyor.
                 </p>
-
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button asChild size="lg" variant="white" className="group shadow-2xl border-2 border-white/30 bg-white/95 text-primary font-semibold hover:bg-white hover:scale-105 transition-all duration-300 backdrop-blur-sm">
                     <Link href="/gonullu-ol">
@@ -305,17 +272,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Newsletter Section - Modern */}
       <section className="py-32 blue-gradient-bg relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-responsive-lg font-medium mb-8 font-lora italic text-center">Haberdar Olun</h2>
-
             <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto font-aristotelica text-center">
               Etkinliklerimizden, projelerimizden ve yeni gelişmelerden haberdar olmak için bültenimize abone olun.
             </p>
-
             <div className="max-w-md mx-auto">
               <div className="flex gap-4 p-2 bg-white/80 backdrop-blur-sm rounded-full border border-primary/20">
                 <Input
@@ -326,7 +290,6 @@ export default function Home() {
                 <Button className="rounded-full px-8">Abone Ol</Button>
               </div>
             </div>
-
             <div className="mt-12 text-sm text-foreground/60 font-aristotelica text-center">
               İnsana değer veren bir yolculukta, iyileşmenin herkesin hakkı olduğuna inanıyoruz.
             </div>

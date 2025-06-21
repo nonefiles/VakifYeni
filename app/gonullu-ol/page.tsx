@@ -24,13 +24,13 @@ export default function VolunteerPage() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-[#ECECE8] to-[#f8f9fa]">
+    <div className="bg-gradient-to-b from-[#ECECE8] to-[#f8f9fa] text-center">
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-[#eff6ff]/50 to-[#ECECE8]">
         <div className="container">
           <h1 className="mb-6 text-center text-4xl font-bold gradient-heading md:text-5xl font-lora">Gönüllü Ol</h1>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-lg text-foreground/80 font-aristotelica">
+            <p className="text-lg text-center text-foreground/80 font-aristotelica">
               Siz de Yol Arkadaşımız Olmak İster misiniz? Birlikte iyileşen, birlikte güçlenen bir topluluk olma
               hayalimizde sizin yeriniz çok özel.
             </p>
@@ -124,79 +124,79 @@ export default function VolunteerPage() {
                       <h3 className="text-lg font-medium gradient-heading text-center font-lora">Kişisel Bilgiler</h3>
 
                       <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="font-aristotelica">
+                        <div className="space-y-2 text-center">
+                          <Label htmlFor="name" className="font-aristotelica block text-center">
                             Ad Soyad
                           </Label>
-                          <Input id="name" required className="border-primary/20 focus:border-primary" />
+                          <Input id="name" required className="border-primary/20 focus:border-primary text-center" />
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="birthdate" className="font-aristotelica">
+                        <div className="space-y-2 text-center">
+                          <Label htmlFor="birthdate" className="font-aristotelica block text-center">
                             Doğum Tarihi
                           </Label>
                           <Input
                             id="birthdate"
                             type="date"
                             required
-                            className="border-primary/20 focus:border-primary"
+                            className="border-primary/20 focus:border-primary text-center"
                           />
                         </div>
                       </div>
 
                       <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="font-aristotelica">
+                        <div className="space-y-2 text-center">
+                          <Label htmlFor="email" className="font-aristotelica block text-center">
                             E-posta
                           </Label>
-                          <Input id="email" type="email" required className="border-primary/20 focus:border-primary" />
+                          <Input id="email" type="email" required className="border-primary/20 focus:border-primary text-center" />
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="phone" className="font-aristotelica">
+                        <div className="space-y-2 text-center">
+                          <Label htmlFor="phone" className="font-aristotelica block text-center">
                             Telefon
                           </Label>
-                          <Input id="phone" type="tel" required className="border-primary/20 focus:border-primary" />
+                          <Input id="phone" type="tel" required className="border-primary/20 focus:border-primary text-center" />
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="city" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="city" className="font-aristotelica block text-center">
                           İkamet Şehri
                         </Label>
-                        <Input id="city" required className="border-primary/20 focus:border-primary" />
+                        <Input id="city" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
                     </div>
 
                     <div className="space-y-4">
                       <h3 className="text-lg font-medium gradient-heading text-center font-lora">Eğitim ve Meslek</h3>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="education" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="education" className="font-aristotelica block text-center">
                           Eğitim Durumu
                         </Label>
                         <Select>
-                          <SelectTrigger className="border-primary/20 focus:border-primary">
+                          <SelectTrigger className="border-primary/20 focus:border-primary text-center">
                             <SelectValue placeholder="Seçiniz" />
                           </SelectTrigger>
                           <SelectContent className="bg-white/80 backdrop-blur-sm">
-                            <SelectItem value="high-school">Lise</SelectItem>
-                            <SelectItem value="associate">Ön Lisans</SelectItem>
-                            <SelectItem value="bachelor">Lisans</SelectItem>
-                            <SelectItem value="master">Yüksek Lisans</SelectItem>
-                            <SelectItem value="doctorate">Doktora</SelectItem>
+                            <SelectItem value="high-school" className="text-center">Lise</SelectItem>
+                            <SelectItem value="associate" className="text-center">Ön Lisans</SelectItem>
+                            <SelectItem value="bachelor" className="text-center">Lisans</SelectItem>
+                            <SelectItem value="master" className="text-center">Yüksek Lisans</SelectItem>
+                            <SelectItem value="doctorate" className="text-center">Doktora</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="school" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="school" className="font-aristotelica block text-center">
                           Mezun Olduğunuz Okul / Bölüm
                         </Label>
-                        <Input id="school" className="border-primary/20 focus:border-primary" />
+                        <Input id="school" className="border-primary/20 focus:border-primary text-center" />
                       </div>
 
                       <div className="space-y-2">
-                        <Label className="font-aristotelica">Çalışma Durumunuz</Label>
-                        <RadioGroup defaultValue="employed">
+                        <Label className="font-aristotelica block text-center">Çalışma Durumunuz</Label>
+                        <RadioGroup defaultValue="employed" className="flex flex-col items-center space-y-2">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="employed" id="employed" />
                             <Label htmlFor="employed" className="font-aristotelica">
@@ -218,11 +218,11 @@ export default function VolunteerPage() {
                         </RadioGroup>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="psychology-education" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="psychology-education" className="font-aristotelica block text-center">
                           Psikoloji ya da ilgili alanda eğitim aldıysanız belirtiniz
                         </Label>
-                        <Textarea id="psychology-education" className="border-primary/20 focus:border-primary" />
+                        <Textarea id="psychology-education" className="border-primary/20 focus:border-primary text-center" />
                       </div>
                     </div>
 
@@ -231,23 +231,23 @@ export default function VolunteerPage() {
                         Gönüllülük Bilgileri
                       </h3>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="experience" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="experience" className="font-aristotelica block text-center">
                           Daha önce gönüllülük deneyiminiz oldu mu? (Varsa açıklayınız)
                         </Label>
-                        <Textarea id="experience" className="border-primary/20 focus:border-primary" />
+                        <Textarea id="experience" className="border-primary/20 focus:border-primary text-center" />
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="motivation" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="motivation" className="font-aristotelica block text-center">
                           Vakfımızda gönüllü olmak isteme nedeniniz nedir?
                         </Label>
-                        <Textarea id="motivation" required className="border-primary/20 focus:border-primary" />
+                        <Textarea id="motivation" required className="border-primary/20 focus:border-primary text-center" />
                       </div>
 
                       <div className="space-y-3">
-                        <Label className="font-aristotelica">Hangi alanlarda destek vermek istersiniz?</Label>
-                        <div className="grid gap-2 md:grid-cols-2">
+                        <Label className="font-aristotelica block text-center">Hangi alanlarda destek vermek istersiniz?</Label>
+                        <div className="grid gap-2 md:grid-cols-2 justify-items-center">
                           <div className="flex items-center space-x-2">
                             <Checkbox id="psychotherapy" />
                             <Label htmlFor="psychotherapy" className="font-normal font-aristotelica">
@@ -284,7 +284,7 @@ export default function VolunteerPage() {
                               Etkinlik Organizasyonu
                             </Label>
                           </div>
-                          <div className="flex items-center space-x-2">
+                          <div className="flex items-center space-x-2 md:col-span-2">
                             <Checkbox id="admin" />
                             <Label htmlFor="admin" className="font-normal font-aristotelica">
                               İdari Destek
@@ -293,37 +293,37 @@ export default function VolunteerPage() {
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="time" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="time" className="font-aristotelica block text-center">
                           Haftalık gönüllülük için ayırabileceğiniz zaman
                         </Label>
                         <Select>
-                          <SelectTrigger className="border-primary/20 focus:border-primary">
+                          <SelectTrigger className="border-primary/20 focus:border-primary text-center">
                             <SelectValue placeholder="Seçiniz" />
                           </SelectTrigger>
                           <SelectContent className="bg-white/80 backdrop-blur-sm">
-                            <SelectItem value="1-3">1-3 saat</SelectItem>
-                            <SelectItem value="4-6">4-6 saat</SelectItem>
-                            <SelectItem value="7-10">7-10 saat</SelectItem>
-                            <SelectItem value="10+">10 saatten fazla</SelectItem>
+                            <SelectItem value="1-3" className="text-center">1-3 saat</SelectItem>
+                            <SelectItem value="4-6" className="text-center">4-6 saat</SelectItem>
+                            <SelectItem value="7-10" className="text-center">7-10 saat</SelectItem>
+                            <SelectItem value="10+" className="text-center">10 saatten fazla</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="days" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="days" className="font-aristotelica block text-center">
                           Uygun olduğunuz gün/saatler
                         </Label>
                         <Textarea
                           id="days"
                           placeholder="Örn: Hafta içi akşamları, Cumartesi öğleden sonra"
-                          className="border-primary/20 focus:border-primary"
+                          className="border-primary/20 focus:border-primary text-center"
                         />
                       </div>
 
                       <div className="space-y-2">
-                        <Label className="font-aristotelica">Online çalışmaya uygun musunuz?</Label>
-                        <RadioGroup defaultValue="yes">
+                        <Label className="font-aristotelica block text-center">Online çalışmaya uygun musunuz?</Label>
+                        <RadioGroup defaultValue="yes" className="flex flex-col items-center space-y-2">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="online-yes" />
                             <Label htmlFor="online-yes" className="font-aristotelica">
@@ -339,52 +339,54 @@ export default function VolunteerPage() {
                         </RadioGroup>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="duration" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="duration" className="font-aristotelica block text-center">
                           Ne kadar süre gönüllü kalmayı planlıyorsunuz?
                         </Label>
                         <Select>
-                          <SelectTrigger className="border-primary/20 focus:border-primary">
+                          <SelectTrigger className="border-primary/20 focus:border-primary text-center">
                             <SelectValue placeholder="Seçiniz" />
                           </SelectTrigger>
                           <SelectContent className="bg-white/80 backdrop-blur-sm">
-                            <SelectItem value="3-months">3 ay</SelectItem>
-                            <SelectItem value="6-months">6 ay</SelectItem>
-                            <SelectItem value="1-year">1 yıl</SelectItem>
-                            <SelectItem value="long-term">Uzun süreli</SelectItem>
+                            <SelectItem value="3-months" className="text-center">3 ay</SelectItem>
+                            <SelectItem value="6-months" className="text-center">6 ay</SelectItem>
+                            <SelectItem value="1-year" className="text-center">1 yıl</SelectItem>
+                            <SelectItem value="long-term" className="text-center">Uzun süreli</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="cv" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="cv" className="font-aristotelica block text-center">
                           CV'nizi buraya yükleyebilirsiniz
                         </Label>
-                        <Input id="cv" type="file" className="border-primary/20 focus:border-primary" />
+                        <Input id="cv" type="file" className="border-primary/20 focus:border-primary text-center" />
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="notes" className="font-aristotelica">
+                      <div className="space-y-2 text-center">
+                        <Label htmlFor="notes" className="font-aristotelica block text-center">
                           Eklemek istediğiniz bir not var mı?
                         </Label>
-                        <Textarea id="notes" className="border-primary/20 focus:border-primary" />
+                        <Textarea id="notes" className="border-primary/20 focus:border-primary text-center" />
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center justify-center space-x-2">
                       <Checkbox id="terms" required />
-                      <Label htmlFor="terms" className="font-normal font-aristotelica">
+                      <Label htmlFor="terms" className="font-normal font-aristotelica text-center">
                         Yukarıda verdiğim bilgilerin doğru olduğunu beyan ederim ve kişisel verilerimin gönüllülük
                         değerlendirme sürecinde kullanılmasını kabul ediyorum.
                       </Label>
                     </div>
 
-                    <Button
-                      type="submit"
-                      className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300"
-                    >
-                      Başvuruyu Gönder
-                    </Button>
+                    <div className="text-center">
+                      <Button
+                        type="submit"
+                        className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300"
+                      >
+                        Başvuruyu Gönder
+                      </Button>
+                    </div>
                   </form>
                 </CardContent>
               </Card>
@@ -409,10 +411,10 @@ function VolunteerAreaCard({
     <Card className="bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md text-center border border-primary/10">
       <CardHeader>
         <div className="mb-2 flex justify-center">{icon}</div>
-        <CardTitle className="font-lora gradient-heading">{title}</CardTitle>
+        <CardTitle className="font-lora gradient-heading text-center">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-base font-aristotelica">{description}</CardDescription>
+        <CardDescription className="text-base font-aristotelica text-center">{description}</CardDescription>
       </CardContent>
     </Card>
   )

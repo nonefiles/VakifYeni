@@ -5,24 +5,19 @@ export default function VakfinHikayesiPage() {
     <div className="container py-16 md:py-24">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center gradient-heading">Vakfın Hikayesi</h1>
       <div className="max-w-3xl mx-auto">
-        <div className="mb-12 relative">
+        <div className="mb-12 relative flex justify-center">
           <Image
-            src="/placeholder.svg?height=400&width=800"
-            alt="Vakfın Kuruluş Hikayesi"
-            width={800}
-            height={400}
-            className="rounded-xl w-full h-auto"
+            src="/images/logo.png"
+            alt="Yol Arkadaşları Psikoloji Vakfı Logo"
+            width={300}
+            height={300}
+            className="rounded-xl"
           />
         </div>
         <div className="prose max-w-none text-center">
-          <p className="text-lg mb-6 text-center">
+          <p className="mb-6 text-center">
             Yol Arkadaşları Psikoloji Vakfı, uzun yıllar boyunca psikoloji alanında çalışan profesyonellerin, ruh
             sağlığı hizmetlerine erişimde yaşanan eşitsizlikleri giderme arzusuyla kurulmuştur.
-          </p>
-          <p className="mb-6 text-center">
-            Vakfımızın temelleri, 2010 yılında bir grup psikolog ve psikiyatristin bir araya gelerek başlattığı gönüllü
-            danışmanlık hizmetleriyle atıldı. Yıllar içinde büyüyen bu dayanışma ağı, 2020 yılında resmi olarak vakıf
-            statüsü kazandı.
           </p>
           <p className="mb-6 text-center">
             Vakfımız, maddi imkânsızlıklar nedeniyle psikolojik desteğe ulaşamayan bireylere ücretsiz hizmet sunmak,

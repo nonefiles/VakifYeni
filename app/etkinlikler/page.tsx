@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Search, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin, Search, ArrowLeft, Users, Clock } from "lucide-react";
 
 // Tarih formatlama fonksiyonu
 const formatDate = (dateString: string) => {
@@ -37,49 +37,29 @@ interface Event {
   image?: string;
   category: string;
   detailedDescription?: string;
+  speakers?: string[];
+  isFree?: boolean;
 }
 
 type FilterType = "all" | "online" | "offline";
-type CategoryType = "all" | "seminar" | "meeting" | "workshop";
+type CategoryType = "all" | "seminar" | "meeting" | "workshop" | "sohbet";
 
 // Etkinlik verilerinin tanımlanması
 const events: Event[] = [
   {
     id: "1",
-    title: "Ruh Sağlığına Giriş Semineri",
-    date: "2025-06-28",
-    time: "19:00",
+    title: "Zorluklar Bizi Güçlendirir mi? - Zor Yaşam Deneyimlerinin Psikolojik Dayanıklılık Üzerindeki Etkisi",
+    date: "2025-06-26",
+    time: "19:30",
     location: "Zoom",
     type: "online",
-    description: "Temel psikolojik kavramların ele alınacağı seminer.",
-    link: "/etkinlikler/ruhsagligi-semineri",
-    category: "seminar",
-    detailedDescription: "Bu seminerde ruh sağlığının temel kavramları, stres yönetimi teknikleri ve günlük yaşamda psikolojik sağlığı koruma yöntemleri ele alınacaktır. Uzman psikologlar eşliğinde interaktif bir oturum olacak."
-  },
-  {
-    id: "2",
-    title: "Gönüllü Buluşması",
-    date: "2025-07-06",
-    time: "14:00",
-    location: "İstanbul Ofisi",
-    type: "offline",
-    description: "Mevcut ve yeni gönüllülerle yüz yüze tanışma etkinliği.",
-    link: "/etkinlikler/gonullu-bulusmasi",
-    category: "meeting",
-    detailedDescription: "Derneğimizin gönüllüleri ile tanışma, deneyim paylaşımı ve gelecek projeler hakkında bilgi alış verişi yapacağımız samimi bir buluşma. Çay-kahve ikramları olacak."
-  },
-  {
-    id: "3",
-    title: "Şema Terapi Atölyesi",
-    date: "2025-07-20",
-    time: "10:00",
-    location: "Ankara",
-    type: "offline",
-    description: "Uygulamalı Şema Terapi atölyesi.",
-    link: "/etkinlikler/sema-terapi-atolyesi",
-    category: "workshop",
-    detailedDescription: "Şema Terapi yaklaşımının temel prensipleri, şema modları ve terapi tekniklerinin uygulamalı olarak öğrenileceği profesyonel bir atölye çalışması. Sertifika verilecektir."
-  },
+    description: "50. Ücretsiz Psikoloji Sohbeti - Zor yaşam deneyimlerinin psikolojik dayanıklılık üzerindeki etkisini ele alan özel sohbet.",
+    link: "/etkinlikler/psikoloji-sohbeti-50",
+    category: "sohbet",
+    detailedDescription: "Bu özel sohbette, hayatımızda karşılaştığımız zorlukların bizi nasıl güçlendirdiğini ve psikolojik dayanıklılığımızı nasıl etkilediğini ele alacağız. M. Abdullah YILMAZ ve Kln. Psk. Yılmaz Kaan Aktuğ'un moderatörlüğünde gerçekleşecek bu online sohbet tamamen ücretsizdir. Zoom bağlantısı kayıt sonrası e-posta ile gönderilecektir.",
+    speakers: ["M. Abdullah YILMAZ", "Kln. Psk. Yılmaz Kaan Aktuğ"],
+    isFree: true
+  }
 ];
 
 // Kayıt formu bileşeni
@@ -107,7 +87,7 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-20">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-4xl mx-auto px-4">
         <Button
           onClick={onBack}
           variant="ghost"
@@ -133,17 +113,32 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
                   </div>
                   <div className="flex items-center gap-2">
                     <span
-                      className={
-                        event.type === "online"
-                          ? "text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700"
-                          : "text-xs font-medium px-3 py-1 rounded-full bg-yellow-100 text-yellow-700"
-                      }
+                      className="text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700"
                     >
-                      {event.type === "online" ? "Online" : "Yüz Yüze"}
+                      Online
                     </span>
+                    {event.isFree && (
+                      <span className="text-xs font-medium px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+                        Ücretsiz
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
+
+              {event.speakers && (
+                <div className="bg-blue-50 p-4 rounded-xl">
+                  <h4 className="text-sm font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    Konuşmacılar
+                  </h4>
+                  <div className="space-y-1">
+                    {event.speakers.map((speaker, index) => (
+                      <p key={index} className="text-sm text-gray-700">{speaker}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="bg-blue-50 p-6 rounded-xl">
                 <h3 className="text-lg font-semibold text-blue-800 mb-3">Etkinlik Hakkında</h3>
@@ -156,7 +151,7 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
             <div className="bg-gray-50 p-6 rounded-xl">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Etkinliğe Kayıt Ol</h2>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                     Ad *
@@ -225,9 +220,9 @@ const RegistrationForm: React.FC<{ event: Event; onBack: () => void }> = ({ even
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl py-3 mt-6"
                 >
-                  Kayıt Ol
+                  Ücretsiz Kayıt Ol
                 </Button>
-              </form>
+              </div>
 
               <p className="text-xs text-gray-500 mt-4">
                 * Zorunlu alanlar. Bilgileriniz gizli tutulacak ve sadece etkinlik organizasyonu için kullanılacaktır.
@@ -254,19 +249,20 @@ const EventCard: React.FC<{ event: Event; onShowDetails: (event: Event) => void 
         />
       )}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="text-xl font-semibold text-blue-800 group-hover:text-blue-600 leading-tight">
             {event.title}
           </h3>
-          <span
-            className={
-              event.type === "online"
-                ? "text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700"
-                : "text-xs font-medium px-3 py-1 rounded-full bg-yellow-100 text-yellow-700"
-            }
-          >
-            {event.type === "online" ? "Online" : "Yüz Yüze"}
-          </span>
+          <div className="flex flex-col gap-1">
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-green-100 text-green-700">
+              Online
+            </span>
+            {event.isFree && (
+              <span className="text-xs font-medium px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">
+                Ücretsiz
+              </span>
+            )}
+          </div>
         </div>
         <p className="text-sm text-muted-foreground min-h-[48px]">
           {event.description}
@@ -282,13 +278,19 @@ const EventCard: React.FC<{ event: Event; onShowDetails: (event: Event) => void 
             <MapPin className="w-4 h-4" />
             <span>{event.location}</span>
           </div>
+          {event.speakers && (
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              <span className="text-xs">{event.speakers.join(", ")}</span>
+            </div>
+          )}
         </div>
       </div>
       <Button
         onClick={() => onShowDetails(event)}
         className="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:brightness-110 rounded-xl"
       >
-        Detayları Gör
+        Detayları Gör ve Kayıt Ol
       </Button>
     </div>
   );
@@ -306,7 +308,7 @@ const FilterButtons: React.FC<{
   ];
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       {buttons.map((btn) => (
         <Button
           key={btn.value}
@@ -335,10 +337,11 @@ const CategoryFilter: React.FC<{
     { label: "Seminer", value: "seminar" as const },
     { label: "Toplantı", value: "meeting" as const },
     { label: "Atölye", value: "workshop" as const },
+    { label: "Sohbet", value: "sohbet" as const },
   ];
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       {categories.map((cat) => (
         <Button
           key={cat.value}
@@ -387,13 +390,13 @@ const EventsPage: React.FC = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-sky-50 py-20">
-      <div className="container space-y-16">
+      <div className="container space-y-16 px-4">
         <header className="text-center space-y-4">
           <h1 className="text-5xl font-extrabold tracking-tight text-blue-700 drop-shadow-sm">
             Etkinlik Takvimi
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ruh sağlığı alanındaki yolculuğunuza bir adım atın. Katılabileceğiniz etkinlikleri keşfedin.
+            Ruh sağlığı alanındaki yolculuğunuza bir adım atın. Katılabileceğiniz ücretsiz etkinlikleri keşfedin.
           </p>
         </header>
 
@@ -413,16 +416,34 @@ const EventsPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {filteredEvents.length === 0 ? (
-            <p className="text-center col-span-full text-muted-foreground">
-              Hiç etkinlik bulunamadı.
-            </p>
+            <div className="text-center col-span-full py-16">
+              <Clock className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+              <p className="text-lg text-muted-foreground mb-2">
+                Aradığınız kriterlere uygun etkinlik bulunamadı.
+              </p>
+              <p className="text-sm text-gray-500">
+                Filtreleri değiştirerek yeniden deneyin.
+              </p>
+            </div>
           ) : (
             filteredEvents.map((event) => (
               <EventCard key={event.id} event={event} onShowDetails={handleShowDetails} />
             ))
           )}
+        </section>
+
+        <section className="text-center bg-blue-50 p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-blue-800 mb-4">
+            Düzenli Etkinliklerimizden Haberdar Olun
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Ruh sağlığı alanındaki yeni etkinliklerimizden ilk siz haberdar olmak ister misiniz?
+          </p>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl">
+            E-posta Listesine Katıl
+          </Button>
         </section>
       </div>
     </main>

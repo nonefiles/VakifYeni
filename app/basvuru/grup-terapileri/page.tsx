@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,190 +18,160 @@ export default function GrupTerapileriBasvuruPage() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-[#ECECE8] to-[#f8f9fa]">
-      {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#eff6ff]/50 to-[#ECECE8]">
-        <div className="container">
-          <h1 className="mb-6 text-left text-4xl font-bold gradient-heading md:text-5xl font-lora">
+    <div className="bg-gradient-to-b from-[#ECECE8] to-[#f8f9fa] min-h-screen flex flex-col items-center p-6 text-center">
+      <div className="w-full max-w-5xl">
+        {/* Hero Section */}
+        <section className="py-12 text-center">
+          <h1 className="mb-4 text-5xl font-extrabold text-blue-700 tracking-tight leading-tight">
             Grup Terapileri Başvurusu
           </h1>
-          <div className="mx-auto max-w-3xl text-left">
-            <p className="text-lg text-foreground/80 font-aristotelica">
-              Benzer yaşantılardan geçen kişilerle bir araya gelerek iyileşme fırsatı bulun. Grup terapilerimize
-              katılmak için aşağıdaki formu doldurun.
+          <p className="text-gray-700 text-lg text-center max-w-2xl mx-auto">
+            Benzer yaşantılardan geçen kişilerle bir araya gelerek iyileşme fırsatı bulun. Grup terapilerimize katılmak için aşağıdaki formu doldurun.
+          </p>
+        </section>
+
+        {/* Info Section */}
+        <section className="py-8 text-gray-800 space-y-10 text-center">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-bold text-center text-blue-600">Grup Terapisi</h2>
+            <p className="max-w-3xl text-center mx-auto">
+              Grup terapisi, bireylerin benzer deneyimler veya zorluklarla mücadele eden bir grup içinde bir araya gelerek psikolojik destek aldığı bir terapi yöntemidir. Bu süreç, genellikle bir ya da iki terapistin liderliğinde yürütülür ve katılımcılar için güvenli, destekleyici bir alan sunar.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Form Section */}
-      <section className="py-16 bg-[#ECECE8]">
-        <div className="container">
-          <div className="mx-auto max-w-3xl">
-            {formSubmitted ? (
-              <Card className="bg-white/80 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-center text-2xl gradient-heading font-lora">Başvurunuz Alındı</CardTitle>
-                  <CardDescription className="text-center text-lg font-aristotelica">
-                    Grup terapileri başvurunuz için teşekkür ederiz. Uygun grup oluştuğunda sizinle iletişime geçeceğiz.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Button
-                    onClick={() => setFormSubmitted(false)}
-                    className="mt-4 bg-primary text-white hover:bg-primary/90 transition-all duration-300"
-                  >
+          <div className="space-y-2">
+            <h3 className="text-2xl font-semibold text-blue-500">Grup Terapisinin Amaçları</h3>
+            <ul className="list-disc list-inside text-left text-gray-700 mx-auto max-w-xl">
+              <li>Bireylerin yalnız olmadıklarını fark etmelerini sağlamak</li>
+              <li>Sağlıklı iletişim ve ilişki kurma becerilerini geliştirmek</li>
+              <li>Zor duyguları anlamlandırmak ve yönetmeyi öğrenmek</li>
+              <li>Çatışma çözme ve problem çözme becerileri kazandırmak</li>
+              <li>Öz farkındalık ve öz-şefkat geliştirmek</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-blue-500">Grup Terapisinin Avantajları</h3>
+            <p className="max-w-3xl text-center mx-auto">
+              Grup terapisi, bireylere hem kendi iç dünyalarını keşfetme hem de başkalarından öğrenme fırsatı sunar. “Ben de bu duyguları yaşıyorum” diyebilmek, güven ve empati ortamını güçlendirir.
+            </p>
+            <p className="max-w-3xl text-center mx-auto">
+              Grup içinde paylaşım, sadece paylaşan kişiye değil tüm katılımcılara ilham verir. Ekonomik ve erişilebilir olmasıyla birlikte özgüven ve duygusal dayanıklılığı artırır.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-2xl font-semibold text-blue-500">Grup Terapisinde Süreç</h3>
+            <ol className="list-decimal list-inside text-left text-gray-700 mx-auto max-w-xl">
+              <li>Tanışma ve güven oluşturma</li>
+              <li>Belirlenen konuların çalışılması</li>
+              <li>Duygu ve deneyimlerin paylaşımı</li>
+              <li>Uygulamalı çalışmalar</li>
+              <li>Süreç değerlendirmesi ve kapanış</li>
+            </ol>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-2xl font-semibold text-blue-500">Neden Katılmalısınız?</h3>
+            <p className="max-w-3xl text-center mx-auto">
+              Grup terapisi yalnızca destek almak değil; öğrenmek, fark etmek, güçlenmek ve kendinizi yeniden inşa etmek için bir fırsattır.
+            </p>
+          </div>
+        </section>
+
+        {/* Form Section */}
+        <section className="mt-10">
+          <Card className="bg-white/90 shadow-2xl mx-auto">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-semibold text-blue-600">Başvuru Formu</CardTitle>
+              <CardDescription className="text-gray-600 max-w-xl mx-auto">
+                Lütfen bilgilerinizi dikkatli bir şekilde doldurunuz.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {formSubmitted ? (
+                <div className="space-y-4 text-center">
+                  <h2 className="text-2xl font-bold text-green-600">Başvurunuz Alındı</h2>
+                  <p>En kısa sürede sizinle iletişime geçilecektir.</p>
+                  <Button onClick={() => setFormSubmitted(false)} className="bg-blue-600 hover:bg-blue-700 text-white">
                     Yeni Başvuru Yap
                   </Button>
-                </CardContent>
-              </Card>
-            ) : (
-              <Card className="bg-white/80 backdrop-blur-sm border border-primary/10">
-                <CardHeader>
-                  <CardTitle className="font-lora gradient-heading text-left">Grup Terapileri Başvuru Formu</CardTitle>
-                  <CardDescription className="text-left font-aristotelica">
-                    Grup terapilerimiz, benzer deneyimlerden gelen bireylerle güvenli bir ortamda buluşma imkanı sunar.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="font-aristotelica">
-                          Ad Soyad
-                        </Label>
-                        <Input id="name" required className="border-primary/20 focus:border-primary" />
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {[
+                      { id: "name", label: "Ad Soyad", type: "text" },
+                      { id: "age", label: "Yaş", type: "number" },
+                      { id: "phone", label: "Telefon", type: "tel" },
+                      { id: "email", label: "E-posta", type: "email" }
+                    ].map(({ id, label, type }) => (
+                      <div key={id}>
+                        <Label htmlFor={id}>{label}</Label>
+                        <Input id={id} type={type} required />
                       </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="age" className="font-aristotelica">
-                          Yaş
-                        </Label>
-                        <Input id="age" type="number" required className="border-primary/20 focus:border-primary" />
-                      </div>
-                    </div>
+                    ))}
+                  </div>
 
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone" className="font-aristotelica">
-                          Telefon
-                        </Label>
-                        <Input id="phone" type="tel" required className="border-primary/20 focus:border-primary" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="font-aristotelica">
-                          E-posta
-                        </Label>
-                        <Input id="email" type="email" required className="border-primary/20 focus:border-primary" />
-                      </div>
+                  <div>
+                    <Label className="block mb-2">Terapiler</Label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                      {[
+                        "Kaygı Yönetimi",
+                        "Depresyon Desteği",
+                        "Yas Süreci",
+                        "İlişki Sorunları",
+                        "Özgüven Geliştirme",
+                        "Travma Sonrası Destek"
+                      ].map((item, index) => (
+                        <label key={index} className="flex items-center gap-2">
+                          <Checkbox id={`topic-${index}`} /> <span>{item}</span>
+                        </label>
+                      ))}
                     </div>
+                  </div>
 
-                    <div className="space-y-3">
-                      <Label className="font-aristotelica">
-                        Hangi konularda grup terapisine katılmak istiyorsunuz?
-                      </Label>
-                      <div className="grid gap-2 md:grid-cols-2">
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="anxiety" />
-                          <Label htmlFor="anxiety" className="font-normal font-aristotelica">
-                            Kaygı Yönetimi
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="depression" />
-                          <Label htmlFor="depression" className="font-normal font-aristotelica">
-                            Depresyon Desteği
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="grief" />
-                          <Label htmlFor="grief" className="font-normal font-aristotelica">
-                            Yas Süreci
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="relationships" />
-                          <Label htmlFor="relationships" className="font-normal font-aristotelica">
-                            İlişki Sorunları
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="self-esteem" />
-                          <Label htmlFor="self-esteem" className="font-normal font-aristotelica">
-                            Özgüven Geliştirme
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="trauma" />
-                          <Label htmlFor="trauma" className="font-normal font-aristotelica">
-                            Travma Sonrası Destek
-                          </Label>
-                        </div>
-                      </div>
-                    </div>
+                  <div>
+                    <Label htmlFor="experience">Deneyiminiz</Label>
+                    <Textarea id="experience" rows={3} required />
+                  </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="experience" className="font-aristotelica">
-                        Daha önce grup terapisine katıldınız mı? Deneyiminizi paylaşır mısınız?
-                      </Label>
-                      <Textarea id="experience" className="border-primary/20 focus:border-primary" rows={3} />
-                    </div>
+                  <div>
+                    <Label htmlFor="expectations">Beklentileriniz</Label>
+                    <Textarea id="expectations" rows={3} required />
+                  </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="expectations" className="font-aristotelica">
-                        Grup terapisinden beklentileriniz nelerdir?
-                      </Label>
-                      <Textarea
-                        id="expectations"
-                        required
-                        className="border-primary/20 focus:border-primary"
-                        rows={3}
-                      />
-                    </div>
+                  <div>
+                    <Label className="block mb-2">Katılım Şekli</Label>
+                    <RadioGroup defaultValue="both" className="flex flex-wrap justify-center gap-6">
+                      {[
+                        { id: "online", value: "online", label: "Online" },
+                        { id: "face-to-face", value: "face-to-face", label: "Yüz yüze" },
+                        { id: "both", value: "both", label: "Her ikisi de uygun" }
+                      ].map(({ id, value, label }) => (
+                        <label key={id} className="flex items-center gap-2">
+                          <RadioGroupItem value={value} id={id} /> {label}
+                        </label>
+                      ))}
+                    </RadioGroup>
+                  </div>
 
-                    <div className="space-y-3">
-                      <Label className="font-aristotelica">Tercih ettiğiniz katılım şekli:</Label>
-                      <RadioGroup defaultValue="both">
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="online" id="online" />
-                          <Label htmlFor="online" className="font-aristotelica">
-                            Online
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="face-to-face" id="face-to-face" />
-                          <Label htmlFor="face-to-face" className="font-aristotelica">
-                            Yüz yüze
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <RadioGroupItem value="both" id="both" />
-                          <Label htmlFor="both" className="font-aristotelica">
-                            Her ikisi de uygun
-                          </Label>
-                        </div>
-                      </RadioGroup>
-                    </div>
-
-                    <div className="flex items-center space-x-2">
+                  <div className="flex justify-center">
+                    <label className="flex items-start gap-2 max-w-xl">
                       <Checkbox id="terms" required />
-                      <Label htmlFor="terms" className="font-normal font-aristotelica">
-                        Grup terapisi kurallarını kabul ediyorum ve gizlilik ilkesine uyacağımı beyan ederim.
-                      </Label>
-                    </div>
+                      <Label htmlFor="terms" className="text-left">Kuralları kabul ediyorum ve gizliliğe uyacağım.</Label>
+                    </label>
+                  </div>
 
-                    <Button
-                      type="submit"
-                      className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300"
-                    >
-                      Başvuruyu Gönder
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        </div>
-      </section>
+                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Başvuruyu Gönder
+                  </Button>
+                </form>
+              )}
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </div>
   )
 }

@@ -1,92 +1,477 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Search, Clock, ArrowRight, Calendar, User, BookOpen, Film, PenTool, Filter } from "lucide-react"
+"use client";
 
-// Örnek blog yazıları
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from 'react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Search, Clock, ArrowRight, Calendar, User, BookOpen, Film, PenTool, Filter } from "lucide-react";
+
+// Blog yazıları
 const blogPosts = [
   {
     id: 1,
-    title: "Psikolojik Sağlamlık: Zorluklarla Başa Çıkma Becerisi",
-    excerpt:
-      "Psikolojik sağlamlık, hayatın zorluklarıyla başa çıkabilme ve bu zorluklar karşısında uyum sağlayabilme becerisidir. Bu yazıda, psikolojik sağlamlığı artırmanın yollarını ele alıyoruz.",
-    date: "15 Mayıs 2023",
-    author: "Dr. Ayşe Yılmaz",
-    category: "Kişisel Gelişim",
-    readTime: "5 dakika",
-    slug: "psikolojik-saglamlik",
-    image: "/placeholder.svg?height=400&width=600&query=Psikolojik+Sağlamlık",
-    featured: true,
+    title: "Ebeveynlik Stresi ve Başa Çıkma Yolları",
+    excerpt: "Ebeveynlik stresi ve bu stresle başa çıkma yolları hakkında bilgi.",
+    readTime: "6 dakika",
+    slug: "ebeveynlik-stresi",
+    image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&h=400&fit=crop&crop=faces",
+    category: "Ebeveynlik",
+    featured: false,
   },
   {
     id: 2,
-    title: "Çocuklarda Kaygı: Ebeveynler İçin Rehber",
-    excerpt:
-      "Çocuklarda kaygı bozuklukları giderek yaygınlaşıyor. Ebeveynler olarak çocuklarımızın kaygılarını nasıl anlayabilir ve onlara nasıl destek olabiliriz?",
-    date: "28 Nisan 2023",
-    author: "Uzm. Psk. Mehmet Kaya",
-    category: "Çocuk Psikolojisi",
-    readTime: "7 dakika",
-    slug: "cocuklarda-kaygi",
-    image: "/placeholder.svg?height=400&width=600&query=Çocuklarda+Kaygı",
+    title: "Her Başarısızlık, Yeni Bir Deneyim ve Öğrenme Fırsatıdır",
+    excerpt: "Başarısızlıkların yeni deneyimler ve öğrenme fırsatları olarak nasıl görülebileceği.",
+    readTime: "5 dakika",
+    slug: "basarisizlik-deneyim",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Kişisel Gelişim",
     featured: false,
   },
   {
     id: 3,
-    title: "İlişkilerde Sağlıklı İletişim Kurmanın Yolları",
-    excerpt:
-      "İlişkilerimizde yaşadığımız sorunların çoğu, iletişim eksikliğinden kaynaklanır. Peki, partnerimizle, ailemizle veya arkadaşlarımızla nasıl daha sağlıklı iletişim kurabiliriz?",
-    date: "10 Nisan 2023",
-    author: "Uzm. Psk. Dan. Zeynep Demir",
-    category: "İlişkiler",
-    readTime: "6 dakika",
-    slug: "iliskilerde-saglikli-iletisim",
-    image: "/placeholder.svg?height=400&width=600&query=Sağlıklı+İletişim",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Mindfulness: Şimdiki Ana Odaklanma Pratiği",
-    excerpt:
-      "Mindfulness, zihnimizi şimdiki ana getirme ve yargılamadan farkındalık geliştirme pratiğidir. Bu yazıda, günlük hayatımıza mindfulness'ı nasıl entegre edebileceğimizi anlatıyoruz.",
-    date: "2 Mart 2023",
-    author: "Dr. Ali Yıldız",
-    category: "Farkındalık",
-    readTime: "8 dakika",
-    slug: "mindfulness-simdiki-ana-odaklanma",
-    image: "/placeholder.svg?height=400&width=600&query=Mindfulness",
+    title: "2 Yaş Sendromu: Ebeveynler İçin Bir Rehber",
+    excerpt: "2 yaş sendromu ve ebeveynler için bir rehber.",
+    readTime: "7 dakika",
+    slug: "2-yas-sendromu",
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&crop=faces",
+    category: "Çocuk Psikolojisi",
     featured: false,
   },
   {
+    id: 4,
+    title: "Narsisizm Nedir?",
+    excerpt: "Narsizm hakkında detaylı bilgi.",
+    readTime: "8 dakika",
+    slug: "narsizm-nedir",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face",
+    category: "Kişilik Bozuklukları",
+    featured: true,
+  },
+  {
     id: 5,
-    title: "Travma Sonrası Büyüme: Zorlukların Ötesinde Gelişim",
-    excerpt:
-      "Travmatik deneyimler sonrasında insanlar sadece iyileşmekle kalmaz, aynı zamanda kişisel olarak büyüme ve gelişme potansiyeline de sahiptir. Bu fenomene 'travma sonrası büyüme' denir.",
-    date: "15 Şubat 2023",
-    author: "Uzm. Psk. Deniz Yalçın",
-    category: "Travma",
+    title: "Psikolojik Hastalıklar",
+    excerpt: "Psikolojik hastalıklar ve tedavi yöntemleri.",
     readTime: "10 dakika",
-    slug: "travma-sonrasi-buyume",
-    image: "/placeholder.svg?height=400&width=600&query=Travma+Sonrası+Büyüme",
+    slug: "psikolojik-hastaliklar",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
     featured: false,
   },
   {
     id: 6,
-    title: "Depresyonla Başa Çıkma Stratejileri",
-    excerpt:
-      "Depresyon, günümüzde en yaygın ruhsal sorunlardan biridir. Bu yazıda, depresyonla başa çıkmak için kullanabileceğiniz etkili stratejileri ve tedavi yöntemlerini ele alıyoruz.",
-    date: "5 Ocak 2023",
-    author: "Prof. Dr. Ahmet Kara",
-    category: "Ruh Sağlığı",
-    readTime: "9 dakika",
-    slug: "depresyonla-basa-cikma",
-    image: "/placeholder.svg?height=400&width=600&query=Depresyon+Tedavi",
+    title: "Stres Hayatımızı Nasıl Etkiler?",
+    excerpt: "Stresin günlük yaşam üzerindeki etkileri.",
+    readTime: "6 dakika",
+    slug: "stres-hayatimiz",
+    image: "https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=600&h=400&fit=crop&crop=center",
+    category: "Stres Yönetimi",
     featured: false,
   },
-]
+  {
+    id: 7,
+    title: "Pazartesi Günleri Bizi Psikolojik Olarak Neden Zorlar?",
+    excerpt: "Pazartesi günlerinin psikolojik etkileri.",
+    readTime: "5 dakika",
+    slug: "pazartesi-gunleri",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Günlük Yaşam",
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "Gelişim Psikolojisi Nedir?",
+    excerpt: "Gelişim psikolojisinin temel kavramları.",
+    readTime: "7 dakika",
+    slug: "gelisim-psikolojisi",
+    image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&crop=center",
+    category: "Psikoloji",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "Bir İlişkiyi Sağlıklı Yapan Nedir",
+    excerpt: "Sağlıklı ilişkilerin temel özellikleri.",
+    readTime: "8 dakika",
+    slug: "saglikli-iliski",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=center",
+    category: "İlişkiler",
+    featured: false,
+  },
+  {
+    id: 10,
+    title: "İlişki Terapisti Kimdir?",
+    excerpt: "İlişki terapistlerinin rolleri ve önemi.",
+    readTime: "6 dakika",
+    slug: "iliski-terapisti",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 22,
+    title: "Psikoz Nedir?",
+    excerpt: "Psikoz ve tedavi yöntemleri.",
+    readTime: "7 dakika",
+    slug: "psikoz",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: true,
+  },
+  {
+    id: 11,
+    title: "Bütüncül Psikoterapi: Zihin, Beden ve Ruhun Bütünlüğüne Doğru",
+    excerpt: "Bütüncül psikoterapinin temel ilkeleri.",
+    readTime: "9 dakika",
+    slug: "butuncul-psikoterapi",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 12,
+    title: "Nefes Terapisi",
+    excerpt: "Nefes terapisi ve faydaları.",
+    readTime: "5 dakika",
+    slug: "nefes-terapisi",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 13,
+    title: "Dikkat Eksikliği: Belirtileri, Tanı Süreci ve Tedavi Yöntemleri",
+    excerpt: "Dikkat eksikliği hakkında detaylı bilgi.",
+    readTime: "10 dakika",
+    slug: "dikkat-eksikligi",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: false,
+  },
+  {
+    id: 14,
+    title: "Bağımlılık Türleri ve Anlama Rehberi",
+    excerpt: "Bağımlılık türleri ve başa çıkma yolları.",
+    readTime: "8 dakika",
+    slug: "bagimlilik-turleri",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&crop=center",
+    category: "Bağımlılık",
+    featured: false,
+  },
+  {
+    id: 15,
+    title: "Çocuk ve Ergenlerde Dikkat Eksikliği",
+    excerpt: "Çocuk ve ergenlerde dikkat eksikliği.",
+    readTime: "7 dakika",
+    slug: "cocuk-ergende-dikkat-eksikligi",
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&crop=faces",
+    category: "Çocuk Psikolojisi",
+    featured: false,
+  },
+  {
+    id: 16,
+    title: "Anoreksiya Nedir",
+    excerpt: "Anoreksiya ve belirtileri.",
+    readTime: "6 dakika",
+    slug: "anoreksiya",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Yeme Bozuklukları",
+    featured: false,
+  },
+  {
+    id: 17,
+    title: "Fomo: Kaybetme Korkusu",
+    excerpt: "Fomo ve etkileri.",
+    readTime: "5 dakika",
+    slug: "fomo",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=center",
+    category: "Anksiyete",
+    featured: false,
+  },
+  {
+    id: 18,
+    title: "Çocuk Gelişiminde Kitap Okumanın Önemi",
+    excerpt: "Kitap okumanın çocuk gelişimine etkisi.",
+    readTime: "7 dakika",
+    slug: "cocuk-gelisiminde-kitap",
+    image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&crop=center",
+    category: "Çocuk Gelişimi",
+    featured: false,
+  },
+  {
+    id: 19,
+    title: "EMDR Nedir?",
+    excerpt: "EMDR terapisi hakkında bilgi.",
+    readTime: "8 dakika",
+    slug: "emdr",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 20,
+    title: "Şema Terapi Nedir",
+    excerpt: "Şema terapisi ve uygulama alanları.",
+    readTime: "9 dakika",
+    slug: "sema-terapisi",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 21,
+    title: "Anksiyete Nedir?",
+    excerpt: "Anksiyete bozukluğu ve belirtileri.",
+    readTime: "6 dakika",
+    slug: "anksiyete",
+    image: "https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=600&h=400&fit=crop&crop=center",
+    category: "Anksiyete",
+    featured: false,
+  },
+  {
+    id: 23,
+    title: "Agorafobi Nedir?",
+    excerpt: "Agorafobi ve başa çıkma yolları.",
+    readTime: "5 dakika",
+    slug: "agorafobi",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=center",
+    category: "Fobiler",
+    featured: false,
+  },
+  {
+    id: 24,
+    title: "Psikolojik El Titremesi",
+    excerpt: "Psikolojik el titremesi ve nedenleri.",
+    readTime: "6 dakika",
+    slug: "psikolojik-el-titremesi",
+    image: "https://images.unsplash.com/photo-1584824486509-112e4181ff6b?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: false,
+  },
+  {
+    id: 25,
+    title: "Monofobi Nedir?",
+    excerpt: "Monofobi ve belirtileri.",
+    readTime: "7 dakika",
+    slug: "monofobi",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=center",
+    category: "Fobiler",
+    featured: false,
+  },
+  {
+    id: 26,
+    title: "Çocuk Gelişiminde Duyguların Önemi",
+    excerpt: "Duyguların çocuk gelişimindeki rolü.",
+    readTime: "8 dakika",
+    slug: "cocuk-gelisiminde-duygular",
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&crop=faces",
+    category: "Çocuk Psikolojisi",
+    featured: false,
+  },
+  {
+    id: 27,
+    title: "Depresyon Nedir?",
+    excerpt: "Depresyon ve tedavi yöntemleri.",
+    readTime: "9 dakika",
+    slug: "depresyon",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: false,
+  },
+  {
+    id: 28,
+    title: "Kişilik Bozukluğu Nedir?",
+    excerpt: "Kişilik bozuklukları ve belirtileri.",
+    readTime: "10 dakika",
+    slug: "kisilik-bozuklugu",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face",
+    category: "Kişilik Bozuklukları",
+    featured: false,
+  },
+  {
+    id: 29,
+    title: "Sosyal Anksiyete Nedir? Hakkında Doğru Bilinen Yanlışlar",
+    excerpt: "Sosyal anksiyete ve yanlış bilinenler.",
+    readTime: "7 dakika",
+    slug: "sosyal-anksiyete",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=center",
+    category: "Anksiyete",
+    featured: false,
+  },
+  {
+    id: 30,
+    title: "Etkili Zaman Yönetimi Nedir?",
+    excerpt: "Etkili zaman yönetimi teknikleri.",
+    readTime: "8 dakika",
+    slug: "zaman-yonetimi",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Kişisel Gelişim",
+    featured: false,
+  },
+  {
+    id: 31,
+    title: "Narsisizm",
+    excerpt: "Narsisizm ve belirtileri hakkında detaylı bilgi.",
+    readTime: "10 dakika",
+    slug: "narsisizm",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face",
+    category: "Kişilik Bozuklukları",
+    featured: false,
+  },
+  {
+    id: 32,
+    title: "Sınav Kaygısı: Kazanmadan Kaybetmek",
+    excerpt: "Sınav kaygısı ve başa çıkma yöntemleri.",
+    readTime: "6 dakika",
+    slug: "sinav-kaygisi",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&crop=center",
+    category: "Eğitim Psikolojisi",
+    featured: false,
+  },
+  {
+    id: 33,
+    title: "Çocuklarda Alt Islatma",
+    excerpt: "Çocuklarda alt ıslatma ve çözüm yolları.",
+    readTime: "5 dakika",
+    slug: "cocuklarda-alt-islatma",
+    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop&crop=faces",
+    category: "Çocuk Psikolojisi",
+    featured: false,
+  },
+  {
+    id: 34,
+    title: "Kadınlarda Orgazm Sorununun (Anorgazmi) Psikolojik Nedenleri",
+    excerpt: "Kadınlarda orgazm sorununun psikolojik nedenleri.",
+    readTime: "7 dakika",
+    slug: "anorgazmi",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=center",
+    category: "Cinsel Sağlık",
+    featured: false,
+  },
+  {
+    id: 35,
+    title: "Çocuklarda Bağlanma-Bağlanma Teorisi Nedir?",
+    excerpt: "Bağlanma teorisi ve çocuk gelişimine etkisi.",
+    readTime: "8 dakika",
+    slug: "baglanma-teorisi",
+    image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&h=400&fit=crop&crop=faces",
+    category: "Çocuk Psikolojisi",
+    featured: false,
+  },
+  {
+    id: 36,
+    title: "Cinsel Obsesif Bozukluk Nedir?",
+    excerpt: "Cinsel obsesif bozukluk ve belirtileri.",
+    readTime: "6 dakika",
+    slug: "cinsel-obsesif-bozukluk",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: false,
+  },
+  {
+    id: 37,
+    title: "Eş Bağımlılığın Tanımı Nedir?",
+    excerpt: "Eş bağımlılık ve belirtileri.",
+    readTime: "7 dakika",
+    slug: "es-bagimlilik",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=center",
+    category: "İlişkiler",
+    featured: false,
+  },
+  {
+    id: 38,
+    title: "Duygusal Banka Hesabı Nedir?",
+    excerpt: "Duygusal banka hesabı ve ilişkilerdeki önemi.",
+    readTime: "5 dakika",
+    slug: "duygusal-banka",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=center",
+    category: "İlişkiler",
+    featured: false,
+  },
+  {
+    id: 39,
+    title: "Söz Dinlemeyen Çocuğa Nasıl Davranılmalıdır?",
+    excerpt: "Söz dinlemeyen çocuklara yaklaşım yöntemleri.",
+    readTime: "8 dakika",
+    slug: "soz-dinlemeyen-cocuk",
+    image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=600&h=400&fit=crop&crop=faces",
+    category: "Ebeveynlik",
+    featured: false,
+  },
+  {
+    id: 40,
+    title: "Terapötik İlişkinin Önemi Nedir?",
+    excerpt: "Terapötik ilişkinin önemi ve etkileri.",
+    readTime: "9 dakika",
+    slug: "terapotik-iliski",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=center",
+    category: "Terapi",
+    featured: false,
+  },
+  {
+    id: 41,
+    title: "Dissosiyatif Kişilik Bozukluğu Nedir?",
+    excerpt: "Dissosiyatif kişilik bozukluğu ve belirtileri.",
+    readTime: "10 dakika",
+    slug: "dissosiyatif-kisilik",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face",
+    category: "Kişilik Bozuklukları",
+    featured: false,
+  },
+  {
+    id: 42,
+    title: "Hipomani Nedir?",
+    excerpt: "Hipomani ve belirtileri.",
+    readTime: "6 dakika",
+    slug: "hipomani",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
+    category: "Ruh Sağlığı",
+    featured: false,
+  },
+  {
+    id: 43,
+    title: "Uyku Felci Nedir?",
+    excerpt: "Uyku felci ve nedenleri.",
+    readTime: "5 dakika",
+    slug: "uyku-felci",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&crop=center",
+    category: "Uyku Bozuklukları",
+    featured: false,
+  },
+  {
+    id: 44,
+    title: "Odaklanma Sorunu Nasıl Çözülür?",
+    excerpt: "Odaklanma sorunları ve çözüm yolları.",
+    readTime: "7 dakika",
+    slug: "odaklanma-sorunu",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop&crop=center",
+    category: "Kişisel Gelişim",
+    featured: false,
+  },
+  {
+    id: 45,
+    title: "İlişkide Güven Sorunu Belirtileri ve Çözümü",
+    excerpt: "İlişkilerde güven sorunları ve çözüm yolları.",
+    readTime: "8 dakika",
+    slug: "guven-sorunu",
+    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=center",
+    category: "İlişkiler",
+    featured: false,
+  },
+  {
+    id: 46,
+    title: "Sosyal Medya Bağımlılığı Nedir?",
+    excerpt: "Sosyal medya bağımlılığı ve etkileri hakkında bilgi.",
+    readTime: "8 dakika",
+    slug: "sosyal-medya-bagimliligi",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop&crop=center",
+    category: "Teknoloji ve Psikoloji",
+    featured: false,
+  },
+];
 
 // Kategoriler
 const categories = [
@@ -98,37 +483,14 @@ const categories = [
   "Travma",
   "Ruh Sağlığı",
   "Terapi",
-]
-
-// Kaynaklar
-const resources = [
-  {
-    id: 1,
-    title: "Psikoloji Alanında Önerilen Kitaplar",
-    description: "Uzmanlarımızın seçtiği, psikoloji ve kişisel gelişim alanında ufkunuzu genişletecek kitap önerileri.",
-    icon: <BookOpen className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/kitaplar",
-  },
-  {
-    id: 2,
-    title: "Terapötik Film Önerileri",
-    description: "Psikolojik konuları derinlemesine ele alan, düşündürücü ve ilham verici film tavsiyeleri.",
-    icon: <Film className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/filmler",
-  },
-  {
-    id: 3,
-    title: "Akademik Makaleler ve Araştırmalar",
-    description: "Psikoloji alanındaki güncel akademik çalışmalar ve araştırma sonuçları.",
-    icon: <PenTool className="h-10 w-10 text-primary" />,
-    link: "/blog/kaynaklar/makaleler",
-  },
-]
+];
 
 export default function BlogPage() {
-  // Öne çıkan yazıları filtrele
-  const featuredPosts = blogPosts.filter((post) => post.featured)
-  const regularPosts = blogPosts.filter((post) => !post.featured)
+  const [showAllFeatured, setShowAllFeatured] = useState(false);
+
+  const featuredPosts = blogPosts.filter((post) => post.featured);
+  const regularPosts = blogPosts.filter((post) => !post.featured);
+  const displayedFeaturedPosts = showAllFeatured ? featuredPosts : featuredPosts.slice(0, 10);
 
   return (
     <div className="min-h-screen">
@@ -143,11 +505,9 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 font-lora italic text-white text-center">Blog ve Kaynaklar</h1>
             <p className="text-xl text-white/90 mb-12 leading-relaxed text-center">
-              Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın hazırladığı içerikler, öneriler ve
-              kaynaklar.
+              Ruh sağlığı, psikoloji ve kişisel gelişim konularında uzmanlarımızın hazırladığı içerikler, öneriler ve kaynaklar.
             </p>
 
-            {/* Arama Kutusu */}
             <div className="relative max-w-2xl mx-auto">
               <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 h-6 w-6" />
               <Input
@@ -201,10 +561,22 @@ export default function BlogPage() {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {featuredPosts.map((post) => (
+            {displayedFeaturedPosts.map((post) => (
               <FeaturedPostCard key={post.id} post={post} />
             ))}
           </div>
+
+          {!showAllFeatured && featuredPosts.length > 10 && (
+            <div className="mt-16 flex justify-center">
+              <Button
+                onClick={() => setShowAllFeatured(true)}
+                variant="outline"
+                className="rounded-full border-primary/30 px-10 py-3 hover:bg-primary/10 transition-all duration-300"
+              >
+                Daha Fazla Göster
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -241,21 +613,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Kaynaklar Bölümü */}
-      <section className="py-20 bg-blue-200 relative overflow-hidden">
-        <div className="container relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 font-lora italic text-white text-center">
-            Faydalı Kaynaklar
-          </h2>
-      
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {resources.map((resource) => (
-              <ResourceCard key={resource.id} resource={resource} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Bülten Aboneliği */}
       <section className="py-20 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="container">
@@ -281,11 +638,11 @@ export default function BlogPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
 
-// Öne Çıkan Yazı Kartı
-function FeaturedPostCard({ post }: { post: any }) {
+// Kart bileşenleri (değiştirilmedi)
+function FeaturedPostCard({ post }) {
   return (
     <Card className="overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group h-full">
       <div className="grid md:grid-cols-2 h-full">
@@ -306,10 +663,6 @@ function FeaturedPostCard({ post }: { post: any }) {
           <div>
             <div className="flex items-center justify-center gap-4 mb-4 text-sm text-gray-500">
               <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                <span>{post.date}</span>
-              </div>
-              <div className="flex items-center gap-1">
                 <Clock className="h-4 w-4" />
                 <span>{post.readTime}</span>
               </div>
@@ -325,11 +678,6 @@ function FeaturedPostCard({ post }: { post: any }) {
           </div>
 
           <div className="flex items-center justify-center flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <User className="h-4 w-4 text-primary" />
-              <span className="text-sm text-gray-600">{post.author}</span>
-            </div>
-
             <Link
               href={`/blog/${post.slug}`}
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 group/link font-medium"
@@ -341,11 +689,10 @@ function FeaturedPostCard({ post }: { post: any }) {
         </div>
       </div>
     </Card>
-  )
+  );
 }
 
-// Blog Yazı Kartı
-function BlogPostCard({ post }: { post: any }) {
+function BlogPostCard({ post }) {
   return (
     <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group h-full flex flex-col">
       <div className="relative h-56 overflow-hidden">
@@ -361,10 +708,6 @@ function BlogPostCard({ post }: { post: any }) {
 
       <CardHeader className="text-center pb-3">
         <div className="flex items-center justify-center gap-4 mb-3 text-sm text-gray-500">
-          <div className="flex items-center gap-1">
-            <Calendar className="h-3 w-3" />
-            <span>{post.date}</span>
-          </div>
           <div className="flex items-center gap-1">
             <Clock className="h-3 w-3" />
             <span>{post.readTime}</span>
@@ -383,11 +726,6 @@ function BlogPostCard({ post }: { post: any }) {
       </CardContent>
 
       <CardFooter className="text-center pt-0 flex items-center justify-center flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <User className="h-3 w-3 text-primary" />
-          <span className="text-sm text-gray-600">{post.author}</span>
-        </div>
-
         <Link
           href={`/blog/${post.slug}`}
           className="inline-flex items-center gap-1 text-primary hover:text-primary/80 transition-all duration-300 group/link text-sm font-medium"
@@ -397,31 +735,5 @@ function BlogPostCard({ post }: { post: any }) {
         </Link>
       </CardFooter>
     </Card>
-  )
-}
-
-// Kaynak Kartı
-function ResourceCard({ resource }: { resource: any }) {
-  return (
-    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm h-full">
-      <CardHeader className="text-center pb-4">
-        <div className="flex justify-center mb-6">{resource.icon}</div>
-        <CardTitle className="text-xl font-lora italic text-[#8fa4d3] mb-4 text-center">{resource.title}</CardTitle>
-      </CardHeader>
-
-      <CardContent className="text-center">
-        <p className="text-[#8fa4d3]/90 leading-relaxed text-center">{resource.description}</p>
-      </CardContent>
-
-      <CardFooter className="justify-center pt-6">
-        <Button
-          asChild
-          variant="outline"
-          className="rounded-full border-[#8fa4d3]/30 text-[#8fa4d3] hover:bg-[#8fa4d3]/10 px-8 py-2"
-        >
-          <Link href={resource.link}>Keşfet</Link>
-        </Button>
-      </CardFooter>
-    </Card>
-  )
+  );
 }
