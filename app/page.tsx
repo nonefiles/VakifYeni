@@ -21,7 +21,7 @@ export default function Home() {
             </div>
             <h1 className="mb-6 sm:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight animate-fade-in text-center">
               <span className="block text-foreground font-lora italic">Ruh sağlığı bir ayrıcalık </span>
-              <span className="block gradient-text font-lora italic">değil haktır.</span>
+              <span className="block font-lora italic">değil haktır.</span>
             </h1>
             <p className="mb-8 sm:mb-12 text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 leading-relaxed font-aristotelica max-w-4xl mx-auto animate-slide-in-up text-center px-4">
               Bu vakıf, bir ihtiyaçtan doğdu. Psikolojik desteğe erişemeyen bireyler için dayanışmayı büyütmek istedik.
