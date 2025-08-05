@@ -96,7 +96,7 @@ export default function DonatePage() {
                       <div className="space-y-2">
                         <div className="grid grid-cols-3 gap-2 text-left">
                           <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:</div>
-                          <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>-</div>
+                          <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}+90 539 889 33 75</div>
                         </div>
                         <div className="grid grid-cols-3 gap-2 text-left">
                           <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>E-posta:</div>
