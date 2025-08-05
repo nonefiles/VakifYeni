@@ -71,42 +71,27 @@ export default function DonatePage() {
                         {[
                           ["BIC:", "TCZBTR2A"],
                           ["Banka:", "Ziraat Bankası"],
-                          ["Şube:", "798- Çankaya/Ankara Şubesi"],
+                          ["Şube:", "798- Çankaya/Ankara"],
                           ["Hesap Adı:", "YILMAZ YOL ARKADAŞLARI VAKFI"],
+                          ["Hesap No:", "798980120335001"],
+                          ["Para Birimi:", "TRY"],
                           ["IBAN:", "TR32001000798980120335001"],
+
                           ["Açıklama:", " "]
                         ].map(([label, value]) => (
                           <div className="grid grid-cols-3 gap-2 text-left" key={label}>
-                            <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>{label}</div>
-                            <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>{value}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-gray-600 text-center" style={{ fontFamily: 'Arial, sans-serif' }}>
-                      Banka havalesi yaptıktan sonra, bağışınızın takibi için lütfen dekont bilgisini
-                      <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline">
-                        {" "}bagis@yolarkadaslari.org
-                      </a>{" "}adresine gönderiniz.
-                    </p>
-                  </TabsContent>
-
-                  <TabsContent value="other" className="mt-6 space-y-6">
-                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
-                      <h3 className="mb-4 text-lg font-bold gradient-heading text-center" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
-                        Diğer Bağış Yöntemleri
-                      </h3>
-                      <p className="text-gray-600 text-center mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        Farklı bağış yöntemleri hakkında bilgi almak için lütfen bizimle iletişime geçin:
+@@ -101,76 +102,76 @@
                       </p>
                       <div className="space-y-2">
                         <div className="grid grid-cols-3 gap-2 text-left">
-                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:+905398893375</div>
+                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:</div>
                           <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}></div>
                         </div>
                         <div className="grid grid-cols-3 gap-2 text-left">
+                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>E-posta:</div>
                           <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline">
+                              bagis@yolarkadaslari.org
                             </a>
                           </div>
                         </div>
