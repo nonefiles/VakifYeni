@@ -69,10 +69,11 @@ export default function DonatePage() {
                       </h3>
                       <div className="space-y-4">
                         {[
-                          ["Banka:", " "],
-                          ["Şube:", " "],
-                          ["Hesap Adı:", " "],
-                          ["IBAN:", " "],
+                          ["BIC:", "TCZBTR2A"],
+                          ["Banka:", "Ziraat Bankası"],
+                          ["Şube:", "798- Çankaya/Ankara Şubesi"],
+                          ["Hesap Adı:", "YILMAZ YOL ARKADAŞLARI VAKFI"],
+                          ["IBAN:", "TR32001000798980120335001"],
                           ["Açıklama:", " "]
                         ].map(([label, value]) => (
                           <div className="grid grid-cols-3 gap-2 text-left" key={label}>
@@ -101,11 +102,11 @@ export default function DonatePage() {
                       </p>
                       <div className="space-y-2">
                         <div className="grid grid-cols-3 gap-2 text-left">
-                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:</div>
+                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:+90 539 889 33 75</div>
                           <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}></div>
                         </div>
                         <div className="grid grid-cols-3 gap-2 text-left">
-                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>E-posta:</div>
+                          <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>E-posta:bagis@yolarkadaslari.org</div>
                           <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline">
                               bagis@yolarkadaslari.org
