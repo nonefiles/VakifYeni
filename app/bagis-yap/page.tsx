@@ -76,16 +76,27 @@ export default function DonatePage() {
                           ["Hesap No:", "798980120335001"],
                           ["Para Birimi:", "TRY"],
                           ["IBAN:", "TR32001000798980120335001"],
-
                           ["Açıklama:", " "]
                         ].map(([label, value]) => (
                           <div className="grid grid-cols-3 gap-2 text-left" key={label}>
-@@ -101,76 +102,76 @@
+                            <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>{label}</div>
+                            <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>{value}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
+                      <h3 className="mb-4 text-lg font-bold gradient-heading text-center" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
+                        İletişim Bilgileri
+                      </h3>
+                      <p className="text-gray-600 text-center mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        Bağış işleminizle ilgili sorularınız için bizimle iletişime geçebilirsiniz:
                       </p>
                       <div className="space-y-2">
                         <div className="grid grid-cols-3 gap-2 text-left">
                           <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>Telefon:</div>
-                          <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}></div>
+                          <div className="col-span-2" style={{ fontFamily: 'Arial, sans-serif' }}>-</div>
                         </div>
                         <div className="grid grid-cols-3 gap-2 text-left">
                           <div className="font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>E-posta:</div>
@@ -106,6 +117,22 @@ export default function DonatePage() {
                         Vakfımıza ayni bağış (eşya, malzeme, hizmet vb.) yapmak isterseniz, lütfen bizimle iletişime geçin.
                         İhtiyaç listemizi paylaşalım ve en uygun şekilde nasıl destek olabileceğinizi birlikte değerlendirelim.
                       </p>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="other" className="mt-6 space-y-6">
+                    <div className="rounded-xl bg-accent/50 p-6 border border-primary/10">
+                      <h3 className="mb-4 text-lg font-bold gradient-heading text-center" style={{ fontFamily: 'Lora', fontStyle: 'italic' }}>
+                        Diğer Bağış Yöntemleri
+                      </h3>
+                      <p className="text-gray-600 text-center mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        Alternatif bağış yöntemleri için lütfen bizimle iletişime geçin.
+                      </p>
+                      <div className="text-center">
+                        <a href="mailto:bagis@yolarkadaslari.org" className="text-primary hover:underline" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          bagis@yolarkadaslari.org
+                        </a>
+                      </div>
                     </div>
                   </TabsContent>
                 </Tabs>
