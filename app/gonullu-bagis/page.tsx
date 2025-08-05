@@ -151,10 +151,11 @@ export default function GonulluBagisPage() {
                   </h4>
                   <div className="font-aristotelica text-center">
                     <p className="mb-2">Yol Arkadaşları Psikoloji Vakfı</p>
-                    <p className="mb-2">Banka: </p>
-                    <p className="mb-2">Şube: </p>
-                    <p className="mb-2">Hesap No: </p>
-                    <p className="mb-2">IBAN: </p>
+                    <p className="mb-2">Banka: Türkiye Cumhuriyeti Ziraat Bankası</p>
+                    <p className="mb-2">Şube: 798- Çankaya/Ankara Şubesi</p>
+                    <p className="mb-2">Hesap No: 798980120335001</p>
+                    <p className="mb-2">IBAN: TR32001000798980120335001</p>
+                    <p className="mb-2">BIC: TCZBTR2A</p>
                   </div>
                 </div>
               </CardContent>
