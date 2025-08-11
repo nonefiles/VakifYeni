@@ -164,10 +164,10 @@ export default function PsikoterapiBasvuruPage() {
               <p className="text-lg font-bold font-aristotelica mt-4">
                 Telefon Numaraları:
               </p>
-              <p className="text-lg font-aristotelica">
+              <p className="text-lg text-center font-aristotelica">
                 +90 539 889 3375
               </p>
-              <p className="text-lg font-aristotelica">
+              <p className="text-lg text-center font-aristotelica">
                 +90 532 419 3375
               </p>
             </CardContent>
