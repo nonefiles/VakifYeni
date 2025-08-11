@@ -48,16 +48,16 @@ type CategoryType = "all" | "seminar" | "meeting" | "workshop" | "sohbet";
 const events: Event[] = [
   {
     id: "1",
-    title: "Zorluklar Bizi Güçlendirir mi? - Zor Yaşam Deneyimlerinin Psikolojik Dayanıklılık Üzerindeki Etkisi",
-    date: "2025-06-26",
+    title: "Görünmekten Korkmak - Sosyal Kaygının Gölgesinde Yaşamak",
+    date: "2025-08-21",
     time: "19:30",
     location: "Zoom",
     type: "online",
-    description: "50. Ücretsiz Psikoloji Sohbeti - Zor yaşam deneyimlerinin psikolojik dayanıklılık üzerindeki etkisini ele alan özel sohbet.",
-    link: "/etkinlikler/psikoloji-sohbeti-50",
+    description: "54. Ücretsiz Psikoloji Sohbeti - Görünmekten Korkmak ve sosyal kaygının gölgesinde yaşama üzerine bir sohbet.",
+    link: "https://www.yolarkadaslari.com",
     category: "sohbet",
-    detailedDescription: "Bu özel sohbette, hayatımızda karşılaştığımız zorlukların bizi nasıl güçlendirdiğini ve psikolojik dayanıklılığımızı nasıl etkilediğini ele alacağız. M. Abdullah YILMAZ ve Kln. Psk. Yılmaz Kaan Aktuğ'un moderatörlüğünde gerçekleşecek bu online sohbet tamamen ücretsizdir. Zoom bağlantısı kayıt sonrası e-posta ile gönderilecektir.",
-    speakers: ["M. Abdullah YILMAZ", "Kln. Psk. Yılmaz Kaan Aktuğ"],
+    detailedDescription: "Katılımın ücretsiz ve herkese açık olduğu bu 54. Ücretsiz Psikoloji Sohbetinde, 'Görünmekten Korkmak' ve 'Sosyal Kaygının Gölgesinde Yaşamak' konuları ele alınacaktır. Etkinlik Zoom üzerinden gerçekleştirilecektir.",
+    speakers: ["M. Abdullah YILMAZ", "Kln. Psk. Eralp AKGÜL", "Kln. Psk. Busenaz OTLU"],
     isFree: true
   }
 ];
