@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -159,13 +161,13 @@ export default function PsikoterapiBasvuruPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-lg text-center font-bold font-aristotelica mt-4">
+              <p className="text-lg font-bold font-aristotelica mt-4">
                 Telefon Numaraları:
               </p>
-              <p className="text-lg text-center font-aristotelica">
+              <p className="text-lg font-aristotelica">
                 +90 539 889 3375
               </p>
-              <p className="text-lg text-center font-aristotelica">
+              <p className="text-lg font-aristotelica">
                 +90 532 419 3375
               </p>
             </CardContent>
