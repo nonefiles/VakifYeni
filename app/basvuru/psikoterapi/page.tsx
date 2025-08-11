@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -160,6 +158,7 @@ export default function PsikoterapiBasvuruPage() {
                 İletişim ve Detaylı Bilgi
               </CardTitle>
             </CardHeader>
+            <CardContent className="text-center">
               <p className="text-lg text-center font-bold font-aristotelica mt-4">
                 Telefon Numaraları:
               </p>
