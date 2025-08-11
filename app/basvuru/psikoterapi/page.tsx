@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -72,13 +70,12 @@ export default function PsikoterapiBasvuruPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {/* FORM BAŞLANGICI */}
                 <form onSubmit={handleSubmit} className="space-y-8 text-center flex flex-col items-center">
                   <div className="w-full max-w-md">
                     <Label htmlFor="firstName" className="block mb-2">Adınız</Label>
                     <Input id="firstName" type="text" required />
                   </div>
-                  
+
                   <div className="w-full max-w-md">
                     <Label htmlFor="lastName" className="block mb-2">Soyadınız</Label>
                     <Input id="lastName" type="text" required />
@@ -90,8 +87,8 @@ export default function PsikoterapiBasvuruPage() {
                   </div>
 
                   <div className="w-full max-w-md">
-                    <Label htmlFor="phone" className="block mb-2">Telefon</Label>
-                    <Input id="phone" type="tel" required />
+                    <Label htmlFor="phone" className="block mb-2">Telefon Numarası</Label>
+                    <Input id="phone" type="tel" placeholder="Örnek: 5551234567" required />
                   </div>
 
                   <div className="w-full max-w-md">
@@ -148,10 +145,34 @@ export default function PsikoterapiBasvuruPage() {
                     </Button>
                   </div>
                 </form>
-                {/* FORM BİTİŞİ */}
               </CardContent>
             </Card>
           )}
+        </section>
+
+        {/* Contact Information Section */}
+        <section className="py-8">
+          <Card className="bg-white/80 backdrop-blur-sm border border-primary/10">
+            <CardHeader>
+              <CardTitle className="text-center gradient-heading font-lora">
+                İletişim ve Detaylı Bilgi
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-lg font-aristotelica">
+                Herhangi bir sorunuz veya yardım talebiniz için bizi arayabilirsiniz.
+              </p>
+              <p className="text-lg font-bold font-aristotelica mt-4">
+                Telefon Numaraları:
+              </p>
+              <p className="text-lg font-aristotelica">
+                +90 539 889 3375
+              </p>
+              <p className="text-lg font-aristotelica">
+                +90 532 419 3375
+              </p>
+            </CardContent>
+          </Card>
         </section>
       </div>
     </div>
