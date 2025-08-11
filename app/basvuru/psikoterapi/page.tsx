@@ -161,7 +161,7 @@ export default function PsikoterapiBasvuruPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-lg font-bold font-aristotelica mt-4">
+              <p className="text-lg text-center font-bold font-aristotelica mt-4">
                 Telefon Numaraları:
               </p>
               <p className="text-lg text-center font-aristotelica">
