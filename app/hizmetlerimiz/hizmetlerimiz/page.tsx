@@ -50,22 +50,20 @@ export default function ServicesPage() {
                     sürecine katılabilir.
                   </p>
                   <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
-                  <p className="text-center inline-block">
+                  <ul className="text-center inline-block">
                     <li>
                       <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
                     </li>
-                    <p>
                     <li>
                       <strong>Çocuk ve Ergen Psikoterapisi:</strong> Çocukların ve ergenlerin gelişimsel, duygusal ve
                       sosyal zorluklarıyla sağlıklı şekilde baş edebilmeleri için aileyle iş birliği içinde yürütülür.
                     </li>
-                    </p>
                     <li>
                       <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
-                  </p>
+                  </ul>
                   <p className="mt-8 text-center">
                     Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
                     gizlilik ilkesiyle gerçekleştirilir.
