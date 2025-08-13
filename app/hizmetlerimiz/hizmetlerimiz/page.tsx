@@ -48,23 +48,23 @@ export default function ServicesPage() {
                     sunuyoruz. Bu hizmetten faydalanmak isteyen herkes, başvuru formumuzu doldurarak değerlendirme
                     sürecine katılabilir.
                   </p>
-                  <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
+                  <p className="mt-8 text-center"><b>Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</b></p>
                   <ul className="text-center inline-block">
                     <li className="mb-4">
-                      <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
+                      <b>Bireysel Psikoterapi:</b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
                     </li>
                     <li className="mb-4">
-                      <strong>Çocuk ve Ergen Psikoterapisi:</strong> Çocukların ve ergenlerin gelişimsel, duygusal ve
+                      <b>Çocuk ve Ergen Psikoterapisi:</b> Çocukların ve ergenlerin gelişimsel, duygusal ve
                       sosyal zorluklarıyla sağlıklı şekilde baş edebilmeleri için aileyle iş birliği içinde yürütülür.
                     </li>
                     <li className="mb-4">
-                      <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
+                      <b>Çift ve Aile Psikoterapisi:</b> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
                   </ul>
                   <p className="mt-8 text-center">
-                    Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
+                    Tüm görüşmelerimiz, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
                     gizlilik ilkesiyle gerçekleştirilir.
                   </p>
                   <p className="mt-8 text-center">Yalnız değilsiniz. Biz, her adımda yanınızda olmaya hazırız.</p>
