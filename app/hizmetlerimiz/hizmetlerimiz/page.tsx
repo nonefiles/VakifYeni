@@ -55,10 +55,12 @@ export default function ServicesPage() {
                       <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
                     </li>
+                    <p>
                     <li>
                       <strong>Çocuk ve Ergen Psikoterapisi:</strong> Çocukların ve ergenlerin gelişimsel, duygusal ve
                       sosyal zorluklarıyla sağlıklı şekilde baş edebilmeleri için aileyle iş birliği içinde yürütülür.
                     </li>
+                    </p>
                     <li>
                       <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
