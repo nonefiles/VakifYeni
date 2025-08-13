@@ -45,14 +45,14 @@ export default function ServicesPage() {
                     hakka erişimde herkesin eşit koşullara sahip olmasını önemsiyoruz.
                   </p>
                   <p className="mt-8 text-center">
-                    Maddi koşullar nedeniyle özel terapiye ulaşamayan bireyler için ücretsiz psikoterapi hizmeti
+                    Maddi koşullar nedeniyle terapiye ulaşamayan bireyler için ücretsiz psikoterapi hizmeti
                     sunuyoruz. Bu hizmetten faydalanmak isteyen herkes, başvuru formumuzu doldurarak değerlendirme
                     sürecine katılabilir.
                   </p>
                   <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
                   <ul className="text-center inline-block">
                     <li>
-                      <strong>Bireysel Psikoterapi:</strong> Yetişkin bireylerin duygu, düşünce ve davranışlarını
+                      <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
                     </li>
                     <li>
