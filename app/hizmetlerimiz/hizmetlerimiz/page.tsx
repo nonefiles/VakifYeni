@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     sürecine katılabilir.
                   </p>
                   <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
-                  <ul className="text-center inline-block">
+                  <p className="text-center inline-block">
                     <li>
                       <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                       <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
-                  </ul>
+                  </p>
                   <p className="mt-8 text-center">
                     Tüm görüşmeler, alanında eğitimli uzmanlar tarafından yürütülür; etik kurallar çerçevesinde ve
                     gizlilik ilkesiyle gerçekleştirilir.
