@@ -49,7 +49,7 @@ export default function ServicesPage() {
                     sürecine katılabilir.
                   </p>
 
-                  <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
+                  <p className="mt-8 text-center mb-4">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
 
                   <ul className="text-center inline-block">
                     <li className="mb-4">
