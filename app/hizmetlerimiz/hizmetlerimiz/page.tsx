@@ -27,7 +27,6 @@ export default function ServicesPage() {
           <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">
             Psikolojik Destek Programları
           </h2>
-
           <div className="grid gap-8 md:grid-cols-2">
             <Card className="border border-primary/20">
               <CardHeader>
@@ -51,15 +50,15 @@ export default function ServicesPage() {
                   </p>
                   <p className="mt-8 text-center">Sunduğumuz psikoterapi hizmetleri, her bireyin ihtiyaçlarına göre şekillenir.</p>
                   <ul className="text-center inline-block">
-                    <li>
+                    <li className="mb-4">
                       <b><strong>Bireysel Psikoterapi:</strong></b> Yetişkin bireylerin duygu, düşünce ve davranışlarını
                       anlamalarına, zorlayıcı yaşam olaylarıyla başa çıkmalarına destek olur.
                     </li>
-                    <li>
+                    <li className="mb-4">
                       <strong>Çocuk ve Ergen Psikoterapisi:</strong> Çocukların ve ergenlerin gelişimsel, duygusal ve
                       sosyal zorluklarıyla sağlıklı şekilde baş edebilmeleri için aileyle iş birliği içinde yürütülür.
                     </li>
-                    <li>
+                    <li className="mb-4">
                       <strong>Çift ve Aile Psikoterapisi:</strong> Evlilik, ebeveynlik ve aile içi ilişkilerde yaşanan
                       çatışmaları anlamak ve çözümlemek amacıyla sunulur.
                     </li>
@@ -127,7 +126,6 @@ export default function ServicesPage() {
       <section className="bg-accent py-16 blue-gradient-bg relative">
         <div className="container">
           <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">Eğitim ve Seminerler</h2>
-
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="bg-white border border-primary/20">
               <CardHeader>
@@ -155,7 +153,6 @@ export default function ServicesPage() {
                 </Button>
               </CardFooter>
             </Card>
-
             <Card className="bg-white border border-primary/20">
               <CardHeader>
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
@@ -180,7 +177,6 @@ export default function ServicesPage() {
                 </Button>
               </CardFooter>
             </Card>
-
             <Card className="bg-white border border-primary/20">
               <CardHeader>
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent mx-auto">
@@ -215,7 +211,7 @@ export default function ServicesPage() {
       <section className="py-16 white-gradient-bg relative">
         <div className="container">
           <h2 className="mb-10 text-center text-3xl font-bold text-primary font-lora italic">Enstitü Projesi</h2>
-          
+
           <div className="grid gap-8 md:grid-cols-1 max-w-4xl mx-auto">
             <Card className="border border-primary/20">
               <CardHeader>
