@@ -139,7 +139,7 @@ export default function VolunteerPage() {
                 <CardContent className="text-center">
                   <CardDescription className="font-aristotelica">
                     Başvurunuz alındıktan sonra ekibimiz tarafından değerlendirilecek ve uygun gönüllülük alanları 
-                    için sizinle iletişime geçilecektir. Bu süreç genellikle 1-2 hafta sürmektedir.
+                    için sizinle iletişime geçilecektir.
                   </CardDescription>
                 </CardContent>
               </Card>
