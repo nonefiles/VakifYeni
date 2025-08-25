@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { InfoBanner } from "@/components/info-banner"
 
 // Lora font for headings
 const lora = Lora({
@@ -31,7 +32,8 @@ export default function RootLayout({
     <html lang="tr" suppressHydrationWarning>
       <body className={`${lora.variable} font-sans bg-background`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col pt-[131px]"> {/* InfoBanner (51px) + Navbar (80px) yüksekliği için padding */}
+            <InfoBanner />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
