@@ -56,7 +56,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500",
+        "fixed top-[51px] z-50 w-full transition-all duration-500",
         scrolled ? "bg-white/95 backdrop-blur-lg shadow-glow border-b border-primary/10" : "bg-transparent",
       )}
     >
